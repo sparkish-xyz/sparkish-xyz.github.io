@@ -357,6 +357,32 @@ body { font-family: var(--font-sans); }
 
 **참고 자료** (HIG 공식)
 - https://developer.apple.com/design/human-interface-guidelines/
+
+---
+
+## 11. 구현 노트 (2026-05-27) — Phase 2 iPhone 디바이스 프레임 비전과의 편차
+
+**배경**  
+Phase 2 ("시각적 스토리텔링 혁신 — 디바이스 프레임")는 이 전략의 **가장 중요한** 부분으로 명시되었다. 구체적으로 "realistic heavy CSS device frames with Dynamic Island" (배경 #111, 62px radius, `::before` pseudo-element를 이용한 Dynamic Island, aspect-ratio 9/19.55)을 통해 "Apple이 직접 만든 제품 페이지" 느낌을 극대화하는 것이 핵심 목표였다.
+
+**실제 발생한 편차**  
+구현 과정에서 Playwright를 이용한 실제 렌더링 진단 + 원본 WebP 자산 직접 분석 결과, `screenshot-iphone-home.webp`와 `screenshot-iphone-settings.webp`가 **이미 완전한 물리적 iPhone 기기 목업**(금색 베젤, 상태바, Dynamic Island 영역 포함)인 것으로 밝혀졌다.
+
+이로 인해 원래 설계한 무거운 CSS 하드웨어 프레임 + Dynamic Island pseudo를 그대로 적용할 경우 **"phone inside a phone"** 시각 버그가 발생했다 (사용자 직접 제보).
+
+**결정 및 근거**  
+- iPhone 프레임: 무거운 하드웨어 시뮬레이션 대신 가벼운 presentation wrapper (투명 + 부드러운 그림자 + 22px radius)로 전환. Dynamic Island `::before` 완전 제거.
+- Apple Watch 프레임: **원래 의도 그대로** 유지 (squircle + dark bezel). 해당 자산은 순수 화면 캡처였기 때문.
+- 이 결정은 "Apple HIG를 가장 잘 따르는 결과"를 내기 위한 **증거 기반 실용적 조정**이다.
+
+**문서화**  
+이 편차는 `index.html`의 device frame CSS 블록 상단에 상세 주석으로도 기록되어 있다. 미래 리뷰어와 전략 소유자가 맥락을 정확히 이해할 수 있도록 한다.
+
+**향후 옵션 (미해결 과제로 남김)**  
+- 기존 WebP를 art-directed crop(베젤 제거된 순수 화면 버전)으로 재가공한 뒤, 가벼우면서도 여전히 "디바이스 느낌"이 나는 CSS 프레임을 재도입하는 방안 검토 가능.
+- 현재 상태에서는 사용자 불만("버그처럼 보임") 해결이 최우선이었으며, 시각 결과는 모바일에서도 프리미엄하게 느껴진다.
+
+이 노트는 전략 문서의 무결성을 유지하면서, 실제 구현에서 발생한 현실과의 괴리를 솔직하게 기록하기 위한 것이다.
 - App Store Marketing Guidelines
 - Apple Design Resources (베젤 다운로드)
 - WWDC 2025 Liquid Glass 세션

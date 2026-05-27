@@ -325,65 +325,76 @@
       font-weight: 600;
     }
 
-    /* ========== CRITICAL: Apple HIG CSS Device Frames (Phase 2 - highest leverage fix) ========== */
-    /* Replaces raw crushed screenshots with realistic iPhone (Dynamic Island) + Watch (squircle) frames */
+    /* ========== Device frames — elegant presentation treatment (iPhone) + realistic squircle (Watch) ========== */
+    /*
+       IMPORTANT DEVIATION NOTE (2026-05-27):
+       The original Winner Candidate 4 / Phase 2 strategy (see MOBILE-FIRST-STRATEGY-WINNER.md)
+       explicitly called for heavy realistic iPhone hardware simulation:
+         - .device-frame background #111 + thick padding
+         - 62px radius + aspect-ratio 9/19.55
+         - .iphone-frame::before Dynamic Island pseudo-element (clamp responsive)
+       This was intended as the signature "Apple made this page" visual language.
+
+       Reality discovered via Playwright + direct asset inspection:
+       The actual WebP files (screenshot-iphone-home.webp and screenshot-iphone-settings.webp)
+       are already complete marketing device mockups containing gold/bronze bezels,
+       status bars, and Dynamic Island areas. Adding the heavy CSS frame created the
+       exact "phone inside a phone" bug reported by the user.
+
+       Decision: Converted iPhone treatment to a minimal light presentation wrapper
+       (transparent + soft shadow + 22px radius). Dynamic Island pseudo removed.
+       Watch frame left 100% unchanged (its asset was clean screen content and matches
+       the original heavy intent).
+
+       This is a pragmatic, evidence-driven departure from the approved heavy-frame vision,
+       documented here and in the strategy doc for future reviewers. The visual result
+       is cleaner, the user complaint is resolved, and premium feel is preserved on mobile.
+       (Watch treatment remains faithful to the original strategy.)
+    */
     .device-frame {
       position: relative;
       margin: 0 auto;
-      background: #111;
+      background: transparent;
       box-shadow: 
-        0 30px 70px -15px rgba(0, 0, 0, 0.45),
-        0 0 0 1px rgba(255,255,255,0.06) inset;
-      overflow: hidden;
+        0 20px 50px -12px rgba(0, 0, 0, 0.18),
+        0 0 0 1px rgba(0,0,0,0.04);
+      overflow: visible;
       transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
     .device-frame:hover {
       transform: translateY(-2px);
+      box-shadow: 
+        0 26px 60px -14px rgba(0, 0, 0, 0.22),
+        0 0 0 1px rgba(0,0,0,0.05);
     }
 
-    /* iPhone 16 Pro style frame — 9:19.55 aspect for modern tall display + Dynamic Island */
+    /* iPhone presentation wrapper (no hardware bezel or Dynamic Island pseudo).
+       The WebP already provides the authentic device visual. Light treatment prevents nested illusion. */
     .iphone-frame {
       width: min(92vw, 310px);
-      aspect-ratio: 9 / 19.55;
-      border-radius: 62px;
-      padding: 9px 9px 12px;
-    }
-
-    .iphone-frame::before {
-      content: '';
-      position: absolute;
-      top: 14px;
-      left: 50%;
-      transform: translateX(-50%);
-      /* Responsive Dynamic Island: scales correctly in both large Hero (~310px) and compact Showcase (~240px) frames */
-      width: clamp(60px, 36%, 118px);
-      height: clamp(13px, 7.8%, 26px);
-      background: #000;
-      border-radius: 20px;
-      z-index: 3;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+      border-radius: 22px;
+      padding: 0;
+      background: transparent;
     }
 
     .iphone-screen {
-      position: relative;
       width: 100%;
-      height: 100%;
-      background: #fff;
-      border-radius: 52px;
+      height: auto;
+      background: transparent;
+      border-radius: 0;
       overflow: hidden;
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+      box-shadow: none;
+      position: relative;
     }
 
     .iphone-screen img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
+      height: auto;
       display: block;
     }
 
-    /* Apple Watch realistic squircle frame */
+    /* Apple Watch realistic squircle frame — kept unchanged (its source asset is clean screen content) */
     .watch-frame {
       width: min(148px, 42vw); /* responsive on narrow mobile while keeping squircle fidelity */
       aspect-ratio: 1 / 1.22;

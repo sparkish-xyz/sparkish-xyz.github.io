@@ -1,0 +1,14 @@
+# Temporary files from visual review
+node_modules/
+package.json
+package-lock.json
+
+# Large Playwright screenshots (kept locally for reference)
+design-review-screenshots/*.png
+design-review-screenshots/after/
+design-review-screenshots/before/
+design-review-screenshots/chromium-*
+design-review-screenshots/webkit-*
+
+# Keep the capture script itself
+!design-review-screenshots/capture.js
