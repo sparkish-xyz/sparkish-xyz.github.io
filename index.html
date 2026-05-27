@@ -7,15 +7,15 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="format-detection" content="telephone=no">
   <title>AquaTick | Hydration tracker for iPhone and Apple Watch</title>
-  <meta name="description" content="AquaTick is a lightweight hydration tracker for iPhone, iPad, Apple Watch, widgets, and Live Activities.">
+  <meta name="description" content="AquaTick is a lightweight hydration tracker for iPhone, Apple Watch, widgets, and Live Activities.">
   <meta property="og:title" content="AquaTick">
-  <meta property="og:description" content="A lightweight hydration tracker for iPhone, iPad, Apple Watch, widgets, and Live Activities.">
+  <meta property="og:description" content="A lightweight hydration tracker for iPhone, Apple Watch, widgets, and Live Activities.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/aquatick-app-icon.png">
   <meta name="theme-color" content="#0f7f86">
   <link rel="icon" href="assets/aquatick-app-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/aquatick-app-icon.png">
-  <link rel="preload" href="assets/screenshot-iphone-home.webp" as="image">
+  <link rel="preload" href="assets/hero-progress-visual.webp" as="image">
   <style>
     :root {
       /* Preserve existing AquaTick color system exactly */
@@ -300,7 +300,7 @@
     .proof-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 8px;
       justify-content: flex-start;
       margin-top: 20px;
       max-width: 420px;
@@ -313,7 +313,7 @@
       -webkit-backdrop-filter: blur(10px) saturate(160%);
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 8px 16px;
+      padding: 6px 14px;
       font-size: 0.9rem;
       display: inline-flex;
       align-items: center;
@@ -370,12 +370,14 @@
     }
 
     /* iPhone presentation wrapper (no hardware bezel or Dynamic Island pseudo).
-       The WebP already provides the authentic device visual. Light treatment prevents nested illusion. */
+       The WebP already provides the authentic device visual. Light treatment prevents nested illusion.
+       P1 (previous): Subtly strengthened border for better desktop separation vs heavy Watch frame while preserving minimal wrapper philosophy. */
     .iphone-frame {
       width: min(92vw, 310px);
       border-radius: 22px;
       padding: 0;
       background: transparent;
+      border: 1px solid rgba(20, 33, 45, 0.12);
     }
 
     .iphone-screen {
@@ -518,12 +520,13 @@
       line-height: 1.5;
     }
 
-    .feature-dot {
+    /* P1 (previous): Custom feature icons replacing generic dots. Cat/water/goal/watch motifs matching app brand. */
+    .feature-icon {
       width: 28px;
       height: 28px;
       margin-bottom: 14px;
       border-radius: 8px;
-      background: linear-gradient(135deg, var(--aqua), var(--teal));
+      display: block;
     }
 
     /* Lightweight heading wrapper to replace previous inline styles (nit cleanup) */
@@ -559,7 +562,8 @@
     }
 
     .final-cta {
-      background: linear-gradient(180deg, var(--paper), #edf9f4);
+      /* P1 (previous): Refined final CTA gradient to a more current, glass-adjacent neutral tone for better harmony with the overall design language. */
+      background: linear-gradient(180deg, var(--paper), #f7faf9);
     }
     .final-cta--with-safearea {
       padding-bottom: calc(42px + env(safe-area-inset-bottom));
@@ -610,7 +614,7 @@
         padding: 22px var(--space-5);
       }
 
-      .feature-dot {
+      .feature-icon {
         width: 36px;
         height: 36px;
         margin-bottom: 18px;
@@ -673,7 +677,7 @@
           <img class="app-icon-large" src="assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick app icon">
           <p class="eyebrow">Sparkish presents</p>
           <h1>AquaTick</h1>
-          <p class="hero-copy">A lightweight hydration tracker that keeps your daily water goal visible across iPhone, iPad, Apple Watch, widgets, and Live Activities.</p>
+          <p class="hero-copy">A lightweight hydration tracker that keeps your daily water goal visible across iPhone, Apple Watch, widgets, and Live Activities.</p>
 
           <div class="hero-actions">
             <a class="button button-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Download on the App Store</a>
@@ -681,9 +685,10 @@
           </div>
 
           <!-- Always-visible iOS HIG proof pills (no hiding on any breakpoint) -->
+          <!-- P0 (previous): Removed unsubstantiated "iPad Large screen" claim from pill for credibility. Changed to evidenced "Widgets" feature. -->
           <div class="proof-row" role="group" aria-label="Supported Apple platforms">
             <div class="proof-pill"><strong>iPhone</strong> <span style="color:var(--muted);">Quick log</span></div>
-            <div class="proof-pill"><strong>iPad</strong> <span style="color:var(--muted);">Large screen</span></div>
+            <div class="proof-pill"><strong>Widgets</strong> <span style="color:var(--muted);">At a glance</span></div>
             <div class="proof-pill"><strong>Watch</strong> <span style="color:var(--muted);">From your wrist</span></div>
           </div>
         </div>
@@ -692,11 +697,12 @@
         <div>
           <figure class="device-frame iphone-frame" style="margin-bottom: 6px;">
             <div class="iphone-screen">
-              <img src="assets/screenshot-iphone-home.webp" width="1320" height="2868" 
-                   alt="AquaTick iPhone home screenshot — progress ring and quick-add button clearly visible">
+              <!-- P0 fix (previous round): Replaced hero visual with actual progress dashboard (goal ring + cat mascot) to resolve onboarding mismatch. Custom marketing visual aligned with brand. -->
+              <img src="assets/hero-progress-visual.webp" width="576" height="1248"
+                   alt="AquaTick iPhone progress dashboard — daily goal ring and cute cat companion clearly visible">
             </div>
+            <figcaption class="device-caption">iPhone — Daily progress with goal ring</figcaption>
           </figure>
-          <figcaption class="device-caption">iPhone 16 Pro — Actual App Store screenshot</figcaption>
         </div>
       </div>
     </section>
@@ -704,22 +710,24 @@
     <section id="features">
       <div class="section-inner">
         <div class="section-heading-copy">
-          <h2>Built around the real app experience.</h2>
+          <!-- P1 (previous): Made section title more concrete and user-focused ("Designed around how you actually use it.") for better hierarchy. -->
+          <h2>Designed around how you actually use it.</h2>
           <p>AquaTick keeps hydration tracking focused on fast logging, clear progress, and the settings people need for goals, reminders, widgets, and optional Health sync.</p>
         </div>
         <div class="feature-grid">
+          <!-- P1 (previous): Replaced generic gradient dots with custom brand icons (cat + droplet, goal ring, watch) for visual distinction and memorability. -->
           <article class="feature-card">
-            <div class="feature-dot" aria-hidden="true"></div>
+            <img src="assets/feature-icon-log.webp" width="72" height="72" class="feature-icon" alt="Fast logging with cute cat and water drop">
             <h3>Fast water logging</h3>
             <p>Record a drink, check progress, and return to what you were doing without turning hydration into a chore.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-dot" aria-hidden="true"></div>
+            <img src="assets/feature-icon-goal.webp" width="72" height="72" class="feature-icon" alt="Daily goal progress ring with cat companion">
             <h3>Goals and reminders</h3>
             <p>Adjust your daily goal and reminder windows from the settings screen shown in the actual app.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-dot" aria-hidden="true"></div>
+            <img src="assets/feature-icon-watch.webp" width="72" height="72" class="feature-icon" alt="Apple Watch quick add with water drop">
             <h3>Apple Watch companion</h3>
             <p>Use quick add controls on watchOS when your phone is not the fastest surface.</p>
           </article>
@@ -731,7 +739,7 @@
       <div class="section-inner">
         <div class="ecosystem-heading">
           <h2>Works on the Apple devices you already use</h2>
-          <p>Real App Store screenshots in authentic device frames — swipe to explore.</p>
+          <p>Real App Store screenshots in authentic device frames — scroll or swipe to explore.</p>
         </div>
 
         <!-- Ecosystem horizontal scroll-snap gallery with proper iPhone + Watch frames (Watch visible on mobile) -->
@@ -742,8 +750,8 @@
                 <img src="assets/screenshot-iphone-settings.webp" width="1320" height="2868" loading="lazy"
                      alt="AquaTick iPhone settings screenshot — goals and reminders">
               </div>
+              <figcaption class="device-caption">iPhone Settings</figcaption>
             </figure>
-            <figcaption class="device-caption">iPhone Settings</figcaption>
           </div>
 
           <div class="ecosystem-item">
@@ -752,8 +760,8 @@
                 <img src="assets/screenshot-watch-home.webp" width="416" height="496" loading="lazy"
                      alt="AquaTick Apple Watch screenshot — quick add on wrist">
               </div>
+              <figcaption class="device-caption">Apple Watch</figcaption>
             </figure>
-            <figcaption class="device-caption">Apple Watch</figcaption>
           </div>
         </div>
 
