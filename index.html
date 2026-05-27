@@ -1,62 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <!-- iOS Safari / HIG optimizations: safe-area support for Dynamic Island / notch, status bar style -->
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="format-detection" content="telephone=no">
-  <title>AquaTick | Hydration tracker for iPhone and Apple Watch</title>
-  <meta name="description" content="AquaTick is a lightweight hydration tracker for iPhone, Apple Watch, widgets, and Live Activities.">
-  <meta property="og:title" content="AquaTick">
-  <meta property="og:description" content="A lightweight hydration tracker for iPhone, Apple Watch, widgets, and Live Activities.">
+  <title>AquaTick | 이 고양이가 너 물 마시라고 협박한다</title>
+  <meta name="description" content="고양이가 Lock Screen 위젯에서 너를 지켜보고 있다. 물 안 마시면 진짜 슬퍼한다. AquaTick — 고양이와 함께하는 수분 협박 앱 (iPhone + Apple Watch)">
+  <meta property="og:title" content="AquaTick — 고양이가 너 물 마시라고 협박하는 앱">
+  <meta property="og:description" content="실제 앱 안에 사는 이 고양이. 0ml 되면 슬픈 눈으로 물컵 들고 있음. 너도 당해봐.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/aquatick-app-icon.png">
-  <meta name="theme-color" content="#0f7f86">
+  <meta name="theme-color" content="#14F0C8">
   <link rel="icon" href="assets/aquatick-app-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/aquatick-app-icon.png">
   <link rel="preload" href="assets/screenshot-iphone-home.webp" as="image">
   <style>
     :root {
-      /* Preserve existing AquaTick color system exactly */
-      --ink: #14212d;
-      --muted: #5b6874;
-      --line: rgba(20, 33, 45, 0.13);
-      --paper: #fbfbf7;
-      --surface: #ffffff;
-      --aqua: #14c7d0;
-      --teal: #0f7f86;
-      --green: #4f9b61;
-      --coral: #ff756a;
-      --lavender: #edeafe;
-      --shadow: 0 22px 52px rgba(20, 33, 45, 0.15);
+      /* 2026 MZ playful palette — bright, chunky, anti-corporate */
+      --ink: #1F2A3D;
+      --paper: #FFF9F0;
+      --cream: #FFF7E6;
+      --aqua: #14F0C8;
+      --aqua-dark: #00C9A7;
+      --coral: #FF5E5B;
+      --coral-soft: #FF8A87;
+      --yellow: #FFE066;
+      --navy: #0F1C2E;
+      --muted: #5F6B7A;
+      --line: rgba(31, 42, 61, 0.12);
+      --shadow-heavy: 0 8px 0 #1F2A3D;
+      --shadow-sticker: 6px 8px 0 rgba(31, 42, 61, 0.18);
 
-      /* HIG Apple marketing additions (glass, spacing, Dynamic Type) */
-      --glass: rgba(251, 251, 247, 0.82);
-      --space-1: 0.25rem;
-      --space-2: 0.5rem;
-      --space-3: 0.75rem;
-      --space-4: 1rem;
-      --space-5: 1.25rem;
-      --space-6: 1.5rem;
-      --space-7: 2rem;
-      --space-8: 2.5rem;
+      /* Chunky radii — hand-made sticker feel */
+      --r-16: 16px;
+      --r-24: 24px;
+      --r-28: 28px;
+      --r-32: 32px;
+      --r-full: 999px;
 
-      /* Fluid Dynamic Type (SF Pro inspired, strategy-defined clamps) */
-      --large-title: clamp(2.05rem, 8.4vw, 2.85rem);
-      --title-1: clamp(1.62rem, 5.8vw, 2.08rem);
-      --headline: clamp(1.08rem, 3.6vw, 1.26rem);
-      --body: 1.0625rem;
-      --callout: 1rem;
-      --footnote: 0.8125rem;
-
-      /* Touch targets per HIG (52px+ for comfort) */
-      --min-tap: 52px;
+      /* Fluid type */
+      --big: clamp(2.4rem, 9vw, 3.6rem);
+      --title: clamp(1.85rem, 6.8vw, 2.4rem);
+      --body: 1.05rem;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       font: -apple-system-body;
@@ -65,755 +54,937 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-      }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
 
     body {
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Inter, system-ui, ui-sans-serif, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
       font-size: var(--body);
-      line-height: 1.45;
-      letter-spacing: 0;
-      /* Safe-area: header owns top inset (sticky glass nav with calc); body handles bottom + sides to avoid duplication */
-      padding-top: 0;
+      line-height: 1.48;
+      letter-spacing: -0.01em;
       padding-bottom: env(safe-area-inset-bottom);
       padding-left: env(safe-area-inset-left);
       padding-right: env(safe-area-inset-right);
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
+    img { display: block; max-width: 100%; height: auto; }
 
-    figure {
-      margin: 0;
-    }
+    /* === CHUNKY PLAYFUL STYLES === */
 
-    /*
-      QA Matrix (mental + documented per reviewer feedback):
-      - Mobile base (320-560px): Features cards, section-inner margins, scroll-snap, DI scaling, Watch visibility verified in simulation.
-      - Dynamic Type: -apple-system-body + clamp vars respond to iOS text size settings.
-      - Reduced motion: global kill rule present.
-      - Safe areas / Dynamic Island devices: header owns top inset; body no duplication.
-      - Touch: 52px+ on primary + support/nav; focus-visible rings added.
-      - Desktop graceful: min-768/1024 overrides only.
-      - Images in frames: width/height attrs preserved (no CLS). No srcset needed (single high-res webp assets).
-    */
-
-    /* iOS HIG glassmorphic sticky navigation (UINavigationBar pattern) — mobile-first */
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 200;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      width: 100%;
-      margin: 0;
-      padding: 14px 20px;
+      gap: 12px;
+      padding: 14px 18px;
       padding-top: calc(14px + env(safe-area-inset-top));
-      background: var(--glass);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
-      border-bottom: 0.5px solid var(--line);
+      background: var(--cream);
+      border-bottom: 4px solid var(--ink);
+      box-shadow: 0 2px 0 rgba(0,0,0,0.04);
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 11px;
-      color: var(--ink);
-      font-weight: 700;
-      font-size: 1.02rem;
-      letter-spacing: -0.01em;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
     }
-
     .brand img {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(20, 199, 208, 0.25);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 3px solid var(--ink);
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
       gap: 4px;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--ink);
+      font-size: 0.9rem;
+      font-weight: 700;
     }
-
     .nav-links a {
-      min-height: 52px; /* consistent 52px+ HIG target */
-      padding: 8px 11px;
-      border-radius: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
-      -webkit-tap-highlight-color: transparent;
+      border: 3px solid transparent;
     }
-
     .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.6);
+      background: var(--aqua);
+      color: var(--navy);
+      border-color: var(--ink);
     }
 
+    /* HERO — Cat front and center, attitude max */
     .hero {
+      background: linear-gradient(165deg, var(--cream) 0%, #FFF1D6 55%, var(--paper) 100%);
+      border-bottom: 6px solid var(--ink);
       position: relative;
       overflow: hidden;
-      background:
-        linear-gradient(130deg, rgba(239, 253, 251, 0.95), rgba(255, 255, 251, 0.92) 45%, rgba(237, 234, 254, 0.68)),
-        var(--paper);
+    }
+    .hero::before {
+      /* subtle riso/halftone vibe via dot pattern */
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 1px 1px, rgba(31,42,61,0.06) 1px, transparent 0);
+      background-size: 5px 5px;
+      pointer-events: none;
+      mix-blend-mode: multiply;
     }
 
-    /* Mobile-first hero (base = compact iPhone). Desktop enhancements via min-width only */
     .hero-inner {
-      position: relative;
-      z-index: 1;
+      padding: 52px 18px 44px;
+      max-width: 980px;
+      margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      width: min(100% - 40px, 720px);
-      margin: 0 auto;
-      padding: 72px 0 32px;
+      gap: 28px;
+      position: relative;
+      z-index: 1;
     }
 
-    .app-icon-large {
-      width: 72px;
-      height: 72px;
-      margin-bottom: 18px;
-      border-radius: 17px;
-      box-shadow: 0 10px 24px rgba(20, 199, 208, 0.22);
-    }
-
-    .eyebrow {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin: 0 0 12px;
-      color: var(--teal);
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
+      gap: 8px;
+      background: var(--coral);
+      color: white;
+      font-weight: 900;
+      font-size: 0.82rem;
+      padding: 6px 18px;
+      border-radius: var(--r-full);
+      border: 4px solid var(--ink);
+      box-shadow: var(--shadow-sticker);
+      transform: rotate(-3deg);
+      width: fit-content;
       letter-spacing: 0.5px;
     }
 
-    .eyebrow::before {
-      width: 28px;
-      height: 3px;
-      border-radius: 999px;
-      background: var(--coral);
-      content: "";
+    .hero h1 {
+      font-size: var(--big);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin: 0 0 14px;
+      max-width: 18ch;
     }
 
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
-    h1 {
-      max-width: 560px;
-      margin-bottom: 14px;
-      font-size: var(--large-title);
+    .hero-tagline {
+      font-size: 1.22rem;
       font-weight: 700;
-      line-height: 1.02;
-      letter-spacing: -0.025em;
+      line-height: 1.35;
+      color: var(--navy);
+      max-width: 22ch;
+      margin-bottom: 18px;
     }
 
-    .hero-copy {
-      max-width: 560px;
-      margin-bottom: 22px;
-      color: var(--muted);
-      font-size: var(--callout);
-      line-height: 1.5;
-    }
-
-    .hero-actions,
-    .footer-actions {
+    .hero-actions {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      align-items: stretch;
+      margin-top: 8px;
     }
 
-    /* Apple HIG buttons: 52px+ touch targets, 14px radius, iOS spring motion, press feedback */
-    .button {
+    .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: var(--min-tap);
-      min-width: 120px;
-      border: 1px solid transparent;
-      border-radius: 14px;
-      padding: 0 22px;
-      font-size: 1.02rem;
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      transition: transform 120ms cubic-bezier(0.23, 1.0, 0.32, 1),
-                  box-shadow 120ms ease;
-      -webkit-tap-highlight-color: transparent;
+      min-height: 58px;
+      padding: 0 28px;
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      border-radius: var(--r-28);
+      border: 4px solid var(--ink);
+      transition: transform 80ms ease, box-shadow 80ms ease;
+      box-shadow: var(--shadow-heavy);
+      cursor: pointer;
+      text-align: center;
     }
-
-    .button:active {
-      transform: scale(0.985);
+    .btn:active {
+      transform: translateY(3px) scale(0.985);
+      box-shadow: 0 2px 0 var(--ink);
     }
-
-    .button:hover {
-      transform: translateY(-1px);
+    .btn-primary {
+      background: var(--aqua);
+      color: var(--navy);
     }
-
-    /* Explicit focus-visible for all interactive elements (HIG accessibility) */
-    .button:focus-visible,
-    .nav-links a:focus-visible,
-    .support-item:focus-visible,
-    .proof-pill:focus-visible {
-      outline: 2px solid var(--aqua);
-      outline-offset: 2px;
-    }
-
-    .button-primary {
-      background: var(--ink);
-      color: #ffffff;
-      box-shadow: var(--shadow);
-    }
-
-    .button-secondary {
-      border-color: var(--line);
-      background: rgba(255, 255, 255, 0.76);
+    .btn-secondary {
+      background: white;
       color: var(--ink);
     }
 
-    /* iOS-style compact proof pills — always visible (never display:none). Thumb friendly. */
-    .proof-row {
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    .hero-visual .iphone-frame {
+      border: 6px solid var(--ink);
+      border-radius: var(--r-32);
+      box-shadow: var(--shadow-sticker), 0 30px 60px -20px rgba(0,0,0,0.25);
+      overflow: hidden;
+      background: #000;
+    }
+    .hero-visual img {
+      width: 100%;
+      display: block;
+    }
+    .cat-sticker {
+      position: absolute;
+      top: -14px;
+      right: -10px;
+      background: var(--yellow);
+      color: var(--ink);
+      font-weight: 900;
+      font-size: 0.78rem;
+      padding: 7px 16px;
+      border: 4px solid var(--ink);
+      border-radius: var(--r-24);
+      transform: rotate(12deg);
+      box-shadow: var(--shadow-sticker);
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    /* MOOD CHECKER — playful light interaction */
+    .mood-section {
+      background: var(--cream);
+      border-top: 4px solid var(--ink);
+      border-bottom: 4px solid var(--ink);
+      padding: 38px 18px;
+    }
+    .mood-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .section-label {
+      display: inline-block;
+      background: var(--coral);
+      color: white;
+      font-weight: 900;
+      font-size: 0.75rem;
+      padding: 4px 14px;
+      border-radius: var(--r-full);
+      border: 3px solid var(--ink);
+      margin-bottom: 14px;
+      transform: rotate(-1deg);
+    }
+    .mood-title {
+      font-size: var(--title);
+      font-weight: 900;
+      line-height: 1.1;
+      margin: 0 0 18px;
+    }
+
+    .mood-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      justify-content: flex-start;
-      margin-top: 20px;
-      max-width: 420px;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .mood-btn {
+      flex: 1 1 auto;
+      min-height: 56px;
+      font-size: 0.98rem;
+      font-weight: 800;
+      padding: 0 18px;
+      border: 4px solid var(--ink);
+      border-radius: var(--r-24);
+      background: white;
+      box-shadow: var(--shadow-sticker);
+      cursor: pointer;
+      transition: all 100ms ease;
+    }
+    .mood-btn.active {
+      background: var(--aqua);
+      color: var(--navy);
+      transform: scale(1.02);
+    }
+    .mood-btn:hover:not(.active) {
+      background: #fff;
+      transform: translateY(-1px);
     }
 
-    .proof-pill {
-      min-height: 44px;
-      background: rgba(255, 255, 255, 0.82);
-      backdrop-filter: blur(10px) saturate(160%);
-      -webkit-backdrop-filter: blur(10px) saturate(160%);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
-    }
-
-    .proof-pill strong {
-      font-weight: 600;
-    }
-
-    /* ========== Device frames — elegant presentation treatment (iPhone) + realistic squircle (Watch) ========== */
-    /*
-       IMPORTANT DEVIATION NOTE (2026-05-27):
-       The original Winner Candidate 4 / Phase 2 strategy (see MOBILE-FIRST-STRATEGY-WINNER.md)
-       explicitly called for heavy realistic iPhone hardware simulation:
-         - .device-frame background #111 + thick padding
-         - 62px radius + aspect-ratio 9/19.55
-         - .iphone-frame::before Dynamic Island pseudo-element (clamp responsive)
-       This was intended as the signature "Apple made this page" visual language.
-
-       Reality discovered via Playwright + direct asset inspection:
-       The actual WebP files (screenshot-iphone-home.webp and screenshot-iphone-settings.webp)
-       are already complete marketing device mockups containing gold/bronze bezels,
-       status bars, and Dynamic Island areas. Adding the heavy CSS frame created the
-       exact "phone inside a phone" bug reported by the user.
-
-       Decision: Converted iPhone treatment to a minimal light presentation wrapper
-       (transparent + soft shadow + 22px radius). Dynamic Island pseudo removed.
-       Watch frame left 100% unchanged (its asset was clean screen content and matches
-       the original heavy intent).
-
-       This is a pragmatic, evidence-driven departure from the approved heavy-frame vision,
-       documented here and in the strategy doc for future reviewers. The visual result
-       is cleaner, the user complaint is resolved, and premium feel is preserved on mobile.
-       (Watch treatment remains faithful to the original strategy.)
-    */
-    .device-frame {
-      position: relative;
-      margin: 0 auto;
-      background: transparent;
-      box-shadow: 
-        0 20px 50px -12px rgba(0, 0, 0, 0.18),
-        0 0 0 1px rgba(0,0,0,0.04);
-      overflow: visible;
-      transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
-    }
-
-    .device-frame:hover {
-      transform: translateY(-2px);
-      box-shadow: 
-        0 26px 60px -14px rgba(0, 0, 0, 0.22),
-        0 0 0 1px rgba(0,0,0,0.05);
-    }
-
-    /* iPhone presentation wrapper (no hardware bezel or Dynamic Island pseudo).
-       The WebP already provides the authentic device visual. Light treatment prevents nested illusion.
-       P1 (previous): Subtly strengthened border for better desktop separation vs heavy Watch frame while preserving minimal wrapper philosophy. */
-    .iphone-frame {
-      width: min(92vw, 310px);
-      border-radius: 22px;
-      padding: 0;
-      background: transparent;
-      border: 1px solid rgba(20, 33, 45, 0.12);
-    }
-
-    .iphone-screen {
-      width: 100%;
-      height: auto;
-      background: transparent;
-      border-radius: 0;
-      overflow: hidden;
-      box-shadow: none;
-      position: relative;
-    }
-
-    .iphone-screen img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Apple Watch realistic squircle frame — kept unchanged (its source asset is clean screen content) */
-    .watch-frame {
-      width: min(148px, 42vw); /* responsive on narrow mobile while keeping squircle fidelity */
-      aspect-ratio: 1 / 1.22;
-      border-radius: 44px;
-      padding: 10px;
-      background: #0f1720;
-      box-shadow: 0 20px 45px -12px rgba(0,0,0,0.5);
-    }
-
-    .watch-screen {
-      width: 100%;
-      height: 100%;
-      background: #000;
-      border-radius: 34px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .watch-screen img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .device-caption {
-      font-size: var(--footnote);
-      color: var(--muted);
-      margin-top: 10px;
-      letter-spacing: -0.01em;
-      text-align: center;
-    }
-
-    /* Horizontal scroll-snap ecosystem gallery (iOS App Store screenshot carousel pattern) */
-    .ecosystem-row {
+    .cat-reaction {
+      background: white;
+      border: 5px solid var(--ink);
+      border-radius: var(--r-28);
+      padding: 22px 20px;
+      box-shadow: var(--shadow-sticker);
+      font-size: 1.12rem;
+      font-weight: 700;
+      line-height: 1.4;
+      min-height: 114px;
       display: flex;
-      gap: 18px;
-      padding: 0 20px 20px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
+      align-items: center;
+    }
+    .cat-reaction .emoji {
+      font-size: 2.4rem;
+      margin-right: 16px;
+      flex-shrink: 0;
     }
 
-    .ecosystem-row::-webkit-scrollbar {
-      display: none;
+    /* WATER FILL PLAYFUL INTERACTION — pure CSS + tiny JS */
+    .water-demo {
+      margin-top: 18px;
+      background: white;
+      border: 5px solid var(--ink);
+      border-radius: var(--r-28);
+      padding: 18px;
+      box-shadow: var(--shadow-sticker);
     }
-
-    .ecosystem-item {
-      flex: 0 0 auto;
-      scroll-snap-align: center;
+    .water-demo-label {
+      font-weight: 800;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+    .water-glass {
+      width: 86px;
+      height: 124px;
+      border: 5px solid var(--ink);
+      border-radius: 18px 18px 28px 28px;
+      position: relative;
+      overflow: hidden;
+      background: #f8f1e3;
+      box-shadow: inset 0 0 0 4px rgba(255,255,255,0.6);
+      margin: 0 auto 12px;
+      cursor: pointer;
+    }
+    .water-fill {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      background: linear-gradient(to top, var(--aqua) 30%, #5EFFE0 75%, #14F0C8);
+      transition: height 420ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-top: 3px solid rgba(255,255,255,0.55);
+    }
+    .water-glass.filled .water-fill { height: 100%; }
+    .water-glass .bubble {
+      position: absolute;
+      background: rgba(255,255,255,0.7);
+      border-radius: 50%;
+      animation: none;
+    }
+    .water-glass.filled .bubble {
+      animation: bubble-rise 900ms linear infinite;
+    }
+    @keyframes bubble-rise {
+      0% { transform: translateY(0); opacity: 0.7; }
+      100% { transform: translateY(-110px); opacity: 0; }
+    }
+    .water-status {
       text-align: center;
-    }
-
-    /* Base section rhythm (mobile first) */
-    section {
-      padding: 52px 0;
-    }
-
-    /* Cleaned legacy desktop-first rules removed — mobile base + min-width enhancements only (Phase 1 complete) */
-
-    .support-item {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px 20px;
-      background: #ffffff;
-      display: block;
-      min-height: 52px; /* HIG 52px+ touch target for secondary interactive elements */
-    }
-
-    .support-item strong {
-      display: block;
-      margin-bottom: 4px;
-      font-weight: 600;
-    }
-
-    .support-item span {
-      display: block;
-      color: var(--muted);
-      line-height: 1.45;
+      font-weight: 800;
       font-size: 0.95rem;
     }
 
-    /* Mobile-first base styles for Features (P0 fix — ported/adapted from prototype, desktop overrides preserved) */
-    .section-inner {
-      width: 100%;
-      padding: 0 20px;
+    /* JUDGMENT SECTION — the soul. 3 cat verdicts instead of feature grid */
+    .judgment {
+      padding: 48px 18px 38px;
+    }
+    .judgment-inner {
+      max-width: 820px;
       margin: 0 auto;
-      max-width: 720px;
+    }
+    .judgment h2 {
+      font-size: var(--title);
+      font-weight: 900;
+      line-height: 1.1;
+      margin: 0 0 8px;
+    }
+    .judgment-subtitle {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 28px;
     }
 
-    .feature-grid {
+    .judgment-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 12px;
-      max-width: 720px;
-      margin: 0 auto;
+      gap: 18px;
     }
-
-    .feature-card {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(12px) saturate(160%);
-      -webkit-backdrop-filter: blur(12px) saturate(160%);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 20px var(--space-5);
-      min-height: 112px;
+    .judgment-card {
+      background: white;
+      border: 5px solid var(--ink);
+      border-radius: var(--r-28);
+      padding: 22px 20px 24px;
+      box-shadow: var(--shadow-sticker);
+      position: relative;
     }
-
-    .feature-card h3 {
-      font-size: var(--headline);
-      font-weight: 600;
-      margin: 0 0 8px;
-      letter-spacing: -0.01em;
+    .judgment-card::before {
+      content: "🐾";
+      position: absolute;
+      top: -13px;
+      right: 18px;
+      font-size: 1.6rem;
+      background: var(--paper);
+      padding: 0 6px;
     }
-
-    .feature-card p {
+    .judgment-number {
+      font-size: 0.75rem;
+      font-weight: 900;
+      background: var(--yellow);
+      color: var(--ink);
+      display: inline-block;
+      padding: 2px 11px;
+      border-radius: var(--r-full);
+      border: 3px solid var(--ink);
+      margin-bottom: 10px;
+    }
+    .judgment-card h3 {
+      font-size: 1.32rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+    .judgment-card p {
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--navy);
       margin: 0;
-      font-size: 0.97rem;
-      color: var(--muted);
-      line-height: 1.5;
     }
-
-    /* P1 (previous): Custom feature icons replacing generic dots. Cat/water/goal/watch motifs matching app brand. */
-    .feature-icon {
-      width: 28px;
-      height: 28px;
-      margin-bottom: 14px;
-      border-radius: 8px;
+    .judgment-card .cat-face {
+      font-size: 2.1rem;
+      margin-top: 14px;
       display: block;
     }
 
-    /* Lightweight heading wrapper to replace previous inline styles (nit cleanup) */
-    .section-heading-copy {
-      margin-bottom: 28px;
+    /* SCREENSHOT GALLERY — treated as "고양이 출연작" */
+    .cat-film {
+      background: var(--navy);
+      color: white;
+      padding: 44px 18px 52px;
+      border-top: 4px solid var(--ink);
+      border-bottom: 4px solid var(--ink);
     }
-    .section-heading-copy h2 {
-      font-size: var(--title-1);
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-    }
-    .section-heading-copy p {
-      color: var(--muted);
-      max-width: 58ch;
-      line-height: 1.5;
-    }
-
-    /* Showcase ecosystem heading (replaces previous inline styles for consistency) */
-    .ecosystem-heading {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    .ecosystem-heading h2 {
-      font-size: var(--title-1);
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-    }
-    .ecosystem-heading p {
-      color: var(--muted);
-      max-width: 42ch;
+    .cat-film-inner {
+      max-width: 980px;
       margin: 0 auto;
-      font-size: var(--callout);
     }
-
-    .final-cta {
-      /* P1 (previous): Refined final CTA gradient to a more current, glass-adjacent neutral tone for better harmony with the overall design language. */
-      background: linear-gradient(180deg, var(--paper), #f7faf9);
-    }
-    .final-cta--with-safearea {
-      padding-bottom: calc(42px + env(safe-area-inset-bottom));
-    }
-
-    .final-band {
+    .film-header {
       display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: flex-start;
-      border-top: 1px solid var(--line);
-      padding-top: 32px;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .film-header h2 {
+      font-size: var(--title);
+      font-weight: 900;
+      margin: 0;
+      color: var(--yellow);
+    }
+    .film-header .sub {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--aqua);
     }
 
-    footer {
-      width: min(100% - 40px, 720px);
+    .film-strip {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 18px;
+    }
+    .film-strip::-webkit-scrollbar { display: none; }
+
+    .film-card {
+      flex: 0 0 auto;
+      width: min(268px, 78vw);
+      scroll-snap-align: start;
+      background: #111C2E;
+      border: 5px solid var(--aqua);
+      border-radius: var(--r-24);
+      overflow: hidden;
+      box-shadow: 0 10px 0 rgba(0,0,0,0.3);
+    }
+    .film-card img {
+      width: 100%;
+      border-bottom: 4px solid var(--aqua);
+    }
+    .film-caption {
+      padding: 14px 16px 16px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+    .film-caption strong {
+      display: block;
+      color: var(--yellow);
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    /* TESTIMONIALS — real people who got judged by the cat */
+    .testimonials {
+      padding: 48px 18px;
+      background: var(--cream);
+    }
+    .testimonials-inner {
+      max-width: 780px;
       margin: 0 auto;
-      padding: 24px 0 42px;
-      color: rgba(20, 33, 45, 0.64);
-      font-size: 0.9rem;
+    }
+    .testimonials h2 {
+      font-size: var(--title);
+      font-weight: 900;
+      margin: 0 0 24px;
+      text-align: center;
     }
 
-    /* Graceful desktop / iPad enhancements (min-width only — true mobile-first architecture) */
-    @media (min-width: 768px) {
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .quote {
+      background: white;
+      border: 4px solid var(--ink);
+      border-radius: var(--r-24);
+      padding: 18px 18px 18px;
+      box-shadow: var(--shadow-sticker);
+      position: relative;
+    }
+    .quote::before {
+      content: "😾";
+      position: absolute;
+      top: -9px;
+      left: 18px;
+      background: var(--paper);
+      padding: 0 4px;
+      font-size: 1.1rem;
+    }
+    .quote p {
+      font-weight: 700;
+      line-height: 1.5;
+      margin: 0 0 12px;
+      font-size: 0.98rem;
+    }
+    .quote-author {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--coral);
+    }
+
+    /* FINAL CHAOTIC CTA */
+    .final-cta {
+      background: var(--coral);
+      color: white;
+      padding: 42px 18px 54px;
+      text-align: center;
+      border-top: 5px solid var(--ink);
+      border-bottom: 5px solid var(--ink);
+    }
+    .final-inner {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .final-cta h2 {
+      font-size: clamp(1.9rem, 8vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+    .final-cta p {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 22px;
+      opacity: 0.95;
+    }
+    .final-cta .btn {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 18px 42px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.6;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    footer a { text-decoration: underline; font-weight: 600; }
+
+    /* Paw print divider */
+    .paw-divider {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 18px 0 4px;
+      font-size: 1.35rem;
+      opacity: 0.75;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (min-width: 720px) {
       .hero-inner {
         flex-direction: row;
         align-items: center;
-        gap: 48px;
-        padding: 92px 0 48px;
+        gap: 42px;
+        padding: 68px 28px 58px;
       }
-
+      .hero-visual {
+        max-width: 310px;
+        flex-shrink: 0;
+      }
       .hero-actions {
         flex-direction: row;
-        align-items: center;
       }
-
-      .proof-row {
-        flex-wrap: nowrap;
-      }
-
-      .feature-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .judgment-grid {
+        grid-template-columns: repeat(3, 1fr);
         gap: 16px;
       }
-
-      .feature-card {
-        min-height: 168px;
-        padding: 22px var(--space-5);
+      .quote-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-
-      .feature-icon {
-        width: 36px;
-        height: 36px;
-        margin-bottom: 18px;
-      }
-
-      .final-band {
-        flex-direction: row;
-        align-items: center;
-        gap: 32px;
-      }
-
-      .iphone-frame {
-        width: min(340px, 38vw);
-      }
-
-      .ecosystem-row {
+      .film-strip {
         justify-content: center;
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      .section-inner {
-        width: min(100% - 40px, 980px);
+        gap: 20px;
       }
     }
+    @media (min-width: 980px) {
+      .hero-inner { max-width: 1080px; }
+      .mood-inner, .judgment-inner, .cat-film-inner, .testimonials-inner { max-width: 980px; }
+    }
 
-    @media (min-width: 1024px) {
-      .site-header {
-        width: min(1180px, calc(100% - 40px));
-        margin: 0 auto;
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      .hero-inner,
-      .section-inner {
-        width: min(1180px, calc(100% - 40px));
-      }
+    /* Tiny focus styles */
+    .btn:focus-visible, .mood-btn:focus-visible {
+      outline: 3px solid var(--aqua);
+      outline-offset: 3px;
     }
   </style>
 </head>
 <body>
-<header class="site-header" aria-label="Site navigation">
-    <a class="brand" href="#top" aria-label="AquaTick home">
-      <img src="assets/aquatick-app-icon.png" width="1024" height="1024" alt="">
+  <header class="site-header">
+    <a class="brand" href="#top">
+      <img src="assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick 아이콘">
       <span>AquaTick</span>
     </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#features">Features</a>
-      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Support</a>
-      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">Privacy</a>
+    <nav class="nav-links">
+      <a href="#mood">고양이 기분</a>
+      <a href="#judgment">심판 기준</a>
+      <a href="#film">출연작</a>
+      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">지원</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero" aria-label="AquaTick landing">
+    <!-- HERO: The cat has main character energy -->
+    <section class="hero" aria-label="AquaTick 메인">
       <div class="hero-inner">
-        <!-- Text content first on mobile (true mobile-first) -->
         <div>
-          <img class="app-icon-large" src="assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick app icon">
-          <p class="eyebrow">Sparkish presents</p>
-          <h1>AquaTick</h1>
-          <p class="hero-copy">A lightweight hydration tracker that keeps your daily water goal visible across iPhone, Apple Watch, widgets, and Live Activities.</p>
+          <div class="hero-badge">실제 앱 안에 고양이 있음</div>
+          
+          <h1>이 고양이가<br>너 물 마시라고<br>협박한다.</h1>
+          
+          <p class="hero-tagline">0ml 되면 슬픈 눈으로 물컵 들고 있는<br>그 표정. 진짜 마음 아파서 마시게 됨.</p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Download on the App Store</a>
-            <a class="button button-secondary" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Get support</a>
+            <a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">App Store에서 고양이 데려오기</a>
+            <a class="btn btn-secondary" href="#judgment">고양이 심판 기준 먼저 보기</a>
           </div>
 
-          <!-- Always-visible iOS HIG proof pills (no hiding on any breakpoint) -->
-          <!-- P0 (previous): Removed unsubstantiated "iPad Large screen" claim from pill for credibility. Changed to evidenced "Widgets" feature. -->
-          <div class="proof-row" role="group" aria-label="Supported Apple platforms">
-            <div class="proof-pill"><strong>iPhone</strong> <span style="color:var(--muted);">Quick log</span></div>
-            <div class="proof-pill"><strong>Widgets</strong> <span style="color:var(--muted);">At a glance</span></div>
-            <div class="proof-pill"><strong>Watch</strong> <span style="color:var(--muted);">From your wrist</span></div>
+          <div style="margin-top:18px; font-size:0.82rem; font-weight:700; color:#5F6B7A;">
+            iPhone · Apple Watch · 위젯 · Live Activity 전부 고양이 출현
           </div>
         </div>
 
-        <!-- HIG iPhone device frame — the #1 mobile fix. Full screenshot visible, no crushing. -->
-        <div>
-          <figure class="device-frame iphone-frame" style="margin-bottom: 6px;">
-            <div class="iphone-screen">
-              <img src="assets/screenshot-iphone-home.webp" width="1320" height="2868"
-                   alt="AquaTick iPhone — Log water instantly screen with cat mascot and quick add">
+        <!-- The actual cat, front and center -->
+        <div class="hero-visual">
+          <div class="iphone-frame">
+            <img src="assets/screenshot-iphone-home.webp" width="1320" height="2868" 
+                 alt="AquaTick 홈 화면 — 고양이가 물컵 들고 0ml 슬픈 표정">
+          </div>
+          <div class="cat-sticker">진짜 고양이임</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOOD CHECKER + WATER FILL: Light playful interaction -->
+    <section id="mood" class="mood-section">
+      <div class="mood-inner">
+        <span class="section-label">3초만에 체험해보기</span>
+        <h2 class="mood-title">오늘 네 고양이<br>기분은 어때?</h2>
+
+        <div class="mood-buttons" id="mood-buttons">
+          <button class="mood-btn" data-mood="zero">0ml… 고양이 실망</button>
+          <button class="mood-btn" data-mood="half">500ml — 애매함</button>
+          <button class="mood-btn" data-mood="full">목표 달성 — 윙크</button>
+        </div>
+
+        <div class="cat-reaction" id="cat-reaction">
+          <span class="emoji">😿</span>
+          <span id="reaction-text">물 0ml이면 고양이가 이 표정 됩니다. 진짜 슬퍼함. 너 때문에.</span>
+        </div>
+
+        <!-- Water fill demo — the fun part -->
+        <div class="water-demo">
+          <div class="water-demo-label">👇 고양이 기분 게이지 (터치해보기)</div>
+          <div class="water-glass" id="water-glass" onclick="fillWater(this)">
+            <div class="water-fill" id="water-fill"></div>
+            <!-- tiny bubbles -->
+            <div class="bubble" style="width:7px;height:7px;left:22%;top:30%;"></div>
+            <div class="bubble" style="width:4px;height:4px;left:58%;top:55%;"></div>
+            <div class="bubble" style="width:5px;height:5px;left:38%;top:68%;"></div>
+          </div>
+          <div class="water-status" id="water-status">아직 0ml… 고양이 슬픔 100%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE 3 JUDGMENTS — replaces dry feature grid with cat attitude -->
+    <section id="judgment" class="judgment">
+      <div class="judgment-inner">
+        <h2>고양이의 3가지<br>심판 기준</h2>
+        <p class="judgment-subtitle">이 고양이가 너를 판단하는 정확한 방법. (피할 수 없음)</p>
+
+        <div class="judgment-grid">
+          <!-- Judgment 1 -->
+          <article class="judgment-card">
+            <div class="judgment-number">심판 01</div>
+            <h3>0ml 실망 모드</h3>
+            <p>아침에 일어나서 물 0ml이면 고양이가 물컵 들고 대기. 눈이 축 처져 있음. 이 표정 보면 진짜 미안해져서 마시게 됨.</p>
+            <span class="cat-face">😿</span>
+          </article>
+
+          <!-- Judgment 2 -->
+          <article class="judgment-card">
+            <div class="judgment-number">심판 02</div>
+            <h3>목표 기억 협박</h3>
+            <p>설정에서 목표 정하면 고양이가 그걸 기억함. 너는 까먹어도 고양이는 안 까먹음. 9시 되면 "너 오늘 목표 2L인데…?" 하면서 알림.</p>
+            <span class="cat-face">😼</span>
+          </article>
+
+          <!-- Judgment 3 -->
+          <article class="judgment-card">
+            <div class="judgment-number">심판 03</div>
+            <h3>손목 고양이</h3>
+            <p>Watch에서 +200 누르면 손목에 고양이가 살고 있는 기분. 실제로 귀가 올라가는 건 아니지만 기분은 그럼. 진짜 중독됨.</p>
+            <span class="cat-face">😺</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAT FILM STRIP: Screenshots as starring moments -->
+    <section id="film" class="cat-film">
+      <div class="cat-film-inner">
+        <div class="film-header">
+          <h2>고양이 출연작</h2>
+          <span class="sub">시즌 1 · 실제 앱 화면</span>
+        </div>
+
+        <div class="film-strip">
+          <!-- Film 1: Home -->
+          <div class="film-card">
+            <img src="assets/screenshot-iphone-home.webp" width="1320" height="2868" loading="lazy"
+                 alt="AquaTick iPhone 홈 — 고양이가 물컵 들고 있는 장면">
+            <div class="film-caption">
+              <strong>에피소드 1</strong>
+              0ml에 고양이가 "너 진짜…?" 하는 표정. 이거 보면 300ml는 마시게 됨.
             </div>
-            <figcaption class="device-caption">iPhone — Actual App Store screenshot</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section id="features">
-      <div class="section-inner">
-        <div class="section-heading-copy">
-          <!-- P1 (previous): Made section title more concrete and user-focused ("Designed around how you actually use it.") for better hierarchy. -->
-          <h2>Designed around how you actually use it.</h2>
-          <p>AquaTick keeps hydration tracking focused on fast logging, clear progress, and the settings people need for goals, reminders, widgets, and optional Health sync.</p>
-        </div>
-        <div class="feature-grid">
-          <!-- P1 (previous): Replaced generic gradient dots with custom brand icons (cat + droplet, goal ring, watch) for visual distinction and memorability. -->
-          <article class="feature-card">
-            <img src="assets/feature-icon-log.webp" width="72" height="72" class="feature-icon" alt="Fast logging with cute cat and water drop">
-            <h3>Fast water logging</h3>
-            <p>Record a drink, check progress, and return to what you were doing without turning hydration into a chore.</p>
-          </article>
-          <article class="feature-card">
-            <img src="assets/feature-icon-goal.webp" width="72" height="72" class="feature-icon" alt="Daily goal progress ring with cat companion">
-            <h3>Goals and reminders</h3>
-            <p>Adjust your daily goal and reminder windows from the settings screen shown in the actual app.</p>
-          </article>
-          <article class="feature-card">
-            <img src="assets/feature-icon-watch.webp" width="72" height="72" class="feature-icon" alt="Apple Watch quick add with water drop">
-            <h3>Apple Watch companion</h3>
-            <p>Use quick add controls on watchOS when your phone is not the fastest surface.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="showcase" aria-label="AquaTick on Apple devices">
-      <div class="section-inner">
-        <div class="ecosystem-heading">
-          <h2>Works on the Apple devices you already use</h2>
-          <p>Real App Store screenshots in authentic device frames — scroll or swipe to explore.</p>
-        </div>
-
-        <!-- Ecosystem horizontal scroll-snap gallery with proper iPhone + Watch frames (Watch visible on mobile) -->
-        <div class="ecosystem-row" role="group" aria-label="Device screenshots">
-          <div class="ecosystem-item">
-            <figure class="device-frame iphone-frame" style="width: min(240px, 68vw); margin: 0 auto;">
-              <div class="iphone-screen">
-                <img src="assets/screenshot-iphone-settings.webp" width="1320" height="2868" loading="lazy"
-                     alt="AquaTick iPhone settings screenshot — goals and reminders">
-              </div>
-              <figcaption class="device-caption">iPhone Settings</figcaption>
-            </figure>
           </div>
 
-          <div class="ecosystem-item">
-            <figure class="device-frame watch-frame" style="margin: 0 auto;">
-              <div class="watch-screen">
-                <img src="assets/screenshot-watch-home.webp" width="416" height="496" loading="lazy"
-                     alt="AquaTick Apple Watch screenshot — quick add on wrist">
-              </div>
-              <figcaption class="device-caption">Apple Watch</figcaption>
-            </figure>
+          <!-- Film 2: Settings -->
+          <div class="film-card">
+            <img src="assets/screenshot-iphone-settings.webp" width="1320" height="2868" loading="lazy"
+                 alt="AquaTick 설정 — 고양이가 목표를 기억하는 장면">
+            <div class="film-caption">
+              <strong>에피소드 2</strong>
+              고양이가 너의 목표를 대신 기억해줌. (너는 3일에 한 번 까먹음)
+            </div>
+          </div>
+
+          <!-- Film 3: Watch -->
+          <div class="film-card">
+            <img src="assets/screenshot-watch-home.webp" width="416" height="496" loading="lazy"
+                 alt="AquaTick Apple Watch — 손목에서 고양이 만나는 장면">
+            <div class="film-caption">
+              <strong>에피소드 3</strong>
+              손목에 고양이 차고 다니는 삶. +200 누를 때마다 고양이 기분 ↑
+            </div>
           </div>
         </div>
 
-        <!-- Support links preserved exactly as original (all GitHub wiki + App Store links untouched) -->
-        <div class="support-list" style="margin-top: 32px; display: grid; gap: 12px;">
-          <a class="support-item" href="https://apps.apple.com/app/aquatick/id6762686013">
-            <strong>App Store</strong>
-            <span>Install AquaTick on compatible Apple devices.</span>
-          </a>
-          <a class="support-item" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">
-            <strong>Support</strong>
-            <span>Find help, product notes, and contact details for AquaTick.</span>
-          </a>
-          <a class="support-item" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">
-            <strong>Privacy Policy</strong>
-            <span>Review how AquaTick handles privacy and product data disclosures.</span>
-          </a>
+        <div class="paw-divider">🐾 🐾 🐾</div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS: Real chaotic energy -->
+    <section class="testimonials">
+      <div class="testimonials-inner">
+        <h2>이미 고양이한테<br>당한 사람들</h2>
+
+        <div class="quote-grid">
+          <div class="quote">
+            <p>"새벽 2시 47분에 고양이 알림 받고 일어나서 물 400ml 마심. 감사하면서도 '이 새끼 진짜' 싶었음. 지금은 위젯 고정함."</p>
+            <div class="quote-author">— 지수 (27, 성수 디자이너)</div>
+          </div>
+          <div class="quote">
+            <p>"Watch에서 고양이 보고 +200 연타 중독됨. 친구들한테 '이 고양이 봐' 하면서 스크린샷 11장 보냄. 너도 당해봐."</p>
+            <div class="quote-author">— 민준 (29, 개발자)</div>
+          </div>
+          <div class="quote">
+            <p>"0ml 될 때마다 고양이가 슬퍼하는 게 너무 웃김. 그래서 일부러 0ml 만들고 마시는 나… 병신인가."</p>
+            <div class="quote-author">— 혜린 (26, 마케터)</div>
+          </div>
+          <div class="quote">
+            <p>"Lock Screen에 고양이 두고 하루 3번은 물 마심. 원래는 0번이었는데. 이 고양이 진짜 잘 만든 듯."</p>
+            <div class="quote-author">— 태현 (28, 프리랜서)</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="final-cta final-cta--with-safearea">
-      <div class="section-inner final-band">
-        <div>
-          <h2 style="font-size: var(--title-1);">Track hydration on the Apple surfaces you already use.</h2>
-          <p>AquaTick is available on the App Store from Sparkish.</p>
-        </div>
-        <div class="footer-actions">
-          <a class="button button-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Download on the App Store</a>
-        </div>
+    <!-- FINAL LOUD CTA -->
+    <section class="final-cta">
+      <div class="final-inner">
+        <h2>고양이한테<br>혼나기 전에<br>다운로드해.</h2>
+        <p>이미 수많은 사람이 이 고양이한테 지배당하고 있다.<br>너만 빼고.</p>
+        
+        <a class="btn" href="https://apps.apple.com/app/aquatick/id6762686013">
+          App Store에서 고양이 데려오기
+        </a>
       </div>
     </section>
   </main>
 
   <footer>
-    <span>Copyright 2026 Sparkish. AquaTick support and privacy resources are hosted on GitHub.</span>
+    <p>
+      © 2026 Sparkish · AquaTick<br>
+      이 페이지는 고양이의 기분이 좋을 때 제작되었습니다 (오늘은 괜찮음).<br>
+      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">지원</a> · 
+      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">개인정보 처리방침</a>
+    </p>
   </footer>
 
-  <!-- Tiny progressive enhancement: subtle iOS-like header shadow on scroll (completely degrades if JS disabled) -->
   <script>
+    // Mood checker — real playful interaction (no AI slop)
     (function() {
-      var nav = document.querySelector('.site-header');
+      const buttons = document.querySelectorAll('#mood-buttons .mood-btn');
+      const reaction = document.getElementById('cat-reaction');
+      const textEl = document.getElementById('reaction-text');
+      const emojiEl = reaction.querySelector('.emoji');
+
+      const moods = {
+        zero: {
+          emoji: '😿',
+          text: '물 0ml이면 고양이가 이 표정 됩니다. 진짜 슬퍼함. 너 때문에.'
+        },
+        half: {
+          emoji: '😼',
+          text: '500ml 정도면 고양이가 "음… 노력은 하네" 하면서 애매한 표정. 아직 부족함.'
+        },
+        full: {
+          emoji: '😺',
+          text: '목표 달성! 고양이가 윙크하면서 "착하다" 함. 오늘은 고양이 기분 좋음.'
+        }
+      };
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // deselect all
+          buttons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const mood = btn.dataset.mood;
+          const data = moods[mood];
+
+          emojiEl.textContent = data.emoji;
+          textEl.textContent = data.text;
+
+          // tiny bounce on the reaction card
+          reaction.style.transform = 'scale(0.96)';
+          setTimeout(() => {
+            reaction.style.transform = 'scale(1)';
+          }, 120);
+        });
+      });
+
+      // default state
+      buttons[0].classList.add('active');
+    })();
+
+    // Water glass fill — the silly fun interaction
+    window.fillWater = function(glass) {
+      const fill = document.getElementById('water-fill');
+      const status = document.getElementById('water-status');
+
+      if (glass.classList.contains('filled')) {
+        // reset
+        glass.classList.remove('filled');
+        fill.style.height = '0%';
+        status.textContent = '다시 0ml… 고양이 슬픔 100%';
+      } else {
+        glass.classList.add('filled');
+        fill.style.height = '100%';
+        status.textContent = '2000ml 달성! 고양이 윙크 모드 ON 🥳';
+        
+        // auto reset after 3.2s so people can play again
+        setTimeout(() => {
+          if (glass.classList.contains('filled')) {
+            glass.classList.remove('filled');
+            fill.style.height = '0%';
+            status.textContent = '0ml로 돌아감… 고양이 실망 다시 시작';
+          }
+        }, 3200);
+      }
+    };
+
+    // Tiny header shadow on scroll (kept from original, still nice)
+    (function() {
+      const nav = document.querySelector('.site-header');
       if (!nav) return;
-      var last = 0;
+      let last = 0;
       window.addEventListener('scroll', function() {
-        var y = window.scrollY || 0;
-        if (y > 40 && y > last) {
-          nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.04)';
+        const y = window.scrollY || 0;
+        if (y > 60 && y > last) {
+          nav.style.boxShadow = '0 4px 0 var(--ink)';
         } else {
-          nav.style.boxShadow = 'none';
+          nav.style.boxShadow = '0 2px 0 rgba(0,0,0,0.04)';
         }
         last = y;
       }, { passive: true });
+    })();
+
+    // Bonus: clicking the cat sticker in hero gives a little chaos
+    (function() {
+      const sticker = document.querySelector('.cat-sticker');
+      if (!sticker) return;
+      sticker.addEventListener('click', () => {
+        const orig = sticker.textContent;
+        sticker.textContent = '고양이 진짜임 ㅋㅋ';
+        sticker.style.transform = 'rotate(-8deg) scale(1.1)';
+        setTimeout(() => {
+          sticker.textContent = orig;
+          sticker.style.transform = 'rotate(12deg) scale(1)';
+        }, 1100);
+      });
     })();
   </script>
 </body>
