@@ -4,27 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AquaTick | Hydration tracker for iPhone and Apple Watch</title>
-  <meta name="description" content="AquaTick is a lightweight hydration tracker for iPhone, Apple Watch, widgets, and Live Activities.">
+  <meta name="description" content="AquaTick is a lightweight hydration tracker for iPhone, iPad, Apple Watch, widgets, and Live Activities.">
   <meta property="og:title" content="AquaTick">
-  <meta property="og:description" content="A lightweight hydration tracker for iPhone, Apple Watch, widgets, and Live Activities.">
+  <meta property="og:description" content="A lightweight hydration tracker for iPhone, iPad, Apple Watch, widgets, and Live Activities.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/aquatick-hero.webp">
-  <meta name="theme-color" content="#0f766e">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/aquatick-hero.webp" as="image">
+  <meta property="og:image" content="assets/aquatick-app-icon.png">
+  <meta name="theme-color" content="#0f7f86">
+  <link rel="icon" href="assets/aquatick-app-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/aquatick-app-icon.png">
+  <link rel="preload" href="assets/screenshot-iphone-home.webp" as="image">
   <style>
     :root {
-      --ink: #17212b;
-      --muted: #526171;
-      --line: rgba(23, 33, 43, 0.12);
-      --paper: #fbfaf6;
+      --ink: #14212d;
+      --muted: #5b6874;
+      --line: rgba(20, 33, 45, 0.13);
+      --paper: #fbfbf7;
       --surface: #ffffff;
-      --aqua: #12b8b1;
-      --aqua-deep: #0f766e;
-      --coral: #ff6b61;
-      --mint: #d7f5e7;
-      --sun: #f9c85d;
-      --shadow: 0 18px 50px rgba(23, 33, 43, 0.14);
+      --aqua: #14c7d0;
+      --teal: #0f7f86;
+      --green: #4f9b61;
+      --coral: #ff756a;
+      --lavender: #edeafe;
+      --shadow: 0 22px 52px rgba(20, 33, 45, 0.15);
     }
 
     * {
@@ -49,7 +50,12 @@
     }
 
     img {
+      display: block;
       max-width: 100%;
+    }
+
+    figure {
+      margin: 0;
     }
 
     .site-header {
@@ -57,7 +63,7 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 10;
+      z-index: 20;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -70,28 +76,26 @@
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 760;
+      gap: 11px;
+      color: var(--ink);
+      font-weight: 790;
       font-size: 1rem;
     }
 
-    .brand-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      background:
-        radial-gradient(circle at 50% 36%, #ffffff 0 16%, transparent 17%),
-        linear-gradient(145deg, var(--aqua), var(--aqua-deep) 58%, var(--coral));
-      box-shadow: 0 8px 18px rgba(15, 118, 110, 0.22);
+    .brand img {
+      width: 38px;
+      height: 38px;
+      border-radius: 9px;
+      box-shadow: 0 10px 20px rgba(20, 199, 208, 0.22);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
       gap: 8px;
-      color: rgba(23, 33, 43, 0.82);
+      color: rgba(20, 33, 45, 0.76);
       font-size: 0.94rem;
-      font-weight: 680;
+      font-weight: 700;
     }
 
     .nav-links a {
@@ -100,49 +104,50 @@
     }
 
     .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.78);
     }
 
     .hero {
       position: relative;
-      isolation: isolate;
-      display: flex;
-      align-items: center;
-      min-height: 84svh;
       overflow: hidden;
       background:
-        linear-gradient(90deg, rgba(251, 250, 246, 0.98) 0%, rgba(251, 250, 246, 0.92) 34%, rgba(251, 250, 246, 0.2) 64%, rgba(251, 250, 246, 0) 100%),
-        url("assets/aquatick-hero.webp") center right / cover no-repeat;
-    }
-
-    .hero::after {
-      position: absolute;
-      inset: auto 0 0;
-      z-index: -1;
-      height: 120px;
-      background: linear-gradient(180deg, rgba(251, 250, 246, 0), var(--paper));
-      content: "";
+        linear-gradient(130deg, rgba(239, 253, 251, 0.95), rgba(255, 255, 251, 0.92) 45%, rgba(237, 234, 254, 0.68)),
+        var(--paper);
     }
 
     .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(470px, 1.05fr);
+      gap: 58px;
+      align-items: center;
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 112px 0 72px;
+      padding: 92px 0 38px;
+    }
+
+    .app-icon-large {
+      width: 88px;
+      height: 88px;
+      margin-bottom: 28px;
+      border-radius: 21px;
+      box-shadow: 0 18px 42px rgba(20, 199, 208, 0.22);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin: 0 0 18px;
-      color: var(--aqua-deep);
-      font-size: 0.82rem;
-      font-weight: 780;
+      margin: 0 0 16px;
+      color: var(--teal);
+      font-size: 0.8rem;
+      font-weight: 800;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
-      width: 32px;
+      width: 34px;
       height: 3px;
       border-radius: 999px;
       background: var(--coral);
@@ -158,18 +163,18 @@
 
     h1 {
       max-width: 560px;
-      margin-bottom: 20px;
-      font-size: 4.6rem;
+      margin-bottom: 18px;
+      font-size: 4.7rem;
       line-height: 0.96;
       letter-spacing: 0;
     }
 
     .hero-copy {
-      max-width: 540px;
+      max-width: 560px;
       margin-bottom: 30px;
       color: var(--muted);
-      font-size: 1.22rem;
-      line-height: 1.6;
+      font-size: 1.18rem;
+      line-height: 1.65;
     }
 
     .hero-actions,
@@ -189,8 +194,7 @@
       border-radius: 8px;
       padding: 0 18px;
       font-size: 0.98rem;
-      font-weight: 760;
-      box-shadow: none;
+      font-weight: 780;
       transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
     }
 
@@ -206,41 +210,110 @@
 
     .button-secondary {
       border-color: var(--line);
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.76);
       color: var(--ink);
     }
 
-    .hero-metrics {
+    .proof-points {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
-      max-width: 580px;
-      margin-top: 44px;
+      max-width: 590px;
+      margin-top: 36px;
     }
 
-    .metric {
-      border: 1px solid rgba(255, 255, 255, 0.78);
+    .proof-point {
+      border: 1px solid rgba(255, 255, 255, 0.82);
       border-radius: 8px;
-      padding: 16px;
-      background: rgba(255, 255, 255, 0.72);
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.68);
       backdrop-filter: blur(14px);
     }
 
-    .metric strong {
+    .proof-point strong {
       display: block;
       margin-bottom: 5px;
-      color: var(--ink);
-      font-size: 1.3rem;
+      font-size: 1.08rem;
     }
 
-    .metric span {
+    .proof-point span {
+      display: block;
       color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.35;
+      font-size: 0.84rem;
+      line-height: 1.42;
+    }
+
+    .screen-gallery {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 0.93fr;
+      gap: 18px;
+      align-items: center;
+      min-height: 560px;
+    }
+
+    .screenshot-card {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .iphone-main {
+      height: 560px;
+    }
+
+    .gallery-side {
+      display: grid;
+      gap: 18px;
+      align-content: center;
+    }
+
+    .iphone-secondary {
+      height: 382px;
+    }
+
+    .watch-card {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      min-height: 156px;
+      padding: 16px;
+      background: #111a21;
+      color: #ffffff;
+    }
+
+    .watch-card img {
+      width: 120px;
+      height: 143px;
+      border-radius: 28px;
+      object-fit: cover;
+    }
+
+    .watch-card strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 1.06rem;
+    }
+
+    .watch-card span {
+      display: block;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.88rem;
+      line-height: 1.45;
     }
 
     section {
-      padding: 84px 0;
+      padding: 78px 0;
     }
 
     .section-inner {
@@ -250,15 +323,15 @@
 
     .section-heading {
       display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.58fr);
-      gap: 56px;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
+      gap: 58px;
       align-items: end;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .section-heading h2 {
       margin-bottom: 0;
-      font-size: 2.45rem;
+      font-size: 2.42rem;
       line-height: 1.08;
       letter-spacing: 0;
     }
@@ -266,7 +339,7 @@
     .section-heading p {
       margin-bottom: 0;
       color: var(--muted);
-      font-size: 1.04rem;
+      font-size: 1.03rem;
       line-height: 1.7;
     }
 
@@ -277,57 +350,28 @@
     }
 
     .feature-card {
-      min-height: 254px;
+      min-height: 238px;
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 24px;
       background: var(--surface);
-      box-shadow: 0 12px 30px rgba(23, 33, 43, 0.07);
+      box-shadow: 0 12px 30px rgba(20, 33, 45, 0.06);
     }
 
-    .feature-icon {
-      display: grid;
-      place-items: center;
-      width: 44px;
-      height: 44px;
-      margin-bottom: 42px;
+    .feature-dot {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 36px;
       border-radius: 8px;
-      background: var(--mint);
+      background: linear-gradient(135deg, rgba(20, 199, 208, 0.95), rgba(15, 127, 134, 0.95));
     }
 
-    .feature-icon::before {
-      width: 18px;
-      height: 24px;
-      border-radius: 18px 18px 18px 4px;
-      background: var(--aqua);
-      transform: rotate(45deg);
-      content: "";
+    .feature-card:nth-child(2) .feature-dot {
+      background: linear-gradient(135deg, rgba(79, 155, 97, 0.95), rgba(237, 234, 254, 0.95));
     }
 
-    .feature-card:nth-child(2) .feature-icon {
-      background: rgba(255, 107, 97, 0.14);
-    }
-
-    .feature-card:nth-child(2) .feature-icon::before {
-      width: 22px;
-      height: 22px;
-      border: 5px solid var(--coral);
-      border-left-color: transparent;
-      border-radius: 50%;
-      background: transparent;
-      transform: none;
-    }
-
-    .feature-card:nth-child(3) .feature-icon {
-      background: rgba(249, 200, 93, 0.22);
-    }
-
-    .feature-card:nth-child(3) .feature-icon::before {
-      width: 24px;
-      height: 16px;
-      border-radius: 5px;
-      background: linear-gradient(90deg, var(--aqua-deep) 0 22%, var(--sun) 22% 45%, var(--coral) 45% 68%, var(--aqua) 68%);
-      transform: none;
+    .feature-card:nth-child(3) .feature-dot {
+      background: linear-gradient(135deg, rgba(255, 117, 106, 0.95), rgba(20, 199, 208, 0.95));
     }
 
     .feature-card h3 {
@@ -339,83 +383,39 @@
     .feature-card p {
       margin-bottom: 0;
       color: var(--muted);
-      line-height: 1.65;
+      line-height: 1.66;
     }
 
-    .ecosystem {
+    .showcase {
       background: #ffffff;
     }
 
-    .device-strip {
+    .showcase-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr);
+      gap: 22px;
       align-items: stretch;
     }
 
-    .device-panel {
-      position: relative;
-      min-height: 380px;
+    .wide-shot {
       overflow: hidden;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #e7fbf7, #fff8e2 54%, #ffe8e5);
       border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f2fbf9;
+      min-height: 520px;
     }
 
-    .device-panel::before,
-    .device-panel::after {
-      position: absolute;
-      content: "";
-    }
-
-    .device-panel::before {
-      right: 18%;
-      bottom: -54px;
-      width: 230px;
-      height: 470px;
-      border: 10px solid #1c2731;
-      border-radius: 34px;
-      background:
-        radial-gradient(circle at 50% 30%, var(--aqua) 0 44px, transparent 45px),
-        conic-gradient(from 16deg, var(--coral) 0 28%, #dce8ec 28% 54%, var(--aqua) 54% 86%, #dce8ec 86% 100%);
-      background-color: #ffffff;
-      box-shadow: 0 24px 60px rgba(23, 33, 43, 0.2);
-      transform: rotate(-5deg);
-    }
-
-    .device-panel::after {
-      right: 8%;
-      bottom: 48px;
-      width: 124px;
-      height: 124px;
-      border: 8px solid #1c2731;
-      border-radius: 28px;
-      background:
-        radial-gradient(circle at 50% 50%, var(--aqua) 0 22px, transparent 23px),
-        conic-gradient(var(--aqua) 0 68%, var(--coral) 68% 81%, #25313d 81%);
-      box-shadow: 0 18px 36px rgba(23, 33, 43, 0.18);
-    }
-
-    .device-panel-content {
-      position: relative;
-      z-index: 1;
-      max-width: 360px;
-      padding: 34px;
-    }
-
-    .device-panel-content h3 {
-      margin-bottom: 12px;
-      font-size: 1.45rem;
-    }
-
-    .device-panel-content p {
-      color: var(--muted);
-      line-height: 1.68;
+    .wide-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
     }
 
     .support-list {
       display: grid;
       gap: 12px;
+      align-content: start;
     }
 
     .support-item {
@@ -431,13 +431,14 @@
     }
 
     .support-item span {
+      display: block;
       color: var(--muted);
       line-height: 1.55;
     }
 
     .final-cta {
       padding-bottom: 42px;
-      background: linear-gradient(180deg, var(--paper), #ecfbf7);
+      background: linear-gradient(180deg, var(--paper), #edf9f4);
     }
 
     .final-band {
@@ -450,9 +451,9 @@
     }
 
     .final-band h2 {
-      max-width: 640px;
+      max-width: 680px;
       margin-bottom: 14px;
-      font-size: 2.2rem;
+      font-size: 2.18rem;
       line-height: 1.12;
     }
 
@@ -467,59 +468,71 @@
       width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
       padding: 24px 0 36px;
-      color: rgba(23, 33, 43, 0.64);
+      color: rgba(20, 33, 45, 0.64);
       font-size: 0.9rem;
     }
 
-    @media (max-width: 840px) {
+    @media (max-width: 940px) {
       .site-header {
         position: relative;
-        width: min(100% - 32px, 680px);
+        width: min(100% - 32px, 720px);
         padding: 18px 0;
       }
 
-      .nav-links {
-        gap: 2px;
-        font-size: 0.88rem;
-      }
-
-      .nav-links a {
-        padding: 8px 7px;
-      }
-
-      .hero {
-        min-height: auto;
-        background:
-          linear-gradient(180deg, rgba(251, 250, 246, 0.98) 0%, rgba(251, 250, 246, 0.86) 40%, rgba(251, 250, 246, 0.42) 100%),
-          url("assets/aquatick-hero.webp") 68% center / cover no-repeat;
-      }
-
-      .hero-inner,
-      .section-inner,
-      footer {
-        width: min(100% - 32px, 680px);
-      }
-
       .hero-inner {
-        padding: 42px 0 54px;
+        grid-template-columns: 1fr;
+        width: min(100% - 32px, 720px);
+        gap: 28px;
+        padding: 32px 0 42px;
+      }
+
+      .app-icon-large {
+        width: 72px;
+        height: 72px;
+        border-radius: 17px;
+        margin-bottom: 22px;
       }
 
       h1 {
-        max-width: 420px;
-        font-size: 3.2rem;
+        max-width: 430px;
+        font-size: 3.24rem;
       }
 
       .hero-copy {
-        max-width: 430px;
-        font-size: 1.08rem;
+        max-width: 570px;
+        font-size: 1.06rem;
+      }
+
+      .proof-points {
+        display: none;
+      }
+
+      .screen-gallery {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        min-height: 0;
+      }
+
+      .iphone-main,
+      .iphone-secondary {
+        height: 220px;
+      }
+
+      .watch-card {
+        display: none;
+      }
+
+      .section-inner,
+      footer {
+        width: min(100% - 32px, 720px);
       }
 
       section {
-        padding: 62px 0;
+        padding: 58px 0;
       }
 
       .section-heading,
-      .device-strip,
+      .showcase-grid,
       .final-band {
         grid-template-columns: 1fr;
         gap: 24px;
@@ -538,68 +551,65 @@
         min-height: auto;
       }
 
-      .feature-icon {
+      .feature-dot {
         margin-bottom: 28px;
       }
 
-      .device-panel {
-        min-height: 340px;
-      }
-
-      .device-panel-content {
-        padding: 26px;
-      }
-
-      .final-band {
-        align-items: start;
+      .wide-shot {
+        min-height: 430px;
       }
     }
 
-    @media (max-width: 520px) {
+    @media (max-width: 560px) {
       .site-header {
         align-items: flex-start;
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
       }
 
-      .hero {
-        min-height: auto;
+      .nav-links {
+        gap: 2px;
+        font-size: 0.88rem;
+      }
+
+      .nav-links a {
+        padding: 8px 7px;
       }
 
       .hero-inner {
-        padding-top: 24px;
-        padding-bottom: 40px;
+        padding-top: 28px;
+        padding-bottom: 16px;
+      }
+
+      .app-icon-large {
+        display: none;
       }
 
       h1 {
-        font-size: 2.85rem;
+        font-size: 2.82rem;
       }
 
+      .hero-actions,
+      .footer-actions,
       .button {
         width: 100%;
       }
 
-      .hero-actions,
-      .footer-actions {
-        width: 100%;
+      .screen-gallery {
+        margin-top: 2px;
       }
 
-      .hero-metrics {
-        display: none;
+      .iphone-main,
+      .iphone-secondary {
+        height: 120px;
       }
 
-      .device-panel::before {
-        right: 7%;
-        bottom: -74px;
-        width: 180px;
-        height: 360px;
+      section {
+        padding: 36px 0 54px;
       }
 
-      .device-panel::after {
-        right: 5%;
-        bottom: 36px;
-        width: 98px;
-        height: 98px;
+      .wide-shot {
+        min-height: 360px;
       }
     }
   </style>
@@ -607,7 +617,7 @@
 <body>
   <header class="site-header" aria-label="Site navigation">
     <a class="brand" href="#top" aria-label="AquaTick home">
-      <span class="brand-mark" aria-hidden="true"></span>
+      <img src="assets/aquatick-app-icon.png" width="1024" height="1024" alt="">
       <span>AquaTick</span>
     </a>
     <nav class="nav-links" aria-label="Primary">
@@ -620,25 +630,46 @@
   <main id="top">
     <section class="hero" aria-label="AquaTick landing">
       <div class="hero-inner">
-        <p class="eyebrow">Sparkish presents</p>
-        <h1>AquaTick</h1>
-        <p class="hero-copy">A lightweight hydration tracker that keeps your daily water goal visible across iPhone, Apple Watch, widgets, and Live Activities.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Download on the App Store</a>
-          <a class="button button-secondary" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Get support</a>
+        <div>
+          <img class="app-icon-large" src="assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick app icon">
+          <p class="eyebrow">Sparkish presents</p>
+          <h1>AquaTick</h1>
+          <p class="hero-copy">A lightweight hydration tracker that keeps your daily water goal visible across iPhone, iPad, Apple Watch, widgets, and Live Activities.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Download on the App Store</a>
+            <a class="button button-secondary" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Get support</a>
+          </div>
+          <div class="proof-points" role="group" aria-label="AquaTick platform highlights">
+            <div class="proof-point">
+              <strong>iPhone</strong>
+              <span>Log water quickly and follow daily progress.</span>
+            </div>
+            <div class="proof-point">
+              <strong>iPad</strong>
+              <span>Use the same simple flow on a larger screen.</span>
+            </div>
+            <div class="proof-point">
+              <strong>Watch</strong>
+              <span>Add common amounts from your wrist.</span>
+            </div>
+          </div>
         </div>
-        <div class="hero-metrics" role="group" aria-label="AquaTick platform highlights">
-          <div class="metric">
-            <strong>iPhone</strong>
-            <span>Fast water logging and daily progress at a glance.</span>
-          </div>
-          <div class="metric">
-            <strong>Watch</strong>
-            <span>Quick updates without reaching for your phone.</span>
-          </div>
-          <div class="metric">
-            <strong>Widgets</strong>
-            <span>Hydration status where you already look.</span>
+
+        <div class="screen-gallery" role="group" aria-label="AquaTick screenshots">
+          <figure class="screenshot-card iphone-main">
+            <img src="assets/screenshot-iphone-home.webp" width="1320" height="2868" alt="AquaTick iPhone home screenshot">
+          </figure>
+          <div class="gallery-side">
+            <figure class="screenshot-card iphone-secondary">
+              <img src="assets/screenshot-iphone-settings.webp" width="1320" height="2868" alt="AquaTick iPhone settings screenshot">
+            </figure>
+            <figure class="screenshot-card watch-card">
+              <img src="assets/screenshot-watch-home.webp" width="416" height="496" alt="AquaTick Apple Watch screenshot">
+              <figcaption>
+                <strong>Apple Watch</strong>
+                <span>Quick add controls stay close without opening the phone.</span>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
@@ -647,43 +678,44 @@
     <section id="features">
       <div class="section-inner">
         <div class="section-heading">
-          <h2>Built for everyday hydration, not another dashboard.</h2>
-          <p>AquaTick keeps the flow simple: log a drink, see the remaining goal, and let lightweight surfaces keep the habit visible during the day.</p>
+          <h2>Built around the real app experience.</h2>
+          <p>AquaTick keeps hydration tracking focused on fast logging, clear progress, and the settings people need for goals, reminders, widgets, and optional Health sync.</p>
         </div>
         <div class="feature-grid">
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true"></div>
-            <h3>Quick daily logging</h3>
-            <p>Record water intake in a few taps and keep the current day focused on the next useful action.</p>
+            <div class="feature-dot" aria-hidden="true"></div>
+            <h3>Fast water logging</h3>
+            <p>Record a drink, check progress, and return to what you were doing without turning hydration into a chore.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true"></div>
-            <h3>Live progress surfaces</h3>
-            <p>Use widgets and Live Activities to keep progress visible without opening the app every time.</p>
+            <div class="feature-dot" aria-hidden="true"></div>
+            <h3>Goals and reminders</h3>
+            <p>Adjust your daily goal and reminder windows from the settings screen shown in the actual app.</p>
           </article>
           <article class="feature-card">
-            <div class="feature-icon" aria-hidden="true"></div>
-            <h3>Apple Watch ready</h3>
-            <p>Track from the wrist with glanceable progress designed for short interactions throughout the day.</p>
+            <div class="feature-dot" aria-hidden="true"></div>
+            <h3>Apple Watch companion</h3>
+            <p>Use quick add controls on watchOS when your phone is not the fastest surface.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="ecosystem" aria-label="AquaTick ecosystem">
+    <section class="showcase" aria-label="AquaTick product showcase">
       <div class="section-inner">
         <div class="section-heading">
-          <h2>One habit, shared across the Apple surfaces you use.</h2>
-          <p>Designed as a companion that moves with you, AquaTick makes hydration status easy to notice on the lock screen, home screen, phone, and watch.</p>
+          <h2>Actual App Store screenshots, not mockups.</h2>
+          <p>The landing page now uses the same app icon and screenshot assets prepared for AquaTick’s App Store presence.</p>
         </div>
-        <div class="device-strip">
-          <div class="device-panel">
-            <div class="device-panel-content">
-              <h3>Glanceable by design</h3>
-              <p>The interface favors progress, rhythm, and small updates so hydration tracking stays light.</p>
-            </div>
-          </div>
+        <div class="showcase-grid">
+          <figure class="wide-shot">
+            <img src="assets/screenshot-iphone-settings.webp" width="1320" height="2868" alt="AquaTick goals and reminders screenshot">
+          </figure>
           <div class="support-list">
+            <a class="support-item" href="https://apps.apple.com/app/aquatick/id6762686013">
+              <strong>App Store</strong>
+              <span>Install AquaTick on compatible Apple devices.</span>
+            </a>
             <a class="support-item" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">
               <strong>Support</strong>
               <span>Find help, product notes, and contact details for AquaTick.</span>
@@ -691,10 +723,6 @@
             <a class="support-item" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">
               <strong>Privacy Policy</strong>
               <span>Review how AquaTick handles privacy and product data disclosures.</span>
-            </a>
-            <a class="support-item" href="https://apps.apple.com/app/aquatick/id6762686013">
-              <strong>App Store</strong>
-              <span>Install AquaTick on compatible Apple devices.</span>
             </a>
           </div>
         </div>
@@ -704,7 +732,7 @@
     <section class="final-cta">
       <div class="section-inner final-band">
         <div>
-          <h2>Keep water tracking close without making it complicated.</h2>
+          <h2>Track hydration on the Apple surfaces you already use.</h2>
           <p>AquaTick is available on the App Store from Sparkish.</p>
         </div>
         <div class="footer-actions">
