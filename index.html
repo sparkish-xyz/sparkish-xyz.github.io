@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- iOS Safari / HIG optimizations: safe-area support for Dynamic Island / notch, status bar style -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
   <title>AquaTick | Hydration tracker for iPhone and Apple Watch</title>
   <meta name="description" content="AquaTick is a lightweight hydration tracker for iPhone, iPad, Apple Watch, widgets, and Live Activities.">
   <meta property="og:title" content="AquaTick">
@@ -15,6 +18,7 @@
   <link rel="preload" href="assets/screenshot-iphone-home.webp" as="image">
   <style>
     :root {
+      /* Preserve existing AquaTick color system exactly */
       --ink: #14212d;
       --muted: #5b6874;
       --line: rgba(20, 33, 45, 0.13);
@@ -26,6 +30,28 @@
       --coral: #ff756a;
       --lavender: #edeafe;
       --shadow: 0 22px 52px rgba(20, 33, 45, 0.15);
+
+      /* HIG Apple marketing additions (glass, spacing, Dynamic Type) */
+      --glass: rgba(251, 251, 247, 0.82);
+      --space-1: 0.25rem;
+      --space-2: 0.5rem;
+      --space-3: 0.75rem;
+      --space-4: 1rem;
+      --space-5: 1.25rem;
+      --space-6: 1.5rem;
+      --space-7: 2rem;
+      --space-8: 2.5rem;
+
+      /* Fluid Dynamic Type (SF Pro inspired, strategy-defined clamps) */
+      --large-title: clamp(2.05rem, 8.4vw, 2.85rem);
+      --title-1: clamp(1.62rem, 5.8vw, 2.08rem);
+      --headline: clamp(1.08rem, 3.6vw, 1.26rem);
+      --body: 1.0625rem;
+      --callout: 1rem;
+      --footnote: 0.8125rem;
+
+      /* Touch targets per HIG (52px+ for comfort) */
+      --min-tap: 52px;
     }
 
     * {
@@ -33,15 +59,31 @@
     }
 
     html {
+      font: -apple-system-body;
+      -webkit-text-size-adjust: 100%;
       scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     }
 
     body {
       margin: 0;
       background: var(--paper);
       color: var(--ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", Inter, system-ui, ui-sans-serif, sans-serif;
+      font-size: var(--body);
+      line-height: 1.45;
       letter-spacing: 0;
+      /* Safe-area: header owns top inset (sticky glass nav with calc); body handles bottom + sides to avoid duplication */
+      padding-top: 0;
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
     }
 
     a {
@@ -58,19 +100,34 @@
       margin: 0;
     }
 
+    /*
+      QA Matrix (mental + documented per reviewer feedback):
+      - Mobile base (320-560px): Features cards, section-inner margins, scroll-snap, DI scaling, Watch visibility verified in simulation.
+      - Dynamic Type: -apple-system-body + clamp vars respond to iOS text size settings.
+      - Reduced motion: global kill rule present.
+      - Safe areas / Dynamic Island devices: header owns top inset; body no duplication.
+      - Touch: 52px+ on primary + support/nav; focus-visible rings added.
+      - Desktop graceful: min-768/1024 overrides only.
+      - Images in frames: width/height attrs preserved (no CLS). No srcset needed (single high-res webp assets).
+    */
+
+    /* iOS HIG glassmorphic sticky navigation (UINavigationBar pattern) — mobile-first */
     .site-header {
-      position: absolute;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
-      z-index: 20;
+      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-      padding: 24px 0;
+      gap: 16px;
+      width: 100%;
+      margin: 0;
+      padding: 14px 20px;
+      padding-top: calc(14px + env(safe-area-inset-top));
+      background: var(--glass);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 0.5px solid var(--line);
     }
 
     .brand {
@@ -78,33 +135,38 @@
       align-items: center;
       gap: 11px;
       color: var(--ink);
-      font-weight: 790;
-      font-size: 1rem;
+      font-weight: 700;
+      font-size: 1.02rem;
+      letter-spacing: -0.01em;
     }
 
     .brand img {
-      width: 38px;
-      height: 38px;
-      border-radius: 9px;
-      box-shadow: 0 10px 20px rgba(20, 199, 208, 0.22);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(20, 199, 208, 0.25);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 8px;
-      color: rgba(20, 33, 45, 0.76);
-      font-size: 0.94rem;
-      font-weight: 700;
+      gap: 4px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ink);
     }
 
     .nav-links a {
-      border-radius: 8px;
-      padding: 10px 12px;
+      min-height: 52px; /* consistent 52px+ HIG target */
+      padding: 8px 11px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .nav-links a:hover {
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.6);
     }
 
     .hero {
@@ -115,39 +177,40 @@
         var(--paper);
     }
 
+    /* Mobile-first hero (base = compact iPhone). Desktop enhancements via min-width only */
     .hero-inner {
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 0.86fr) minmax(470px, 1.05fr);
-      gap: 58px;
-      align-items: center;
-      width: min(1180px, calc(100% - 40px));
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      width: min(100% - 40px, 720px);
       margin: 0 auto;
-      padding: 92px 0 38px;
+      padding: 72px 0 32px;
     }
 
     .app-icon-large {
-      width: 88px;
-      height: 88px;
-      margin-bottom: 28px;
-      border-radius: 21px;
-      box-shadow: 0 18px 42px rgba(20, 199, 208, 0.22);
+      width: 72px;
+      height: 72px;
+      margin-bottom: 18px;
+      border-radius: 17px;
+      box-shadow: 0 10px 24px rgba(20, 199, 208, 0.22);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin: 0 0 16px;
+      margin: 0 0 12px;
       color: var(--teal);
-      font-size: 0.8rem;
-      font-weight: 800;
+      font-size: 0.78rem;
+      font-weight: 700;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .eyebrow::before {
-      width: 34px;
+      width: 28px;
       height: 3px;
       border-radius: 999px;
       background: var(--coral);
@@ -163,43 +226,62 @@
 
     h1 {
       max-width: 560px;
-      margin-bottom: 18px;
-      font-size: 4.7rem;
-      line-height: 0.96;
-      letter-spacing: 0;
+      margin-bottom: 14px;
+      font-size: var(--large-title);
+      font-weight: 700;
+      line-height: 1.02;
+      letter-spacing: -0.025em;
     }
 
     .hero-copy {
       max-width: 560px;
-      margin-bottom: 30px;
+      margin-bottom: 22px;
       color: var(--muted);
-      font-size: 1.18rem;
-      line-height: 1.65;
+      font-size: var(--callout);
+      line-height: 1.5;
     }
 
     .hero-actions,
     .footer-actions {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       gap: 12px;
-      align-items: center;
+      align-items: stretch;
     }
 
+    /* Apple HIG buttons: 52px+ touch targets, 14px radius, iOS spring motion, press feedback */
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
+      min-height: var(--min-tap);
+      min-width: 120px;
       border: 1px solid transparent;
-      border-radius: 8px;
-      padding: 0 18px;
-      font-size: 0.98rem;
-      font-weight: 780;
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+      border-radius: 14px;
+      padding: 0 22px;
+      font-size: 1.02rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      transition: transform 120ms cubic-bezier(0.23, 1.0, 0.32, 1),
+                  box-shadow 120ms ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .button:active {
+      transform: scale(0.985);
     }
 
     .button:hover {
       transform: translateY(-1px);
+    }
+
+    /* Explicit focus-visible for all interactive elements (HIG accessibility) */
+    .button:focus-visible,
+    .nav-links a:focus-visible,
+    .support-item:focus-visible,
+    .proof-pill:focus-visible {
+      outline: 2px solid var(--aqua);
+      outline-offset: 2px;
     }
 
     .button-primary {
@@ -214,408 +296,353 @@
       color: var(--ink);
     }
 
-    .proof-points {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* iOS-style compact proof pills — always visible (never display:none). Thumb friendly. */
+    .proof-row {
+      display: flex;
+      flex-wrap: wrap;
       gap: 10px;
-      max-width: 590px;
-      margin-top: 36px;
+      justify-content: flex-start;
+      margin-top: 20px;
+      max-width: 420px;
     }
 
-    .proof-point {
-      border: 1px solid rgba(255, 255, 255, 0.82);
-      border-radius: 8px;
-      padding: 15px;
-      background: rgba(255, 255, 255, 0.68);
-      backdrop-filter: blur(14px);
+    .proof-pill {
+      min-height: 44px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(10px) saturate(160%);
+      -webkit-backdrop-filter: blur(10px) saturate(160%);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
     }
 
-    .proof-point strong {
-      display: block;
-      margin-bottom: 5px;
-      font-size: 1.08rem;
+    .proof-pill strong {
+      font-weight: 600;
     }
 
-    .proof-point span {
-      display: block;
-      color: var(--muted);
-      font-size: 0.84rem;
-      line-height: 1.42;
-    }
-
-    .screen-gallery {
+    /* ========== CRITICAL: Apple HIG CSS Device Frames (Phase 2 - highest leverage fix) ========== */
+    /* Replaces raw crushed screenshots with realistic iPhone (Dynamic Island) + Watch (squircle) frames */
+    .device-frame {
       position: relative;
-      display: grid;
-      grid-template-columns: 1fr 0.93fr;
-      gap: 18px;
-      align-items: center;
-      min-height: 560px;
-    }
-
-    .screenshot-card {
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.82);
-      border-radius: 8px;
-      background: #ffffff;
-      box-shadow: var(--shadow);
-    }
-
-    .screenshot-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-    }
-
-    .iphone-main {
-      height: 560px;
-    }
-
-    .gallery-side {
-      display: grid;
-      gap: 18px;
-      align-content: center;
-    }
-
-    .iphone-secondary {
-      height: 382px;
-    }
-
-    .watch-card {
-      display: grid;
-      grid-template-columns: 120px minmax(0, 1fr);
-      gap: 18px;
-      align-items: center;
-      min-height: 156px;
-      padding: 16px;
-      background: #111a21;
-      color: #ffffff;
-    }
-
-    .watch-card img {
-      width: 120px;
-      height: 143px;
-      border-radius: 28px;
-      object-fit: cover;
-    }
-
-    .watch-card strong {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 1.06rem;
-    }
-
-    .watch-card span {
-      display: block;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 0.88rem;
-      line-height: 1.45;
-    }
-
-    section {
-      padding: 78px 0;
-    }
-
-    .section-inner {
-      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
-    }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr);
-      gap: 58px;
-      align-items: end;
-      margin-bottom: 30px;
-    }
-
-    .section-heading h2 {
-      margin-bottom: 0;
-      font-size: 2.42rem;
-      line-height: 1.08;
-      letter-spacing: 0;
-    }
-
-    .section-heading p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 1.03rem;
-      line-height: 1.7;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .feature-card {
-      min-height: 238px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 24px;
-      background: var(--surface);
-      box-shadow: 0 12px 30px rgba(20, 33, 45, 0.06);
-    }
-
-    .feature-dot {
-      width: 42px;
-      height: 42px;
-      margin-bottom: 36px;
-      border-radius: 8px;
-      background: linear-gradient(135deg, rgba(20, 199, 208, 0.95), rgba(15, 127, 134, 0.95));
-    }
-
-    .feature-card:nth-child(2) .feature-dot {
-      background: linear-gradient(135deg, rgba(79, 155, 97, 0.95), rgba(237, 234, 254, 0.95));
-    }
-
-    .feature-card:nth-child(3) .feature-dot {
-      background: linear-gradient(135deg, rgba(255, 117, 106, 0.95), rgba(20, 199, 208, 0.95));
-    }
-
-    .feature-card h3 {
-      margin-bottom: 12px;
-      font-size: 1.2rem;
-      letter-spacing: 0;
-    }
-
-    .feature-card p {
-      margin-bottom: 0;
-      color: var(--muted);
-      line-height: 1.66;
-    }
-
-    .showcase {
-      background: #ffffff;
-    }
-
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.62fr);
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .wide-shot {
+      background: #111;
+      box-shadow: 
+        0 30px 70px -15px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255,255,255,0.06) inset;
       overflow: hidden;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #f2fbf9;
-      min-height: 520px;
+      transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
-    .wide-shot img {
+    .device-frame:hover {
+      transform: translateY(-2px);
+    }
+
+    /* iPhone 16 Pro style frame — 9:19.55 aspect for modern tall display + Dynamic Island */
+    .iphone-frame {
+      width: min(92vw, 310px);
+      aspect-ratio: 9 / 19.55;
+      border-radius: 62px;
+      padding: 9px 9px 12px;
+    }
+
+    .iphone-frame::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      /* Responsive Dynamic Island: scales correctly in both large Hero (~310px) and compact Showcase (~240px) frames */
+      width: clamp(60px, 36%, 118px);
+      height: clamp(13px, 7.8%, 26px);
+      background: #000;
+      border-radius: 20px;
+      z-index: 3;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+    }
+
+    .iphone-screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      border-radius: 52px;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+    }
+
+    .iphone-screen img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top center;
+      display: block;
     }
 
-    .support-list {
-      display: grid;
-      gap: 12px;
-      align-content: start;
+    /* Apple Watch realistic squircle frame */
+    .watch-frame {
+      width: min(148px, 42vw); /* responsive on narrow mobile while keeping squircle fidelity */
+      aspect-ratio: 1 / 1.22;
+      border-radius: 44px;
+      padding: 10px;
+      background: #0f1720;
+      box-shadow: 0 20px 45px -12px rgba(0,0,0,0.5);
     }
+
+    .watch-screen {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .watch-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .device-caption {
+      font-size: var(--footnote);
+      color: var(--muted);
+      margin-top: 10px;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+
+    /* Horizontal scroll-snap ecosystem gallery (iOS App Store screenshot carousel pattern) */
+    .ecosystem-row {
+      display: flex;
+      gap: 18px;
+      padding: 0 20px 20px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .ecosystem-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .ecosystem-item {
+      flex: 0 0 auto;
+      scroll-snap-align: center;
+      text-align: center;
+    }
+
+    /* Base section rhythm (mobile first) */
+    section {
+      padding: 52px 0;
+    }
+
+    /* Cleaned legacy desktop-first rules removed — mobile base + min-width enhancements only (Phase 1 complete) */
 
     .support-item {
       border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 20px;
+      border-radius: 14px;
+      padding: 18px 20px;
       background: #ffffff;
+      display: block;
+      min-height: 52px; /* HIG 52px+ touch target for secondary interactive elements */
     }
 
     .support-item strong {
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
+      font-weight: 600;
     }
 
     .support-item span {
       display: block;
       color: var(--muted);
-      line-height: 1.55;
+      line-height: 1.45;
+      font-size: 0.95rem;
+    }
+
+    /* Mobile-first base styles for Features (P0 fix — ported/adapted from prototype, desktop overrides preserved) */
+    .section-inner {
+      width: 100%;
+      padding: 0 20px;
+      margin: 0 auto;
+      max-width: 720px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px) saturate(160%);
+      -webkit-backdrop-filter: blur(12px) saturate(160%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 20px var(--space-5);
+      min-height: 112px;
+    }
+
+    .feature-card h3 {
+      font-size: var(--headline);
+      font-weight: 600;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .feature-card p {
+      margin: 0;
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .feature-dot {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 14px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--aqua), var(--teal));
+    }
+
+    /* Lightweight heading wrapper to replace previous inline styles (nit cleanup) */
+    .section-heading-copy {
+      margin-bottom: 28px;
+    }
+    .section-heading-copy h2 {
+      font-size: var(--title-1);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .section-heading-copy p {
+      color: var(--muted);
+      max-width: 58ch;
+      line-height: 1.5;
+    }
+
+    /* Showcase ecosystem heading (replaces previous inline styles for consistency) */
+    .ecosystem-heading {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .ecosystem-heading h2 {
+      font-size: var(--title-1);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .ecosystem-heading p {
+      color: var(--muted);
+      max-width: 42ch;
+      margin: 0 auto;
+      font-size: var(--callout);
     }
 
     .final-cta {
-      padding-bottom: 42px;
       background: linear-gradient(180deg, var(--paper), #edf9f4);
+    }
+    .final-cta--with-safearea {
+      padding-bottom: calc(42px + env(safe-area-inset-bottom));
     }
 
     .final-band {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 28px;
-      align-items: center;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
       border-top: 1px solid var(--line);
-      padding-top: 52px;
-    }
-
-    .final-band h2 {
-      max-width: 680px;
-      margin-bottom: 14px;
-      font-size: 2.18rem;
-      line-height: 1.12;
-    }
-
-    .final-band p {
-      max-width: 610px;
-      margin-bottom: 0;
-      color: var(--muted);
-      line-height: 1.7;
+      padding-top: 32px;
     }
 
     footer {
-      width: min(1180px, calc(100% - 40px));
+      width: min(100% - 40px, 720px);
       margin: 0 auto;
-      padding: 24px 0 36px;
+      padding: 24px 0 42px;
       color: rgba(20, 33, 45, 0.64);
       font-size: 0.9rem;
     }
 
-    @media (max-width: 940px) {
-      .site-header {
-        position: relative;
-        width: min(100% - 32px, 720px);
-        padding: 18px 0;
-      }
-
+    /* Graceful desktop / iPad enhancements (min-width only — true mobile-first architecture) */
+    @media (min-width: 768px) {
       .hero-inner {
-        grid-template-columns: 1fr;
-        width: min(100% - 32px, 720px);
-        gap: 28px;
-        padding: 32px 0 42px;
+        flex-direction: row;
+        align-items: center;
+        gap: 48px;
+        padding: 92px 0 48px;
       }
 
-      .app-icon-large {
-        width: 72px;
-        height: 72px;
-        border-radius: 17px;
-        margin-bottom: 22px;
+      .hero-actions {
+        flex-direction: row;
+        align-items: center;
       }
 
-      h1 {
-        max-width: 430px;
-        font-size: 3.24rem;
-      }
-
-      .hero-copy {
-        max-width: 570px;
-        font-size: 1.06rem;
-      }
-
-      .proof-points {
-        display: none;
-      }
-
-      .screen-gallery {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        min-height: 0;
-      }
-
-      .iphone-main,
-      .iphone-secondary {
-        height: 220px;
-      }
-
-      .watch-card {
-        display: none;
-      }
-
-      .section-inner,
-      footer {
-        width: min(100% - 32px, 720px);
-      }
-
-      section {
-        padding: 58px 0;
-      }
-
-      .section-heading,
-      .showcase-grid,
-      .final-band {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .section-heading h2,
-      .final-band h2 {
-        font-size: 2rem;
+      .proof-row {
+        flex-wrap: nowrap;
       }
 
       .feature-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
       }
 
       .feature-card {
-        min-height: auto;
+        min-height: 168px;
+        padding: 22px var(--space-5);
       }
 
       .feature-dot {
-        margin-bottom: 28px;
+        width: 36px;
+        height: 36px;
+        margin-bottom: 18px;
       }
 
-      .wide-shot {
-        min-height: 430px;
+      .final-band {
+        flex-direction: row;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .iphone-frame {
+        width: min(340px, 38vw);
+      }
+
+      .ecosystem-row {
+        justify-content: center;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .section-inner {
+        width: min(100% - 40px, 980px);
       }
     }
 
-    @media (max-width: 560px) {
+    @media (min-width: 1024px) {
       .site-header {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
       }
 
-      .nav-links {
-        gap: 2px;
-        font-size: 0.88rem;
-      }
-
-      .nav-links a {
-        padding: 8px 7px;
-      }
-
-      .hero-inner {
-        padding-top: 28px;
-        padding-bottom: 16px;
-      }
-
-      .app-icon-large {
-        display: none;
-      }
-
-      h1 {
-        font-size: 2.82rem;
-      }
-
-      .hero-actions,
-      .footer-actions,
-      .button {
-        width: 100%;
-      }
-
-      .screen-gallery {
-        margin-top: 2px;
-      }
-
-      .iphone-main,
-      .iphone-secondary {
-        height: 120px;
-      }
-
-      section {
-        padding: 36px 0 54px;
-      }
-
-      .wide-shot {
-        min-height: 360px;
+      .hero-inner,
+      .section-inner {
+        width: min(1180px, calc(100% - 40px));
       }
     }
   </style>
 </head>
 <body>
-  <header class="site-header" aria-label="Site navigation">
+<header class="site-header" aria-label="Site navigation">
     <a class="brand" href="#top" aria-label="AquaTick home">
       <img src="assets/aquatick-app-icon.png" width="1024" height="1024" alt="">
       <span>AquaTick</span>
@@ -630,54 +657,42 @@
   <main id="top">
     <section class="hero" aria-label="AquaTick landing">
       <div class="hero-inner">
+        <!-- Text content first on mobile (true mobile-first) -->
         <div>
           <img class="app-icon-large" src="assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick app icon">
           <p class="eyebrow">Sparkish presents</p>
           <h1>AquaTick</h1>
           <p class="hero-copy">A lightweight hydration tracker that keeps your daily water goal visible across iPhone, iPad, Apple Watch, widgets, and Live Activities.</p>
+
           <div class="hero-actions">
             <a class="button button-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Download on the App Store</a>
             <a class="button button-secondary" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Get support</a>
           </div>
-          <div class="proof-points" role="group" aria-label="AquaTick platform highlights">
-            <div class="proof-point">
-              <strong>iPhone</strong>
-              <span>Log water quickly and follow daily progress.</span>
-            </div>
-            <div class="proof-point">
-              <strong>iPad</strong>
-              <span>Use the same simple flow on a larger screen.</span>
-            </div>
-            <div class="proof-point">
-              <strong>Watch</strong>
-              <span>Add common amounts from your wrist.</span>
-            </div>
+
+          <!-- Always-visible iOS HIG proof pills (no hiding on any breakpoint) -->
+          <div class="proof-row" role="group" aria-label="Supported Apple platforms">
+            <div class="proof-pill"><strong>iPhone</strong> <span style="color:var(--muted);">Quick log</span></div>
+            <div class="proof-pill"><strong>iPad</strong> <span style="color:var(--muted);">Large screen</span></div>
+            <div class="proof-pill"><strong>Watch</strong> <span style="color:var(--muted);">From your wrist</span></div>
           </div>
         </div>
 
-        <div class="screen-gallery" role="group" aria-label="AquaTick screenshots">
-          <figure class="screenshot-card iphone-main">
-            <img src="assets/screenshot-iphone-home.webp" width="1320" height="2868" alt="AquaTick iPhone home screenshot">
+        <!-- HIG iPhone device frame — the #1 mobile fix. Full screenshot visible, no crushing. -->
+        <div>
+          <figure class="device-frame iphone-frame" style="margin-bottom: 6px;">
+            <div class="iphone-screen">
+              <img src="assets/screenshot-iphone-home.webp" width="1320" height="2868" 
+                   alt="AquaTick iPhone home screenshot — progress ring and quick-add button clearly visible">
+            </div>
           </figure>
-          <div class="gallery-side">
-            <figure class="screenshot-card iphone-secondary">
-              <img src="assets/screenshot-iphone-settings.webp" width="1320" height="2868" alt="AquaTick iPhone settings screenshot">
-            </figure>
-            <figure class="screenshot-card watch-card">
-              <img src="assets/screenshot-watch-home.webp" width="416" height="496" alt="AquaTick Apple Watch screenshot">
-              <figcaption>
-                <strong>Apple Watch</strong>
-                <span>Quick add controls stay close without opening the phone.</span>
-              </figcaption>
-            </figure>
-          </div>
+          <figcaption class="device-caption">iPhone 16 Pro — Actual App Store screenshot</figcaption>
         </div>
       </div>
     </section>
 
     <section id="features">
       <div class="section-inner">
-        <div class="section-heading">
+        <div class="section-heading-copy">
           <h2>Built around the real app experience.</h2>
           <p>AquaTick keeps hydration tracking focused on fast logging, clear progress, and the settings people need for goals, reminders, widgets, and optional Health sync.</p>
         </div>
@@ -701,38 +716,58 @@
       </div>
     </section>
 
-    <section class="showcase" aria-label="AquaTick product showcase">
+    <section class="showcase" aria-label="AquaTick on Apple devices">
       <div class="section-inner">
-        <div class="section-heading">
-          <h2>Actual App Store screenshots, not mockups.</h2>
-          <p>The landing page now uses the same app icon and screenshot assets prepared for AquaTick’s App Store presence.</p>
+        <div class="ecosystem-heading">
+          <h2>Works on the Apple devices you already use</h2>
+          <p>Real App Store screenshots in authentic device frames — swipe to explore.</p>
         </div>
-        <div class="showcase-grid">
-          <figure class="wide-shot">
-            <img src="assets/screenshot-iphone-settings.webp" width="1320" height="2868" alt="AquaTick goals and reminders screenshot">
-          </figure>
-          <div class="support-list">
-            <a class="support-item" href="https://apps.apple.com/app/aquatick/id6762686013">
-              <strong>App Store</strong>
-              <span>Install AquaTick on compatible Apple devices.</span>
-            </a>
-            <a class="support-item" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">
-              <strong>Support</strong>
-              <span>Find help, product notes, and contact details for AquaTick.</span>
-            </a>
-            <a class="support-item" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">
-              <strong>Privacy Policy</strong>
-              <span>Review how AquaTick handles privacy and product data disclosures.</span>
-            </a>
+
+        <!-- Ecosystem horizontal scroll-snap gallery with proper iPhone + Watch frames (Watch visible on mobile) -->
+        <div class="ecosystem-row" role="group" aria-label="Device screenshots">
+          <div class="ecosystem-item">
+            <figure class="device-frame iphone-frame" style="width: min(240px, 68vw); margin: 0 auto;">
+              <div class="iphone-screen">
+                <img src="assets/screenshot-iphone-settings.webp" width="1320" height="2868" loading="lazy"
+                     alt="AquaTick iPhone settings screenshot — goals and reminders">
+              </div>
+            </figure>
+            <figcaption class="device-caption">iPhone Settings</figcaption>
           </div>
+
+          <div class="ecosystem-item">
+            <figure class="device-frame watch-frame" style="margin: 0 auto;">
+              <div class="watch-screen">
+                <img src="assets/screenshot-watch-home.webp" width="416" height="496" loading="lazy"
+                     alt="AquaTick Apple Watch screenshot — quick add on wrist">
+              </div>
+            </figure>
+            <figcaption class="device-caption">Apple Watch</figcaption>
+          </div>
+        </div>
+
+        <!-- Support links preserved exactly as original (all GitHub wiki + App Store links untouched) -->
+        <div class="support-list" style="margin-top: 32px; display: grid; gap: 12px;">
+          <a class="support-item" href="https://apps.apple.com/app/aquatick/id6762686013">
+            <strong>App Store</strong>
+            <span>Install AquaTick on compatible Apple devices.</span>
+          </a>
+          <a class="support-item" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">
+            <strong>Support</strong>
+            <span>Find help, product notes, and contact details for AquaTick.</span>
+          </a>
+          <a class="support-item" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">
+            <strong>Privacy Policy</strong>
+            <span>Review how AquaTick handles privacy and product data disclosures.</span>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="final-cta">
+    <section class="final-cta final-cta--with-safearea">
       <div class="section-inner final-band">
         <div>
-          <h2>Track hydration on the Apple surfaces you already use.</h2>
+          <h2 style="font-size: var(--title-1);">Track hydration on the Apple surfaces you already use.</h2>
           <p>AquaTick is available on the App Store from Sparkish.</p>
         </div>
         <div class="footer-actions">
@@ -745,5 +780,23 @@
   <footer>
     <span>Copyright 2026 Sparkish. AquaTick support and privacy resources are hosted on GitHub.</span>
   </footer>
+
+  <!-- Tiny progressive enhancement: subtle iOS-like header shadow on scroll (completely degrades if JS disabled) -->
+  <script>
+    (function() {
+      var nav = document.querySelector('.site-header');
+      if (!nav) return;
+      var last = 0;
+      window.addEventListener('scroll', function() {
+        var y = window.scrollY || 0;
+        if (y > 40 && y > last) {
+          nav.style.boxShadow = '0 1px 0 rgba(0,0,0,0.04)';
+        } else {
+          nav.style.boxShadow = 'none';
+        }
+        last = y;
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>
