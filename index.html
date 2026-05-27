@@ -1,20 +1,721 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AquaTick</title>
-  <meta name="description" content="AquaTick developer website and support links.">
+  <title>AquaTick | Hydration tracker for iPhone and Apple Watch</title>
+  <meta name="description" content="AquaTick is a lightweight hydration tracker for iPhone, Apple Watch, widgets, and Live Activities.">
+  <meta property="og:title" content="AquaTick">
+  <meta property="og:description" content="A lightweight hydration tracker for iPhone, Apple Watch, widgets, and Live Activities.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/aquatick-hero.webp">
+  <meta name="theme-color" content="#0f766e">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/aquatick-hero.webp" as="image">
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #526171;
+      --line: rgba(23, 33, 43, 0.12);
+      --paper: #fbfaf6;
+      --surface: #ffffff;
+      --aqua: #12b8b1;
+      --aqua-deep: #0f766e;
+      --coral: #ff6b61;
+      --mint: #d7f5e7;
+      --sun: #f9c85d;
+      --shadow: 0 18px 50px rgba(23, 33, 43, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 760;
+      font-size: 1rem;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background:
+        radial-gradient(circle at 50% 36%, #ffffff 0 16%, transparent 17%),
+        linear-gradient(145deg, var(--aqua), var(--aqua-deep) 58%, var(--coral));
+      box-shadow: 0 8px 18px rgba(15, 118, 110, 0.22);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(23, 33, 43, 0.82);
+      font-size: 0.94rem;
+      font-weight: 680;
+    }
+
+    .nav-links a {
+      border-radius: 8px;
+      padding: 10px 12px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      min-height: 84svh;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(251, 250, 246, 0.98) 0%, rgba(251, 250, 246, 0.92) 34%, rgba(251, 250, 246, 0.2) 64%, rgba(251, 250, 246, 0) 100%),
+        url("assets/aquatick-hero.webp") center right / cover no-repeat;
+    }
+
+    .hero::after {
+      position: absolute;
+      inset: auto 0 0;
+      z-index: -1;
+      height: 120px;
+      background: linear-gradient(180deg, rgba(251, 250, 246, 0), var(--paper));
+      content: "";
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 112px 0 72px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--aqua-deep);
+      font-size: 0.82rem;
+      font-weight: 780;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 32px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--coral);
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 560px;
+      margin-bottom: 20px;
+      font-size: 4.6rem;
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 540px;
+      margin-bottom: 30px;
+      color: var(--muted);
+      font-size: 1.22rem;
+      line-height: 1.6;
+    }
+
+    .hero-actions,
+    .footer-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      padding: 0 18px;
+      font-size: 0.98rem;
+      font-weight: 760;
+      box-shadow: none;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--ink);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--ink);
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 580px;
+      margin-top: 44px;
+    }
+
+    .metric {
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      border-radius: 8px;
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(14px);
+    }
+
+    .metric strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-size: 1.3rem;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 0.86rem;
+      line-height: 1.35;
+    }
+
+    section {
+      padding: 84px 0;
+    }
+
+    .section-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.58fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: 2.45rem;
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+
+    .section-heading p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+      line-height: 1.7;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .feature-card {
+      min-height: 254px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      background: var(--surface);
+      box-shadow: 0 12px 30px rgba(23, 33, 43, 0.07);
+    }
+
+    .feature-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      margin-bottom: 42px;
+      border-radius: 8px;
+      background: var(--mint);
+    }
+
+    .feature-icon::before {
+      width: 18px;
+      height: 24px;
+      border-radius: 18px 18px 18px 4px;
+      background: var(--aqua);
+      transform: rotate(45deg);
+      content: "";
+    }
+
+    .feature-card:nth-child(2) .feature-icon {
+      background: rgba(255, 107, 97, 0.14);
+    }
+
+    .feature-card:nth-child(2) .feature-icon::before {
+      width: 22px;
+      height: 22px;
+      border: 5px solid var(--coral);
+      border-left-color: transparent;
+      border-radius: 50%;
+      background: transparent;
+      transform: none;
+    }
+
+    .feature-card:nth-child(3) .feature-icon {
+      background: rgba(249, 200, 93, 0.22);
+    }
+
+    .feature-card:nth-child(3) .feature-icon::before {
+      width: 24px;
+      height: 16px;
+      border-radius: 5px;
+      background: linear-gradient(90deg, var(--aqua-deep) 0 22%, var(--sun) 22% 45%, var(--coral) 45% 68%, var(--aqua) 68%);
+      transform: none;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+      letter-spacing: 0;
+    }
+
+    .feature-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .ecosystem {
+      background: #ffffff;
+    }
+
+    .device-strip {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .device-panel {
+      position: relative;
+      min-height: 380px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #e7fbf7, #fff8e2 54%, #ffe8e5);
+      border: 1px solid var(--line);
+    }
+
+    .device-panel::before,
+    .device-panel::after {
+      position: absolute;
+      content: "";
+    }
+
+    .device-panel::before {
+      right: 18%;
+      bottom: -54px;
+      width: 230px;
+      height: 470px;
+      border: 10px solid #1c2731;
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 50% 30%, var(--aqua) 0 44px, transparent 45px),
+        conic-gradient(from 16deg, var(--coral) 0 28%, #dce8ec 28% 54%, var(--aqua) 54% 86%, #dce8ec 86% 100%);
+      background-color: #ffffff;
+      box-shadow: 0 24px 60px rgba(23, 33, 43, 0.2);
+      transform: rotate(-5deg);
+    }
+
+    .device-panel::after {
+      right: 8%;
+      bottom: 48px;
+      width: 124px;
+      height: 124px;
+      border: 8px solid #1c2731;
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 50% 50%, var(--aqua) 0 22px, transparent 23px),
+        conic-gradient(var(--aqua) 0 68%, var(--coral) 68% 81%, #25313d 81%);
+      box-shadow: 0 18px 36px rgba(23, 33, 43, 0.18);
+    }
+
+    .device-panel-content {
+      position: relative;
+      z-index: 1;
+      max-width: 360px;
+      padding: 34px;
+    }
+
+    .device-panel-content h3 {
+      margin-bottom: 12px;
+      font-size: 1.45rem;
+    }
+
+    .device-panel-content p {
+      color: var(--muted);
+      line-height: 1.68;
+    }
+
+    .support-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .support-item {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      background: #ffffff;
+    }
+
+    .support-item strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .support-item span {
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .final-cta {
+      padding-bottom: 42px;
+      background: linear-gradient(180deg, var(--paper), #ecfbf7);
+    }
+
+    .final-band {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      padding-top: 52px;
+    }
+
+    .final-band h2 {
+      max-width: 640px;
+      margin-bottom: 14px;
+      font-size: 2.2rem;
+      line-height: 1.12;
+    }
+
+    .final-band p {
+      max-width: 610px;
+      margin-bottom: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    footer {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0 36px;
+      color: rgba(23, 33, 43, 0.64);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 840px) {
+      .site-header {
+        position: relative;
+        width: min(100% - 32px, 680px);
+        padding: 18px 0;
+      }
+
+      .nav-links {
+        gap: 2px;
+        font-size: 0.88rem;
+      }
+
+      .nav-links a {
+        padding: 8px 7px;
+      }
+
+      .hero {
+        min-height: auto;
+        background:
+          linear-gradient(180deg, rgba(251, 250, 246, 0.98) 0%, rgba(251, 250, 246, 0.86) 40%, rgba(251, 250, 246, 0.42) 100%),
+          url("assets/aquatick-hero.webp") 68% center / cover no-repeat;
+      }
+
+      .hero-inner,
+      .section-inner,
+      footer {
+        width: min(100% - 32px, 680px);
+      }
+
+      .hero-inner {
+        padding: 42px 0 54px;
+      }
+
+      h1 {
+        max-width: 420px;
+        font-size: 3.2rem;
+      }
+
+      .hero-copy {
+        max-width: 430px;
+        font-size: 1.08rem;
+      }
+
+      section {
+        padding: 62px 0;
+      }
+
+      .section-heading,
+      .device-strip,
+      .final-band {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .section-heading h2,
+      .final-band h2 {
+        font-size: 2rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card {
+        min-height: auto;
+      }
+
+      .feature-icon {
+        margin-bottom: 28px;
+      }
+
+      .device-panel {
+        min-height: 340px;
+      }
+
+      .device-panel-content {
+        padding: 26px;
+      }
+
+      .final-band {
+        align-items: start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-inner {
+        padding-top: 24px;
+        padding-bottom: 40px;
+      }
+
+      h1 {
+        font-size: 2.85rem;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-actions,
+      .footer-actions {
+        width: 100%;
+      }
+
+      .hero-metrics {
+        display: none;
+      }
+
+      .device-panel::before {
+        right: 7%;
+        bottom: -74px;
+        width: 180px;
+        height: 360px;
+      }
+
+      .device-panel::after {
+        right: 5%;
+        bottom: 36px;
+        width: 98px;
+        height: 98px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <main>
-    <h1>AquaTick</h1>
-    <p>AquaTick is a lightweight hydration tracker for iPhone, Apple Watch, widgets, and Live Activities.</p>
-    <ul>
-      <li><a href="https://apps.apple.com/app/aquatick/id6762686013">App Store</a></li>
-      <li><a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Support</a></li>
-      <li><a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">Privacy Policy</a></li>
-    </ul>
+  <header class="site-header" aria-label="Site navigation">
+    <a class="brand" href="#top" aria-label="AquaTick home">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>AquaTick</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Support</a>
+      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">Privacy</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="AquaTick landing">
+      <div class="hero-inner">
+        <p class="eyebrow">Sparkish presents</p>
+        <h1>AquaTick</h1>
+        <p class="hero-copy">A lightweight hydration tracker that keeps your daily water goal visible across iPhone, Apple Watch, widgets, and Live Activities.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Download on the App Store</a>
+          <a class="button button-secondary" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Get support</a>
+        </div>
+        <div class="hero-metrics" role="group" aria-label="AquaTick platform highlights">
+          <div class="metric">
+            <strong>iPhone</strong>
+            <span>Fast water logging and daily progress at a glance.</span>
+          </div>
+          <div class="metric">
+            <strong>Watch</strong>
+            <span>Quick updates without reaching for your phone.</span>
+          </div>
+          <div class="metric">
+            <strong>Widgets</strong>
+            <span>Hydration status where you already look.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>Built for everyday hydration, not another dashboard.</h2>
+          <p>AquaTick keeps the flow simple: log a drink, see the remaining goal, and let lightweight surfaces keep the habit visible during the day.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"></div>
+            <h3>Quick daily logging</h3>
+            <p>Record water intake in a few taps and keep the current day focused on the next useful action.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"></div>
+            <h3>Live progress surfaces</h3>
+            <p>Use widgets and Live Activities to keep progress visible without opening the app every time.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"></div>
+            <h3>Apple Watch ready</h3>
+            <p>Track from the wrist with glanceable progress designed for short interactions throughout the day.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="ecosystem" aria-label="AquaTick ecosystem">
+      <div class="section-inner">
+        <div class="section-heading">
+          <h2>One habit, shared across the Apple surfaces you use.</h2>
+          <p>Designed as a companion that moves with you, AquaTick makes hydration status easy to notice on the lock screen, home screen, phone, and watch.</p>
+        </div>
+        <div class="device-strip">
+          <div class="device-panel">
+            <div class="device-panel-content">
+              <h3>Glanceable by design</h3>
+              <p>The interface favors progress, rhythm, and small updates so hydration tracking stays light.</p>
+            </div>
+          </div>
+          <div class="support-list">
+            <a class="support-item" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">
+              <strong>Support</strong>
+              <span>Find help, product notes, and contact details for AquaTick.</span>
+            </a>
+            <a class="support-item" href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">
+              <strong>Privacy Policy</strong>
+              <span>Review how AquaTick handles privacy and product data disclosures.</span>
+            </a>
+            <a class="support-item" href="https://apps.apple.com/app/aquatick/id6762686013">
+              <strong>App Store</strong>
+              <span>Install AquaTick on compatible Apple devices.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <div class="section-inner final-band">
+        <div>
+          <h2>Keep water tracking close without making it complicated.</h2>
+          <p>AquaTick is available on the App Store from Sparkish.</p>
+        </div>
+        <div class="footer-actions">
+          <a class="button button-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Download on the App Store</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    <span>Copyright 2026 Sparkish. AquaTick support and privacy resources are hosted on GitHub.</span>
+  </footer>
 </body>
 </html>
