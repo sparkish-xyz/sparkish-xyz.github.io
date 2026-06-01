@@ -98,6 +98,17 @@ async function captureForBrowser(browserType, browserName, extraContextOpts = {}
       console.log(`  Saved ${heroName}`);
     }
 
+    // Targeted: 3s demo section (#mood .app-demo) — static initial state (0mL + empty cat) for visual regression of new interactive demo
+    const moodDemo = await page.locator('#mood .app-demo').first();
+    if (await moodDemo.count() > 0) {
+      const demoName = `${browserName}-${vp.name}-mood-demo.png`;
+      await moodDemo.screenshot({ 
+        path: path.join(outDir, demoName),
+        type: 'png'
+      });
+      console.log(`  Saved ${demoName}`);
+    }
+
     // Targeted: Showcase ecosystem row
     const showcase = await page.locator('section.showcase').first();
     if (await showcase.count() > 0) {
