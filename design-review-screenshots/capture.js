@@ -8,7 +8,7 @@
  *
  * Key improvements in this version (addressing reviewer feedback):
  * - Configurable target URL via TARGET_URL env var (defaults to relative file:// next to repo root).
- *   No more hardcoded absolute personal paths.
+ *   No more hardcoded absolute personal paths. Defaults to /ko/index.html (the primary designed Korean content after multilingual restructure).
  * - Phase separation (--phase before|after|current) writes to dedicated subdirectories.
  *   Prevents overwriting pre-fix evidence on post-fix runs.
  * - Added critical missing scenarios:
@@ -33,7 +33,10 @@ const path = require('path');
 const OUTPUT_DIR = path.resolve(__dirname, '..', 'design-review-screenshots');
 
 // Resolve target URL relative to CWD so the script works from any checkout / machine
-const DEFAULT_TARGET = `file://${path.resolve(process.cwd(), 'index.html')}`;
+const DEFAULT_TARGET = `file://${path.resolve(process.cwd(), 'ko/index.html')}`;
+// NOTE (review #4): Primary visual regression targets the core designed Korean content (/ko/).
+// en/ and ja/ are faithful translations; they inherit the same CSS/JS but are not separately captured unless TARGET_URL is overridden.
+// Legacy .showcase/.watch-frame locators remain for backward compat (they safely no-op when absent).
 const TARGET_URL = process.env.TARGET_URL || DEFAULT_TARGET;
 
 // Simple CLI arg parsing (no extra deps)

@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+
+# Sitemap for multilingual structure (ko/en/ja + root detector)
+Sitemap: https://sparkish-xyz.github.io/sitemap.xml

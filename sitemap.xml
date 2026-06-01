@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- lastmod dates are representative snapshot at implementation time (review #11). Update on content changes. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Root language detector/chooser -->
+  <url>
+    <loc>https://sparkish-xyz.github.io/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/"/>
+  </url>
+
+  <!-- Korean version (primary polished content) -->
+  <url>
+    <loc>https://sparkish-xyz.github.io/ko/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/"/>
+  </url>
+
+  <!-- English version -->
+  <url>
+    <loc>https://sparkish-xyz.github.io/en/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/"/>
+  </url>
+
+  <!-- Japanese version (app already supports Japanese) -->
+  <url>
+    <loc>https://sparkish-xyz.github.io/ja/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/"/>
+  </url>
+</urlset>

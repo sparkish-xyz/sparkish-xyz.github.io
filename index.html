@@ -1,21 +1,34 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="und">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="format-detection" content="telephone=no">
-  <title>AquaTick | 이 고양이가 당신의 수분을 함께 챙겨줍니다</title>
-  <meta name="description" content="고양이가 위젯과 Watch에서 당신의 하루를 기억하며 부드럽게 응원합니다. 물을 기록하면 고양이 표정이 밝아져요. AquaTick — 고양이와 함께하는 따뜻한 수분 습관 앱 (iPhone + Apple Watch)">
-  <meta property="og:title" content="AquaTick — 고양이가 당신의 수분을 함께 챙겨주는 앱">
-  <meta property="og:description" content="실제 앱 안에 사는 이 고양이. 0mL가 되면 조용히 물컵을 들고 기다립니다. 그 표정을 보면 자연스럽게 손이 가요.">
+  <title>AquaTick | 언어 선택 / Choose language / 言語を選択</title>
+  <meta name="description" content="AquaTick official landing — choose language or auto-redirect based on browser. Korean, English, Japanese versions with shared design and interactive demo.">
+  <meta property="og:title" content="AquaTick — Language selection">
+  <meta property="og:description" content="The cat that gently helps with daily hydration. Choose Korean, English, or Japanese.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/aquatick-app-icon.png">
+  <meta property="og:image" content="/assets/aquatick-app-icon.png">
   <meta name="theme-color" content="#14F0C8">
-  <link rel="icon" href="assets/aquatick-app-icon.png" type="image/png">
-  <link rel="apple-touch-icon" href="assets/aquatick-app-icon.png">
-  <link rel="preload" href="assets/screenshot-iphone-home.png" as="image">
+  <link rel="icon" href="/assets/aquatick-app-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/aquatick-app-icon.png">
+  <link rel="preload" href="/assets/screenshot-iphone-home.png" as="image">
+  <!-- Root language detector + chooser: hreflang + canonical -->
+  <link rel="canonical" href="https://sparkish-xyz.github.io/">
+  <link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/ko/">
+  <link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/en/">
+  <link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/ja/">
+  <link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/">
   <style>
+    /* NOTE ON CSS BLOAT (review issue #2):
+       This <style> retains the full original landing CSS (including .mood-section, .judgment, .cat-film, .film-strip etc.)
+       even though the root chooser page only uses .site-header, .brand, .nav-links, .hero-badge, .btn*, footer and basics.
+       Kept as-is for zero-risk (no build step, no separate CSS files, exact pattern match with language pages).
+       In a future iteration a CSS purge or split stylesheet could be added, but that would violate the "smallest change / no new patterns" rule applied here.
+       The bloat is accepted trade-off for the current static GitHub Pages setup.
+    */
     :root {
       /* 2026 MZ playful palette — bright, chunky, anti-corporate */
       --ink: #1F2A3D;
@@ -126,35 +139,6 @@
       border-color: var(--ink);
     }
 
-    /* HERO — Cat front and center, attitude max */
-    .hero {
-      background: linear-gradient(165deg, var(--cream) 0%, #FFF1D6 55%, var(--paper) 100%);
-      border-bottom: 6px solid var(--ink);
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      /* subtle riso/halftone vibe via dot pattern */
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle at 1px 1px, rgba(31,42,61,0.06) 1px, transparent 0);
-      background-size: 5px 5px;
-      pointer-events: none;
-      mix-blend-mode: multiply;
-    }
-
-    .hero-inner {
-      padding: 52px 18px 44px;
-      max-width: 980px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-      position: relative;
-      z-index: 1;
-    }
-
     .hero-badge {
       display: inline-flex;
       align-items: center;
@@ -170,31 +154,6 @@
       transform: rotate(-3deg);
       width: fit-content;
       letter-spacing: 0.5px;
-    }
-
-    .hero h1 {
-      font-size: var(--big);
-      line-height: 1.05;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      margin: 0 0 14px;
-      max-width: 18ch;
-    }
-
-    .hero-tagline {
-      font-size: 1.22rem;
-      font-weight: 700;
-      line-height: 1.35;
-      color: var(--navy);
-      max-width: 22ch;
-      margin-bottom: 18px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 8px;
     }
 
     .btn {
@@ -696,340 +655,89 @@
   </style>
 </head>
 <body>
+  <!-- Root: language detection + chooser for proper /ko /en /ja structure (GitHub Pages static friendly) -->
   <header class="site-header">
-    <a class="brand" href="#top">
-      <img src="assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick 아이콘">
+    <a class="brand" href="/">
+      <img src="/assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick icon">
       <span>AquaTick</span>
     </a>
-    <nav class="nav-links">
-      <a href="#mood">3초 체험</a>
-      <a href="#judgment">함께하는 방식</a>
-      <a href="#film">함께한 순간</a>
-      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">지원</a>
+    <nav class="nav-links" aria-label="Language selection">
+      <a href="/ko/" aria-label="Switch to Korean">한국어</a>
+      <a href="/en/" aria-label="Switch to English">English</a>
+      <a href="/ja/" aria-label="Switch to Japanese">日本語</a>
     </nav>
   </header>
 
-  <main id="top">
-    <!-- HERO: The cat has main character energy -->
-    <section class="hero" aria-label="AquaTick 메인">
-      <div class="hero-inner">
-        <div>
-          <div class="hero-badge">실제 앱 안에 고양이 있음</div>
-          
-          <h1>이 고양이가<br>당신의 하루 수분을<br>함께 챙겨줍니다.</h1>
-          
-          <p class="hero-tagline">0mL가 되면 고양이가 조용히 물컵을 들고 기다립니다.<br>그 표정을 보면 자연스럽게 손이 가요.</p>
+  <main style="max-width: 720px; margin: 0 auto; padding: 60px 18px 80px; text-align: center;">
+    <div style="margin-bottom: 24px;">
+      <div class="hero-badge" style="margin: 0 auto 16px;">🌐 언어 / Language</div>
+      <h1 style="font-size: var(--big); line-height: 1.05; font-weight: 900; letter-spacing: -0.04em; margin: 0 0 12px;">
+        환영합니다.<br>Choose your language.
+      </h1>
+      <p style="font-size: 1.15rem; font-weight: 700; color: var(--navy); max-width: 26ch; margin: 0 auto 28px;">
+        브라우저 언어에 따라 자동으로 이동합니다.<br>Your preference is remembered.
+      </p>
+    </div>
 
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">App Store에서 고양이 데려오기</a>
-            <a class="btn btn-secondary" href="#judgment">함께하는 방식 먼저 보기</a>
-          </div>
+    <!-- Chunky language chooser buttons (reusing .btn styles for visual consistency) -->
+    <div style="display: flex; flex-direction: column; gap: 14px; max-width: 420px; margin: 0 auto;">
+      <a class="btn btn-primary" href="/ko/" style="font-size: 1.15rem;" onclick="localStorage.setItem('aquaLangPref','ko');">
+        한국어 — 한국어로 보기
+      </a>
+      <a class="btn btn-secondary" href="/en/" style="font-size: 1.15rem;" onclick="localStorage.setItem('aquaLangPref','en');">
+        English — View in English
+      </a>
+      <a class="btn btn-secondary" href="/ja/" style="font-size: 1.15rem;" onclick="localStorage.setItem('aquaLangPref','ja');">
+        日本語 — 日本語で表示
+      </a>
+    </div>
 
-          <div style="margin-top:18px; font-size:0.82rem; font-weight:700; color:#5F6B7A;">
-            iPhone · Apple Watch · 위젯 · Live Activity 전부 고양이 출현
-          </div>
-        </div>
-
-        <!-- The actual cat, front and center -->
-        <div class="hero-visual">
-          <div class="iphone-frame">
-            <img src="assets/screenshot-iphone-home.png" width="1290" height="2796" 
-                 alt="AquaTick iPhone 홈 — 고양이가 미소 지으며 1.35L를 달성한 화면, 수평 teal 진행 바와 남은 양 표시">
-          </div>
-          <div class="cat-sticker">진짜 고양이임</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MOOD CHECKER + WATER FILL: Light playful interaction -->
-    <section id="mood" class="mood-section">
-      <div class="mood-inner">
-        <span class="section-label">3초만에 체험해보기</span>
-        <h2 class="mood-title">고양이와 함께<br>빠르게 기록해보세요</h2>
-
-        <!-- 실제 앱 홈 카드 + Watch 스타일 빠른 추가 (DESIGN.md 준수: 수평 waterline progress, CatHydration 상태별, +200/+300) -->
-        <div class="app-demo">
-          <div class="demo-card">
-            <div class="demo-main">
-              <img id="demo-cat" class="demo-cat" src="assets/cat-empty.png" width="96" height="96" alt="고양이 수분 상태 — 현재 진행에 따라 empty / thirsty / hero 표정으로 변화">
-              <div class="demo-stats">
-                <div class="demo-total"><span id="demo-total">0</span><small>mL</small></div>
-                <div class="demo-goal">오늘 목표 2L · <span id="demo-pct">0</span>%</div>
-                <div class="demo-progress" aria-hidden="true">
-                  <div class="demo-progress-fill" id="demo-progress-fill" style="width: 0%"></div>
-                </div>
-                <div class="demo-remain">오늘 남은 양 <span id="demo-remain">2000</span>mL</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="demo-actions">
-            <button class="quick-add-btn" data-add="200" aria-label="200밀리리터 추가">+200</button>
-            <button class="quick-add-btn" data-add="300" aria-label="300밀리리터 추가">+300</button>
-            <button class="undo-btn" id="demo-undo" aria-label="마지막 물 추가 취소">되돌리기</button>
-          </div>
-          <div id="demo-message" class="demo-message" aria-live="polite"></div>
-        </div>
-        <p class="demo-hint">실제 앱과 동일한 빠른 기록 흐름을 여기서 먼저 느껴보세요. 고양이가 당신의 수분을 기억하고 표정으로 응원합니다.</p>
-      </div>
-    </section>
-
-    <!-- THE 3 JUDGMENTS — replaces dry feature grid with cat attitude -->
-    <section id="judgment" class="judgment">
-      <div class="judgment-inner">
-        <h2>고양이가 함께하는<br>세 가지 약속</h2>
-        <p class="judgment-subtitle">이 고양이가 당신을 기억하고 따뜻하게 응원하는 방식입니다.</p>
-
-        <div class="judgment-grid">
-          <!-- Judgment 1 -->
-          <article class="judgment-card">
-            <div class="judgment-number">약속 01</div>
-            <h3>기다림의 순간</h3>
-            <p>0mL가 되면 고양이가 물컵을 들고 조용히 기다립니다. 그 부드러운 표정을 보면 자연스럽게 물을 챙기게 돼요.</p>
-            <span class="cat-face">😿</span>
-          </article>
-
-          <!-- Judgment 2 -->
-          <article class="judgment-card">
-            <div class="judgment-number">약속 02</div>
-            <h3>기억과 응원</h3>
-            <p>목표를 정하면 고양이가 기억해 둡니다. 당신이 잊어도 고양이는 잊지 않아요. 알림은 부드러운 격려처럼 다가옵니다.</p>
-            <span class="cat-face">😼</span>
-          </article>
-
-          <!-- Judgment 3 -->
-          <article class="judgment-card">
-            <div class="judgment-number">약속 03</div>
-            <h3>손목 위의 친구</h3>
-            <p>Watch에서 +200을 누를 때마다 손목에 고양이가 함께하는 느낌이 들어요. 귀가 올라가는 건 아니지만, 기분은 정말 좋아집니다.</p>
-            <span class="cat-face">😺</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- CAT FILM STRIP: Screenshots as starring moments -->
-    <section id="film" class="cat-film">
-      <div class="cat-film-inner">
-        <div class="film-header">
-          <h2>고양이와 함께한 순간들</h2>
-          <span class="sub">실제 앱 화면</span>
-        </div>
-
-        <div class="film-strip">
-          <!-- Film 1: Home -->
-          <div class="film-card">
-            <img src="assets/screenshot-iphone-home.png" width="1290" height="2796" loading="lazy"
-                 alt="AquaTick iPhone 홈 화면 — 고양이와 함께 1.35L 달성, 수평 진행 바와 상세 상태">
-            <div class="film-caption">
-              <strong>순간 1</strong>
-              고양이가 미소 짓는 홈 카드. 1.35L 기록 후의 따뜻한 순간.
-            </div>
-          </div>
-
-          <!-- Film 2: History -->
-          <div class="film-card">
-            <img src="assets/screenshot-iphone-history.png" width="1290" height="2796" loading="lazy"
-                 alt="AquaTick 히스토리 — 달력과 일별 물 기록, 고양이 캐릭터와 함께">
-            <div class="film-caption">
-              <strong>순간 2</strong>
-              히스토리로 흐름을 확인. 고양이와 함께 쌓아가는 매일의 기록.
-            </div>
-          </div>
-
-          <!-- Film 3: Watch -->
-          <div class="film-card">
-            <img src="assets/screenshot-watch-home.png" width="416" height="496" loading="lazy"
-                 alt="AquaTick Apple Watch — 0mL에서 +200 +300 빠른 추가 버튼이 있는 크림 카드">
-            <div class="film-caption">
-              <strong>순간 3</strong>
-              손목 위에서 +200, +300으로 3초 만에 기록. 고양이와 함께하는 일상.
-            </div>
-          </div>
-        </div>
-
-        <div class="paw-divider">🐾 🐾 🐾</div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS: Real chaotic energy -->
-    <section class="testimonials">
-      <div class="testimonials-inner">
-        <h2>고양이와 함께하는<br>사람들</h2>
-
-        <div class="quote-grid">
-          <div class="quote">
-            <p>"새벽 2시 47분에 고양이 알림 받고 일어나서 물 400mL 마셨어요. 고마우면서도 놀랐어요. 지금은 위젯을 고정해 두고 지내요."</p>
-            <div class="quote-author">— 지수 (27, 성수 디자이너)</div>
-          </div>
-          <div class="quote">
-            <p>"Watch에서 고양이 보고 +200을 연타하게 돼요. 친구들에게 '이 고양이 한번 봐' 하면서 스크린샷을 여러 장 보냈어요. 여러분도 느껴보세요."</p>
-            <div class="quote-author">— 민준 (29, 개발자)</div>
-          </div>
-          <div class="quote">
-            <p>"0mL가 될 때마다 고양이가 기다리는 표정이 인상적이에요. 그래서 더 자주 물을 챙기게 됐어요. 재미있으면서도 고마운 앱이에요."</p>
-            <div class="quote-author">— 혜린 (26, 마케터)</div>
-          </div>
-          <div class="quote">
-            <p>"Lock Screen에 고양이를 두고 하루에 여러 번 물을 마시게 됐어요. 원래는 거의 안 마셨는데, 이 고양이 덕분에 습관이 생겼어요."</p>
-            <div class="quote-author">— 태현 (28, 프리랜서)</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL LOUD CTA -->
-    <section class="final-cta">
-      <div class="final-inner">
-        <h2>고양이와 함께<br>오늘부터<br>시작해보세요.</h2>
-        <p>이미 많은 분들이 이 고양이와 함께 수분을 챙기고 있어요.<br>당신도 함께해 보세요.</p>
-        
-        <a class="btn" href="https://apps.apple.com/app/aquatick/id6762686013">
-          App Store에서 고양이 데려오기
-        </a>
-      </div>
-    </section>
+    <p style="margin-top: 32px; font-size: 0.82rem; font-weight: 700; color: var(--muted); line-height: 1.5;">
+      처음 방문 시 <strong>navigator.language</strong>를 감지해<br>
+      /ko /en /ja 중 적합한 버전으로 안내합니다.<br>
+      (GitHub Pages 정적 호스팅, 서버 라우팅 없음)
+    </p>
   </main>
 
   <footer>
     <p>
       © 2026 Sparkish · AquaTick<br>
-      이 페이지는 고양이의 기분이 좋은 날에 제작되었습니다.<br>
-      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">지원</a> · 
-      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">개인정보 처리방침</a>
+      이 페이지는 고양이의 기분이 좋은 날에 제작되었습니다.
     </p>
   </footer>
 
   <script>
-    // 3초 체험 데모 — 실제 AquaTick 앱 홈/워치 경험 재현 (단일 상태 source of truth, DESIGN.md waterline progress + Cat states)
+    // Early language detection + redirect (runs before paint where possible)
+    // Priority: 1. localStorage preference 2. navigator.language 3. fallback /ko/
     (function() {
-      const totalEl = document.getElementById('demo-total');
-      const pctEl = document.getElementById('demo-pct');
-      const remainEl = document.getElementById('demo-remain');
-      const fillEl = document.getElementById('demo-progress-fill');
-      const catEl = document.getElementById('demo-cat');
-      const msgEl = document.getElementById('demo-message');
-      const undoBtn = document.getElementById('demo-undo');
+      try {
+        var pref = localStorage.getItem('aquaLangPref');
+        var lang = (pref || (navigator.language || navigator.userLanguage || 'ko')).toLowerCase();
+        var target = null;
 
-      if (!totalEl || !pctEl || !remainEl || !fillEl || !catEl || !msgEl || !undoBtn) return; // safety if structure changes
-
-      const GOAL = 2000;
-      const THRESHOLDS = { LOW: 30, HIGH: 68 }; // HIGH 68 matches DESIGN.md + screenshot-iphone-home.png (1.35L / 68% uses CatHydrationHero happy)
-      let current = 0; // 0mL 시작 — 3초 만에 기록하는 전체 여정 체험
-      let lastAdd = 0;
-
-      const CAT_STATES = {
-        low: 'assets/cat-empty.png',
-        mid: 'assets/cat-thirsty.png',
-        high: 'assets/cat-hero.png'
-      };
-
-      function getCatSrc(pct) {
-        if (pct < THRESHOLDS.LOW) return CAT_STATES.low;
-        if (pct < THRESHOLDS.HIGH) return CAT_STATES.mid;
-        return CAT_STATES.high;
-      }
-
-      function updateUI(animate) {
-        const pct = Math.min(100, Math.round((current / GOAL) * 100));
-        const remain = Math.max(0, GOAL - current);
-
-        totalEl.textContent = current.toLocaleString('ko-KR');
-        pctEl.textContent = pct;
-        remainEl.textContent = remain.toLocaleString('ko-KR');
-
-        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (fillEl) {
-          fillEl.style.transition = (animate && !reduced) ? 'width 260ms cubic-bezier(0.23, 1, 0.32, 1)' : 'none';
-          fillEl.style.width = pct + '%';
-        }
-
-        const newSrc = getCatSrc(pct);
-        const base = newSrc.split('/').pop();
-        if (catEl.dataset.currentCat !== base) {
-          catEl.src = newSrc;
-          catEl.dataset.currentCat = base;
-        }
-      }
-
-      function showMessage(text) {
-        if (!msgEl) return;
-        msgEl.textContent = text;
-        setTimeout(() => {
-          if (msgEl.textContent === text) msgEl.textContent = '';
-        }, 1600);
-      }
-
-      function addWater(amount) {
-        const prev = current;
-        current = Math.min(GOAL, current + amount);
-        lastAdd = current - prev;
-        updateUI(true);
-
-        const pct = Math.round((current / GOAL) * 100);
-        if (pct >= 100) {
-          showMessage('🎉 목표 달성! 고양이가 기뻐해요.');
-        } else if (lastAdd > 0) {
-          showMessage('기록 완료! 고양이가 응원해요.');
-        }
-        if (undoBtn) undoBtn.disabled = (lastAdd <= 0);
-      }
-
-      function undoLast() {
-        if (lastAdd > 0 && undoBtn) {
-          current = Math.max(0, current - lastAdd);
-          lastAdd = 0;
-          updateUI(true);
-          showMessage('취소했어요. 다시 시작해볼까요?');
-          undoBtn.disabled = true;
-        }
-      }
-
-      // Attach listeners (44pt+ touch targets via CSS)
-      document.querySelectorAll('.quick-add-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          const amt = parseInt(btn.getAttribute('data-add'), 10) || 200;
-          addWater(amt);
-        });
-      });
-      if (undoBtn) {
-        undoBtn.addEventListener('click', undoLast);
-        undoBtn.disabled = true;
-      }
-
-      // Init
-      updateUI(false);
-    })();
-
-    // Tiny header shadow on scroll (kept from original, still nice)
-    (function() {
-      const nav = document.querySelector('.site-header');
-      if (!nav) return;
-      let last = 0;
-      window.addEventListener('scroll', function() {
-        const y = window.scrollY || 0;
-        if (y > 60 && y > last) {
-          nav.style.boxShadow = '0 4px 0 var(--ink)';
+        if (pref === 'ko' || pref === 'en' || pref === 'ja') {
+          target = '/' + pref + '/';
+        } else if (lang.startsWith('ko')) {
+          target = '/ko/';
+        } else if (lang.startsWith('en')) {
+          target = '/en/';
+        } else if (lang.startsWith('ja')) {
+          target = '/ja/';
         } else {
-          nav.style.boxShadow = '0 2px 0 rgba(0,0,0,0.04)';
+          target = '/ko/'; // default to polished Korean content
         }
-        last = y;
-      }, { passive: true });
-    })();
 
-    // Bonus: clicking the cat sticker in hero gives a little chaos
-    (function() {
-      const sticker = document.querySelector('.cat-sticker');
-      if (!sticker) return;
-      sticker.addEventListener('click', () => {
-        const orig = sticker.textContent;
-        sticker.textContent = '고양이 진짜임 ㅋㅋ';
-        sticker.style.transform = 'rotate(-8deg) scale(1.1)';
-        setTimeout(() => {
-          sticker.textContent = orig;
-          sticker.style.transform = 'rotate(12deg) scale(1)';
-        }, 1100);
-      });
+        // Only redirect if we are exactly at the root (avoid loops on direct /ko/ etc)
+        // Robust against trailing slash, query strings, and /index.html variants (review #7)
+        var p = location.pathname.replace(/\/$/, '');
+        if (target && (p === '' || p === '/index.html' || p === '/index')) {
+          // Use replace to avoid back-button issues
+          location.replace(target);
+          return;
+        }
+      } catch (e) {
+        // localStorage or navigator blocked — fall through to manual chooser
+      }
     })();
   </script>
 </body>
