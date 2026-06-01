@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="format-detection" content="telephone=no">
-  <title>AquaTick | 언어 선택 / Choose language / 言語を選択</title>
-  <meta name="description" content="AquaTick official landing — choose language or auto-redirect based on browser. Korean, English, Japanese versions with shared design and interactive demo.">
+  <title>AquaTick | Hydration tracker app language selection</title>
+  <meta name="description" content="Choose the Korean, English, or Japanese AquaTick landing page. AquaTick is a hydration tracker app for iPhone, Apple Watch, and widgets.">
   <meta property="og:title" content="AquaTick — Language selection">
-  <meta property="og:description" content="The cat that gently helps with daily hydration. Choose Korean, English, or Japanese.">
+  <meta property="og:description" content="Choose your language for AquaTick, a cat-themed hydration tracker app for iPhone, Apple Watch, and widgets.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/aquatick-app-icon.png">
+  <meta property="og:url" content="https://sparkish-xyz.github.io/">
+  <meta property="og:image" content="https://sparkish-xyz.github.io/assets/aquatick-app-icon.png">
+  <meta property="og:image:alt" content="AquaTick app icon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AquaTick — Hydration tracker app">
+  <meta name="twitter:description" content="Choose your language for AquaTick, a cat-themed hydration tracker app for iPhone, Apple Watch, and widgets.">
+  <meta name="twitter:image" content="https://sparkish-xyz.github.io/assets/aquatick-app-icon.png">
+  <meta name="apple-itunes-app" content="app-id=6762686013">
   <meta name="theme-color" content="#14F0C8">
   <link rel="icon" href="/assets/aquatick-app-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/assets/aquatick-app-icon.png">
@@ -21,6 +28,40 @@
   <link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/en/">
   <link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/ja/">
   <link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://sparkish-xyz.github.io/#website",
+        "name": "AquaTick",
+        "url": "https://sparkish-xyz.github.io/",
+        "inLanguage": ["ko", "en", "ja"],
+        "publisher": { "@id": "https://sparkish-xyz.github.io/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://sparkish-xyz.github.io/#organization",
+        "name": "Sparkish",
+        "url": "https://sparkish-xyz.github.io/",
+        "logo": "https://sparkish-xyz.github.io/assets/aquatick-app-icon.png"
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://sparkish-xyz.github.io/#app",
+        "name": "AquaTick",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "iOS, watchOS",
+        "installUrl": "https://apps.apple.com/app/aquatick/id6762686013",
+        "image": "https://sparkish-xyz.github.io/assets/aquatick-app-icon.png",
+        "description": "AquaTick is a hydration tracker app for iPhone, Apple Watch, and widgets.",
+        "inLanguage": ["ko", "en", "ja"],
+        "publisher": { "@id": "https://sparkish-xyz.github.io/#organization" }
+      }
+    ]
+  }
+  </script>
   <style>
     /* NOTE ON CSS BLOAT (review issue #2):
        This <style> retains the full original landing CSS (including .mood-section, .judgment, .cat-film, .film-strip etc.)
