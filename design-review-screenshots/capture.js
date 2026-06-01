@@ -37,6 +37,7 @@ const DEFAULT_TARGET = `file://${path.resolve(process.cwd(), 'ko/index.html')}`;
 // NOTE (review #4): Primary visual regression targets the core designed Korean content (/ko/).
 // en/ and ja/ are faithful translations; they inherit the same CSS/JS but are not separately captured unless TARGET_URL is overridden.
 // Legacy .showcase/.watch-frame locators remain for backward compat (they safely no-op when absent).
+// Mobile header wrap states (flex-wrap + align flex-start on <=720px, taller header on long-label ko/ja pages, different en lengths) are now exercised on narrow viewports.
 const TARGET_URL = process.env.TARGET_URL || DEFAULT_TARGET;
 
 // Simple CLI arg parsing (no extra deps)
@@ -51,6 +52,7 @@ const PHASE = (getArg('--phase') || process.env.PHASE || 'current').toLowerCase(
 const PHASE_DIR = path.join(OUTPUT_DIR, PHASE);
 
 const VIEWPORTS = [
+  { name: 'edge-narrow-320', width: 320, height: 568, label: 'Edge Narrow 320px (critical narrow header wrap regression, long labels)' },
   { name: 'iphone-se', width: 375, height: 667, label: 'iPhone SE (375px)' },
   { name: 'iphone-14', width: 390, height: 844, label: 'iPhone 14/16 (390px)' },
   { name: 'iphone-16-pro', width: 402, height: 874, label: 'iPhone 16 Pro (402px)' },

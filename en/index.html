@@ -696,6 +696,34 @@
       .mood-inner, .judgment-inner, .cat-film-inner, .testimonials-inner { max-width: 980px; }
     }
 
+    @media (max-width: 720px) {
+      /* 720px boundary shared intentionally with existing min-width:720px hero for progressive enhancement; no soft transition added to keep change minimal (per review) */
+      .site-header {
+        gap: 6px;
+        padding: 8px 10px;
+        padding-top: calc(8px + env(safe-area-inset-top));
+        align-items: flex-start;
+      }
+      .brand {
+        font-size: 0.95rem;
+        gap: 4px;
+      }
+      .brand img {
+        width: 28px;
+        height: 28px;
+      }
+      .nav-links {
+        gap: 2px;
+        row-gap: 2px;
+        font-size: 0.72rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .nav-links a {
+        padding: 5px 6px;
+      }
+    }
+
     /* Tiny focus styles */
     .btn:focus-visible, .quick-add-btn:focus-visible, .undo-btn:focus-visible {
       outline: 3px solid var(--aqua);
