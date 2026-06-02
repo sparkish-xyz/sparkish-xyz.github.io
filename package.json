@@ -1,0 +1,24 @@
+{
+  "name": "sparkish-landingpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:routes": "playwright test tests/routes.spec.ts",
+    "capture:local": "node design-review-screenshots/capture.js",
+    "capture:deployed": "node design-review-deployed/capture-live.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-sparkish:sparkish-xyz/sparkish-xyz.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "playwright": "^1.60.0"
+  }
+}

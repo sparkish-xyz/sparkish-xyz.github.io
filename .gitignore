@@ -1,7 +1,6 @@
 # Temporary files from visual review
 node_modules/
-package.json
-package-lock.json
+test-results/
 
 # Large Playwright screenshots (kept locally for reference)
 design-review-screenshots/*.png

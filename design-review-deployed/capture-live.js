@@ -1,7 +1,7 @@
 const { chromium, webkit } = require('playwright');
 
 (async () => {
-  const url = 'https://sparkish-xyz.github.io/ko/';
+  const url = process.env.TARGET_URL || 'https://sparkish-xyz.github.io/aquatick/ko/';
   // NOTE (review #4): Captures the primary Korean design. en/ja translations share the same visual system but are not auto-captured here.
   const viewports = [
     { name: 'iphone-se', width: 375, height: 667 },

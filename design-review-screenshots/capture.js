@@ -7,8 +7,8 @@
  * visual bug fix (and ongoing regression detection).
  *
  * Key improvements in this version (addressing reviewer feedback):
- * - Configurable target URL via TARGET_URL env var (defaults to relative file:// next to repo root).
- *   No more hardcoded absolute personal paths. Defaults to /ko/index.html (the primary designed Korean content after multilingual restructure).
+ * - Configurable target URL via TARGET_URL env var (default: http://127.0.0.1:8080/aquatick/ko/).
+ *   Requires a local static server — absolute /aquatick/assets/ paths break under file://.
  * - Phase separation (--phase before|after|current) writes to dedicated subdirectories.
  *   Prevents overwriting pre-fix evidence on post-fix runs.
  * - Added critical missing scenarios:
@@ -32,13 +32,39 @@ const path = require('path');
 // --- Configuration (now flexible) ---
 const OUTPUT_DIR = path.resolve(__dirname, '..', 'design-review-screenshots');
 
-// Resolve target URL relative to CWD so the script works from any checkout / machine
-const DEFAULT_TARGET = `file://${path.resolve(process.cwd(), 'ko/index.html')}`;
-// NOTE (review #4): Primary visual regression targets the core designed Korean content (/ko/).
+// Default: local static server (see README). Override with TARGET_URL for deployed captures.
+const DEFAULT_TARGET = 'http://127.0.0.1:8080/aquatick/ko/';
+const ALLOWED_TARGET_HOSTS = new Set(['127.0.0.1', 'localhost', 'sparkish-xyz.github.io']);
+
+function resolveTargetUrl(raw) {
+  const urlString = raw || DEFAULT_TARGET;
+  let u;
+  try {
+    u = new URL(urlString);
+  } catch (e) {
+    console.error('Invalid TARGET_URL (not a URL):', urlString);
+    process.exit(1);
+  }
+  if (u.protocol === 'file:') {
+    console.error('file:// TARGET_URL not allowed; use http://127.0.0.1:8080/... or sparkish-xyz.github.io');
+    process.exit(1);
+  }
+  if (!ALLOWED_TARGET_HOSTS.has(u.hostname)) {
+    console.error('TARGET_URL host not allowed:', u.hostname, '(allowed:', [...ALLOWED_TARGET_HOSTS].join(', '), ')');
+    process.exit(1);
+  }
+  if ((u.hostname === '127.0.0.1' || u.hostname === 'localhost') && u.port && u.port !== '8080') {
+    console.error('Local TARGET_URL must use port 8080, got:', u.port);
+    process.exit(1);
+  }
+  return urlString;
+}
+
+// NOTE: Primary visual regression targets the core designed Korean content (/aquatick/ko/).
 // en/ and ja/ are faithful translations; they inherit the same CSS/JS but are not separately captured unless TARGET_URL is overridden.
 // Legacy .showcase/.watch-frame locators remain for backward compat (they safely no-op when absent).
 // Mobile header wrap states (flex-wrap + align flex-start on <=720px, taller header on long-label ko/ja pages, different en lengths) are now exercised on narrow viewports.
-const TARGET_URL = process.env.TARGET_URL || DEFAULT_TARGET;
+const TARGET_URL = resolveTargetUrl(process.env.TARGET_URL);
 
 // Simple CLI arg parsing (no extra deps)
 function getArg(name, defaultVal = null) {

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Candidate 4 — Apple HIG Prototype | AquaTick</title>
   <meta name="description" content="iOS 네이티브 느낌의 AquaTick 랜딩 페이지 프로토타입 — Apple HIG, Dynamic Type, Liquid Glass, 디바이스 프레임 데모">
+  <!-- Dev prototype: serve from repo root (python3 -m http.server) so /aquatick/assets/ paths resolve. -->
   <style>
     :root {
       /* Apple HIG-inspired color system (evolved from existing) */
@@ -417,7 +418,7 @@
   <!-- iOS Glass Navigation (HIG UINavigationBar pattern) -->
   <nav class="ios-nav" aria-label="AquaTick navigation">
     <div class="brand">
-      <img src="assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick 아이콘">
+      <img src="/aquatick/assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick 아이콘">
       <span>AquaTick</span>
     </div>
     <div class="nav-actions">
@@ -451,7 +452,7 @@
       <div style="margin-top: 42px;">
         <figure class="device-frame iphone-frame" style="margin-bottom: 8px;">
           <div class="iphone-screen">
-            <img src="assets/screenshot-iphone-home.webp" width="1320" height="2868" 
+            <img src="/aquatick/assets/screenshot-iphone-home.webp" width="1320" height="2868" 
                  alt="AquaTick iPhone 홈 화면 — 진행 상황 링과 빠른 추가 버튼이 명확하게 보입니다">
           </div>
         </figure>
@@ -469,7 +470,7 @@
           <div class="ecosystem-item">
             <figure class="device-frame iphone-frame" style="width: min(240px, 68vw); margin:0 auto;">
               <div class="iphone-screen">
-                <img src="assets/screenshot-iphone-settings.webp" width="1320" height="2868" 
+                <img src="/aquatick/assets/screenshot-iphone-settings.webp" width="1320" height="2868" 
                      alt="AquaTick 설정 화면 — 목표와 알림 설정">
               </div>
             </figure>
@@ -480,7 +481,7 @@
           <div class="ecosystem-item">
             <figure class="device-frame watch-frame" style="margin: 0 auto;">
               <div class="watch-screen">
-                <img src="assets/screenshot-watch-home.webp" width="416" height="496" 
+                <img src="/aquatick/assets/screenshot-watch-home.webp" width="416" height="496" 
                      alt="Apple Watch에서 빠른 물 추가 컨트롤">
               </div>
             </figure>

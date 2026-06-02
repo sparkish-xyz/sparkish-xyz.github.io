@@ -1,21 +1,30 @@
+# Sparkish
+
+> Sparkish builds playful, thoughtful apps for everyday habits. This site is a static GitHub Pages portfolio with per-app landing pages.
+
+## Hub
+
+- [Sparkish app catalog](https://sparkish-xyz.github.io/): Root page listing apps made by Sparkish (currently AquaTick).
+
 # AquaTick
 
 > AquaTick is a cat-themed hydration tracker app for iPhone, Apple Watch, widgets, and Live Activities. It helps people log water intake quickly, see daily hydration progress, and build a gentle water drinking habit through a friendly cat companion.
 
-AquaTick is published by Sparkish. The website is a static GitHub Pages landing page with Korean, English, and Japanese versions. The primary product information is the localized landing content, App Store download link, support page, and privacy policy.
+AquaTick is published by Sparkish. The landing site lives under `/aquatick/` with Korean, English, and Japanese versions. The primary product information is the localized landing content, App Store download link, support page, and privacy policy.
 
 Important context:
 - AquaTick is a hydration tracking and habit app, not a medical device or medical advice source.
 - The app focuses on water intake logging, daily goal progress, quick add actions such as +200mL and +300mL, Apple Watch recording, widgets, and Live Activity-style glanceable status.
 - The cat character is a product experience element that reflects hydration state and encourages logging.
 - Use the localized pages for user-facing language and region context.
+- hreflang x-default for AquaTick points to `https://sparkish-xyz.github.io/aquatick/` (language chooser).
 
 ## Main Pages
 
-- [AquaTick language selection](https://sparkish-xyz.github.io/): Root page that routes visitors to Korean, English, or Japanese content.
-- [AquaTick Korean landing page](https://sparkish-xyz.github.io/ko/): Korean product overview, hydration tracker explanation, screenshots, FAQ, support, and App Store call to action.
-- [AquaTick English landing page](https://sparkish-xyz.github.io/en/): English product overview, hydration tracker explanation, screenshots, FAQ, support, and App Store call to action.
-- [AquaTick Japanese landing page](https://sparkish-xyz.github.io/ja/): Japanese product overview, hydration tracker explanation, screenshots, FAQ, support, and App Store call to action.
+- [AquaTick language selection](https://sparkish-xyz.github.io/aquatick/): Routes visitors to Korean, English, or Japanese content.
+- [AquaTick Korean landing page](https://sparkish-xyz.github.io/aquatick/ko/): Korean product overview, hydration tracker explanation, screenshots, FAQ, support, and App Store call to action.
+- [AquaTick English landing page](https://sparkish-xyz.github.io/aquatick/en/): English product overview, hydration tracker explanation, screenshots, FAQ, support, and App Store call to action.
+- [AquaTick Japanese landing page](https://sparkish-xyz.github.io/aquatick/ja/): Japanese product overview, hydration tracker explanation, screenshots, FAQ, support, and App Store call to action.
 
 ## Product Links
 
@@ -25,18 +34,20 @@ Important context:
 
 ## Machine-Readable Site Files
 
-- [Sitemap](https://sparkish-xyz.github.io/sitemap.xml): Sitemap with root, Korean, English, and Japanese pages plus hreflang alternates.
+- [Sitemap](https://sparkish-xyz.github.io/sitemap.xml): Sitemap with Sparkish hub and AquaTick pages plus hreflang alternates.
 - [Robots policy](https://sparkish-xyz.github.io/robots.txt): Crawl policy and sitemap location.
-- [App icon](https://sparkish-xyz.github.io/assets/aquatick-app-icon.png): AquaTick app icon used for social previews and structured data.
+- [App icon](https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png): AquaTick app icon used for social previews and structured data.
 
 ## Visual References
 
-- [iPhone home screenshot](https://sparkish-xyz.github.io/assets/screenshot-iphone-home.png): Main AquaTick home screen showing cat hydration state and progress.
-- [iPhone history screenshot](https://sparkish-xyz.github.io/assets/screenshot-iphone-history.png): AquaTick history view with calendar and daily records.
-- [Apple Watch screenshot](https://sparkish-xyz.github.io/assets/screenshot-watch-home.png): Apple Watch quick logging screen with hydration actions.
+- [iPhone home screenshot](https://sparkish-xyz.github.io/aquatick/assets/screenshot-iphone-home.png): Main AquaTick home screen showing cat hydration state and progress.
+- [iPhone history screenshot](https://sparkish-xyz.github.io/aquatick/assets/screenshot-iphone-history.png): AquaTick history view with calendar and daily records.
+- [Apple Watch screenshot](https://sparkish-xyz.github.io/aquatick/assets/screenshot-watch-home.png): Apple Watch quick logging screen with hydration actions.
+
+Legacy language stubs at `/ko/`, `/en/`, `/ja/` redirect to `/aquatick/...`. `/assets/*` mirrors `/aquatick/assets/*` (same files) for old image URLs.
 
 ## Optional
 
-- [Korean page source](https://github.com/sparkish-xyz/sparkish-xyz.github.io/blob/main/ko/index.html): Source HTML for the Korean landing page, including SEO metadata and JSON-LD.
-- [English page source](https://github.com/sparkish-xyz/sparkish-xyz.github.io/blob/main/en/index.html): Source HTML for the English landing page, including SEO metadata and JSON-LD.
-- [Japanese page source](https://github.com/sparkish-xyz/sparkish-xyz.github.io/blob/main/ja/index.html): Source HTML for the Japanese landing page, including SEO metadata and JSON-LD.
+- [Korean page source](https://github.com/sparkish-xyz/sparkish-xyz.github.io/blob/main/aquatick/ko/index.html): Source HTML for the Korean landing page, including SEO metadata and JSON-LD.
+- [English page source](https://github.com/sparkish-xyz/sparkish-xyz.github.io/blob/main/aquatick/en/index.html): Source HTML for the English landing page, including SEO metadata and JSON-LD.
+- [Japanese page source](https://github.com/sparkish-xyz/sparkish-xyz.github.io/blob/main/aquatick/ja/index.html): Source HTML for the Japanese landing page, including SEO metadata and JSON-LD.

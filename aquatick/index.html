@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="format-detection" content="telephone=no">
+  <title>AquaTick | Hydration tracker app language selection</title>
+  <meta name="description" content="Choose the Korean, English, or Japanese AquaTick landing page. AquaTick is a hydration tracker app for iPhone, Apple Watch, and widgets.">
+  <meta property="og:title" content="AquaTick — Language selection">
+  <meta property="og:description" content="Choose your language for AquaTick, a cat-themed hydration tracker app for iPhone, Apple Watch, and widgets.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sparkish-xyz.github.io/aquatick/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png">
+  <meta property="og:image:alt" content="AquaTick app icon">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AquaTick — Hydration tracker app">
+  <meta name="twitter:description" content="Choose your language for AquaTick, a cat-themed hydration tracker app for iPhone, Apple Watch, and widgets.">
+  <meta name="twitter:image" content="https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png">
+  <meta name="apple-itunes-app" content="app-id=6762686013">
+  <meta name="theme-color" content="#14F0C8">
+  <link rel="icon" href="/aquatick/assets/aquatick-app-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/aquatick/assets/aquatick-app-icon.png">
+  <link rel="preload" href="/aquatick/assets/screenshot-iphone-home.png" as="image">
+  <!-- AquaTick language chooser: hreflang + canonical -->
+  <link rel="canonical" href="https://sparkish-xyz.github.io/aquatick/">
+  <link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/">
+  <link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/">
+  <link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/">
+  <link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://sparkish-xyz.github.io/aquatick/#website",
+        "name": "AquaTick",
+        "url": "https://sparkish-xyz.github.io/aquatick/",
+        "inLanguage": ["ko", "en", "ja"],
+        "publisher": { "@id": "https://sparkish-xyz.github.io/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://sparkish-xyz.github.io/#organization",
+        "name": "Sparkish",
+        "url": "https://sparkish-xyz.github.io/",
+        "logo": "https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png"
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://sparkish-xyz.github.io/aquatick/#app",
+        "name": "AquaTick",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "iOS, watchOS",
+        "installUrl": "https://apps.apple.com/app/aquatick/id6762686013",
+        "image": "https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png",
+        "description": "AquaTick is a hydration tracker app for iPhone, Apple Watch, and widgets.",
+        "inLanguage": ["ko", "en", "ja"],
+        "publisher": { "@id": "https://sparkish-xyz.github.io/#organization" }
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* NOTE ON CSS BLOAT (review issue #2):
+       This <style> retains the full original landing CSS (including .mood-section, .judgment, .cat-film, .film-strip etc.)
+       even though the root chooser page only uses .site-header, .brand, .nav-links, .hero-badge, .btn*, footer and basics.
+       Kept as-is for zero-risk (no build step, no separate CSS files, exact pattern match with language pages).
+       In a future iteration a CSS purge or split stylesheet could be added, but that would violate the "smallest change / no new patterns" rule applied here.
+       The bloat is accepted trade-off for the current static GitHub Pages setup.
+    */
+    :root {
+      /* 2026 MZ playful palette — bright, chunky, anti-corporate */
+      --ink: #1F2A3D;
+      --paper: #FFF9F0;
+      --cream: #FFF7E6;
+      --aqua: #14F0C8;
+      --aqua-dark: #00C9A7;
+      --coral: #FF5E5B;
+      --coral-soft: #FF8A87;
+      --yellow: #FFE066;
+      --navy: #0F1C2E;
+      --muted: #5F6B7A;
+      --line: rgba(31, 42, 61, 0.12);
+      --shadow-heavy: 0 8px 0 #1F2A3D;
+      --shadow-sticker: 6px 8px 0 rgba(31, 42, 61, 0.18);
+
+      /* Chunky radii — hand-made sticker feel */
+      --r-16: 16px;
+      --r-24: 24px;
+      --r-28: 28px;
+      --r-32: 32px;
+      --r-full: 999px;
+
+      /* Fluid type */
+      --big: clamp(2.4rem, 9vw, 3.6rem);
+      --title: clamp(1.85rem, 6.8vw, 2.4rem);
+      --body: 1.05rem;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      font: -apple-system-body;
+      -webkit-text-size-adjust: 100%;
+      scroll-behavior: smooth;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+      font-size: var(--body);
+      line-height: 1.48;
+      letter-spacing: -0.01em;
+      padding-bottom: env(safe-area-inset-bottom);
+      padding-left: env(safe-area-inset-left);
+      padding-right: env(safe-area-inset-right);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    /* === CHUNKY PLAYFUL STYLES === */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 18px;
+      padding-top: calc(14px + env(safe-area-inset-top));
+      background: var(--cream);
+      border-bottom: 4px solid var(--ink);
+      box-shadow: 0 2px 0 rgba(0,0,0,0.04);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -0.03em;
+    }
+    .brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 3px solid var(--ink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+    .nav-links a {
+      padding: 8px 14px;
+      border-radius: 999px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      border: 3px solid transparent;
+    }
+    .nav-links a:hover {
+      background: var(--aqua);
+      color: var(--navy);
+      border-color: var(--ink);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--coral);
+      color: white;
+      font-weight: 900;
+      font-size: 0.82rem;
+      padding: 6px 18px;
+      border-radius: var(--r-full);
+      border: 4px solid var(--ink);
+      box-shadow: var(--shadow-sticker);
+      transform: rotate(-3deg);
+      width: fit-content;
+      letter-spacing: 0.5px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 58px;
+      padding: 0 28px;
+      font-size: 1.08rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      border-radius: var(--r-28);
+      border: 4px solid var(--ink);
+      transition: transform 80ms ease, box-shadow 80ms ease;
+      box-shadow: var(--shadow-heavy);
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn:active {
+      transform: translateY(3px) scale(0.985);
+      box-shadow: 0 2px 0 var(--ink);
+    }
+    .btn-primary {
+      background: var(--aqua);
+      color: var(--navy);
+    }
+    .btn-secondary {
+      background: white;
+      color: var(--ink);
+    }
+
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    .hero-visual .iphone-frame {
+      border: 6px solid var(--ink);
+      border-radius: var(--r-32);
+      box-shadow: var(--shadow-sticker), 0 30px 60px -20px rgba(0,0,0,0.25);
+      overflow: hidden;
+      background: #000;
+    }
+    .hero-visual img {
+      width: 100%;
+      display: block;
+    }
+    .cat-sticker {
+      position: absolute;
+      top: -14px;
+      right: -10px;
+      background: var(--yellow);
+      color: var(--ink);
+      font-weight: 900;
+      font-size: 0.78rem;
+      padding: 7px 16px;
+      border: 4px solid var(--ink);
+      border-radius: var(--r-24);
+      transform: rotate(12deg);
+      box-shadow: var(--shadow-sticker);
+      z-index: 10;
+      white-space: nowrap;
+    }
+
+    /* MOOD CHECKER — playful light interaction */
+    .mood-section {
+      background: var(--cream);
+      border-top: 4px solid var(--ink);
+      border-bottom: 4px solid var(--ink);
+      padding: 38px 18px;
+    }
+    .mood-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .section-label {
+      display: inline-block;
+      background: var(--coral);
+      color: white;
+      font-weight: 900;
+      font-size: 0.75rem;
+      padding: 4px 14px;
+      border-radius: var(--r-full);
+      border: 3px solid var(--ink);
+      margin-bottom: 14px;
+      transform: rotate(-1deg);
+    }
+    .mood-title {
+      font-size: var(--title);
+      font-weight: 900;
+      line-height: 1.1;
+      margin: 0 0 18px;
+    }
+
+    /* 3초 체험 데모 — 실제 앱 홈 카드 + 빠른 추가 (DESIGN.md: cream, aqua #14F0C8, horizontal waterline progress, sticker shadows, SF Pro) */
+    .app-demo {
+      margin-top: 12px;
+    }
+    .demo-card {
+      background: var(--cream);
+      border: 5px solid var(--ink);
+      border-radius: var(--r-28);
+      padding: 16px 14px;
+      box-shadow: var(--shadow-sticker);
+    }
+    .demo-main {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .demo-cat {
+      width: 96px;
+      height: 96px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--cream);
+      object-fit: contain;
+    }
+    .demo-stats {
+      flex: 1;
+      min-width: 0;
+    }
+    .demo-total {
+      font-size: 1.85rem;
+      font-weight: 900;
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+    }
+    .demo-total small {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .demo-goal {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 3px 0 5px;
+    }
+    .demo-progress {
+      height: 5px;
+      background: #E5E5EA;
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 5px;
+    }
+    .demo-progress-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--aqua), #5EFFE0);
+      transition: width 260ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .demo-remain {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .demo-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .quick-add-btn {
+      flex: 1 1 auto;
+      min-height: 52px;
+      font-size: 1.02rem;
+      font-weight: 900;
+      padding: 0 18px;
+      border: 4px solid var(--ink);
+      border-radius: var(--r-24);
+      background: var(--aqua);
+      color: var(--navy);
+      box-shadow: var(--shadow-sticker);
+      cursor: pointer;
+      transition: transform 80ms ease, box-shadow 80ms ease;
+    }
+    .quick-add-btn:active {
+      transform: translateY(2px) scale(0.985);
+      box-shadow: 0 2px 0 var(--ink);
+    }
+    .undo-btn {
+      flex: 0 0 auto;
+      min-height: 44px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      padding: 0 14px;
+      border: 3px solid var(--ink);
+      border-radius: var(--r-24);
+      background: white;
+      color: var(--ink);
+      box-shadow: var(--shadow-sticker);
+      cursor: pointer;
+    }
+    .undo-btn:disabled {
+      opacity: 0.55;
+      pointer-events: none;
+    }
+    .demo-message {
+      margin-top: 8px;
+      min-height: 1.3em;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--aqua-dark);
+      text-align: center;
+    }
+    .demo-hint {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.35;
+    }
+
+    /* JUDGMENT SECTION — the soul. 3 cat verdicts instead of feature grid */
+    .judgment {
+      padding: 48px 18px 38px;
+    }
+    .judgment-inner {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    .judgment h2 {
+      font-size: var(--title);
+      font-weight: 900;
+      line-height: 1.1;
+      margin: 0 0 8px;
+    }
+    .judgment-subtitle {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .judgment-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .judgment-card {
+      background: white;
+      border: 5px solid var(--ink);
+      border-radius: var(--r-28);
+      padding: 22px 20px 24px;
+      box-shadow: var(--shadow-sticker);
+      position: relative;
+    }
+    .judgment-card::before {
+      content: "🐾";
+      position: absolute;
+      top: -13px;
+      right: 18px;
+      font-size: 1.6rem;
+      background: var(--paper);
+      padding: 0 6px;
+    }
+    .judgment-number {
+      font-size: 0.75rem;
+      font-weight: 900;
+      background: var(--yellow);
+      color: var(--ink);
+      display: inline-block;
+      padding: 2px 11px;
+      border-radius: var(--r-full);
+      border: 3px solid var(--ink);
+      margin-bottom: 10px;
+    }
+    .judgment-card h3 {
+      font-size: 1.32rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin: 0 0 10px;
+    }
+    .judgment-card p {
+      font-weight: 700;
+      line-height: 1.45;
+      color: var(--navy);
+      margin: 0;
+    }
+    .judgment-card .cat-face {
+      font-size: 2.1rem;
+      margin-top: 14px;
+      display: block;
+    }
+
+    /* SCREENSHOT GALLERY — 고양이와 함께한 순간들 */
+    .cat-film {
+      background: var(--navy);
+      color: white;
+      padding: 44px 18px 52px;
+      border-top: 4px solid var(--ink);
+      border-bottom: 4px solid var(--ink);
+    }
+    .cat-film-inner {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .film-header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .film-header h2 {
+      font-size: var(--title);
+      font-weight: 900;
+      margin: 0;
+      color: var(--yellow);
+    }
+    .film-header .sub {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--aqua);
+    }
+
+    .film-strip {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 18px;
+    }
+    .film-strip::-webkit-scrollbar { display: none; }
+
+    .film-card {
+      flex: 0 0 auto;
+      width: min(268px, 78vw);
+      scroll-snap-align: start;
+      background: #111C2E;
+      border: 5px solid var(--aqua);
+      border-radius: var(--r-24);
+      overflow: hidden;
+      box-shadow: 0 10px 0 rgba(0,0,0,0.3);
+    }
+    .film-card img {
+      width: 100%;
+      border-bottom: 4px solid var(--aqua);
+    }
+    .film-caption {
+      padding: 14px 16px 16px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+    .film-caption strong {
+      display: block;
+      color: var(--yellow);
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+
+    /* TESTIMONIALS — real people who got judged by the cat */
+    .testimonials {
+      padding: 48px 18px;
+      background: var(--cream);
+    }
+    .testimonials-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .testimonials h2 {
+      font-size: var(--title);
+      font-weight: 900;
+      margin: 0 0 24px;
+      text-align: center;
+    }
+
+    .quote-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .quote {
+      background: white;
+      border: 4px solid var(--ink);
+      border-radius: var(--r-24);
+      padding: 18px 18px 18px;
+      box-shadow: var(--shadow-sticker);
+      position: relative;
+    }
+    .quote::before {
+      content: "😾";
+      position: absolute;
+      top: -9px;
+      left: 18px;
+      background: var(--paper);
+      padding: 0 4px;
+      font-size: 1.1rem;
+    }
+    .quote p {
+      font-weight: 700;
+      line-height: 1.5;
+      margin: 0 0 12px;
+      font-size: 0.98rem;
+    }
+    .quote-author {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--coral);
+    }
+
+    /* FINAL CHAOTIC CTA */
+    .final-cta {
+      background: var(--coral);
+      color: white;
+      padding: 42px 18px 54px;
+      text-align: center;
+      border-top: 5px solid var(--ink);
+      border-bottom: 5px solid var(--ink);
+    }
+    .final-inner {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .final-cta h2 {
+      font-size: clamp(1.9rem, 8vw, 2.6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+    .final-cta p {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0 0 22px;
+      opacity: 0.95;
+    }
+    .final-cta .btn {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+      background: var(--yellow);
+      color: var(--ink);
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 28px 18px 42px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.6;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    footer a { text-decoration: underline; font-weight: 600; }
+
+    /* Paw print divider */
+    .paw-divider {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 18px 0 4px;
+      font-size: 1.35rem;
+      opacity: 0.75;
+      user-select: none;
+    }
+
+    /* Responsive */
+    @media (min-width: 720px) {
+      .hero-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 42px;
+        padding: 68px 28px 58px;
+      }
+      .hero-visual {
+        max-width: 310px;
+        flex-shrink: 0;
+      }
+      .hero-actions {
+        flex-direction: row;
+      }
+      .judgment-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .quote-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .film-strip {
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+    @media (min-width: 980px) {
+      .hero-inner { max-width: 1080px; }
+      .mood-inner, .judgment-inner, .cat-film-inner, .testimonials-inner { max-width: 980px; }
+    }
+
+    @media (max-width: 720px) {
+      /* 720px boundary shared intentionally with existing min-width:720px hero for progressive enhancement; no soft transition added to keep change minimal (per review) */
+      .site-header {
+        gap: 6px;
+        padding: 8px 10px;
+        padding-top: calc(8px + env(safe-area-inset-top));
+        align-items: flex-start;
+      }
+      .brand {
+        font-size: 0.95rem;
+        gap: 4px;
+      }
+      .brand img {
+        width: 28px;
+        height: 28px;
+      }
+      .nav-links {
+        gap: 2px;
+        row-gap: 2px;
+        font-size: 0.72rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .nav-links a {
+        padding: 5px 6px;
+      }
+    }
+
+    /* Tiny focus styles */
+    .btn:focus-visible, .quick-add-btn:focus-visible, .undo-btn:focus-visible {
+      outline: 3px solid var(--aqua);
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body>
+  <!-- AquaTick language chooser (GitHub Pages static friendly) -->
+  <header class="site-header">
+    <a class="brand" href="/aquatick/">
+      <img src="/aquatick/assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick icon">
+      <span>AquaTick</span>
+    </a>
+    <nav class="nav-links" aria-label="Language selection">
+      <a href="/aquatick/ko/" data-aqua-lang="ko" aria-label="Switch to Korean">한국어</a>
+      <a href="/aquatick/en/" data-aqua-lang="en" aria-label="Switch to English">English</a>
+      <a href="/aquatick/ja/" data-aqua-lang="ja" aria-label="Switch to Japanese">日本語</a>
+    </nav>
+  </header>
+
+  <main style="max-width: 720px; margin: 0 auto; padding: 60px 18px 80px; text-align: center;">
+    <div style="margin-bottom: 24px;">
+      <div class="hero-badge" style="margin: 0 auto 16px;">🌐 언어 / Language</div>
+      <h1 style="font-size: var(--big); line-height: 1.05; font-weight: 900; letter-spacing: -0.04em; margin: 0 0 12px;">
+        환영합니다.<br>Choose your language.
+      </h1>
+      <p style="font-size: 1.15rem; font-weight: 700; color: var(--navy); max-width: 26ch; margin: 0 auto 28px;">
+        브라우저 언어에 따라 자동으로 이동합니다.<br>Your preference is remembered.
+      </p>
+    </div>
+
+    <!-- Chunky language chooser buttons (reusing .btn styles for visual consistency) -->
+    <div style="display: flex; flex-direction: column; gap: 14px; max-width: 420px; margin: 0 auto;">
+      <a class="btn btn-primary" href="/aquatick/ko/" data-aqua-lang="ko" style="font-size: 1.15rem;">
+        한국어 — 한국어로 보기
+      </a>
+      <a class="btn btn-secondary" href="/aquatick/en/" data-aqua-lang="en" style="font-size: 1.15rem;">
+        English — View in English
+      </a>
+      <a class="btn btn-secondary" href="/aquatick/ja/" data-aqua-lang="ja" style="font-size: 1.15rem;">
+        日本語 — 日本語で表示
+      </a>
+    </div>
+
+    <p style="margin-top: 32px; font-size: 0.82rem; font-weight: 700; color: var(--muted); line-height: 1.5;">
+      처음 방문 시 <strong>navigator.language</strong>를 감지해<br>
+      /aquatick/ko · /aquatick/en · /aquatick/ja 중 적합한 버전으로 안내합니다.<br>
+      (GitHub Pages 정적 호스팅, 서버 라우팅 없음)
+    </p>
+  </main>
+
+  <footer>
+    <p>
+      © 2026 <a href="/">Sparkish</a> · AquaTick<br>
+      이 페이지는 고양이의 기분이 좋은 날에 제작되었습니다.
+    </p>
+  </footer>
+
+  <script>
+    (function() {
+      var VALID = ['ko', 'en', 'ja'];
+      document.querySelectorAll('[data-aqua-lang]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var lang = el.getAttribute('data-aqua-lang');
+          if (VALID.indexOf(lang) !== -1) {
+            try { localStorage.setItem('aquaLangPref', lang); } catch (e) {}
+          }
+        });
+      });
+    })();
+    // Early language detection + redirect (runs before paint where possible)
+    // Priority: 1. localStorage preference 2. navigator.language 3. fallback /aquatick/ko/
+    (function() {
+      var VALID = ['ko', 'en', 'ja'];
+      try {
+        var pref = localStorage.getItem('aquaLangPref');
+        if (pref && VALID.indexOf(pref) === -1) pref = null;
+        var lang = (pref || (navigator.language || navigator.userLanguage || 'ko')).toLowerCase();
+        var target = null;
+
+        if (pref && VALID.indexOf(pref) !== -1) {
+          target = '/aquatick/' + pref + '/';
+        } else if (lang.startsWith('ko')) {
+          target = '/aquatick/ko/';
+        } else if (lang.startsWith('en')) {
+          target = '/aquatick/en/';
+        } else if (lang.startsWith('ja')) {
+          target = '/aquatick/ja/';
+        } else {
+          target = '/aquatick/ko/'; // default to polished Korean content
+        }
+
+        // Only redirect on AquaTick chooser root (avoid loops on language pages)
+        var p = location.pathname.replace(/\/$/, '');
+        if (target && (p === '/aquatick' || p === '/aquatick/index.html' || p === '/aquatick/index')) {
+          // Use replace to avoid back-button issues
+          location.replace(target);
+          return;
+        }
+      } catch (e) {
+        // localStorage or navigator blocked — fall through to manual chooser
+      }
+    })();
+  </script>
+</body>
+</html>
