@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Sparkish — Apps we make">
   <meta name="twitter:description" content="Playful apps from Sparkish. Start with AquaTick, a hydration tracker with a cat companion.">
   <meta name="twitter:image" content="https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png">
-  <meta name="theme-color" content="#14F0C8">
+  <meta name="theme-color" content="#00AD9E">
   <link rel="icon" href="/aquatick/assets/aquatick-app-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/aquatick/assets/aquatick-app-icon.png">
   <link rel="canonical" href="https://sparkish-xyz.github.io/">
@@ -60,18 +60,21 @@
   </script>
   <style>
     :root {
-      --ink: #1F2A3D;
-      --paper: #FFF9F0;
-      --cream: #FFF7E6;
-      --aqua: #14F0C8;
-      --coral: #FF5E5B;
-      --yellow: #FFE066;
-      --navy: #0F1C2E;
-      --muted: #5F6B7A;
-      --shadow-heavy: 0 8px 0 #1F2A3D;
-      --shadow-sticker: 6px 8px 0 rgba(31, 42, 61, 0.18);
-      --r-24: 24px;
-      --r-28: 28px;
+      /* AquaTick 2026 refresh — synced with aquatick/ landing tokens */
+      --ink: #0D2138;
+      --paper: #F7FAFC;
+      --cream: #FFFFFF;
+      --water-accent: #00AD9E;
+      --aqua: var(--water-accent);
+      --coral: #E63B59;
+      --yellow: #E6F5F2;
+      --navy: #0A1F38;
+      --muted: #4A6270;
+      --fine-border: rgba(13, 33, 56, 0.12);
+      --shadow-soft: 0 8px 16px rgba(13, 33, 56, 0.08);
+      --shadow-card: 0 4px 12px rgba(13, 33, 56, 0.06);
+      --r-card: 16px;
+      --r-control: 14px;
       --r-full: 999px;
       --big: clamp(2.2rem, 8vw, 3.2rem);
       --body: 1.05rem;
@@ -99,7 +102,8 @@
       padding: 14px 18px;
       padding-top: calc(14px + env(safe-area-inset-top));
       background: var(--cream);
-      border-bottom: 4px solid var(--ink);
+      border-bottom: 1px solid var(--fine-border);
+      box-shadow: var(--shadow-card);
     }
     .brand {
       display: inline-flex;
@@ -114,7 +118,7 @@
       height: 36px;
       border-radius: 10px;
       background: var(--aqua);
-      border: 3px solid var(--ink);
+      border: 1px solid var(--fine-border);
       display: grid;
       place-items: center;
       font-size: 1.1rem;
@@ -127,14 +131,14 @@
     .hero-badge {
       display: inline-flex;
       background: var(--coral);
-      color: white;
+      color: var(--navy);
       font-weight: 900;
       font-size: 0.82rem;
       padding: 6px 18px;
       border-radius: var(--r-full);
-      border: 4px solid var(--ink);
-      box-shadow: var(--shadow-sticker);
-      transform: rotate(-2deg);
+      border: 1px solid var(--fine-border);
+      box-shadow: var(--shadow-soft);
+      transform: none;
       margin-bottom: 16px;
     }
     h1 {
@@ -162,15 +166,15 @@
       align-items: center;
       padding: 22px;
       background: white;
-      border: 5px solid var(--ink);
-      border-radius: var(--r-28);
-      box-shadow: var(--shadow-heavy);
+      border: 1px solid var(--fine-border);
+      border-radius: var(--r-card);
+      box-shadow: var(--shadow-soft);
     }
     .app-card img {
       width: 88px;
       height: 88px;
       border-radius: 20px;
-      border: 4px solid var(--ink);
+      border: 1px solid var(--fine-border);
     }
     .app-card h2 {
       margin: 0 0 6px;
@@ -193,21 +197,21 @@
       padding: 0 22px;
       font-size: 1rem;
       font-weight: 800;
-      border-radius: var(--r-24);
-      border: 4px solid var(--ink);
-      box-shadow: var(--shadow-heavy);
-      background: var(--aqua);
+      border-radius: var(--r-control);
+      border: 1px solid var(--water-accent);
+      box-shadow: var(--shadow-soft);
+      background: var(--water-accent);
       color: var(--navy);
     }
-    .btn:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--ink); }
-    .btn:focus-visible { outline: 3px solid var(--aqua); outline-offset: 3px; }
+    .btn:active { transform: translateY(1px); box-shadow: var(--shadow-card); }
+    .btn:focus-visible { outline: 3px solid var(--water-accent); outline-offset: 3px; }
     footer {
       text-align: center;
       padding: 28px 18px 40px;
       font-size: 0.85rem;
       font-weight: 700;
       color: var(--muted);
-      border-top: 4px solid var(--ink);
+      border-top: 1px solid var(--fine-border);
       background: var(--cream);
     }
     footer a { text-decoration: underline; font-weight: 600; color: var(--ink); }

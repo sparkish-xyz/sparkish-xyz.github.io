@@ -89,4 +89,18 @@ test.describe('Sparkish site routes', () => {
     expect(res.status()).toBe(200);
     expect(res.headers()['content-type']).toMatch(/image/);
   });
+
+  test('mirrored /assets/ screenshots return 200', async ({ request }) => {
+    const screenshots = [
+      'screenshot-iphone-home.png',
+      'screenshot-iphone-history.png',
+      'screenshot-watch-home.png',
+      'screenshot-iphone-settings.png',
+    ];
+    for (const name of screenshots) {
+      const res = await request.get(`/assets/${name}`);
+      expect(res.status(), name).toBe(200);
+      expect(res.headers()['content-type'], name).toMatch(/image/);
+    }
+  });
 });

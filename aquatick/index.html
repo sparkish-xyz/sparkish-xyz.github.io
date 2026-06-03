@@ -19,7 +19,7 @@
   <meta name="twitter:description" content="Choose your language for AquaTick, a cat-themed hydration tracker app for iPhone, Apple Watch, and widgets.">
   <meta name="twitter:image" content="https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png">
   <meta name="apple-itunes-app" content="app-id=6762686013">
-  <meta name="theme-color" content="#14F0C8">
+  <meta name="theme-color" content="#00AD9E">
   <link rel="icon" href="/aquatick/assets/aquatick-app-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/aquatick/assets/aquatick-app-icon.png">
   <link rel="preload" href="/aquatick/assets/screenshot-iphone-home.png" as="image">
@@ -72,26 +72,37 @@
        The bloat is accepted trade-off for the current static GitHub Pages setup.
     */
     :root {
-      /* 2026 MZ playful palette — bright, chunky, anti-corporate */
-      --ink: #1F2A3D;
-      --paper: #FFF9F0;
-      --cream: #FFF7E6;
-      --aqua: #14F0C8;
-      --aqua-dark: #00C9A7;
-      --coral: #FF5E5B;
-      --coral-soft: #FF8A87;
-      --yellow: #FFE066;
-      --navy: #0F1C2E;
-      --muted: #5F6B7A;
-      --line: rgba(31, 42, 61, 0.12);
-      --shadow-heavy: 0 8px 0 #1F2A3D;
-      --shadow-sticker: 6px 8px 0 rgba(31, 42, 61, 0.18);
+      /* AquaTick 2026 refresh — AquaTickDesign.swift light-mode (white surfaces, navy type, teal actions) */
+      --ink: #0D2138;
+      --paper: #F7FAFC;
+      --cream: #FFFFFF;
+      --warm-surface: #F7FAFC;
+      --hero-surface: #FFFFFF;
+      --inset-surface: #FFFFFF;
+      --water-accent: #00AD9E;
+      --aqua: var(--water-accent);
+      --aqua-bright: #00B8A6;
+      --lavender-accent: #335E8C;
+      --coral: #E63B59;
+      --coral-soft: rgba(230, 59, 89, 0.14);
+      --yellow: #E6F5F2;
+      --navy: #0A1F38;
+      /* Web CTAs use --navy on water-accent for WCAG AA; native app uses white actionInk on teal. */
+      --progress-track: rgba(13, 33, 56, 0.14);
+      /* #4A6270: WCAG body copy on paper; Swift Widget secondary is #597E82 */
+      --muted: #4A6270;
+      --line: rgba(13, 33, 56, 0.12);
+      --fine-border: rgba(13, 33, 56, 0.12);
+      --sticker-border: rgba(13, 33, 56, 0.13);
+      --shadow-soft: 0 8px 16px rgba(13, 33, 56, 0.08);
+      --shadow-card: 0 4px 12px rgba(13, 33, 56, 0.06);
 
-      /* Chunky radii — hand-made sticker feel */
+      --r-card: 16px;
+      --r-control: 14px;
       --r-16: 16px;
-      --r-24: 24px;
-      --r-28: 28px;
-      --r-32: 32px;
+      --r-24: 16px;
+      --r-28: 16px;
+      --r-32: 24px;
       --r-full: 999px;
 
       /* Fluid type */
@@ -129,7 +140,7 @@
 
     img { display: block; max-width: 100%; height: auto; }
 
-    /* === CHUNKY PLAYFUL STYLES === */
+    /* === 2026 REFRESH SURFACES === */
 
     .site-header {
       position: sticky;
@@ -142,8 +153,8 @@
       padding: 14px 18px;
       padding-top: calc(14px + env(safe-area-inset-top));
       background: var(--cream);
-      border-bottom: 4px solid var(--ink);
-      box-shadow: 0 2px 0 rgba(0,0,0,0.04);
+      border-bottom: 1px solid var(--fine-border);
+      box-shadow: var(--shadow-card);
     }
 
     .brand {
@@ -158,7 +169,7 @@
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      border: 3px solid var(--ink);
+      border: 1px solid var(--sticker-border);
     }
 
     .nav-links {
@@ -173,12 +184,12 @@
       min-height: 44px;
       display: inline-flex;
       align-items: center;
-      border: 3px solid transparent;
+      border: 1px solid transparent;
     }
     .nav-links a:hover {
-      background: var(--aqua);
+      background: var(--water-accent);
       color: var(--navy);
-      border-color: var(--ink);
+      border-color: var(--water-accent);
     }
 
     .hero-badge {
@@ -186,14 +197,14 @@
       align-items: center;
       gap: 8px;
       background: var(--coral);
-      color: white;
+      color: var(--navy);
       font-weight: 900;
       font-size: 0.82rem;
       padding: 6px 18px;
       border-radius: var(--r-full);
-      border: 4px solid var(--ink);
-      box-shadow: var(--shadow-sticker);
-      transform: rotate(-3deg);
+      border: 1px solid var(--sticker-border);
+      box-shadow: var(--shadow-soft);
+      transform: none;
       width: fit-content;
       letter-spacing: 0.5px;
     }
@@ -207,20 +218,21 @@
       font-size: 1.08rem;
       font-weight: 800;
       letter-spacing: -0.02em;
-      border-radius: var(--r-28);
-      border: 4px solid var(--ink);
-      transition: transform 80ms ease, box-shadow 80ms ease;
-      box-shadow: var(--shadow-heavy);
+      border-radius: var(--r-control);
+      border: 1px solid var(--sticker-border);
+      transition: transform 120ms ease, box-shadow 120ms ease;
+      box-shadow: var(--shadow-soft);
       cursor: pointer;
       text-align: center;
     }
     .btn:active {
-      transform: translateY(3px) scale(0.985);
-      box-shadow: 0 2px 0 var(--ink);
+      transform: translateY(1px) scale(0.99);
+      box-shadow: var(--shadow-card);
     }
     .btn-primary {
-      background: var(--aqua);
+      background: var(--water-accent);
       color: var(--navy);
+      border-color: var(--water-accent);
     }
     .btn-secondary {
       background: white;
@@ -234,9 +246,9 @@
       margin: 0 auto;
     }
     .hero-visual .iphone-frame {
-      border: 6px solid var(--ink);
+      border: 1px solid var(--sticker-border);
       border-radius: var(--r-32);
-      box-shadow: var(--shadow-sticker), 0 30px 60px -20px rgba(0,0,0,0.25);
+      box-shadow: var(--shadow-soft), 0 24px 48px -16px rgba(13, 33, 56, 0.18);
       overflow: hidden;
       background: #000;
     }
@@ -253,10 +265,10 @@
       font-weight: 900;
       font-size: 0.78rem;
       padding: 7px 16px;
-      border: 4px solid var(--ink);
+      border: 1px solid var(--sticker-border);
       border-radius: var(--r-24);
       transform: rotate(12deg);
-      box-shadow: var(--shadow-sticker);
+      box-shadow: var(--shadow-soft);
       z-index: 10;
       white-space: nowrap;
     }
@@ -264,8 +276,8 @@
     /* MOOD CHECKER — playful light interaction */
     .mood-section {
       background: var(--cream);
-      border-top: 4px solid var(--ink);
-      border-bottom: 4px solid var(--ink);
+      border-top: 1px solid var(--fine-border);
+      border-bottom: 1px solid var(--fine-border);
       padding: 38px 18px;
     }
     .mood-inner {
@@ -280,7 +292,7 @@
       font-size: 0.75rem;
       padding: 4px 14px;
       border-radius: var(--r-full);
-      border: 3px solid var(--ink);
+      border: 1px solid var(--sticker-border);
       margin-bottom: 14px;
       transform: rotate(-1deg);
     }
@@ -291,16 +303,16 @@
       margin: 0 0 18px;
     }
 
-    /* 3초 체험 데모 — 실제 앱 홈 카드 + 빠른 추가 (DESIGN.md: cream, aqua #14F0C8, horizontal waterline progress, sticker shadows, SF Pro) */
+    /* 3-second demo — app home card (AquaTickDesign: inset cream/white, waterAccent progress, 16px radius, fine borders) */
     .app-demo {
       margin-top: 12px;
     }
     .demo-card {
-      background: var(--cream);
-      border: 5px solid var(--ink);
-      border-radius: var(--r-28);
+      background: var(--inset-surface);
+      border: 1px solid var(--fine-border);
+      border-radius: var(--r-card);
       padding: 16px 14px;
-      box-shadow: var(--shadow-sticker);
+      box-shadow: var(--shadow-soft);
     }
     .demo-main {
       display: flex;
@@ -338,15 +350,15 @@
       margin: 3px 0 5px;
     }
     .demo-progress {
-      height: 5px;
-      background: #E5E5EA;
+      height: 8px;
+      background: var(--progress-track);
       border-radius: 999px;
       overflow: hidden;
       margin-bottom: 5px;
     }
     .demo-progress-fill {
       height: 100%;
-      background: linear-gradient(to right, var(--aqua), #5EFFE0);
+      background: var(--water-accent);
       transition: width 260ms cubic-bezier(0.23, 1, 0.32, 1);
     }
     .demo-remain {
@@ -366,17 +378,18 @@
       font-size: 1.02rem;
       font-weight: 900;
       padding: 0 18px;
-      border: 4px solid var(--ink);
-      border-radius: var(--r-24);
-      background: var(--aqua);
+      border: 1px solid var(--sticker-border);
+      border-radius: var(--r-control);
+      background: var(--water-accent);
       color: var(--navy);
-      box-shadow: var(--shadow-sticker);
+      border-color: var(--water-accent);
+      box-shadow: var(--shadow-soft);
       cursor: pointer;
       transition: transform 80ms ease, box-shadow 80ms ease;
     }
     .quick-add-btn:active {
-      transform: translateY(2px) scale(0.985);
-      box-shadow: 0 2px 0 var(--ink);
+      transform: translateY(1px) scale(0.99);
+      box-shadow: var(--shadow-card);
     }
     .undo-btn {
       flex: 0 0 auto;
@@ -384,11 +397,11 @@
       font-size: 0.88rem;
       font-weight: 800;
       padding: 0 14px;
-      border: 3px solid var(--ink);
-      border-radius: var(--r-24);
+      border: 1px solid var(--sticker-border);
+      border-radius: var(--r-control);
       background: white;
       color: var(--ink);
-      box-shadow: var(--shadow-sticker);
+      box-shadow: var(--shadow-soft);
       cursor: pointer;
     }
     .undo-btn:disabled {
@@ -400,7 +413,7 @@
       min-height: 1.3em;
       font-size: 0.88rem;
       font-weight: 700;
-      color: var(--aqua-dark);
+      color: var(--navy);
       text-align: center;
     }
     .demo-hint {
@@ -440,10 +453,10 @@
     }
     .judgment-card {
       background: white;
-      border: 5px solid var(--ink);
-      border-radius: var(--r-28);
+      border: 1px solid var(--fine-border);
+      border-radius: var(--r-card);
       padding: 22px 20px 24px;
-      box-shadow: var(--shadow-sticker);
+      box-shadow: var(--shadow-soft);
       position: relative;
     }
     .judgment-card::before {
@@ -463,7 +476,7 @@
       display: inline-block;
       padding: 2px 11px;
       border-radius: var(--r-full);
-      border: 3px solid var(--ink);
+      border: 1px solid var(--sticker-border);
       margin-bottom: 10px;
     }
     .judgment-card h3 {
@@ -489,8 +502,8 @@
       background: var(--navy);
       color: white;
       padding: 44px 18px 52px;
-      border-top: 4px solid var(--ink);
-      border-bottom: 4px solid var(--ink);
+      border-top: 1px solid var(--fine-border);
+      border-bottom: 1px solid var(--fine-border);
     }
     .cat-film-inner {
       max-width: 980px;
@@ -528,15 +541,15 @@
       flex: 0 0 auto;
       width: min(268px, 78vw);
       scroll-snap-align: start;
-      background: #111C2E;
-      border: 5px solid var(--aqua);
-      border-radius: var(--r-24);
+      background: var(--navy);
+      border: 1px solid var(--water-accent);
+      border-radius: var(--r-card);
       overflow: hidden;
-      box-shadow: 0 10px 0 rgba(0,0,0,0.3);
+      box-shadow: var(--shadow-soft);
     }
     .film-card img {
       width: 100%;
-      border-bottom: 4px solid var(--aqua);
+      border-bottom: 1px solid var(--fine-border);
     }
     .film-caption {
       padding: 14px 16px 16px;
@@ -574,10 +587,10 @@
     }
     .quote {
       background: white;
-      border: 4px solid var(--ink);
+      border: 1px solid var(--sticker-border);
       border-radius: var(--r-24);
       padding: 18px 18px 18px;
-      box-shadow: var(--shadow-sticker);
+      box-shadow: var(--shadow-soft);
       position: relative;
     }
     .quote::before {
@@ -607,8 +620,8 @@
       color: white;
       padding: 42px 18px 54px;
       text-align: center;
-      border-top: 5px solid var(--ink);
-      border-bottom: 5px solid var(--ink);
+      border-top: 1px solid var(--fine-border);
+      border-bottom: 1px solid var(--fine-border);
     }
     .final-inner {
       max-width: 620px;
@@ -719,7 +732,7 @@
 
     /* Tiny focus styles */
     .btn:focus-visible, .quick-add-btn:focus-visible, .undo-btn:focus-visible {
-      outline: 3px solid var(--aqua);
+      outline: 3px solid var(--water-accent);
       outline-offset: 3px;
     }
   </style>
