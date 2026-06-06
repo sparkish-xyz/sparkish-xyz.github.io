@@ -90,6 +90,31 @@ test.describe('Sparkish site routes', () => {
     expect(res.headers()['content-type']).toMatch(/image/);
   });
 
+  test('Korea Map Link privacy and support pages load', async ({ page }) => {
+    await page.goto('/korea-map-link/privacy/');
+    await expect(page.getByRole('heading', { name: /Privacy Policy/i })).toBeVisible();
+    await page.goto('/korea-map-link/support/');
+    await expect(page.getByRole('heading', { name: /^Support$/i })).toBeVisible();
+  });
+
+  test('Korea Map Link chooser redirects to English by default', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.removeItem('kmbLangPref');
+      Object.defineProperty(navigator, 'language', {
+        get: () => 'en-US',
+        configurable: true,
+      });
+    });
+    await page.goto('/korea-map-link/');
+    await expect(page).toHaveURL(/\/korea-map-link\/en\/?$/);
+  });
+
+  test('Korea Map Link app icon returns 200', async ({ request }) => {
+    const res = await request.get('/korea-map-link/assets/app-icon.png');
+    expect(res.status()).toBe(200);
+    expect(res.headers()['content-type']).toMatch(/image/);
+  });
+
   test('mirrored /assets/ screenshots return 200', async ({ request }) => {
     const screenshots = [
       'screenshot-iphone-home.png',
