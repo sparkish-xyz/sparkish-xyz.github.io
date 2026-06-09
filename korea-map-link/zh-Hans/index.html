@@ -15,7 +15,7 @@
   <meta name="twitter:description" content="谷歌地图在韩国导航有限？粘贴链接或英文店名，获取韩文名称与地址，一键打开 Naver/Kakao 地图，还可显示给司机的大字韩文卡片。">
   <meta name="twitter:image" content="https://sparkish-xyz.github.io/korea-map-link/assets/app-icon.png">
   <meta name="apple-itunes-app" content="app-id=6776109560">
-  <meta name="theme-color" content="#2563EB">
+  <meta name="theme-color" content="#0B6B5E">
   <link rel="icon" href="/korea-map-link/assets/app-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/korea-map-link/assets/app-icon.png">
   <link rel="canonical" href="https://sparkish-xyz.github.io/korea-map-link/zh-Hans/">
@@ -38,8 +38,8 @@
         "installUrl": "https://apps.apple.com/app/id6776109560",
         "image": "https://sparkish-xyz.github.io/korea-map-link/assets/app-icon.png",
         "screenshot": [
-          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-onboarding.png",
-          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-results.png",
+          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-home.png",
+          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-resolve.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-place-detail.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-taxi.png"
         ],
@@ -71,13 +71,14 @@
 
   <main>
     <section class="hero">
-      <span class="hero-badge">韩国旅行</span>
-      <h1>Google 地图 → 韩国本地地图</h1>
+      <span class="hero-badge">韩国 handoff 票据</span>
+      <h1>粘贴地点，打开正确的韩国地图</h1>
       <p class="lead">谷歌地图在韩国导航有限？粘贴链接或英文店名，获取韩文名称与地址，一键打开 Naver/Kakao 地图，还可显示给司机的大字韩文卡片。</p>
       <div class="pill-row">
-        <span class="pill naver">Naver 地图</span>
-        <span class="pill kakao">Kakao 地图</span>
-        <span class="pill">出租车卡片</span>
+        <span class="pill naver">Home</span>
+        <span class="pill kakao">Saved</span>
+        <span class="pill">Taxi</span>
+        <span class="pill">共享表单</span>
       </div>
       <div class="btn-row">
         <a class="btn" href="https://apps.apple.com/app/id6776109560">在 App Store 下载</a>
@@ -88,29 +89,29 @@
     <section class="section">
       <h2>使用方法</h2>
       <ol class="steps">
-        <li><strong>粘贴或搜索</strong> 粘贴 Google 地图链接，或输入英文/中文店名（弘大咖啡、景福宫、酒店地址等）。</li>
-        <li><strong>选择正确分店</strong> 查看带可信度标识的韩文匹配结果，选择正确分店。</li>
-        <li><strong>打开或分享</strong> 一键打开 Naver、Kakao 或 Google 地图，复制韩文，或出示出租车专用卡片。</li>
+        <li><strong>输入</strong> 在 Home 粘贴 Google 地图链接、英文/中文店名或地址，也可通过 iOS 共享表单直接传入。</li>
+        <li><strong>确认</strong> Resolve 屏幕解析来源，比较 Naver/Kakao 候选并显示带可信度标识的最佳韩文匹配。</li>
+        <li><strong>打开</strong> 从 Place 票据发送到 Naver/Kakao、保存到 Saved，或从 Taxi 标签显示无广告的出租车卡片。</li>
       </ol>
     </section>
 
     <section class="section shots">
-      <h2>为真实旅行场景设计</h2>
+      <h2>Handoff 流程</h2>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-onboarding.png" width="1179" height="2556" loading="lazy" alt="引导页 — 粘贴 Google 地图链接或输入英文店名">
-        <figcaption>粘贴 Google 地图链接或输入英文店名。</figcaption>
-      </figure>
-      <figure class="results">
-        <img src="/korea-map-link/assets/screenshot-results.png" width="1179" height="1380" loading="lazy" alt="带可信度标识的韩文搜索结果">
-        <figcaption>从带可信度标识的韩文结果中选择正确分店。</figcaption>
+        <img src="/korea-map-link/assets/screenshot-home.png" width="1320" height="2868" loading="lazy" alt="Home — 粘贴地点后打开 Naver、Kakao 或 Taxi">
+        <figcaption>Home 是 handoff 控制台 — 粘贴、搜索或从 Google 地图共享。</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-place-detail.png" width="1179" height="2556" loading="lazy" alt="含道路名与地番地址的地点详情卡">
-        <figcaption>每张地点卡显示道路名地址与地番地址。</figcaption>
+        <img src="/korea-map-link/assets/screenshot-resolve.png" width="1320" height="2868" loading="lazy" alt="Resolve — 解析来源并排序韩文匹配">
+        <figcaption>Resolve 解析来源并显示带可信度的最佳韩文匹配。</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-taxi.png" width="1179" height="2556" loading="lazy" alt="大字韩文出租车目的地卡片">
-        <figcaption>司机可直接阅读的大字韩文卡片 — 该页面无广告。</figcaption>
+        <img src="/korea-map-link/assets/screenshot-place-detail.png" width="1320" height="2868" loading="lazy" alt="Place 票据 — 韩文地址与 Naver/Kakao 发送按钮">
+        <figcaption>从已验证的 Place 票据发送到 Naver/Kakao — 含道路名与地番地址。</figcaption>
+      </figure>
+      <figure>
+        <img src="/korea-map-link/assets/screenshot-taxi.png" width="1320" height="2868" loading="lazy" alt="出租车 placard — 大字韩文目的地卡片">
+        <figcaption>高对比度出租车 placard，司机可直接阅读 — 无广告页面。</figcaption>
       </figure>
     </section>
 
@@ -121,8 +122,12 @@
         <p>Google 地图适合规划，但在韩国的步行/驾车实时导航受限。当地人常用 Naver、Kakao 地图。本应用帮你把 Google 里保存的地点连接到本地地图。</p>
       </details>
       <details>
+        <summary>可以从 Google 地图共享吗？</summary>
+        <p>可以。在 iOS 共享表单中选择 Korea Map Link，即可将共享地点即时转换为韩文 handoff 票据。</p>
+      </details>
+      <details>
         <summary>需要注册账号吗？</summary>
-        <p>无需注册。最近地点和收藏保存在你的设备上。</p>
+        <p>无需注册。最近链接和保存地点在 Home、Saved、Taxi 标签中保存在你的设备上。</p>
       </details>
       <details>
         <summary>应用免费吗？</summary>

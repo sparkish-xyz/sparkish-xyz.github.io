@@ -194,8 +194,8 @@ test.describe('Sparkish site routes', () => {
 
   test('Korea Map Link screenshots return 200', async ({ request }) => {
     const screenshots = [
-      'screenshot-onboarding.png',
-      'screenshot-results.png',
+      'screenshot-home.png',
+      'screenshot-resolve.png',
       'screenshot-place-detail.png',
       'screenshot-taxi.png',
     ];

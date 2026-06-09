@@ -15,7 +15,7 @@
   <meta name="twitter:description" content="Google 지도는 한국에서 걷기·운전 안내가 제한적입니다. 링크나 영어 장소명을 붙여 넣으면 한글 이름·주소를 받고 네이버·카카오맵을 열거나 택시 카드를 보여줄 수 있습니다.">
   <meta name="twitter:image" content="https://sparkish-xyz.github.io/korea-map-link/assets/app-icon.png">
   <meta name="apple-itunes-app" content="app-id=6776109560">
-  <meta name="theme-color" content="#2563EB">
+  <meta name="theme-color" content="#0B6B5E">
   <link rel="icon" href="/korea-map-link/assets/app-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/korea-map-link/assets/app-icon.png">
   <link rel="canonical" href="https://sparkish-xyz.github.io/korea-map-link/ko/">
@@ -38,8 +38,8 @@
         "installUrl": "https://apps.apple.com/app/id6776109560",
         "image": "https://sparkish-xyz.github.io/korea-map-link/assets/app-icon.png",
         "screenshot": [
-          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-onboarding.png",
-          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-results.png",
+          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-home.png",
+          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-resolve.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-place-detail.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-taxi.png"
         ],
@@ -71,13 +71,14 @@
 
   <main>
     <section class="hero">
-      <span class="hero-badge">한국 여행자용</span>
-      <h1>Google 지도 → 네이버·카카오</h1>
+      <span class="hero-badge">한국 handoff 티켓</span>
+      <h1>장소를 붙여 넣고, 맞는 한국 지도로 열기</h1>
       <p class="lead">Google 지도는 한국에서 걷기·운전 안내가 제한적이고, 영어 검색은 네이버·카카오에서 잘 안 됩니다. 영어 장소명이나 Google 지도 링크를 한글 이름·주소로 바꿔 현지 지도와 택시에 바로 쓰세요.</p>
       <div class="pill-row">
-        <span class="pill naver">네이버지도</span>
-        <span class="pill kakao">카카오맵</span>
-        <span class="pill">택시 카드</span>
+        <span class="pill naver">Home</span>
+        <span class="pill kakao">Saved</span>
+        <span class="pill">Taxi</span>
+        <span class="pill">공유 시트</span>
       </div>
       <div class="btn-row">
         <a class="btn" href="https://apps.apple.com/app/id6776109560">App Store에서 다운로드</a>
@@ -88,29 +89,29 @@
     <section class="section">
       <h2>사용 방법</h2>
       <ol class="steps">
-        <li><strong>붙여넣기 또는 검색</strong> Google 지도 링크, 영어 장소명, 주소, Hongdae·경복궁 같은 여행자 별칭을 입력합니다.</li>
-        <li><strong>올바른 장소 선택</strong> 지점이 많을 때 신뢰도 순 한글 결과에서 맞는 곳을 고릅니다.</li>
-        <li><strong>열기 또는 공유</strong> 네이버·카카오·Google 지도로 이동하거나, 한글을 복사하거나 광고 없는 택시 카드를 보여줍니다.</li>
+        <li><strong>입력</strong> Home에서 Google 지도 링크, 영어·한국어 장소명, 주소를 붙여 넣거나 iOS 공유 시트에서 바로 전달합니다.</li>
+        <li><strong>확인</strong> Resolve 화면에서 원본을 파싱하고 네이버·카카오 후보를 비교해 신뢰도와 함께 최적의 한국어 매칭을 보여줍니다.</li>
+        <li><strong>열기</strong> Place 티켓에서 네이버·카카오로 전달하고 Saved에 저장하거나 Taxi 탭의 광고 없는 택시 카드를 표시합니다.</li>
       </ol>
     </section>
 
     <section class="section shots">
-      <h2>실제 여행 순간을 위한 기능</h2>
+      <h2>Handoff 흐름</h2>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-onboarding.png" width="1179" height="2556" loading="lazy" alt="온보딩 화면 — Google 지도 링크 붙여넣기 또는 영어 장소명 입력">
-        <figcaption>Google 지도 링크를 붙이거나 영어 장소명을 입력하세요.</figcaption>
-      </figure>
-      <figure class="results">
-        <img src="/korea-map-link/assets/screenshot-results.png" width="1179" height="1380" loading="lazy" alt="신뢰도 배지가 있는 한글 검색 결과">
-        <figcaption>신뢰도 순 한글 결과에서 올바른 지점을 고릅니다.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-home.png" width="1320" height="2868" loading="lazy" alt="Home — 장소 붙여넣기 후 네이버·카카오·택시로 열기">
+        <figcaption>Home은 handoff 콘솔 — 붙여넣기, 검색, Google Maps 공유를 한곳에서 처리합니다.</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-place-detail.png" width="1179" height="2556" loading="lazy" alt="도로명·지번 주소가 있는 장소 상세 카드">
-        <figcaption>모든 장소 카드에 도로명·지번 주소가 표시됩니다.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-resolve.png" width="1320" height="2868" loading="lazy" alt="Resolve — 원본 파싱 및 한국어 매칭 순위">
+        <figcaption>Resolve가 원본을 파싱하고 신뢰도와 함께 최적의 한국어 매칭을 보여줍니다.</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-taxi.png" width="1179" height="2556" loading="lazy" alt="큰 한글 택시 목적지 카드">
-        <figcaption>기사님이 읽기 쉬운 한글 택시 카드 — 해당 화면에는 광고가 없습니다.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-place-detail.png" width="1320" height="2868" loading="lazy" alt="Place 티켓 — 한국어 주소와 네이버·카카오 전달 버튼">
+        <figcaption>검증된 Place 티켓에서 네이버·카카오로 전달 — 도로명·지번 주소 포함.</figcaption>
+      </figure>
+      <figure>
+        <img src="/korea-map-link/assets/screenshot-taxi.png" width="1320" height="2868" loading="lazy" alt="택시 placard — 큰 한국어 목적지 카드">
+        <figcaption>기사님이 읽기 쉬운 고대비 택시 placard — 광고 없는 화면.</figcaption>
       </figure>
     </section>
 
@@ -121,8 +122,12 @@
         <p>Google 지도는 계획에는 유용하지만 한국에서 걷기·운전 안내는 제한적입니다. 현지인은 네이버·카카오를 씁니다. 이 앱은 Google에 저장한 장소를 현지 지도 앱으로 연결해 줍니다.</p>
       </details>
       <details>
+        <summary>Google Maps에서 공유할 수 있나요?</summary>
+        <p>네. iOS 공유 시트에서 Korea Map Link를 선택하면 공유한 장소를 한국어 handoff 티켓으로 바로 변환합니다.</p>
+      </details>
+      <details>
         <summary>계정이 필요한가요?</summary>
-        <p>가입 없이 사용할 수 있습니다. 최근 장소와 즐겨찾기는 기기에 저장됩니다.</p>
+        <p>가입 없이 사용할 수 있습니다. 최근 링크와 저장 장소는 Home·Saved·Taxi 탭에서 기기에 저장됩니다.</p>
       </details>
       <details>
         <summary>앱이 무료인가요?</summary>

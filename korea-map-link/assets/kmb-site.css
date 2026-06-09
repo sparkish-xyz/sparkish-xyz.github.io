@@ -1,16 +1,17 @@
-/* Korea Map Link — shared site styles (DSColor light tokens) */
+/* Korea Map Link — Atlas Ticket design tokens (2026-06-06 handoff refresh) */
 :root {
-  --ink: #07122d;
-  --paper: #f7fafc;
-  --cream: #ffffff;
-  --hero: #eef5ff;
-  --accent: #2563eb;
-  --accent-deep: #1d4ed8;
-  --muted: #667085;
-  --border: rgba(7, 18, 45, 0.12);
-  --naver: #03c75a;
+  --ink: #111827;
+  --paper: #f7f8f4;
+  --cream: #fffffb;
+  --hero: #eef8f4;
+  --accent: #0b6b5e;
+  --accent-deep: #0a5a4f;
+  --route-blue: #2563eb;
+  --muted: #4b5563;
+  --border: rgba(17, 24, 39, 0.12);
+  --naver: #10a66b;
   --kakao: #fee500;
-  --shadow: 0 8px 20px rgba(7, 18, 45, 0.08);
+  --shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
   --r-card: 16px;
   --r-btn: 14px;
   --r-full: 999px;
@@ -88,7 +89,7 @@ img { display: block; max-width: 100%; height: auto; }
 .lang-switch a[aria-current="true"] {
   background: var(--hero);
   color: var(--accent-deep);
-  border-color: rgba(37, 99, 235, 0.25);
+  border-color: rgba(11, 107, 94, 0.25);
 }
 main { max-width: var(--max); margin: 0 auto; padding: 32px 18px 64px; }
 main.legal { max-width: var(--max-legal); }
@@ -107,7 +108,7 @@ main.legal { max-width: var(--max-legal); }
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--accent-deep);
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(11, 107, 94, 0.1);
   padding: 5px 12px;
   border-radius: var(--r-full);
   margin-bottom: 12px;
@@ -203,15 +204,8 @@ h1 {
 }
 .shots figure img {
   width: 100%;
-  aspect-ratio: 1179 / 2556;
+  aspect-ratio: 1320 / 2868;
   object-fit: cover;
-  object-position: top center;
-}
-.shots figure.results {
-  background: var(--paper);
-}
-.shots figure.results img {
-  object-fit: contain;
   object-position: top center;
 }
 .shots figcaption {
