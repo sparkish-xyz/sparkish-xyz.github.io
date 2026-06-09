@@ -20,6 +20,7 @@
   <link rel="apple-touch-icon" href="/korea-map-link/assets/app-icon.png">
   <link rel="canonical" href="https://sparkish-xyz.github.io/korea-map-link/ko/">
   <link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/korea-map-link/en/">
+  <link rel="alternate" hreflang="fr" href="https://sparkish-xyz.github.io/korea-map-link/fr/">
   <link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/korea-map-link/ko/">
   <link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/korea-map-link/ja/">
   <link rel="alternate" hreflang="zh-Hans" href="https://sparkish-xyz.github.io/korea-map-link/zh-Hans/">
@@ -38,6 +39,7 @@
         "installUrl": "https://apps.apple.com/app/id6776109560",
         "image": "https://sparkish-xyz.github.io/korea-map-link/assets/app-icon.png",
         "screenshot": [
+          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-onboarding.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-home.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-resolve.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-place-detail.png",
@@ -62,6 +64,7 @@
     </nav>
     <div class="lang-switch" aria-label="언어">
       <a href="/korea-map-link/en/" lang="en">EN</a>
+      <a href="/korea-map-link/fr/" lang="fr">FR</a>
       <a href="/korea-map-link/ko/" aria-current="true" lang="ko">KO</a>
       <a href="/korea-map-link/ja/" lang="ja">JA</a>
       <a href="/korea-map-link/zh-Hans/" lang="zh-Hans">简</a>
@@ -71,13 +74,14 @@
 
   <main>
     <section class="hero">
-      <span class="hero-badge">한국 handoff 티켓</span>
+      <span class="hero-badge">최신 iOS 앱 캡처</span>
       <h1>장소를 붙여 넣고, 맞는 한국 지도로 열기</h1>
       <p class="lead">Google 지도는 한국에서 걷기·운전 안내가 제한적이고, 영어 검색은 네이버·카카오에서 잘 안 됩니다. 영어 장소명이나 Google 지도 링크를 한글 이름·주소로 바꿔 현지 지도와 택시에 바로 쓰세요.</p>
       <div class="pill-row">
         <span class="pill naver">Home</span>
-        <span class="pill kakao">Saved</span>
-        <span class="pill">Taxi</span>
+        <span class="pill">Resolve</span>
+        <span class="pill kakao">Kakao</span>
+        <span class="pill naver">Naver</span>
         <span class="pill">공유 시트</span>
       </div>
       <div class="btn-row">
@@ -96,22 +100,26 @@
     </section>
 
     <section class="section shots">
-      <h2>Handoff 흐름</h2>
+      <h2>최신 앱 흐름</h2>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-home.png" width="1320" height="2868" loading="lazy" alt="Home — 장소 붙여넣기 후 네이버·카카오·택시로 열기">
-        <figcaption>Home은 handoff 콘솔 — 붙여넣기, 검색, Google Maps 공유를 한곳에서 처리합니다.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-onboarding.png" width="1320" height="2868" loading="eager" alt="Onboarding — 한국 장소명을 지도에 바로 쓸 수 있는 결과로 변환">
+        <figcaption>온보딩은 앱의 핵심 약속을 먼저 보여줍니다 — 한국어 장소 정보가 처음부터 계속 보입니다.</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-resolve.png" width="1320" height="2868" loading="lazy" alt="Resolve — 원본 파싱 및 한국어 매칭 순위">
-        <figcaption>Resolve가 원본을 파싱하고 신뢰도와 함께 최적의 한국어 매칭을 보여줍니다.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-home.png" width="1320" height="2868" loading="eager" alt="Home — 장소 붙여넣기 후 네이버·카카오·택시로 열기">
+        <figcaption>Home은 붙여넣기, 검색, 지역, 현재 위치, Google Maps 공유 입력을 한곳에서 처리합니다.</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-place-detail.png" width="1320" height="2868" loading="lazy" alt="Place 티켓 — 한국어 주소와 네이버·카카오 전달 버튼">
-        <figcaption>검증된 Place 티켓에서 네이버·카카오로 전달 — 도로명·지번 주소 포함.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-resolve.png" width="1320" height="2868" loading="eager" alt="Resolve — 원본 파싱 및 한국어 매칭 순위">
+        <figcaption>Resolve는 원본 미리보기, 파싱 진행, 현지 후보, 매칭 신뢰도를 함께 보여줍니다.</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-taxi.png" width="1320" height="2868" loading="lazy" alt="택시 placard — 큰 한국어 목적지 카드">
-        <figcaption>기사님이 읽기 쉬운 고대비 택시 placard — 광고 없는 화면.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-place-detail.png" width="1320" height="2868" loading="eager" alt="Place 티켓 — 한국어 주소와 네이버·카카오 전달 버튼">
+        <figcaption>Place 카드에는 한국어·로마자·지번 주소와 네이버, 카카오, 저장, 복사, 택시 액션이 모입니다.</figcaption>
+      </figure>
+      <figure>
+        <img src="/korea-map-link/assets/screenshot-taxi.png" width="1320" height="2868" loading="eager" alt="택시 placard — 큰 한국어 목적지 카드">
+        <figcaption>택시 카드는 광고 없이 큰 한국어 목적지와 주소를 보여줘 기사님이 바로 읽을 수 있습니다.</figcaption>
       </figure>
     </section>
 

@@ -19,7 +19,7 @@ Static GitHub Pages site for **Sparkish** apps.
     └── assets/             # AquaTick images (canonical paths)
 └── korea-map-link/
     ├── index.html          # Language chooser → en/ko/ja/zh-*
-    ├── en/ ko/ ja/ zh-Hans/ zh-Hant/
+    ├── en/ fr/ ko/ ja/ zh-Hans/ zh-Hant/
     ├── privacy/ support/   # App Store legal pages (English)
     ├── assets/             # App icon + screenshots
     └── firebase.json       # Optional deploy to korea-map-link.web.app
@@ -37,7 +37,7 @@ When AquaTick images change, update **`aquatick/assets/`** and copy the same fil
 | `/ko/`, `/en/`, `/ja/` | Legacy stubs → redirect to `/aquatick/ko|en|ja/` |
 | `/assets/*` | Legacy mirror of `/aquatick/assets/*` (same files, not a redirect) |
 | `/korea-map-link/` | Korea Map Link chooser |
-| `/korea-map-link/en/` … | Localized landings |
+| `/korea-map-link/en/` … | Localized landings, including French |
 | `/korea-map-link/privacy/` | Privacy Policy (App Store) |
 | `/korea-map-link/support/` | Support (App Store) |
 

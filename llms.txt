@@ -46,6 +46,38 @@ Important context:
 
 Legacy language stubs at `/ko/`, `/en/`, `/ja/` redirect to `/aquatick/...`. `/assets/*` mirrors `/aquatick/assets/*` (same files) for old image URLs.
 
+# Korea Map Link
+
+> Korea Map Link is an iOS travel utility for Korea trips. It turns a Google Maps link, Korean address, or place name into verified Korean place details, then opens Naver Map or Kakao Map and can show an ad-free taxi card with large Korean destination text.
+
+Korea Map Link is published by Sparkish. The landing site lives under `/korea-map-link/` with English, French, Korean, Japanese, Simplified Chinese, and Traditional Chinese pages. The current landing visuals use live iOS simulator captures from the KoreanMapBridge app: onboarding, Home, Resolve, Place, and Taxi card screens.
+
+Important context:
+- Google Maps can be useful for planning Korea trips, but local routing and place handoff often works better through Naver Map or Kakao Map.
+- Korea Map Link keeps Korean names, road address, romanized address, jibun address, and match confidence visible.
+- The taxi card is designed for driver handoff and stays ad-free.
+- No account is required; recent and saved places stay on device.
+
+## Korea Map Link Pages
+
+- [Korea Map Link language selection](https://sparkish-xyz.github.io/korea-map-link/): Routes visitors by saved preference or browser language.
+- [Korea Map Link English landing page](https://sparkish-xyz.github.io/korea-map-link/en/): English product overview, live app screenshots, FAQ, support, and App Store call to action.
+- [Korea Map Link French landing page](https://sparkish-xyz.github.io/korea-map-link/fr/): French product overview and localized landing content.
+- [Korea Map Link Korean landing page](https://sparkish-xyz.github.io/korea-map-link/ko/): Korean landing content retained for the public URL.
+- [Korea Map Link Japanese landing page](https://sparkish-xyz.github.io/korea-map-link/ja/): Japanese landing content.
+- [Korea Map Link Simplified Chinese landing page](https://sparkish-xyz.github.io/korea-map-link/zh-Hans/): Simplified Chinese landing content.
+- [Korea Map Link Traditional Chinese landing page](https://sparkish-xyz.github.io/korea-map-link/zh-Hant/): Traditional Chinese landing content.
+- [Korea Map Link support](https://sparkish-xyz.github.io/korea-map-link/support/): Support and contact information.
+- [Korea Map Link privacy policy](https://sparkish-xyz.github.io/korea-map-link/privacy/): Privacy policy.
+
+## Korea Map Link Visual References
+
+- [Onboarding screenshot](https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-onboarding.png): First-run screen showing the app promise.
+- [Home screenshot](https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-home.png): Paste/search console with Home tab.
+- [Resolve screenshot](https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-resolve.png): Source parsing and match confidence screen.
+- [Place screenshot](https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-place-detail.png): Verified place card with Naver/Kakao actions.
+- [Taxi screenshot](https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-taxi.png): High-contrast taxi card.
+
 ## Optional
 
 - [Korean page source](https://github.com/sparkish-xyz/sparkish-xyz.github.io/blob/main/aquatick/ko/index.html): Source HTML for the Korean landing page, including SEO metadata and JSON-LD.

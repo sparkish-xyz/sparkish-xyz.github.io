@@ -15,13 +15,13 @@ test.describe('Sparkish site routes', () => {
     expect(jsonLd).toContain('"@type": "MobileApplication"');
     expect(jsonLd).toContain('AquaTick');
     expect(jsonLd).toContain('Korea Map Link');
-    expect(jsonLd).toContain('for first-time trips');
+    expect(jsonLd).toContain('ad-free taxi card');
   });
 
   test('hub links to Korea Map Link', async ({ page }) => {
     await page.goto('/');
     await page.getByRole('link', { name: /View Korea Map Link/i }).click();
-    await expect(page).toHaveURL(/\/korea-map-link\/(en|ko|ja|zh-Hans|zh-Hant)\/?$/);
+    await expect(page).toHaveURL(/\/korea-map-link\/(en|fr|ko|ja|zh-Hans|zh-Hant)\/?$/);
   });
 
   test('legacy /ko/ redirects and seeds aquaLangPref', async ({ page }) => {
@@ -166,6 +166,18 @@ test.describe('Sparkish site routes', () => {
     await expect(page).toHaveURL(/\/korea-map-link\/ja\/?$/);
   });
 
+  test('Korea Map Link chooser uses navigator.language for French', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.removeItem('kmbLangPref');
+      Object.defineProperty(navigator, 'language', {
+        get: () => 'fr-FR',
+        configurable: true,
+      });
+    });
+    await page.goto('/korea-map-link/');
+    await expect(page).toHaveURL(/\/korea-map-link\/fr\/?$/);
+  });
+
   test('Korea Map Link chooser maps zh-TW to Traditional Chinese', async ({ page }) => {
     await page.addInitScript(() => {
       localStorage.removeItem('kmbLangPref');
@@ -219,6 +231,7 @@ test.describe('Sparkish site routes', () => {
 
   test('Korea Map Link screenshots return 200', async ({ request }) => {
     const screenshots = [
+      'screenshot-onboarding.png',
       'screenshot-home.png',
       'screenshot-resolve.png',
       'screenshot-place-detail.png',

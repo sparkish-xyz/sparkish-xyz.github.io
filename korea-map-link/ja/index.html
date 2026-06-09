@@ -20,6 +20,7 @@
   <link rel="apple-touch-icon" href="/korea-map-link/assets/app-icon.png">
   <link rel="canonical" href="https://sparkish-xyz.github.io/korea-map-link/ja/">
   <link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/korea-map-link/en/">
+  <link rel="alternate" hreflang="fr" href="https://sparkish-xyz.github.io/korea-map-link/fr/">
   <link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/korea-map-link/ko/">
   <link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/korea-map-link/ja/">
   <link rel="alternate" hreflang="zh-Hans" href="https://sparkish-xyz.github.io/korea-map-link/zh-Hans/">
@@ -38,6 +39,7 @@
         "installUrl": "https://apps.apple.com/app/id6776109560",
         "image": "https://sparkish-xyz.github.io/korea-map-link/assets/app-icon.png",
         "screenshot": [
+          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-onboarding.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-home.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-resolve.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-place-detail.png",
@@ -62,6 +64,7 @@
     </nav>
     <div class="lang-switch" aria-label="言語">
       <a href="/korea-map-link/en/" lang="en">EN</a>
+      <a href="/korea-map-link/fr/" lang="fr">FR</a>
       <a href="/korea-map-link/ko/" lang="ko">KO</a>
       <a href="/korea-map-link/ja/" aria-current="true" lang="ja">JA</a>
       <a href="/korea-map-link/zh-Hans/" lang="zh-Hans">简</a>
@@ -71,13 +74,14 @@
 
   <main>
     <section class="hero">
-      <span class="hero-badge">韓国 handoff チケット</span>
+      <span class="hero-badge">最新 iOS アプリ画面</span>
       <h1>場所を貼り付けて、正しい韓国地図を開く</h1>
       <p class="lead">Googleマップでは足りない韓国旅行に。リンクや英語の店名を貼り付けて韓国語の住所を取得。Naver・Kakaoを開き、タクシー用の大きな韓国語カードも表示。</p>
       <div class="pill-row">
         <span class="pill naver">Home</span>
-        <span class="pill kakao">Saved</span>
-        <span class="pill">Taxi</span>
+        <span class="pill">Resolve</span>
+        <span class="pill kakao">Kakao</span>
+        <span class="pill naver">Naver</span>
         <span class="pill">共有シート</span>
       </div>
       <div class="btn-row">
@@ -96,22 +100,26 @@
     </section>
 
     <section class="section shots">
-      <h2>Handoff の流れ</h2>
+      <h2>現在のアプリフロー</h2>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-home.png" width="1320" height="2868" loading="lazy" alt="Home — 場所を貼り付けて Naver・Kakao・Taxi を開く">
-        <figcaption>Homeは handoff コンソール — 貼り付け、検索、Googleマップ共有を一箇所で。</figcaption>
+        <img src="/korea-map-link/assets/screenshot-onboarding.png" width="1320" height="2868" loading="eager" alt="Onboarding — 韓国の場所名を地図で使える結果に変換">
+        <figcaption>オンボーディングで、韓国語の場所情報を最初から見失わない体験を伝えます。</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-resolve.png" width="1320" height="2868" loading="lazy" alt="Resolve — 元データ解析と韓国語マッチの順位">
-        <figcaption>Resolveが元データを解析し、信頼度付きの最適な韓国語マッチを表示。</figcaption>
+        <img src="/korea-map-link/assets/screenshot-home.png" width="1320" height="2868" loading="eager" alt="Home — 場所を貼り付けて Naver・Kakao・Taxi を開く">
+        <figcaption>Homeは貼り付け、検索、地域、現在地、Googleマップ共有をまとめた handoff コンソールです。</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-place-detail.png" width="1320" height="2868" loading="lazy" alt="Placeチケット — 韓国語住所と Naver・Kakao 送信ボタン">
-        <figcaption>検証済み Place チケットから Naver・Kakao へ送信 — 道路名・地番住所付き。</figcaption>
+        <img src="/korea-map-link/assets/screenshot-resolve.png" width="1320" height="2868" loading="eager" alt="Resolve — 元データ解析と韓国語マッチの順位">
+        <figcaption>Resolveは元データ、解析状況、現地候補、マッチ信頼度を一画面で見せます。</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-taxi.png" width="1320" height="2868" loading="lazy" alt="タクシー placard — 大きな韓国語目的地カード">
-        <figcaption>運転手が読みやすい高コントラストのタクシー placard — 広告なし画面。</figcaption>
+        <img src="/korea-map-link/assets/screenshot-place-detail.png" width="1320" height="2868" loading="eager" alt="Placeチケット — 韓国語住所と Naver・Kakao 送信ボタン">
+        <figcaption>Placeカードには韓国語・ローマ字・地番住所と、Naver、Kakao、保存、コピー、タクシー操作が並びます。</figcaption>
+      </figure>
+      <figure>
+        <img src="/korea-map-link/assets/screenshot-taxi.png" width="1320" height="2868" loading="eager" alt="タクシー placard — 大きな韓国語目的地カード">
+        <figcaption>タクシーカードは広告なしで、大きな韓国語の目的地と住所を運転手に見せられます。</figcaption>
       </figure>
     </section>
 

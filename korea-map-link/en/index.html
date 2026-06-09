@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Korea Map Link — Google Maps to Naver &amp; Kakao for Korea travel</title>
-  <meta name="description" content="Google Maps falls short in Korea. Paste links or English place names—get Korean names, open Naver/Kakao Map, and show a large taxi card for first-time trips.">
+  <meta name="description" content="Paste a place, Korean address, or Google Maps link. Korea Map Link verifies Korean details, opens Naver/Kakao, and shows an ad-free taxi card.">
   <meta property="og:title" content="Korea Map Link — Google Maps to Naver &amp; Kakao">
-  <meta property="og:description" content="Google Maps falls short in Korea. Paste links or English place names—get Korean names, open Naver/Kakao Map, and show a large taxi card for first-time trips.">
+  <meta property="og:description" content="Paste a place, Korean address, or Google Maps link. Korea Map Link verifies Korean details, opens Naver/Kakao, and shows an ad-free taxi card.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sparkish-xyz.github.io/korea-map-link/en/">
   <meta property="og:image" content="https://sparkish-xyz.github.io/korea-map-link/assets/app-icon.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Korea Map Link — Google Maps to Naver &amp; Kakao">
-  <meta name="twitter:description" content="Google Maps falls short in Korea. Paste links or English place names—get Korean names, open Naver/Kakao Map, and show a large taxi card for first-time trips.">
+  <meta name="twitter:description" content="Paste a place, Korean address, or Google Maps link. Korea Map Link verifies Korean details, opens Naver/Kakao, and shows an ad-free taxi card.">
   <meta name="twitter:image" content="https://sparkish-xyz.github.io/korea-map-link/assets/app-icon.png">
   <meta name="apple-itunes-app" content="app-id=6776109560">
   <meta name="theme-color" content="#0B6B5E">
@@ -20,6 +20,7 @@
   <link rel="apple-touch-icon" href="/korea-map-link/assets/app-icon.png">
   <link rel="canonical" href="https://sparkish-xyz.github.io/korea-map-link/en/">
   <link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/korea-map-link/en/">
+  <link rel="alternate" hreflang="fr" href="https://sparkish-xyz.github.io/korea-map-link/fr/">
   <link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/korea-map-link/ko/">
   <link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/korea-map-link/ja/">
   <link rel="alternate" hreflang="zh-Hans" href="https://sparkish-xyz.github.io/korea-map-link/zh-Hans/">
@@ -38,12 +39,13 @@
         "installUrl": "https://apps.apple.com/app/id6776109560",
         "image": "https://sparkish-xyz.github.io/korea-map-link/assets/app-icon.png",
         "screenshot": [
+          "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-onboarding.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-home.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-resolve.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-place-detail.png",
           "https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-taxi.png"
         ],
-        "description": "Google Maps falls short in Korea. Paste links or English place names—get Korean names, open Naver/Kakao Map, and show a large taxi card for first-time trips.",
+        "description": "Paste a place, Korean address, or Google Maps link. Korea Map Link verifies Korean details, opens Naver/Kakao, and shows an ad-free taxi card.",
         "publisher": { "@id": "https://sparkish-xyz.github.io/#organization" }
       }
     ]
@@ -62,6 +64,7 @@
     </nav>
     <div class="lang-switch" aria-label="Language">
       <a href="/korea-map-link/en/" aria-current="true" lang="en">EN</a>
+      <a href="/korea-map-link/fr/" lang="fr">FR</a>
       <a href="/korea-map-link/ko/" lang="ko">KO</a>
       <a href="/korea-map-link/ja/" lang="ja">JA</a>
       <a href="/korea-map-link/zh-Hans/" lang="zh-Hans">简</a>
@@ -71,13 +74,14 @@
 
   <main>
     <section class="hero">
-      <span class="hero-badge">Korea handoff ticket</span>
+      <span class="hero-badge">Current iOS app capture</span>
       <h1>Paste a place. Open the right Korean map.</h1>
-      <p class="lead">Google Maps falls short in Korea. Paste links or English place names—get Korean names, open Naver/Kakao Map, and show a large taxi card for first-time trips.</p>
+      <p class="lead">Paste a Google Maps link, Korean address, or place name. Korea Map Link resolves the Korean details and keeps Naver, Kakao, and taxi handoff one tap away.</p>
       <div class="pill-row">
         <span class="pill naver">Home</span>
-        <span class="pill kakao">Saved</span>
-        <span class="pill">Taxi</span>
+        <span class="pill">Resolve</span>
+        <span class="pill kakao">Kakao</span>
+        <span class="pill naver">Naver</span>
         <span class="pill">Share Sheet</span>
       </div>
       <div class="btn-row">
@@ -89,29 +93,33 @@
     <section class="section">
       <h2>How it works</h2>
       <ol class="steps">
-        <li><strong>Input</strong> On Home, paste a Google Maps link, English name, or address—or share directly from Google Maps via the iOS Share Sheet.</li>
-        <li><strong>Verify</strong> Resolve parses your source, checks Naver/Kakao candidates, and ranks the best Korean match with confidence badges.</li>
-        <li><strong>Open</strong> Send to Naver or Kakao from the place ticket, save to Saved, or show the ad-free taxi placard from the Taxi tab.</li>
+        <li><strong>Paste</strong> Start from a Google Maps link, Korean address, English place name, or the iOS Share Sheet.</li>
+        <li><strong>Resolve</strong> The app parses the source, checks local candidates, and keeps the Korean name, address, and confidence visible.</li>
+        <li><strong>Hand off</strong> Open Naver or Kakao, save the place, or show the ad-free taxi-ready card when you need a driver to read it.</li>
       </ol>
     </section>
 
     <section class="section shots">
-      <h2>The handoff flow</h2>
+      <h2>The current app flow</h2>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-home.png" width="1320" height="2868" loading="lazy" alt="Home — paste a place and open Naver, Kakao, or Taxi">
-        <figcaption>Home is your handoff console — paste, search, or share from Google Maps.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-onboarding.png" width="1320" height="2868" loading="eager" alt="Onboarding — turn Korean place names into map-ready results">
+        <figcaption>Onboarding sets the promise: Korean place details stay visible from the first step.</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-resolve.png" width="1320" height="2868" loading="lazy" alt="Resolve — parse source and rank Korean matches">
-        <figcaption>Resolve parses your source and surfaces the best Korean match with confidence.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-home.png" width="1320" height="2868" loading="eager" alt="Home — paste a place and open Naver, Kakao, or Taxi">
+        <figcaption>Home is a focused handoff console for paste, search, region, current location, and share-sheet input.</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-place-detail.png" width="1320" height="2868" loading="lazy" alt="Place ticket — Korean addresses and Naver/Kakao send buttons">
-        <figcaption>Send to Naver or Kakao from the verified place ticket — road and jibun addresses included.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-resolve.png" width="1320" height="2868" loading="eager" alt="Resolve — parse source and rank Korean matches">
+        <figcaption>Resolve shows the source preview, parsing progress, local candidates, and match confidence.</figcaption>
       </figure>
       <figure>
-        <img src="/korea-map-link/assets/screenshot-taxi.png" width="1320" height="2868" loading="lazy" alt="Taxi placard — large Korean destination card">
-        <figcaption>Show a high-contrast taxi placard drivers can read — ad-free screen.</figcaption>
+        <img src="/korea-map-link/assets/screenshot-place-detail.png" width="1320" height="2868" loading="eager" alt="Place ticket — Korean addresses and Naver/Kakao send buttons">
+        <figcaption>The place card keeps Korean, romanized, and jibun addresses beside Naver, Kakao, save, copy, and taxi actions.</figcaption>
+      </figure>
+      <figure>
+        <img src="/korea-map-link/assets/screenshot-taxi.png" width="1320" height="2868" loading="eager" alt="Taxi placard — large Korean destination card">
+        <figcaption>The taxi card is high-contrast, ad-free, and readable at a glance for drivers.</figcaption>
       </figure>
     </section>
 

@@ -10,6 +10,7 @@ Deployed under the Sparkish site:
 |------|-----|
 | Language chooser | `https://sparkish-xyz.github.io/korea-map-link/` |
 | English landing | `https://sparkish-xyz.github.io/korea-map-link/en/` |
+| French landing | `https://sparkish-xyz.github.io/korea-map-link/fr/` |
 | Privacy | `https://sparkish-xyz.github.io/korea-map-link/privacy/` |
 | Support | `https://sparkish-xyz.github.io/korea-map-link/support/` |
 
