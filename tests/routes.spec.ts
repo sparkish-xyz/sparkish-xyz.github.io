@@ -14,6 +14,14 @@ test.describe('Sparkish site routes', () => {
     expect(jsonLd).toContain('"@type": "Organization"');
     expect(jsonLd).toContain('"@type": "MobileApplication"');
     expect(jsonLd).toContain('AquaTick');
+    expect(jsonLd).toContain('Korea Map Link');
+    expect(jsonLd).toContain('for first-time trips');
+  });
+
+  test('hub links to Korea Map Link', async ({ page }) => {
+    await page.goto('/');
+    await page.getByRole('link', { name: /View Korea Map Link/i }).click();
+    await expect(page).toHaveURL(/\/korea-map-link\/(en|ko|ja|zh-Hans|zh-Hant)\/?$/);
   });
 
   test('legacy /ko/ redirects and seeds aquaLangPref', async ({ page }) => {
@@ -109,10 +117,93 @@ test.describe('Sparkish site routes', () => {
     await expect(page).toHaveURL(/\/korea-map-link\/en\/?$/);
   });
 
+  test('Korea Map Link chooser uses navigator.language for Korean', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.removeItem('kmbLangPref');
+      Object.defineProperty(navigator, 'language', {
+        get: () => 'ko-KR',
+        configurable: true,
+      });
+    });
+    await page.goto('/korea-map-link/');
+    await expect(page).toHaveURL(/\/korea-map-link\/ko\/?$/);
+  });
+
+  test('Korea Map Link chooser uses navigator.language for Japanese', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.removeItem('kmbLangPref');
+      Object.defineProperty(navigator, 'language', {
+        get: () => 'ja-JP',
+        configurable: true,
+      });
+    });
+    await page.goto('/korea-map-link/');
+    await expect(page).toHaveURL(/\/korea-map-link\/ja\/?$/);
+  });
+
+  test('Korea Map Link chooser maps zh-TW to Traditional Chinese', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.removeItem('kmbLangPref');
+      Object.defineProperty(navigator, 'language', {
+        get: () => 'zh-TW',
+        configurable: true,
+      });
+    });
+    await page.goto('/korea-map-link/');
+    await expect(page).toHaveURL(/\/korea-map-link\/zh-Hant\/?$/);
+  });
+
+  test('Korea Map Link chooser maps zh-CN to Simplified Chinese', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.removeItem('kmbLangPref');
+      Object.defineProperty(navigator, 'language', {
+        get: () => 'zh-CN',
+        configurable: true,
+      });
+    });
+    await page.goto('/korea-map-link/');
+    await expect(page).toHaveURL(/\/korea-map-link\/zh-Hans\/?$/);
+  });
+
+  test('Korea Map Link chooser honors stored language preference', async ({ page }) => {
+    await page.addInitScript(() => {
+      localStorage.setItem('kmbLangPref', 'ja');
+    });
+    await page.goto('/korea-map-link/');
+    await expect(page).toHaveURL(/\/korea-map-link\/ja\/?$/);
+  });
+
+  test('Korea Map Link locale page does not bounce away from direct URL', async ({ page }) => {
+    await page.goto('/korea-map-link/ko/');
+    await expect(page).toHaveURL(/\/korea-map-link\/ko\/?$/);
+    await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
+  });
+
+  test('Korea Map Link locale path seeds kmbLangPref', async ({ page }) => {
+    await page.goto('/korea-map-link/zh-Hans/');
+    await expect(page).toHaveURL(/\/korea-map-link\/zh-Hans\/?$/);
+    const pref = await page.evaluate(() => localStorage.getItem('kmbLangPref'));
+    expect(pref).toBe('zh-Hans');
+  });
+
   test('Korea Map Link app icon returns 200', async ({ request }) => {
     const res = await request.get('/korea-map-link/assets/app-icon.png');
     expect(res.status()).toBe(200);
     expect(res.headers()['content-type']).toMatch(/image/);
+  });
+
+  test('Korea Map Link screenshots return 200', async ({ request }) => {
+    const screenshots = [
+      'screenshot-onboarding.png',
+      'screenshot-results.png',
+      'screenshot-place-detail.png',
+      'screenshot-taxi.png',
+    ];
+    for (const name of screenshots) {
+      const res = await request.get(`/korea-map-link/assets/${name}`);
+      expect(res.status(), name).toBe(200);
+      expect(res.headers()['content-type'], name).toMatch(/image/);
+    }
   });
 
   test('mirrored /assets/ screenshots return 200', async ({ request }) => {

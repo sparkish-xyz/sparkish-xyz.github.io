@@ -198,6 +198,21 @@ h1 {
   border: 1px solid var(--border);
   border-radius: var(--r-card);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.shots figure img {
+  width: 100%;
+  aspect-ratio: 1179 / 2556;
+  object-fit: cover;
+  object-position: top center;
+}
+.shots figure.results {
+  background: var(--paper);
+}
+.shots figure.results img {
+  object-fit: contain;
+  object-position: top center;
 }
 .shots figcaption {
   padding: 10px 14px;
