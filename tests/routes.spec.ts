@@ -280,6 +280,89 @@ test.describe('Sparkish site routes', () => {
     }
   });
 
+  test('Korea Map Link locale pages keep meta and JSON-LD descriptions in sync', async ({ page }) => {
+    const locales = ['en', 'fr', 'ko', 'ja', 'zh-Hans', 'zh-Hant'] as const;
+
+    for (const locale of locales) {
+      await page.goto(`/korea-map-link/${locale}/`);
+      const metaDescription = await page.locator('meta[name="description"]').getAttribute('content');
+      const ogDescription = await page.locator('meta[property="og:description"]').getAttribute('content');
+      const twitterDescription = await page.locator('meta[name="twitter:description"]').getAttribute('content');
+      const jsonLd = await page.locator('script[type="application/ld+json"]').textContent();
+      const json = JSON.parse(jsonLd ?? '{}') as {
+        '@graph'?: Array<{ description?: string }>;
+      };
+      const jsonDescription = json['@graph']?.[0]?.description;
+
+      expect(metaDescription, locale).toBeTruthy();
+      expect(metaDescription, locale).toBe(ogDescription);
+      expect(metaDescription, locale).toBe(twitterDescription);
+      expect(metaDescription, locale).toBe(jsonDescription);
+    }
+  });
+
+  test('Korea Map Link locale pages keep FAQ and screenshot structure in parity', async ({ page }) => {
+    const locales = ['en', 'fr', 'ko', 'ja', 'zh-Hans', 'zh-Hant'] as const;
+    const counts = [];
+
+    for (const locale of locales) {
+      await page.goto(`/korea-map-link/${locale}/`);
+      counts.push({
+        locale,
+        details: await page.locator('section.faq details').count(),
+        figures: await page.locator('section.shots figure').count(),
+      });
+    }
+
+    const expectedDetails = counts[0].details;
+    const expectedFigures = counts[0].figures;
+
+    for (const entry of counts) {
+      expect(entry.details, entry.locale).toBe(expectedDetails);
+      expect(entry.figures, entry.locale).toBe(expectedFigures);
+    }
+
+    expect(expectedDetails).toBe(5);
+    expect(expectedFigures).toBe(5);
+  });
+
+  test('Korea Map Link screenshots keep expected dimensions', async ({ request }) => {
+    const screenshots = [
+      'screenshot-onboarding.png',
+      'screenshot-home.png',
+      'screenshot-resolve.png',
+      'screenshot-place-detail.png',
+      'screenshot-taxi.png',
+    ];
+
+    for (const name of screenshots) {
+      const res = await request.get(`/korea-map-link/assets/${name}`);
+      expect(res.status(), name).toBe(200);
+
+      const body = await res.body();
+      const width = body.readUInt32BE(16);
+      const height = body.readUInt32BE(20);
+
+      expect(width, name).toBe(1320);
+      expect(height, name).toBe(2868);
+    }
+  });
+
+  test('Korea Map Link locale pages keep title tags in sync with social titles', async ({ page }) => {
+    const locales = ['en', 'fr', 'ko', 'ja', 'zh-Hans', 'zh-Hant'] as const;
+
+    for (const locale of locales) {
+      await page.goto(`/korea-map-link/${locale}/`);
+      const title = await page.title();
+      const ogTitle = await page.locator('meta[property="og:title"]').getAttribute('content');
+      const twitterTitle = await page.locator('meta[name="twitter:title"]').getAttribute('content');
+
+      expect(title, locale).toBeTruthy();
+      expect(title, locale).toBe(ogTitle);
+      expect(title, locale).toBe(twitterTitle);
+    }
+  });
+
   test('mirrored /assets/ screenshots return 200', async ({ request }) => {
     const screenshots = [
       'screenshot-iphone-home.png',
