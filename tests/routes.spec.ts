@@ -51,6 +51,31 @@ test.describe('Sparkish site routes', () => {
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   });
 
+  test('AquaTick screenshot strip starts with the first card visible', async ({ page }) => {
+    await page.setViewportSize({ width: 720, height: 800 });
+    await page.goto('/aquatick/ko/');
+    await page.locator('#film').scrollIntoViewIfNeeded();
+
+    const metrics = await page.locator('.film-strip').evaluate((strip) => {
+      const firstCard = strip.querySelector('.film-card');
+      if (!firstCard) {
+        throw new Error('Missing screenshot card');
+      }
+
+      const stripRect = strip.getBoundingClientRect();
+      const firstRect = firstCard.getBoundingClientRect();
+
+      return {
+        stripLeft: Math.round(stripRect.left),
+        firstLeft: Math.round(firstRect.left),
+        pageOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      };
+    });
+
+    expect(metrics.firstLeft).toBeGreaterThanOrEqual(metrics.stripLeft);
+    expect(metrics.pageOverflow).toBe(0);
+  });
+
   test('locale path without trailing slash seeds aquaLangPref', async ({ page }) => {
     await page.goto('/aquatick/ko');
     await expect(page).toHaveURL(/\/aquatick\/ko\/?$/);
