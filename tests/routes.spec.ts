@@ -76,6 +76,42 @@ test.describe('Sparkish site routes', () => {
     expect(metrics.pageOverflow).toBe(0);
   });
 
+  test('Japanese AquaTick hero remains readable at tablet width', async ({ page }) => {
+    await page.setViewportSize({ width: 720, height: 900 });
+    await page.goto('/aquatick/ja/');
+
+    const metrics = await page.evaluate(() => {
+      const h1 = document.querySelector('.hero h1');
+      const firstButton = document.querySelector('.hero-actions .btn');
+      const actions = document.querySelector('.hero-actions');
+      if (!h1 || !firstButton || !actions) {
+        throw new Error('Missing Japanese hero content');
+      }
+
+      const h1Rect = h1.getBoundingClientRect();
+      const buttonRect = firstButton.getBoundingClientRect();
+      const buttonTextRange = document.createRange();
+      buttonTextRange.selectNodeContents(firstButton);
+      const buttonLineCount = new Set(
+        Array.from(buttonTextRange.getClientRects(), (rect) => Math.round(rect.top)),
+      ).size;
+
+      return {
+        h1Height: Math.round(h1Rect.height),
+        buttonWidth: Math.round(buttonRect.width),
+        buttonLineCount,
+        actionsDirection: getComputedStyle(actions).flexDirection,
+        pageOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      };
+    });
+
+    expect(metrics.h1Height).toBeLessThanOrEqual(150);
+    expect(metrics.buttonWidth).toBeGreaterThanOrEqual(280);
+    expect(metrics.buttonLineCount).toBeLessThanOrEqual(1);
+    expect(metrics.actionsDirection).toBe('column');
+    expect(metrics.pageOverflow).toBe(0);
+  });
+
   test('locale path without trailing slash seeds aquaLangPref', async ({ page }) => {
     await page.goto('/aquatick/ko');
     await expect(page).toHaveURL(/\/aquatick\/ko\/?$/);

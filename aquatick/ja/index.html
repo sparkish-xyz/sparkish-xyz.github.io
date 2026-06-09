@@ -834,6 +834,21 @@
         gap: 20px;
       }
     }
+    @media (min-width: 720px) and (max-width: 979px) {
+      html[lang="ja"] .hero h1 {
+        font-size: clamp(2.4rem, 5.4vw, 3rem);
+        letter-spacing: -0.02em;
+      }
+      html[lang="ja"] .hero-actions {
+        flex-direction: column;
+        max-width: 320px;
+      }
+      html[lang="ja"] .hero-actions .btn {
+        width: 100%;
+        padding: 0 20px;
+        font-size: 1rem;
+      }
+    }
     @media (min-width: 980px) {
       .hero-inner { max-width: 1080px; }
       .mood-inner, .judgment-inner, .cat-film-inner, .testimonials-inner { max-width: 980px; }
@@ -898,7 +913,7 @@
         <div>
           <div class="hero-badge">ワンタップ・ウィジェット・ウォッチ・猫</div>
           
-          <h1>この猫が<br>あなたの毎日の水分を<br>そっと守ってくれます。</h1>
+          <h1>この猫が<br>毎日の水分を<br>そっと守ります。</h1>
           
           <p class="hero-tagline">水分補給の猫と一緒に。ホーム画面・ロック画面ウィジェット、Live Activity、Dynamic Island、Apple Watchから+200mL、+300mLをワンタップで記録。<br>0mLになると、猫が静かにコップを持って待っています。</p>
 
