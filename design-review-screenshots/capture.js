@@ -18,16 +18,17 @@
  * - Usage examples:
  *     node design-review-screenshots/capture.js --phase after
  *     TARGET_URL="http://localhost:5173" node design-review-screenshots/capture.js --phase before
- * - Still lightweight Node script (no @playwright/test required for this review tooling).
+ * - Still lightweight Node script using the existing @playwright/test dependency.
  *
  * Note on limitations (honest):
  * - True Dynamic Type "maximum" text scaling is best tested manually in Safari Responsive Design Mode
  *   or on real iOS devices (Playwright context has limited font scaling emulation).
  * - Broken-image / network failure states are low-priority for this polished static page.
  */
-const { chromium, webkit } = require('playwright');
+const { chromium, webkit } = require('@playwright/test');
 const fs = require('fs');
 const path = require('path');
+const { parseArgs } = require('util');
 
 // --- Configuration (now flexible) ---
 const OUTPUT_DIR = path.resolve(__dirname, '..', 'design-review-screenshots');
@@ -66,15 +67,13 @@ function resolveTargetUrl(raw) {
 // Mobile header wrap states (flex-wrap + align flex-start on <=720px, taller header on long-label ko/ja pages, different en lengths) are now exercised on narrow viewports.
 const TARGET_URL = resolveTargetUrl(process.env.TARGET_URL);
 
-// Simple CLI arg parsing (no extra deps)
-function getArg(name, defaultVal = null) {
-  const args = process.argv.slice(2);
-  const idx = args.indexOf(name);
-  if (idx !== -1 && idx + 1 < args.length) return args[idx + 1];
-  return defaultVal;
-}
+const { values: args } = parseArgs({
+  options: {
+    phase: { type: 'string' },
+  },
+});
 
-const PHASE = (getArg('--phase') || process.env.PHASE || 'current').toLowerCase();
+const PHASE = (args.phase || process.env.PHASE || 'current').toLowerCase();
 const PHASE_DIR = path.join(OUTPUT_DIR, PHASE);
 
 const VIEWPORTS = [

@@ -70,10 +70,11 @@ Requires a local server (absolute `/aquatick/assets/` paths):
 ```bash
 python3 -m http.server 8080 &
 npm run capture:local
-TARGET_URL="https://sparkish-xyz.github.io/aquatick/ko/" npm run capture:deployed
+npm run capture:deployed
 ```
 
-`capture:local` only accepts `http://127.0.0.1:8080` / `localhost:8080` or `sparkish-xyz.github.io` URLs via `TARGET_URL`.
+Captures are generated under `design-review-screenshots/<phase>/` and are intentionally gitignored.
+The capture script only accepts `http://127.0.0.1:8080` / `localhost:8080` or `sparkish-xyz.github.io` URLs via `TARGET_URL`.
 
 ## CI
 

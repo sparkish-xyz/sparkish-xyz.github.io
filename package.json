@@ -7,7 +7,7 @@
     "test": "playwright test",
     "test:routes": "playwright test tests/routes.spec.ts",
     "capture:local": "node design-review-screenshots/capture.js",
-    "capture:deployed": "node design-review-deployed/capture-live.js"
+    "capture:deployed": "TARGET_URL=\"https://sparkish-xyz.github.io/aquatick/ko/\" node design-review-screenshots/capture.js --phase deployed"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,6 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@playwright/test": "^1.60.0",
-    "playwright": "^1.60.0"
+    "@playwright/test": "^1.60.0"
   }
 }

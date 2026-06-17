@@ -1,8 +1,10 @@
 # Temporary files from visual review
 node_modules/
 test-results/
+**/.DS_Store
 
 # Large Playwright screenshots (kept locally for reference)
+design-review-deployed/
 design-review-screenshots/*.png
 design-review-screenshots/after/
 design-review-screenshots/before/
