@@ -33,9 +33,9 @@
   --r-32: 24px;
   --r-full: 999px;
 
-  /* Fluid type */
-  --big: clamp(2.4rem, 9vw, 3.6rem);
-  --title: clamp(1.85rem, 6.8vw, 2.4rem);
+  /* Type scale */
+  --big: 2.8rem;
+  --title: 2rem;
   --body: 1.05rem;
 }
 
@@ -58,7 +58,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
   font-size: var(--body);
   line-height: 1.48;
-  letter-spacing: -0.01em;
+  letter-spacing: 0;
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
@@ -91,7 +91,7 @@ img { display: block; max-width: 100%; height: auto; }
   gap: 10px;
   font-weight: 800;
   font-size: 1.15rem;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 .brand img {
   width: 36px;
@@ -120,7 +120,7 @@ img { display: block; max-width: 100%; height: auto; }
   border-color: var(--water-accent);
 }
 
-/* HERO — Cat front and center, attitude max */
+/* HERO — one-tap habit first, cat nudge second */
 .hero {
   background: linear-gradient(180deg, var(--hero-surface) 0%, var(--paper) 100%);
   border-bottom: 1px solid var(--fine-border);
@@ -139,14 +139,21 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .hero-inner {
-  padding: 52px 18px 44px;
-  max-width: 980px;
+  padding: 42px 18px 38px;
+  max-width: 1040px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  align-items: center;
+  gap: 24px;
   position: relative;
   z-index: 1;
+  text-align: center;
+}
+
+.hero-copy {
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .hero-badge {
@@ -163,16 +170,19 @@ img { display: block; max-width: 100%; height: auto; }
   box-shadow: var(--shadow-soft);
   transform: none;
   width: fit-content;
-  letter-spacing: 0.5px;
+  letter-spacing: 0;
+  margin: 0 auto 12px;
 }
 
 .hero h1 {
   font-size: var(--big);
   line-height: 1.05;
   font-weight: 900;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
   margin: 0 0 14px;
-  max-width: 18ch;
+  max-width: 16ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-tagline {
@@ -180,8 +190,8 @@ img { display: block; max-width: 100%; height: auto; }
   font-weight: 700;
   line-height: 1.35;
   color: var(--navy);
-  max-width: 22ch;
-  margin-bottom: 18px;
+  max-width: 34rem;
+  margin: 0 auto 18px;
 }
 
 .hero-actions {
@@ -189,6 +199,25 @@ img { display: block; max-width: 100%; height: auto; }
   flex-direction: column;
   gap: 12px;
   margin-top: 8px;
+  align-items: stretch;
+}
+
+.hero-proof {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.hero-proof span {
+  border: 1px solid var(--fine-border);
+  border-radius: var(--r-full);
+  background: white;
+  padding: 6px 10px;
 }
 
 .btn {
@@ -199,7 +228,7 @@ img { display: block; max-width: 100%; height: auto; }
   padding: 0 28px;
   font-size: 1.08rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   border-radius: var(--r-control);
   border: 1px solid var(--sticker-border);
   transition: transform 120ms ease, box-shadow 120ms ease;
@@ -224,7 +253,7 @@ img { display: block; max-width: 100%; height: auto; }
 .hero-visual {
   position: relative;
   width: 100%;
-  max-width: 340px;
+  max-width: 280px;
   margin: 0 auto;
 }
 .hero-visual .iphone-frame {
@@ -253,6 +282,26 @@ img { display: block; max-width: 100%; height: auto; }
   box-shadow: var(--shadow-soft);
   z-index: 10;
   white-space: nowrap;
+}
+.floating-proof {
+  position: absolute;
+  background: white;
+  color: var(--ink);
+  border: 1px solid var(--sticker-border);
+  border-radius: var(--r-control);
+  box-shadow: var(--shadow-soft);
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+.floating-proof-left {
+  left: -18px;
+  bottom: 18%;
+}
+.floating-proof-right {
+  right: -18px;
+  top: 22%;
 }
 
 /* MOOD CHECKER — playful light interaction */
@@ -317,7 +366,7 @@ img { display: block; max-width: 100%; height: auto; }
   font-size: 1.85rem;
   font-weight: 900;
   line-height: 1.0;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   color: var(--ink);
 }
 .demo-total small {
@@ -671,7 +720,7 @@ img { display: block; max-width: 100%; height: auto; }
   margin: 0 auto;
 }
 .final-cta h2 {
-  font-size: clamp(1.9rem, 8vw, 2.6rem);
+  font-size: 2.1rem;
   font-weight: 900;
   line-height: 1.1;
   margin: 0 0 12px;
@@ -715,18 +764,23 @@ footer a { text-decoration: underline; font-weight: 600; }
 
 /* Responsive */
 @media (min-width: 720px) {
+  :root {
+    --big: 3.5rem;
+    --title: 2.35rem;
+  }
   .hero-inner {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 42px;
-    padding: 68px 28px 58px;
+    gap: 30px;
+    padding: 58px 28px 50px;
   }
   .hero-visual {
-    max-width: 310px;
+    max-width: 320px;
     flex-shrink: 0;
   }
   .hero-actions {
     flex-direction: row;
+    justify-content: center;
   }
   .judgment-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -745,11 +799,14 @@ footer a { text-decoration: underline; font-weight: 600; }
     justify-content: flex-start;
     gap: 20px;
   }
+  .final-cta h2 {
+    font-size: 2.6rem;
+  }
 }
 @media (min-width: 720px) and (max-width: 979px) {
   html[lang="ja"] .hero h1 {
-    font-size: clamp(2.4rem, 5.4vw, 3rem);
-    letter-spacing: -0.02em;
+    font-size: 3rem;
+    letter-spacing: 0;
   }
   html[lang="ja"] .hero-actions {
     flex-direction: column;

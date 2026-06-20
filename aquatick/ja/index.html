@@ -104,55 +104,58 @@
   </header>
 
   <main id="top">
-    <!-- HERO: The cat has main character energy -->
+    <!-- HERO: one-tap habit first, cat nudge second -->
     <section class="hero" aria-label="AquaTick メイン">
       <div class="hero-inner">
-        <div>
-          <div class="hero-badge">ワンタップ・ウィジェット・ウォッチ・猫</div>
+        <div class="hero-copy">
+          <div class="hero-badge">アプリ外で終わる水分記録</div>
           
-          <h1>この猫が<br>毎日の水分を<br>そっと守ります。</h1>
+          <h1>アプリを開かずに<br>+200mL。</h1>
           
-          <p class="hero-tagline">水分補給の猫と一緒に。ホーム画面・ロック画面ウィジェット、Live Activity、Dynamic Island、Apple Watchから+200mL、+300mLをワンタップで記録。<br>0mLになると、猫が静かにコップを持って待っています。</p>
+          <p class="hero-tagline">ロック画面、ウィジェット、Live Activity、Dynamic Island、Apple Watchからワンタップ。0mLになると、猫が静かに待っています。</p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">App Storeから猫をお迎えください</a>
-            <a class="btn btn-secondary" href="#judgment">一緒にいる方法を先に見る</a>
+            <a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">App Storeで入手</a>
+            <a class="btn btn-secondary" href="#proof">続けやすい理由を見る</a>
           </div>
 
-          <div style="margin-top:18px; font-size:0.82rem; font-weight:700; color:var(--muted);">
-            iPhone · Apple Watch · ウィジェット · Live Activity · Dynamic Island — すべて猫と一緒に
+          <div class="hero-proof" aria-label="AquaTickの主な機能">
+            <span>Lock Screen +200</span>
+            <span>Watch +300</span>
+            <span>アカウント不要</span>
           </div>
         </div>
 
-        <!-- The actual cat, front and center -->
         <div class="hero-visual">
           <div class="iphone-frame">
             <img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" 
                  alt="AquaTick iPhoneホーム — 猫がカップを持って待ち、500mL記録、水平ティール進行バーと残量表示">
           </div>
-          <div class="cat-sticker" data-active-text="本物の猫だよ 😂">本物の猫です</div>
+          <div class="cat-sticker" data-active-text="記録完了！">猫が待っています</div>
+          <div class="floating-proof floating-proof-left">3秒で記録</div>
+          <div class="floating-proof floating-proof-right">今日 68%</div>
         </div>
       </div>
     </section>
 
-    <section class="answer-summary" aria-labelledby="summary-title">
+    <section id="proof" class="answer-summary" aria-labelledby="summary-title">
       <div class="answer-inner">
-        <span class="section-label">AquaTickの概要</span>
-        <h2 id="summary-title">AquaTickは猫と続ける水分記録アプリです</h2>
-        <p class="answer-lead">猫と一緒の水分記録アプリで、すでに見ている画面からワンタップで水を記録できます。今日の摂取量と目標の進み具合を確認し、遅れると猫の表情がそっと促してくれます。</p>
+        <span class="section-label">続けやすい理由</span>
+        <h2 id="summary-title">面倒な記録をアプリの外へ出しました</h2>
+        <p class="answer-lead">AquaTickが最初に解決するのは、水を飲んだ直後のいちばん短い行動です。見ている画面から+200mLを押すだけ。猫はプレッシャーではなく、状態でそっと知らせます。</p>
 
         <div class="fact-grid">
           <article class="fact-card">
-            <h3>ワンタップで素早く追加</h3>
-            <p>ホーム画面・ロック画面ウィジェット、Live Activity、Dynamic Island、Apple Watchから+200mL、+300mLを記録。</p>
+            <h3>アプリを開きません</h3>
+            <p>ロック画面、ホーム画面ウィジェット、Live Activity、Dynamic Island、Apple Watchから+200mL、+300mLを記録。</p>
           </article>
           <article class="fact-card">
-            <h3>履歴と連続達成</h3>
-            <p>履歴タブの月間カレンダー、7日平均、目標達成日、連続達成の流れ。カスタム量と最近の記録の取り消しにも対応。</p>
+            <h3>強く急かしません</h3>
+            <p>0mLでは猫が待ち、目標に近づくと表情が変わります。警告よりも、やさしい合図に近い体験です。</p>
           </article>
           <article class="fact-card">
-            <h3>アカウント不要</h3>
-            <p>アカウントなしで使えます。リマインダー通知とAppleヘルス連携は任意で、許可したデータだけを使用します。</p>
+            <h3>記録は残ります</h3>
+            <p>月間カレンダー、7日平均、目標達成日、カスタム量、最近の記録の取り消しまで必要な分だけ確認できます。</p>
           </article>
         </div>
       </div>
@@ -161,8 +164,8 @@
     <!-- MOOD CHECKER + WATER FILL: Light playful interaction -->
     <section id="mood" class="mood-section">
       <div class="mood-inner">
-        <span class="section-label">3秒で体験してみてください</span>
-        <h2 class="mood-title">猫と一緒に<br>サッと記録してみましょう</h2>
+        <span class="section-label">3秒デモ</span>
+        <h2 class="mood-title">水を飲んだら<br>+200を押すだけ</h2>
 
         <!-- 実際のアプリホームカード + Watchスタイルのクイック追加 (AquaTickDesign / HomeHeroCardView: horizontal progress, CatHydration, +200/+300) -->
         <div class="app-demo" data-locale="ja-JP" data-goal-message="🎉 目標達成！猫が喜んでいます。" data-logged-message="記録完了！猫が応援しています。" data-undone-message="取り消しました。また始めましょうか？">
@@ -187,49 +190,49 @@
           </div>
           <div id="demo-message" class="demo-message" aria-live="polite"></div>
         </div>
-        <p class="demo-hint">実際のアプリと同じクイック記録の流れをここで先に体験してください。猫があなたの水分を覚えていて、表情で応援してくれます。</p>
+        <p class="demo-hint">実際のクイック記録の流れです。数字が増え、猫の状態が変わり、記録が残ります。</p>
       </div>
     </section>
 
-    <!-- THE 3 JUDGMENTS — replaces dry feature grid with cat attitude -->
+    <!-- CAT NUDGE: soft emotional reason to come back -->
     <section id="judgment" class="judgment">
       <div class="judgment-inner">
-        <h2>この猫が一緒に<br>してくれる3つの約束</h2>
-        <p class="judgment-subtitle">猫があなたを覚えていて、優しく応援してくれる方法です。</p>
+        <h2>猫が伝えるのは<br>必要なことだけ</h2>
+        <p class="judgment-subtitle">自己管理アプリの圧迫感ではなく、見ればわかる小さな合図だけを残しました。</p>
 
         <div class="judgment-grid">
           <!-- Judgment 1 -->
           <article class="judgment-card">
-            <div class="judgment-number">約束 01</div>
-            <h3>待っている瞬間</h3>
-            <p>0mLになると、猫がコップを持って静かに待っています。その優しい表情を見ると、自然と水を手に取ってしまいます。</p>
+            <div class="judgment-number">0mL</div>
+            <h3>静かに待つ</h3>
+            <p>まだ記録がないと、猫がコップを持って待っています。通知より軽く、それでも気づきやすい合図です。</p>
             <span class="cat-face">😿</span>
           </article>
 
           <!-- Judgment 2 -->
           <article class="judgment-card">
-            <div class="judgment-number">約束 02</div>
-            <h3>記憶と応援</h3>
-            <p>目標を決めると猫が覚えていてくれます。あなたが忘れても猫は忘れません。通知は優しい励ましのように届きます。</p>
+            <div class="judgment-number">途中</div>
+            <h3>状態でわかる</h3>
+            <p>目標までの進み具合を、数字と表情で一緒に見せます。細かいダッシュボードを見る必要はありません。</p>
             <span class="cat-face">😼</span>
           </article>
 
           <!-- Judgment 3 -->
           <article class="judgment-card">
-            <div class="judgment-number">約束 03</div>
-            <h3>手首の上の友達</h3>
-            <p>Watchで+200を押すたびに、手首に猫が一緒にいるような気持ちになります。耳が本当に立つわけではありませんが、気分は本当に良くなります。</p>
+            <div class="judgment-number">目標近く</div>
+            <h3>軽く応援する</h3>
+            <p>少しずつ満たされるほど、猫も明るくなります。習慣は厳しい管理より、小さな反応の積み重ねで続きます。</p>
             <span class="cat-face">😺</span>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CAT FILM STRIP: Screenshots as starring moments -->
+    <!-- MOMENTS: screenshots by user situation -->
     <section id="film" class="cat-film">
       <div class="cat-film-inner">
         <div class="film-header">
-          <h2>猫と一緒にいた瞬間</h2>
+          <h2>記録が起きる瞬間</h2>
           <span class="sub">実際のアプリ画面</span>
         </div>
 
@@ -239,8 +242,8 @@
             <img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" loading="lazy"
                  alt="AquaTick iPhoneホーム — 猫と一緒に500mL記録、水平プログレスバーと詳細ステータス">
             <div class="film-caption">
-              <strong>瞬間 1</strong>
-              猫がカップを持って待つホームカード。500mL記録後の温かい瞬間。
+              <strong>アプリを探す前に</strong>
+              アプリを開かなくても、500mLの記録と今日の残りの量がすぐ見えます。
             </div>
           </div>
 
@@ -249,8 +252,8 @@
             <img src="/aquatick/assets/screenshot-iphone-history.png" width="1206" height="2622" loading="lazy"
                  alt="AquaTick ヒストリー — カレンダーと日々の水分記録、猫のキャラクターと一緒に">
             <div class="film-caption">
-              <strong>瞬間 2</strong>
-              ヒストリーで流れを確認。猫と一緒に積み重ねる毎日の記録。
+              <strong>1日の終わりに</strong>
+              月間カレンダーと最近の流れで、実際にどれだけ飲めたか確認します。
             </div>
           </div>
 
@@ -259,8 +262,8 @@
             <img src="/aquatick/assets/screenshot-watch-home.png" width="416" height="496" loading="lazy"
                  alt="AquaTick Apple Watch — 0mLで+200 +300のクイック追加ボタンがあるクリームカード">
             <div class="film-caption">
-              <strong>瞬間 3</strong>
-              手首で+200、+300を3秒で記録。猫と一緒にいる日常。
+              <strong>iPhoneを出したくない時</strong>
+              手首で+200、+300を押して終わり。会議中でも散歩中でも短く済みます。
             </div>
           </div>
 
@@ -269,8 +272,8 @@
             <img src="/aquatick/assets/screenshot-iphone-settings.png" width="1206" height="2622" loading="lazy"
                  alt="AquaTick設定 — 1日の目標、リマインダー、任意のAppleヘルス連携">
             <div class="film-caption">
-              <strong>瞬間 4</strong>
-              目標、リマインダー、任意のAppleヘルス連携を設定。アカウントは不要です。
+              <strong>最初の1分設定</strong>
+              目標、リマインダー、任意のAppleヘルス連携を決めれば、アカウントなしで始められます。
             </div>
           </div>
         </div>
@@ -279,27 +282,27 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS: Example use cases -->
+    <!-- PERSONA FIT -->
     <section class="testimonials">
       <div class="testimonials-inner">
-        <h2>AquaTickの使い方の例</h2>
+        <h2>AquaTickが合う人</h2>
 
         <div class="quote-grid">
           <div class="quote">
-            <p>「午前2時47分に猫からの通知で起きて400mL飲みました。感謝しつつも驚きました。今はウィジェットを固定して生活しています。」</p>
-            <div class="quote-author">使用例 01</div>
+            <p>記録が面倒になった瞬間、習慣アプリを消してしまいがちな人。</p>
+            <div class="quote-author">記録回避型</div>
           </div>
           <div class="quote">
-            <p>「Watchで猫を見て+200を連打してしまいます。友達に『この猫見て』と言いながらスクリーンショットを何枚も送りました。皆さんもぜひ。」</p>
-            <div class="quote-author">使用例 02</div>
+            <p>強い通知は苦手でも、猫が待つくらいのやさしい合図なら受け取れる人。</p>
+            <div class="quote-author">感情ナッジ型</div>
           </div>
           <div class="quote">
-            <p>「0mLになるたびに猫が待っている表情が印象的です。だからもっと頻繁に水を飲むようになりました。楽しくて感謝しているアプリです。」</p>
-            <div class="quote-author">使用例 03</div>
+            <p>iPhoneアプリを開くより、Apple Watchからすぐ記録したい人。</p>
+            <div class="quote-author">Watch優先型</div>
           </div>
           <div class="quote">
-            <p>「ロック画面に猫を置いてから、1日に何度も水を飲むようになりました。元々ほとんど飲んでいなかったのに、この猫のおかげで習慣になりました。」</p>
-            <div class="quote-author">使用例 04</div>
+            <p>重いダッシュボードではなく、1日や1週間の流れだけ軽く見返したい人。</p>
+            <div class="quote-author">軽い確認型</div>
           </div>
         </div>
       </div>

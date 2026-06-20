@@ -104,55 +104,58 @@
   </header>
 
   <main id="top">
-    <!-- HERO: The cat has main character energy -->
+    <!-- HERO: one-tap habit first, cat nudge second -->
     <section class="hero" aria-label="AquaTick main">
       <div class="hero-inner">
-        <div>
-          <div class="hero-badge">One-Tap Widget, Watch &amp; Cat</div>
+        <div class="hero-copy">
+          <div class="hero-badge">Hydration logging outside the app</div>
           
-          <h1>This cat gently<br>helps watch over<br>your daily hydration.</h1>
+          <h1>+200mL<br>without opening<br>the app.</h1>
           
-          <p class="hero-tagline">Meet your hydration cat. Log +200 mL or +300 mL from widgets, Live Activity, Dynamic Island, or Apple Watch—often without opening the app.<br>When it hits 0mL, the cat quietly waits holding a water cup.</p>
+          <p class="hero-tagline">One tap from Lock Screen, widgets, Live Activity, Dynamic Island, or Apple Watch. When you are at 0mL, the cat quietly waits.</p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Bring the cat home from the App Store</a>
-            <a class="btn btn-secondary" href="#judgment">See how we accompany first</a>
+            <a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Get it on the App Store</a>
+            <a class="btn btn-secondary" href="#proof">See why it sticks</a>
           </div>
 
-          <div style="margin-top:18px; font-size:0.82rem; font-weight:700; color:var(--muted);">
-            iPhone · Apple Watch · Widgets · Live Activity · Dynamic Island — all with your cat
+          <div class="hero-proof" aria-label="AquaTick key features">
+            <span>Lock Screen +200</span>
+            <span>Watch +300</span>
+            <span>No account</span>
           </div>
         </div>
 
-        <!-- The actual cat, front and center -->
         <div class="hero-visual">
           <div class="iphone-frame">
             <img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" 
                  alt="AquaTick iPhone home — cat waiting with a cup after 500mL logged, horizontal teal progress bar and remaining amount">
           </div>
-          <div class="cat-sticker" data-active-text="A real cat for real 😂">Real cat inside</div>
+          <div class="cat-sticker" data-active-text="Logged!">The cat waits</div>
+          <div class="floating-proof floating-proof-left">3-sec log</div>
+          <div class="floating-proof floating-proof-right">Today 68%</div>
         </div>
       </div>
     </section>
 
-    <section class="answer-summary" aria-labelledby="summary-title">
+    <section id="proof" class="answer-summary" aria-labelledby="summary-title">
       <div class="answer-inner">
-        <span class="section-label">AquaTick at a glance</span>
-        <h2 id="summary-title">AquaTick is a cat-themed hydration tracker app</h2>
-        <p class="answer-lead">A playful cat-themed water tracker built for one-tap logging from the screen you already use. See today's total, daily goal, remaining amount, and progress—and let the cat's expressions gently nudge you when you fall behind.</p>
+        <span class="section-label">Why it sticks</span>
+        <h2 id="summary-title">The tedious part lives outside the app</h2>
+        <p class="answer-lead">AquaTick starts with the shortest moment: right after you drink water. Tap +200mL from the screen you already use, while the cat nudges with state instead of pressure.</p>
 
         <div class="fact-grid">
           <article class="fact-card">
-            <h3>One-tap quick add</h3>
-            <p>Log +200 mL or +300 mL from Home Screen widgets, Lock Screen widgets, Live Activities, Dynamic Island, or Apple Watch.</p>
+            <h3>No need to open the app</h3>
+            <p>Log +200mL or +300mL from Lock Screen, Home Screen widgets, Live Activity, Dynamic Island, or Apple Watch.</p>
           </article>
           <article class="fact-card">
-            <h3>History &amp; streaks</h3>
-            <p>History tab with monthly calendar, 7-day average, goal-hit days, and streak flow. Custom amounts and undo for recent entries.</p>
+            <h3>No nagging</h3>
+            <p>At 0mL the cat waits. As you approach your goal, its expression changes. It feels closer to a gentle signal than a warning.</p>
           </article>
           <article class="fact-card">
-            <h3>No account needed</h3>
-            <p>Works without an account. Optional reminder notifications and Apple Health sync—only the data you allow.</p>
+            <h3>Your record still builds</h3>
+            <p>Monthly calendar, 7-day average, goal-hit days, custom amounts, and undo are there when you want the details.</p>
           </article>
         </div>
       </div>
@@ -161,8 +164,8 @@
     <!-- MOOD CHECKER + WATER FILL: Light playful interaction -->
     <section id="mood" class="mood-section">
       <div class="mood-inner">
-        <span class="section-label">Experience it with your cat in 3 seconds</span>
-        <h2 class="mood-title">Quickly log water<br>together with your cat</h2>
+        <span class="section-label">3-second demo</span>
+        <h2 class="mood-title">Drank water?<br>Just tap +200</h2>
 
         <!-- Real app home card + Watch-style quick add (AquaTickDesign / HomeHeroCardView: horizontal progress, CatHydration, +200/+300) -->
         <div class="app-demo" data-locale="en-US" data-goal-message="🎉 Goal reached! The cat is thrilled." data-logged-message="Logged! The cat is cheering for you." data-undone-message="Undone. Ready to try again?">
@@ -187,49 +190,49 @@
           </div>
           <div id="demo-message" class="demo-message" aria-live="polite"></div>
         </div>
-        <p class="demo-hint">Feel the exact same quick-log flow as the real app right here. The cat remembers your hydration and cheers you on with its expressions.</p>
+        <p class="demo-hint">This is the real quick-log rhythm: the number rises, the cat state changes, and the record remains.</p>
       </div>
     </section>
 
-    <!-- THE 3 JUDGMENTS — replaces dry feature grid with cat attitude -->
+    <!-- CAT NUDGE: soft emotional reason to come back -->
     <section id="judgment" class="judgment">
       <div class="judgment-inner">
-        <h2>Three promises<br>this cat makes with you</h2>
-        <p class="judgment-subtitle">This is how the cat remembers you and gently cheers you on.</p>
+        <h2>The cat only says<br>what matters</h2>
+        <p class="judgment-subtitle">Instead of pressure from another self-improvement app, AquaTick leaves small visible signals.</p>
 
         <div class="judgment-grid">
           <!-- Judgment 1 -->
           <article class="judgment-card">
-            <div class="judgment-number">Promise 01</div>
-            <h3>The waiting moment</h3>
-            <p>When it reaches 0mL, the cat holds a cup and waits quietly. That gentle expression makes you naturally want to grab some water.</p>
+            <div class="judgment-number">0mL</div>
+            <h3>Quiet waiting</h3>
+            <p>If nothing is logged yet, the cat waits with a cup. It is lighter than a notification and harder to ignore.</p>
             <span class="cat-face">😿</span>
           </article>
 
           <!-- Judgment 2 -->
           <article class="judgment-card">
-            <div class="judgment-number">Promise 02</div>
-            <h3>Memory and encouragement</h3>
-            <p>Set a goal and the cat remembers it for you. Even if you forget, the cat never does. Notifications feel like soft encouragement.</p>
+            <div class="judgment-number">In progress</div>
+            <h3>Visible state</h3>
+            <p>Your goal progress shows through numbers and expression together. No dense dashboard required.</p>
             <span class="cat-face">😼</span>
           </article>
 
           <!-- Judgment 3 -->
           <article class="judgment-card">
-            <div class="judgment-number">Promise 03</div>
-            <h3>A friend on your wrist</h3>
-            <p>Every time you tap +200 on Watch, you feel the cat is right there with you. Your ears don't literally perk up, but your mood definitely does.</p>
+            <div class="judgment-number">Near goal</div>
+            <h3>Light encouragement</h3>
+            <p>As the day fills up, the cat brightens too. Habits grow through small repeated reactions, not strict management.</p>
             <span class="cat-face">😺</span>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- CAT FILM STRIP: Screenshots as starring moments -->
+    <!-- MOMENTS: screenshots by user situation -->
     <section id="film" class="cat-film">
       <div class="cat-film-inner">
         <div class="film-header">
-          <h2>Moments spent with the cat</h2>
+          <h2>Where logging happens</h2>
           <span class="sub">Actual app screens</span>
         </div>
 
@@ -239,8 +242,8 @@
             <img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" loading="lazy"
                  alt="AquaTick iPhone home — cat waiting with 500mL logged, horizontal progress bar and detailed status">
             <div class="film-caption">
-              <strong>Moment 1</strong>
-              The home card where the cat waits with a cup. A warm moment after logging 500mL.
+              <strong>Before opening your phone</strong>
+              See 500mL logged and today's remaining amount without going hunting for the app.
             </div>
           </div>
 
@@ -249,8 +252,8 @@
             <img src="/aquatick/assets/screenshot-iphone-history.png" width="1206" height="2622" loading="lazy"
                  alt="AquaTick history — calendar and daily water logs together with the cat character">
             <div class="film-caption">
-              <strong>Moment 2</strong>
-              Check your flow in history. Every day's records built together with the cat.
+              <strong>At the end of the day</strong>
+              Check the monthly calendar and recent flow to see what actually happened.
             </div>
           </div>
 
@@ -259,8 +262,8 @@
             <img src="/aquatick/assets/screenshot-watch-home.png" width="416" height="496" loading="lazy"
                  alt="AquaTick Apple Watch — cream card with +200 +300 quick add buttons at 0mL">
             <div class="film-caption">
-              <strong>Moment 3</strong>
-              +200, +300 in 3 seconds on your wrist. Everyday life together with the cat.
+              <strong>When pulling out your phone is too much</strong>
+              Tap +200 or +300 from your wrist. Short enough for meetings and walks.
             </div>
           </div>
 
@@ -269,7 +272,7 @@
             <img src="/aquatick/assets/screenshot-iphone-settings.png" width="1206" height="2622" loading="lazy"
                  alt="AquaTick settings — daily goal, reminders, and optional Apple Health sync">
             <div class="film-caption">
-              <strong>Moment 4</strong>
+              <strong>One-minute setup</strong>
               Set your goal, reminders, and optional Apple Health sync. No account required.
             </div>
           </div>
@@ -279,27 +282,27 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS: Example use cases -->
+    <!-- PERSONA FIT -->
     <section class="testimonials">
       <div class="testimonials-inner">
-        <h2>Ways people use AquaTick</h2>
+        <h2>Who AquaTick is for</h2>
 
         <div class="quote-grid">
           <div class="quote">
-            <p>"I woke up at 2:47am after the cat notification and drank 400mL. It was surprising but I was grateful. Now I keep the widget pinned."</p>
-            <div class="quote-author">Example use 01</div>
+            <p>People who delete habit apps as soon as logging starts to feel like work.</p>
+            <div class="quote-author">Log-avoidant</div>
           </div>
           <div class="quote">
-            <p>"Seeing the cat on Watch makes me tap +200 repeatedly. I sent my friends multiple screenshots saying 'you have to see this cat'. You should try it too."</p>
-            <div class="quote-author">Example use 02</div>
+            <p>People who dislike nagging, but can accept a soft signal from a waiting cat.</p>
+            <div class="quote-author">Emotion-nudged</div>
           </div>
           <div class="quote">
-            <p>"Every time it hits 0mL, the cat's waiting expression is so striking. That's why I end up drinking water more often. It's fun and I'm thankful for this app."</p>
-            <div class="quote-author">Example use 03</div>
+            <p>People who would rather log from Apple Watch than open another iPhone app.</p>
+            <div class="quote-author">Watch-first</div>
           </div>
           <div class="quote">
-            <p>"I put the cat on my Lock Screen and now I drink water several times a day. I barely drank before, but thanks to this cat, I built the habit."</p>
-            <div class="quote-author">Example use 04</div>
+            <p>People who want to glance back at the day or week without a heavy dashboard.</p>
+            <div class="quote-author">Light reviewer</div>
           </div>
         </div>
       </div>
