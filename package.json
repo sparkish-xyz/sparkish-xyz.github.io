@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "playwright test",
-    "test:routes": "playwright test tests/routes.spec.ts",
-    "capture:local": "node design-review-screenshots/capture.js",
-    "capture:deployed": "TARGET_URL=\"https://sparkish-xyz.github.io/aquatick/ko/\" node design-review-screenshots/capture.js --phase deployed"
-  },
   "repository": {
     "type": "git",
     "url": "git@github.com-sparkish:sparkish-xyz/sparkish-xyz.github.io.git"
@@ -17,7 +11,25 @@
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+  "scripts": {
+    "test": "playwright test",
+    "test:routes": "playwright test tests/routes.spec.ts tests/aquatick.spec.ts tests/korea-map-link.spec.ts tests/sitemap.spec.ts",
+    "typecheck": "tsc --noEmit",
+    "build:css": "node tools/build-css.cjs",
+    "build:js": "node tools/build-js.cjs",
+    "generate": "node tools/generate-site.cjs",
+    "check:static": "node tools/check-static.cjs",
+    "check:assets": "node tools/check-assets.cjs",
+    "sync:assets": "node tools/sync-aquatick-assets.cjs",
+    "check": "npm run verify:built-assets && npm run typecheck && npm run check:static && npm run verify:generated && npm run check:assets",
+    "verify:built-assets": "node tools/verify-built-assets.cjs",
+    "verify:generated": "node tools/verify-generated.cjs",
+    "capture:local": "node design-review-screenshots/capture.js",
+    "capture:deployed": "TARGET_URL=\"https://sparkish-xyz.github.io/aquatick/ko/\" node design-review-screenshots/capture.js --phase deployed"
+  },
   "devDependencies": {
-    "@playwright/test": "^1.60.0"
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^26.0.1",
+    "typescript": "^6.0.3"
   }
 }

@@ -1,0 +1,12 @@
+{
+  "partials": [
+    "01-foundation-header.css",
+    "02-hero.css",
+    "03-demo.css",
+    "04-social-proof.css",
+    "05-answer-cta-footer.css",
+    "06-responsive-focus.css"
+  ],
+  "output": "aquatick/assets/aquatick-site.css",
+  "templateOutput": "site-src/templates/aquatick/assets/aquatick-site.css"
+}

@@ -1,0 +1,122 @@
+/* Shared AquaTick landing styles. */
+:root {
+  /* AquaTick 2026 refresh — AquaTickDesign.swift light-mode (white surfaces, navy type, teal actions) */
+  --ink: #0D2138;
+  --paper: #F7FAFC;
+  --cream: #FFFFFF;
+  --warm-surface: #F7FAFC;
+  --hero-surface: #FFFFFF;
+  --inset-surface: #FFFFFF;
+  --water-accent: #00AD9E;
+  --aqua: var(--water-accent);
+  --aqua-bright: #00B8A6;
+  --lavender-accent: #335E8C;
+  --coral: #E63B59;
+  --coral-soft: rgba(230, 59, 89, 0.14);
+  --yellow: #E6F5F2;
+  --navy: #0A1F38;
+  /* Web CTAs use --navy on water-accent for WCAG AA; native app uses white actionInk on teal. */
+  --progress-track: rgba(13, 33, 56, 0.14);
+  /* #4A6270: WCAG body copy on paper; Swift Widget secondary is #597E82 */
+  --muted: #4A6270;
+  --line: rgba(13, 33, 56, 0.12);
+  --fine-border: rgba(13, 33, 56, 0.12);
+  --sticker-border: rgba(13, 33, 56, 0.13);
+  --shadow-soft: 0 8px 16px rgba(13, 33, 56, 0.08);
+  --shadow-card: 0 4px 12px rgba(13, 33, 56, 0.06);
+
+  --r-card: 16px;
+  --r-control: 14px;
+  --r-16: 16px;
+  --r-24: 16px;
+  --r-28: 16px;
+  --r-32: 24px;
+  --r-full: 999px;
+
+  /* Type scale */
+  --big: 2.8rem;
+  --title: 2rem;
+  --body: 1.05rem;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font: -apple-system-body;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+  font-size: var(--body);
+  line-height: 1.48;
+  letter-spacing: 0;
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+a { color: inherit; text-decoration: none; }
+
+img { display: block; max-width: 100%; height: auto; }
+
+/* === 2026 REFRESH SURFACES === */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  padding-top: calc(14px + env(safe-area-inset-top));
+  background: var(--cream);
+  border-bottom: 1px solid var(--fine-border);
+  box-shadow: var(--shadow-card);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: 0;
+}
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--sticker-border);
+}
+
+.nav-links {
+  display: flex;
+  gap: 4px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.nav-links a {
+  padding: 8px 14px;
+  border-radius: 999px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent;
+}
+.nav-links a:hover {
+  background: var(--water-accent);
+  color: var(--navy);
+  border-color: var(--water-accent);
+}
+

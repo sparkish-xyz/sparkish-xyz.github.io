@@ -1,0 +1,25 @@
+{
+  "aquatickLegacyImageMirror": [
+    "aquatick-app-icon.png",
+    "cat-empty.png",
+    "cat-hero.png",
+    "cat-thirsty.png",
+    "screenshot-iphone-home.png",
+    "screenshot-iphone-history.png",
+    "screenshot-iphone-settings.png",
+    "screenshot-watch-home.png"
+  ],
+  "aquatickLegacyMirrorExclusions": [
+    "aquatick-site.css",
+    "aquatick-site.js"
+  ],
+  "koreaMapLinkAssets": [
+    "app-icon.png",
+    "kmb-site.css",
+    "screenshot-home.png",
+    "screenshot-onboarding.png",
+    "screenshot-place-detail.png",
+    "screenshot-resolve.png",
+    "screenshot-taxi.png"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "partials": [
+    "01-language-preference.js",
+    "02-hydration-demo.js",
+    "03-header-shadow.js",
+    "04-cat-sticker.js"
+  ],
+  "output": "aquatick/assets/aquatick-site.js",
+  "templateOutput": "site-src/templates/aquatick/assets/aquatick-site.js"
+}

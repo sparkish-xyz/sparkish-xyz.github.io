@@ -1,0 +1,94 @@
+/* Responsive */
+@media (min-width: 720px) {
+  :root {
+    --big: 3.5rem;
+    --title: 2.35rem;
+  }
+  .hero-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 58px 28px 50px;
+  }
+  .hero-visual {
+    max-width: 320px;
+    flex-shrink: 0;
+  }
+  .hero-actions {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .judgment-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .quote-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .fact-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .film-strip {
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .final-cta h2 {
+    font-size: 2.6rem;
+  }
+}
+@media (min-width: 720px) and (max-width: 979px) {
+  html[lang="ja"] .hero h1 {
+    font-size: 3rem;
+    letter-spacing: 0;
+  }
+  html[lang="ja"] .hero-actions {
+    flex-direction: column;
+    max-width: 320px;
+  }
+  html[lang="ja"] .hero-actions .btn {
+    width: 100%;
+    padding: 0 20px;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 980px) {
+  .hero-inner { max-width: 1080px; }
+  .mood-inner, .judgment-inner, .cat-film-inner, .testimonials-inner { max-width: 980px; }
+}
+
+@media (max-width: 720px) {
+  /* 720px boundary shared intentionally with existing min-width:720px hero for progressive enhancement; no soft transition added to keep change minimal (per review) */
+  .site-header {
+    gap: 6px;
+    padding: 8px 10px;
+    padding-top: calc(8px + env(safe-area-inset-top));
+    align-items: flex-start;
+  }
+  .brand {
+    font-size: 0.95rem;
+    gap: 4px;
+  }
+  .brand img {
+    width: 28px;
+    height: 28px;
+  }
+  .nav-links {
+    gap: 2px;
+    row-gap: 2px;
+    font-size: 0.72rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .nav-links a {
+    padding: 5px 6px;
+  }
+}
+
+/* Tiny focus styles */
+.btn:focus-visible, .quick-add-btn:focus-visible, .undo-btn:focus-visible {
+  outline: 3px solid var(--water-accent);
+  outline-offset: 3px;
+}

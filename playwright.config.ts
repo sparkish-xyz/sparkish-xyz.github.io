@@ -1,10 +1,12 @@
 import { defineConfig } from '@playwright/test';
 
+const isCI = process.env['CI'] !== undefined;
+
 export default defineConfig({
   testDir: './tests',
   fullyParallel: true,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 1 : 0,
+  forbidOnly: isCI,
+  retries: isCI ? 1 : 0,
   reporter: 'list',
   use: {
     baseURL: 'http://127.0.0.1:8080',
@@ -12,7 +14,7 @@ export default defineConfig({
   webServer: {
     command: 'python3 -m http.server 8080',
     url: 'http://127.0.0.1:8080/',
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: !isCI,
     timeout: 120_000,
   },
 });

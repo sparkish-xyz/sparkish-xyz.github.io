@@ -1,0 +1,10 @@
+{
+  "partials": [
+    "01-foundation-header.css",
+    "02-hero-actions.css",
+    "03-content-legal-footer.css",
+    "04-responsive.css"
+  ],
+  "output": "korea-map-link/assets/kmb-site.css",
+  "templateOutput": "site-src/templates/korea-map-link/assets/kmb-site.css"
+}

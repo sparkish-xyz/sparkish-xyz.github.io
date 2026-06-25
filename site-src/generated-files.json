@@ -1,0 +1,40 @@
+{
+  "generatedTextFiles": [
+    "index.html",
+    "robots.txt",
+    "sitemap.xml",
+    "llms.txt",
+    "app-ads.txt",
+    "ko/index.html",
+    "en/index.html",
+    "ja/index.html",
+    "aquatick/index.html",
+    "aquatick/ko/index.html",
+    "aquatick/en/index.html",
+    "aquatick/ja/index.html",
+    "aquatick/assets/aquatick-site.css",
+    "aquatick/assets/aquatick-site.js",
+    "korea-map-link/index.html",
+    "korea-map-link/en/index.html",
+    "korea-map-link/fr/index.html",
+    "korea-map-link/ko/index.html",
+    "korea-map-link/ja/index.html",
+    "korea-map-link/zh-Hans/index.html",
+    "korea-map-link/zh-Hant/index.html",
+    "korea-map-link/privacy/index.html",
+    "korea-map-link/support/index.html",
+    "korea-map-link/assets/kmb-site.css"
+  ],
+  "staticAssetDirectories": [
+    "assets",
+    "aquatick/assets",
+    "korea-map-link/assets"
+  ],
+  "rootOnlyFiles": [
+    "index.html",
+    "robots.txt",
+    "sitemap.xml",
+    "llms.txt",
+    "app-ads.txt"
+  ]
+}
