@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <title>Sparkish — Apps we make</title>
+  <meta name="description" content="Sparkish builds playful, thoughtful apps for everyday habits. AquaTick for hydration and Korea Map Link for Korea travel.">
+  <meta property="og:title" content="Sparkish — Apps we make">
+  <meta property="og:description" content="Playful apps from Sparkish. AquaTick logs water in one tap from widgets and Watch. Korea Map Link bridges Google Maps to Naver and Kakao.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sparkish-xyz.github.io/">
+  <meta property="og:site_name" content="Sparkish">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png">
+  <meta property="og:image:alt" content="AquaTick app icon">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Sparkish — Apps we make">
+  <meta name="twitter:description" content="Playful apps from Sparkish. AquaTick logs water in one tap from widgets and Watch. Korea Map Link bridges Google Maps to Naver and Kakao.">
+  <meta name="twitter:image" content="https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png">
+  <meta name="theme-color" content="#00AD9E">
+  <link rel="icon" href="/aquatick/assets/aquatick-app-icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/aquatick/assets/aquatick-app-icon.png">
+  <link rel="canonical" href="https://sparkish-xyz.github.io/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://sparkish-xyz.github.io/#organization",
+        "name": "Sparkish",
+        "url": "https://sparkish-xyz.github.io/",
+        "logo": "https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png"
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://sparkish-xyz.github.io/#apps",
+        "name": "Sparkish apps",
+        "numberOfItems": 2,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "AquaTick",
+              "applicationCategory": "HealthApplication",
+              "operatingSystem": "iOS, watchOS",
+              "url": "https://sparkish-xyz.github.io/aquatick/",
+              "installUrl": "https://apps.apple.com/app/aquatick/id6762686013",
+              "image": "https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png",
+              "description": "Meet your hydration cat. Log water in one tap from widgets, Live Activity, Dynamic Island, and Apple Watch. No account. Goals, history, and streaks."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "MobileApplication",
+              "name": "Korea Map Link",
+              "applicationCategory": "TravelApplication",
+              "operatingSystem": "iOS",
+              "url": "https://sparkish-xyz.github.io/korea-map-link/en/",
+              "installUrl": "https://apps.apple.com/app/id6776109560",
+              "image": "https://sparkish-xyz.github.io/korea-map-link/assets/app-icon.png",
+              "description": "Paste a place, verify Korean details, open Naver or Kakao, and show an ad-free taxi card."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    :root {
+      /* AquaTick 2026 refresh — synced with aquatick/ landing tokens */
+      --ink: #0D2138;
+      --paper: #F7FAFC;
+      --cream: #FFFFFF;
+      --water-accent: #00AD9E;
+      --aqua: var(--water-accent);
+      --coral: #E63B59;
+      --yellow: #E6F5F2;
+      --navy: #0A1F38;
+      --muted: #4A6270;
+      --fine-border: rgba(13, 33, 56, 0.12);
+      --shadow-soft: 0 8px 16px rgba(13, 33, 56, 0.08);
+      --shadow-card: 0 4px 12px rgba(13, 33, 56, 0.06);
+      --r-card: 16px;
+      --r-control: 14px;
+      --r-full: 999px;
+      --big: clamp(2.2rem, 8vw, 3.2rem);
+      --body: 1.05rem;
+    }
+    * { box-sizing: border-box; }
+    html { font: -apple-system-body; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+      font-size: var(--body);
+      line-height: 1.48;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      padding-top: calc(14px + env(safe-area-inset-top));
+      background: var(--cream);
+      border-bottom: 1px solid var(--fine-border);
+      box-shadow: var(--shadow-card);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      font-size: 1.2rem;
+      letter-spacing: -0.03em;
+    }
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--aqua);
+      border: 1px solid var(--fine-border);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+    }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 18px 72px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      background: var(--coral);
+      color: var(--navy);
+      font-weight: 900;
+      font-size: 0.82rem;
+      padding: 6px 18px;
+      border-radius: var(--r-full);
+      border: 1px solid var(--fine-border);
+      box-shadow: var(--shadow-soft);
+      transform: none;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: var(--big);
+      line-height: 1.05;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin: 0 0 12px;
+    }
+    .intro {
+      font-size: 1.12rem;
+      font-weight: 700;
+      color: var(--navy);
+      max-width: 36ch;
+      margin: 0 0 36px;
+    }
+    .app-grid {
+      display: grid;
+      gap: 20px;
+    }
+    .app-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 22px;
+      background: white;
+      border: 1px solid var(--fine-border);
+      border-radius: var(--r-card);
+      box-shadow: var(--shadow-soft);
+    }
+    .app-card img {
+      width: 88px;
+      height: 88px;
+      border-radius: 20px;
+      border: 1px solid var(--fine-border);
+    }
+    .app-card h2 {
+      margin: 0 0 6px;
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+    .app-card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      font-size: 1rem;
+      font-weight: 800;
+      border-radius: var(--r-control);
+      border: 1px solid var(--water-accent);
+      box-shadow: var(--shadow-soft);
+      background: var(--water-accent);
+      color: var(--navy);
+    }
+    .btn:active { transform: translateY(1px); box-shadow: var(--shadow-card); }
+    .btn:focus-visible { outline: 3px solid var(--water-accent); outline-offset: 3px; }
+    footer {
+      text-align: center;
+      padding: 28px 18px 40px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+      border-top: 1px solid var(--fine-border);
+      background: var(--cream);
+    }
+    footer a { text-decoration: underline; font-weight: 600; color: var(--ink); }
+    @media (max-width: 480px) {
+      .app-card { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>Sparkish</span>
+    </a>
+  </header>
+
+  <main>
+    <div class="hero-badge">Apps we make</div>
+    <h1>Playful tools for everyday habits.</h1>
+    <p class="intro">
+      Sparkish builds small, thoughtful apps — starting with a cat who cares whether you drank enough water today.
+    </p>
+
+    <div class="app-grid">
+      <article class="app-card">
+        <img src="/aquatick/assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick app icon">
+        <div>
+          <h2>AquaTick</h2>
+          <p>One-tap widget, Watch &amp; cat hydration tracker. Log +200/+300 mL from widgets, Live Activity, Dynamic Island, or Apple Watch—no account. Goals, history, and streaks.</p>
+          <a class="btn" href="/aquatick/">View AquaTick →</a>
+        </div>
+      </article>
+      <article class="app-card">
+        <img src="/korea-map-link/assets/app-icon.png" width="1024" height="1024" alt="Korea Map Link app icon">
+        <div>
+          <h2>Korea Map Link</h2>
+          <p>Paste a place, verify Korean details, open Naver or Kakao, and show an ad-free taxi card for Korea trips.</p>
+          <a class="btn" href="/korea-map-link/">View Korea Map Link →</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      © 2026 Sparkish<br>
+      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Support</a> ·
+      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">Privacy Policy</a>
+    </p>
+  </footer>
+</body>
+</html>
