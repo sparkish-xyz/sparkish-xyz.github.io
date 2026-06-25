@@ -1,6 +1,7 @@
 # Temporary files from visual review
 node_modules/
 test-results/
+.omo/
 **/.DS_Store
 
 # Large Playwright screenshots (kept locally for reference)
