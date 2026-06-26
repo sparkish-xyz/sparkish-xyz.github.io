@@ -108,10 +108,19 @@ footer a { text-decoration: underline; font-weight: 600; }
 .paw-divider {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   padding: 18px 0 4px;
-  font-size: 1.35rem;
   opacity: 0.75;
   user-select: none;
 }
-
+.paw-divider span {
+  width: 30px;
+  height: 22px;
+  border-radius: var(--r-full);
+  background:
+    radial-gradient(circle at 50% 70%, var(--yellow) 0 5px, transparent 5.5px),
+    radial-gradient(circle at 24% 36%, var(--aqua-bright) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 43% 24%, var(--aqua-bright) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 62% 24%, var(--aqua-bright) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 80% 36%, var(--aqua-bright) 0 3px, transparent 3.5px);
+}

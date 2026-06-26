@@ -135,7 +135,26 @@
       border: 1px solid var(--fine-border);
       display: grid;
       place-items: center;
-      font-size: 1.1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-mark::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: var(--cream);
+      clip-path: polygon(50% 0, 62% 36%, 100% 50%, 62% 64%, 50% 100%, 38% 64%, 0 50%, 38% 36%);
+    }
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      width: 6px;
+      height: 6px;
+      border-radius: var(--r-full);
+      background: var(--coral);
+      border: 1px solid var(--navy);
     }
     main {
       max-width: 720px;
@@ -216,7 +235,19 @@
       box-shadow: var(--shadow-soft);
       background: var(--water-accent);
       color: var(--navy);
+      gap: 10px;
+      transition: transform 120ms ease, box-shadow 120ms ease;
     }
+    .btn::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid currentColor;
+      border-right: 2px solid currentColor;
+      transform: rotate(45deg);
+      transition: transform 120ms ease;
+    }
+    .btn:hover::after { transform: translateX(2px) rotate(45deg); }
     .btn:active { transform: translateY(1px); box-shadow: var(--shadow-card); }
     .btn:focus-visible { outline: 3px solid var(--water-accent); outline-offset: 3px; }
     footer {
@@ -237,7 +268,7 @@
 <body>
   <header class="site-header">
     <a class="brand" href="/">
-      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span class="brand-mark" aria-hidden="true"></span>
       <span>Sparkish</span>
     </a>
   </header>
@@ -255,7 +286,7 @@
         <div>
           <h2>AquaTick</h2>
           <p>One-tap widget, Watch &amp; cat hydration tracker. Log +200/+300 mL from widgets, Live Activity, Dynamic Island, or Apple Watch—no account. Goals, history, and streaks.</p>
-          <a class="btn" href="/aquatick/">View AquaTick →</a>
+          <a class="btn" href="/aquatick/">View AquaTick</a>
         </div>
       </article>
       <article class="app-card">
@@ -263,7 +294,7 @@
         <div>
           <h2>Korea Map Link</h2>
           <p>Paste a place, verify Korean details, open Naver or Kakao, and show an ad-free taxi card for Korea trips.</p>
-          <a class="btn" href="/korea-map-link/">View Korea Map Link →</a>
+          <a class="btn" href="/korea-map-link/">View Korea Map Link</a>
         </div>
       </article>
     </div>

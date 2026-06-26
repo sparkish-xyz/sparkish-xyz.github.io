@@ -33,13 +33,21 @@
   position: relative;
 }
 .judgment-card::before {
-  content: "🐾";
+  content: "";
   position: absolute;
-  top: -13px;
+  top: -12px;
   right: 18px;
-  font-size: 1.6rem;
-  background: var(--paper);
-  padding: 0 6px;
+  width: 34px;
+  height: 24px;
+  border-radius: var(--r-full);
+  background:
+    radial-gradient(circle at 50% 68%, var(--coral) 0 5px, transparent 5.5px),
+    radial-gradient(circle at 24% 36%, var(--water-accent) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 43% 24%, var(--water-accent) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 62% 24%, var(--water-accent) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 80% 36%, var(--water-accent) 0 3px, transparent 3.5px),
+    var(--paper);
+  border: 1px solid var(--sticker-border);
 }
 .judgment-number {
   font-size: 0.75rem;
@@ -65,9 +73,49 @@
   margin: 0;
 }
 .judgment-card .cat-face {
-  font-size: 2.1rem;
   margin-top: 14px;
   display: block;
+  position: relative;
+  width: 44px;
+  height: 38px;
+  border: 2px solid var(--sticker-border);
+  border-radius: 52% 52% 46% 46%;
+  background:
+    radial-gradient(circle at 34% 45%, var(--ink) 0 2px, transparent 2.5px),
+    radial-gradient(circle at 66% 45%, var(--ink) 0 2px, transparent 2.5px),
+    radial-gradient(circle at 50% 67%, var(--cat-mark, var(--coral)) 0 2px, transparent 2.5px),
+    var(--yellow);
+  box-shadow: var(--shadow-card);
+}
+.judgment-card .cat-face::before,
+.judgment-card .cat-face::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  width: 13px;
+  height: 13px;
+  background: var(--yellow);
+  border-top: 2px solid var(--sticker-border);
+  border-left: 2px solid var(--sticker-border);
+  border-radius: 4px 0 0;
+}
+.judgment-card .cat-face::before {
+  left: 7px;
+  transform: rotate(34deg);
+}
+.judgment-card .cat-face::after {
+  right: 7px;
+  transform: rotate(56deg);
+}
+.cat-face--waiting {
+  --cat-mark: var(--lavender-accent);
+  opacity: 0.82;
+}
+.cat-face--steady {
+  --cat-mark: var(--water-accent);
+}
+.cat-face--bright {
+  --cat-mark: var(--coral);
 }
 
 /* SCREENSHOT GALLERY — 고양이와 함께한 순간들 */
@@ -85,6 +133,7 @@
 .film-header {
   display: flex;
   align-items: baseline;
+  flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 22px;
 }
@@ -98,6 +147,19 @@
   font-size: 1rem;
   font-weight: 700;
   color: var(--aqua);
+}
+
+@media (max-width: 480px) {
+  .film-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .film-header h2 {
+    line-height: 1.08;
+    text-wrap: balance;
+  }
 }
 
 .film-strip {
@@ -167,13 +229,20 @@
   position: relative;
 }
 .quote::before {
-  content: "😾";
+  content: "";
   position: absolute;
-  top: -9px;
+  top: -12px;
   left: 18px;
-  background: var(--paper);
-  padding: 0 4px;
-  font-size: 1.1rem;
+  width: 28px;
+  height: 22px;
+  border: 1px solid var(--sticker-border);
+  border-radius: 52% 52% 46% 46%;
+  background:
+    radial-gradient(circle at 34% 46%, var(--ink) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 66% 46%, var(--ink) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 50% 68%, var(--coral) 0 1.75px, transparent 2.25px),
+    var(--yellow);
+  box-shadow: var(--shadow-card);
 }
 .quote p {
   font-weight: 700;
@@ -186,4 +255,3 @@
   font-weight: 800;
   color: var(--coral);
 }
-
