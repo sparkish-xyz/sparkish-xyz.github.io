@@ -92,6 +92,13 @@ test.describe('AquaTick route contracts', () => {
     }
   });
 
+  test('AquaTick film strip includes vault screenshot card', async ({ page }) => {
+    await page.goto('/aquatick/ko/');
+    const vaultCard = page.locator('.film-card img[src*="screenshot-iphone-vault"]');
+    await expect(vaultCard).toBeVisible();
+    await expect(vaultCard).toHaveAttribute('alt', /보관함/);
+  });
+
   test('AquaTick screenshot strip starts with the first card visible', async ({ page }) => {
     await page.setViewportSize({ width: 720, height: 800 });
     await page.goto('/aquatick/ko/');

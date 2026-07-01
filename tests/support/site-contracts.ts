@@ -12,6 +12,7 @@ export const AQUATICK_IMAGE_ASSETS = [
   'cat-hero.png',
   'cat-thirsty.png',
   'screenshot-iphone-home.png',
+  'screenshot-iphone-vault.png',
   'screenshot-iphone-history.png',
   'screenshot-iphone-settings.png',
   'screenshot-watch-home.png',
@@ -19,6 +20,7 @@ export const AQUATICK_IMAGE_ASSETS = [
 
 export const AQUATICK_SCREENSHOTS = [
   'screenshot-iphone-home.png',
+  'screenshot-iphone-vault.png',
   'screenshot-iphone-history.png',
   'screenshot-watch-home.png',
   'screenshot-iphone-settings.png',
