@@ -1,44 +1,80 @@
 # Sparkish Static Site Design System
 
-This is a no-redesign contract for the current static site. Refactors must preserve the existing visual language across AquaTick, Korea Map Link, and the Sparkish hub. Don't add new colors, layouts, typography, copy, assets, dependencies, or interaction patterns unless the product direction changes first.
+AquaTick product direction changed: the AquaTick landing page redesign is allowed under this contract. The target is premium close Flighty grammar adapted to AquaTick's teal water and cat identity. Korea Map Link and the Sparkish hub are unchanged under this plan.
+
+Loaded frontend reference: `references/design/README.md` for the design system gate and non generic premium surface rules.
 
 ## 1. Atmosphere & Identity
 
-Sparkish feels small, playful, and useful. The hub presents a compact app catalog with AquaTick's friendly teal, navy, coral, and white system. AquaTick feels like a cheerful habit coach with a cat motif, rounded white cards, teal action surfaces, coral badges, and light sticker details. Korea Map Link feels more travel utility focused, with blue app actions, route green signals, Kakao and Naver service colors, phone screenshot frames, and clear step cards.
+### AquaTick
 
-## 2. Color
+Light editorial canvas, precise floating proof chips, glossy app demo depth, and selective dark teal bands for the hero and final CTA. Keep AquaTick friendly through `--water-accent`, cat motifs, hydration language, and soft rounded controls. Flighty grammar means confident spacing, live status surfaces, big calm type, layered cards, and status chips, not Flighty logos, routes, aircraft graphics, or brand claims.
 
-### Shared Contract
+Product fact: logging buttons live on app Home Quick Add (+200/+300), Cup Vault favorites on Home Quick Add, and Apple Watch; widgets, Live Activity, and Dynamic Island are glance/status only.
 
-Use only colors already present in `index.html`, `aquatick/assets/aquatick-site.css`, and `korea-map-link/assets/kmb-site.css`. Product pages may keep their own token names because the visual systems intentionally differ.
+Locked decisions:
 
-### Sparkish Hub And AquaTick Tokens
+| Decision | Value |
+|---|---|
+| Fidelity | premium close |
+| Copy | headline rewrite only |
+| Atmosphere | light plus teal |
+| AquaTick scope | redesign allowed |
+| Hub and KMB | unchanged under this plan |
+
+Band map:
+
+| Flighty band | AquaTick band |
+|---|---|
+| Preflight | proof |
+| At airport | mood plus judgment |
+| After | film |
+| Social | testimonials |
+| Download | final cta |
+
+### Sparkish Hub
+
+Unchanged under this plan. Keep the compact app catalog look and existing token values.
+
+### Korea Map Link
+
+Unchanged under this plan. Keep the travel utility frame, blue actions, route green signals, Kakao and Naver colors, phone screenshot frames, and existing token values.
+
+## 2. Color Tokens
+
+### AquaTick
 
 | Role | Token | Value | Usage |
-|------|-------|-------|-------|
-| Text primary | `--ink` | `#0D2138` | Body text, headings |
-| Page background | `--paper` | `#F7FAFC` | Hub and AquaTick page background |
-| Surface | `--cream` | `#FFFFFF` | Header, cards, sections |
-| Warm surface | `--warm-surface` | `#F7FAFC` | AquaTick alternate surface |
-| Hero surface | `--hero-surface` | `#FFFFFF` | AquaTick hero start |
-| Inset surface | `--inset-surface` | `#FFFFFF` | AquaTick demo cards |
-| Action teal | `--water-accent` | `#00AD9E` | Primary CTA, progress fill, hub theme color |
-| Action teal alias | `--aqua` | `var(--water-accent)` | Aqua accent alias |
-| Bright teal | `--aqua-bright` | `#00B8A6` | AquaTick accent variant |
-| Blue accent | `--lavender-accent` | `#335E8C` | AquaTick secondary accent |
-| Coral accent | `--coral` | `#E63B59` | Badges, final CTA, quote author |
-| Coral soft | `--coral-soft` | `rgba(230, 59, 89, 0.14)` | Soft coral tint |
-| Mint chip | `--yellow` | `#E6F5F2` | Proof chips, cat stickers, final CTA button |
-| Navy | `--navy` | `#0A1F38` | CTA text, dark film section |
+|---|---|---|---|
+| Ink navy | `--ink` | `#0D2138` | Body text, headings |
+| Paper white | `--paper` | `#F7FAFC` | Light canvas |
+| Surface | `--cream` | `#FFFFFF` | Cards, header, content sheets |
+| Water accent | `--water-accent` | `#00AD9E` | Primary CTA, proof state, progress |
+| Aqua alias | `--aqua` | `var(--water-accent)` | Existing accent alias |
+| Bright teal | `--aqua-bright` | `#00B8A6` | Hover, chip glow |
+| Dark band | `--band-dark` | `#061B2E` | Hero and final CTA premium bands |
+| Dark band teal | `--band-teal` | `#063F46` | Teal gradient stop in dark bands |
+| Floating chip surface | `--chip-surface` | `rgba(255, 255, 255, 0.82)` | Floating proof and status chip |
+| Floating chip border | `--chip-border` | `rgba(0, 173, 158, 0.24)` | Chip rim |
 | Muted text | `--muted` | `#4A6270` | Secondary copy |
-| Progress track | `--progress-track` | `rgba(13, 33, 56, 0.14)` | Hydration progress track |
-| Border | `--line`, `--fine-border` | `rgba(13, 33, 56, 0.12)` | Dividers, cards |
-| Sticker border | `--sticker-border` | `rgba(13, 33, 56, 0.13)` | Sticker and card outlines |
+| Line | `--line` | `rgba(13, 33, 56, 0.12)` | Borders, dividers |
+| Fine border | `--fine-border` | `rgba(13, 33, 56, 0.12)` | Existing fine borders |
+| Coral | `--coral` | `#E63B59` | Small cat or warning accents only |
+| Mint tint | `--yellow` | `#E6F5F2` | Soft proof tint |
+| Shadow 1 | `--shadow-soft` | `0 8px 16px rgba(13, 33, 56, 0.08)` | Small cards |
+| Shadow 2 | `--shadow-card` | `0 18px 42px rgba(13, 33, 56, 0.12)` | Fact and film cards |
+| Shadow 3 | `--shadow-float` | `0 28px 70px rgba(6, 27, 46, 0.22)` | App demo and floating chips |
+
+### Sparkish Hub Tokens
+
+Unchanged under this plan. Keep the existing AquaTick linked hub tokens: `--ink #0D2138`, `--paper #F7FAFC`, `--cream #FFFFFF`, `--water-accent #00AD9E`, `--aqua var(--water-accent)`, `--navy #0A1F38`, `--muted #4A6270`, `--line rgba(13, 33, 56, 0.12)`, `--shadow-soft 0 8px 16px rgba(13, 33, 56, 0.08)`, and `--shadow-card 0 4px 12px rgba(13, 33, 56, 0.06)`.
 
 ### Korea Map Link Tokens
 
+Unchanged under this plan.
+
 | Role | Token | Value | Usage |
-|------|-------|-------|-------|
+|---|---|---|---|
 | Text primary | `--ink` | `#0f172a` | Body text, headings |
 | Page background | `--paper` | `#f8fafc` | Main page background |
 | Surface | `--surface` | `#ffffff` | Cards, buttons, footer |
@@ -56,122 +92,119 @@ Use only colors already present in `index.html`, `aquatick/assets/aquatick-site.
 | Border | `--line` | `rgba(15, 23, 42, 0.12)` | Cards, header, dividers |
 | Strong border | `--line-strong` | `rgba(15, 23, 42, 0.18)` | Stronger dividers |
 | Phone frame | raw value | `#111820` | Screenshot device border |
-| White text | raw value | `#ffffff` | Primary blue button text |
-| Kakao text | raw value | `#111111` | Kakao pill text |
-| Naver text | raw value | `#047843` | Naver pill text |
 
 ## 3. Typography
 
-### Font Stack
+Font stack stays Apple system: `-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif`.
 
-| Product | Stack |
-|---------|-------|
-| Sparkish hub | `-apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif` |
-| AquaTick | `-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif` |
-| Korea Map Link | `-apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif` |
+### AquaTick Scale
 
-### Scale
+| Role | Value | Usage |
+|---|---|---|
+| Editorial hero h1 | `clamp(3.25rem, 9vw, 7.4rem)`, `line-height: 0.92`, `font-weight: 900`, `letter-spacing: -0.07em` | Flighty scale hero with AquaTick headline rewrite |
+| Section title | `clamp(2.2rem, 5vw, 4.8rem)`, `line-height: 0.96`, `font-weight: 900`, `letter-spacing: -0.055em` | Proof, judgment, film, testimonials, FAQ |
+| Card title | `clamp(1.2rem, 2vw, 1.65rem)`, `line-height: 1.08`, `font-weight: 850` | Fact, judgment, film cards |
+| Body | `1.05rem`, `line-height: 1.48`, `font-weight: 600` | Main copy |
+| Small label | `0.78rem`, `line-height: 1.1`, `font-weight: 800`, `letter-spacing: 0.08em`, uppercase | Status chip, proof labels |
 
-| Product | Token Or Selector | Value | Usage |
-|---------|-------------------|-------|-------|
-| Hub | `--big` | `clamp(2.2rem, 8vw, 3.2rem)` | Main title |
-| Hub | `--body` | `1.05rem`, `line-height: 1.48` | Body text |
-| AquaTick | `--big` | `2.8rem`, then `3.5rem` at `720px` | Hero heading |
-| AquaTick | `--title` | `2rem`, then `2.35rem` at `720px` | Section headings |
-| AquaTick | `--body` | `1.05rem`, `line-height: 1.48` | Body text |
-| Korea Map Link | `--big` | `clamp(2.7rem, 7vw, 5.8rem)` | Hero heading |
-| Korea Map Link | `--title` | `clamp(2rem, 4.4vw, 3.4rem)` | Section headings |
-| Korea Map Link | `--body` | `1.05rem`, `line-height: 1.5` | Body text |
-
-Rules: keep the heavy, rounded Apple system feel. Headings use `font-weight: 900`. Supporting text is usually `600` to `800`. Letter spacing stays at `0` in product pages, while the hub uses tight tracking on brand and headings.
+Hub and Korea Map Link typography are unchanged under this plan.
 
 ## 4. Spacing & Layout
 
-### Shared Patterns
+### AquaTick
 
-| Pattern | Existing Values |
-|---------|-----------------|
-| Safe area | `env(safe-area-inset-top)`, `env(safe-area-inset-bottom)`, plus left and right on product pages |
-| Header padding | Hub and AquaTick use `14px 18px`; AquaTick mobile uses `8px 10px`; Korea Map Link uses `12px max(18px, calc((100vw - var(--max)) / 2 + 18px))` |
-| Card gaps | Hub `20px`; AquaTick commonly `14px`, `16px`, `18px`, `20px`, `24px`; Korea Map Link commonly `12px`, `14px`, `16px`, `24px` |
-| Section padding | Hub `48px 18px 72px`; AquaTick sections often `38px` to `54px` vertical; Korea Map Link section rhythm uses `clamp(48px, 8vw, 86px)` |
+| Pattern | Contract |
+|---|---|
+| Page padding | `clamp(18px, 4vw, 48px)` inline |
+| Narrow content | `max-width: 720px` |
+| Standard content | `max-width: 980px` |
+| Wide hero/demo | `max-width: 1120px` |
+| Section rhythm | `clamp(64px, 10vw, 132px)` vertical |
+| Card gap | `clamp(16px, 3vw, 28px)` |
+| Radius | `--r-card: 24px`, `--r-control: 999px`, `--r-panel: 36px` |
+| Breakpoints | `720px` and `980px` remain the layout pivots |
 
-### Layout Widths And Breakpoints
+Responsive notes:
 
-| Product | Values |
-|---------|--------|
-| Hub | `main` max width `720px`; mobile cards stack below `480px` |
-| AquaTick | Hero max width `1040px`, wider content up to `1080px`, common content max widths `620px`, `720px`, `780px`, `820px`, `980px`; breakpoints at `720px` and `980px` |
-| Korea Map Link | `--max: 1120px`; `--max-legal: 720px`; hero two column layout until `980px`; compact mobile rules at `560px` |
+| Width | Rule |
+|---|---|
+| 375 | Single column, sticky header keeps Download visible, chips can stack below demo |
+| 768 | Hero can split only if h1 height stays within budget, content width uses `720px` |
+| 1280 | Use `980px` content and `1120px` hero/demo, don't stretch text lines |
 
-### Radius Tokens
+JA hero budget: existing test remains, h1 height must be `<=150px` at `720px` unless a new budget is documented in the implementation plan.
 
-| Product | Tokens |
-|---------|--------|
-| Hub | `--r-card: 16px`, `--r-control: 14px`, `--r-full: 999px` |
-| AquaTick | `--r-card: 16px`, `--r-control: 14px`, `--r-16: 16px`, `--r-24: 16px`, `--r-28: 16px`, `--r-32: 24px`, `--r-full: 999px` |
-| Korea Map Link | `--r-card: 8px`, `--r-control: 8px`, `--r-pill: 999px` |
+Hub keeps `main` max width `720px`. Korea Map Link keeps `--max: 1120px`, `--max-legal: 720px`, hero split until `980px`, and compact mobile rules at `560px`.
 
 ## 5. Components
 
-### Site Header
+All AquaTick components use transform, opacity, and filter only for motion. Focus states must be visible.
 
-Structure: sticky on product pages, static on the hub. Brand mark plus text on the left, navigation or language controls on the right. Hub and AquaTick use white surfaces with navy text. Korea Map Link uses translucent paper with blur.
+### `site-header`
 
-States: header links keep rounded tap targets. AquaTick hover fills with teal. Korea Map Link hover uses a soft blue tint.
+Sticky. Left brand, right anchors plus Download. Default uses translucent paper or dark band tint over hero. Hover raises link contrast and adds soft teal chip fill. Focus uses a `2px` teal outline with `2px` offset. Active presses `translateY(1px)`.
 
-### Primary Button
+### `btn-primary` and `btn-secondary`
 
-Structure: inline flex center alignment, bold label, rounded control radius, minimum touch height.
+Primary uses `--water-accent` fill with navy text. Secondary uses white or `--chip-surface` with navy text and teal border. Hover lifts `translateY(-1px)` and deepens shadow. Focus uses teal outline. Active returns to `translateY(1px)` with lower shadow.
 
-Variants: AquaTick and hub use teal fill with navy text. Korea Map Link uses blue fill with white text and a secondary white button.
+### `floating-proof` and `status-chip`
 
-States: active press moves `translateY(1px)`. AquaTick also scales to `0.99`. Focus rings use teal for AquaTick and translucent blue for Korea Map Link.
+Small rounded glassy chips on `--chip-surface`, `--chip-border`, and `--shadow-float`. Status chip may show hydration state text, streak, or reminder status. Hover only when interactive: slight lift and brighter teal rim. Focus matches buttons. Active presses down.
 
-### Cards
+### `fact-card`
 
-Structure: white or product surface background, one pixel border, product radius, soft shadow, bold title and muted body.
+Count contract: 4. White surface, bold number or proof label, short text, one teal detail. Hover lifts only if card links or toggles. Focus only if interactive. No extra cards without plan update.
 
-Variants: hub app cards, AquaTick judgment cards, AquaTick fact and FAQ cards, Korea Map Link step cards, FAQ details, contact cards.
+### `app-demo`
 
-### Badges And Pills
+Preserve existing `demo-*` IDs and routes. The demo may be framed as a premium app surface with teal progress, cat detail, floating status chips, and deep shadow. Don't rename demo IDs, remove routes, or replace the hydration demo contract.
 
-Structure: inline flex, pill radius, bold compact text.
+### `judgment-card`
 
-Variants: AquaTick uses coral badges, mint chips, route proof chips, and cat sticker cards. Korea Map Link uses blue hero badges, white pills, Naver green pills, and Kakao yellow pills.
+Mood plus judgment cards explain the hydration decision. Default is white card with one status accent. Hover lift only if interactive. Focus ring required if clickable. Active press mirrors buttons.
 
-### Product Visuals
+### `film-card`
 
-Structure: AquaTick uses a screenshot inside a rounded iPhone frame with sticker overlays and floating proof cards. Korea Map Link uses a large phone mockup created from the home screenshot, plus screenshot gallery cards with dark phone borders.
+Count contract: 5, vault included. Use darker or high contrast media card treatment with teal highlights. Hover may lift media cards and sharpen filter if clickable. Focus visible. Active press allowed.
 
-### Legal And Utility Content
+### `quote`
 
-Structure: Korea Map Link legal pages use the same surface, border, radius, muted copy, and max legal width as marketing pages.
+Real user or neutral product quote only. No fake celebrity quotes. Surface can be white or dark band inset. Keep quote copy short and source honest.
+
+### `faq-item`
+
+Native details or existing disclosure pattern. Default collapsed with clear title. Hover adds teal tint. Focus ring required on summary. Active press is subtle `translateY(1px)` if styled.
+
+### `final-cta`
+
+Dark teal premium band using `--band-dark`, `--band-teal`, `--water-accent`, and `--shadow-float`. Include headline, short body, primary Download, and secondary route if present. Hover/focus/active states follow button rules.
+
+Hub and Korea Map Link components are unchanged under this plan.
 
 ## 6. Motion & Interaction
 
-| Pattern | Existing Values |
-|---------|-----------------|
-| Reduced motion | `prefers-reduced-motion: reduce` disables animation and transition globally |
-| Scroll | Product pages set `scroll-behavior: smooth` |
-| AquaTick button press | `transform 120ms ease`, `box-shadow 120ms ease`, active `translateY(1px) scale(0.99)` |
-| AquaTick quick add | `transform 80ms ease`, `box-shadow 80ms ease` |
-| AquaTick progress fill | `width 260ms cubic-bezier(0.23, 1, 0.32, 1)` |
-| Korea Map Link button hover | `translateY(-1px)` |
-| Korea Map Link button active | `translateY(1px)` |
+Use only `transform`, `opacity`, and `filter` for animation. No layout animation. No decorative non interactive motion. No scroll theatrics unless tied to readable state change.
 
-Rules: only preserve existing motion. Don't add scroll effects, new easing curves, new hover patterns, or layout changing animation during refactors.
+Global reduced motion rule: `prefers-reduced-motion: reduce` disables animation, transition, smooth scroll, and scripted decorative motion.
 
-## 7. Depth & Surface
+Allowed AquaTick motion:
 
-### Strategy
+| Motion | Contract |
+|---|---|
+| Button/chip hover | `transform 140ms ease`, opacity or filter only |
+| Active press | `translateY(1px)` |
+| Demo progress | existing progress state may animate with transform or opacity only when possible |
+| Card hover | lift only for interactive cards |
 
-The site uses a mixed strategy of light surfaces, one pixel borders, rounded cards, and soft shadows. Keep the current product split.
+Korea Map Link and hub motion are unchanged under this plan.
 
-| Product | Depth Tokens And Surfaces |
-|---------|---------------------------|
-| Hub | `--shadow-soft: 0 8px 16px rgba(13, 33, 56, 0.08)`, `--shadow-card: 0 4px 12px rgba(13, 33, 56, 0.06)`, white cards on `#F7FAFC` |
-| AquaTick | Same soft and card shadows as hub, plus `0 24px 48px -16px rgba(13, 33, 56, 0.18)` on phone frame, navy film section, white cards, coral CTA section |
-| Korea Map Link | `--shadow-soft: 0 18px 44px rgba(15, 23, 42, 0.08)`, `--shadow-small: 0 8px 22px rgba(15, 23, 42, 0.07)`, phone shadow `0 30px 70px rgba(15, 23, 42, 0.22)`, translucent blurred header |
+## 7. Must Not Have
 
-Refactors must keep this depth model. Don't flatten the pages, increase shadow drama, round Korea Map Link cards to AquaTick sizes, or move AquaTick toward the Korea Map Link utility frame.
+- Flighty logos, aircraft marks, route visuals, copied app UI, copied copy, or IP claims.
+- New dependencies.
+- Hub redesign or Korea Map Link redesign.
+- Fake celebrity quotes.
+- Broken `demo-*` IDs or routes.
+- CSS, HTML, or JavaScript changes as part of this DESIGN.md task.
+- Decorative non interactive motion.
