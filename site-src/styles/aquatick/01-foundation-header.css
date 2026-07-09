@@ -1,6 +1,5 @@
 /* Shared AquaTick landing styles. */
 :root {
-  /* AquaTick 2026 refresh — AquaTickDesign.swift light-mode (white surfaces, navy type, teal actions) */
   --ink: #0D2138;
   --paper: #F7FAFC;
   --cream: #FFFFFF;
@@ -10,6 +9,8 @@
   --water-accent: #00AD9E;
   --aqua: var(--water-accent);
   --aqua-bright: #00B8A6;
+  --band-dark: #061B2E;
+  --band-teal: #063F46;
   --lavender-accent: #335E8C;
   --coral: #E63B59;
   --coral-soft: rgba(230, 59, 89, 0.14);
@@ -21,22 +22,35 @@
   --muted: #4A6270;
   --line: rgba(13, 33, 56, 0.12);
   --fine-border: rgba(13, 33, 56, 0.12);
+  --chip-surface: rgba(255, 255, 255, 0.82);
+  --chip-border: rgba(0, 173, 158, 0.24);
   --sticker-border: rgba(13, 33, 56, 0.13);
   --shadow-soft: 0 8px 16px rgba(13, 33, 56, 0.08);
-  --shadow-card: 0 4px 12px rgba(13, 33, 56, 0.06);
+  --shadow-card: 0 18px 42px rgba(13, 33, 56, 0.12);
+  --shadow-float: 0 28px 70px rgba(6, 27, 46, 0.22);
 
-  --r-card: 16px;
-  --r-control: 14px;
+  --r-card: 24px;
+  --r-control: 999px;
+  --r-panel: 36px;
   --r-16: 16px;
-  --r-24: 16px;
-  --r-28: 16px;
-  --r-32: 24px;
+  --r-24: 24px;
+  --r-28: 28px;
+  --r-32: 32px;
   --r-full: 999px;
 
   /* Type scale */
-  --big: 2.8rem;
-  --title: 2rem;
+  --hero-display: clamp(3.25rem, 9vw, 7.4rem);
+  --section-title: clamp(2.2rem, 5vw, 4.8rem);
+  --big: clamp(3.25rem, 9vw, 7.4rem);
+  --title: clamp(2.2rem, 5vw, 4.8rem);
+  --card-title: clamp(1.2rem, 2vw, 1.65rem);
   --body: 1.05rem;
+  --label: 0.78rem;
+
+  --page-pad: clamp(18px, 4vw, 48px);
+  --section-y: clamp(64px, 10vw, 132px);
+  --card-gap: clamp(16px, 3vw, 28px);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 * { box-sizing: border-box; }
@@ -48,12 +62,15 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
 body {
   margin: 0;
-  background: var(--paper);
+  background:
+    radial-gradient(circle at 50% -10%, rgba(0, 173, 158, 0.10), transparent 34rem),
+    linear-gradient(180deg, var(--cream) 0%, var(--paper) 42%, var(--paper) 100%);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
   font-size: var(--body);
@@ -78,45 +95,60 @@ img { display: block; max-width: 100%; height: auto; }
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding: 14px 18px;
-  padding-top: calc(14px + env(safe-area-inset-top));
-  background: var(--cream);
+  padding: 12px var(--page-pad);
+  padding-top: calc(12px + env(safe-area-inset-top));
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: saturate(160%) blur(18px);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
   border-bottom: 1px solid var(--fine-border);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.75), 0 18px 40px rgba(13, 33, 56, 0.06);
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: 0;
+  font-weight: 850;
+  font-size: 1.02rem;
+  letter-spacing: -0.03em;
 }
 .brand img {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  border: 1px solid var(--sticker-border);
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--fine-border);
+  box-shadow: var(--shadow-soft);
 }
 
 .nav-links {
   display: flex;
-  gap: 4px;
-  font-size: 0.9rem;
-  font-weight: 700;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 .nav-links a {
-  padding: 8px 14px;
-  border-radius: 999px;
+  padding: 9px 14px;
+  border-radius: var(--r-control);
   min-height: 44px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   border: 1px solid transparent;
+  transition: background-color 140ms var(--ease-spring), border-color 140ms var(--ease-spring), color 140ms var(--ease-spring), transform 140ms var(--ease-spring), box-shadow 140ms var(--ease-spring);
 }
-.nav-links a:hover {
-  background: var(--water-accent);
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  background: var(--yellow);
   color: var(--navy);
-  border-color: var(--water-accent);
+  border-color: var(--chip-border);
+  box-shadow: var(--shadow-soft);
 }
-
+.nav-links a:focus-visible {
+  outline: 2px solid var(--water-accent);
+  outline-offset: 2px;
+}
+.nav-links a:active {
+  transform: translateY(1px);
+}
