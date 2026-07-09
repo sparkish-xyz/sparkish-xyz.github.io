@@ -99,6 +99,60 @@ test.describe('AquaTick route contracts', () => {
     await expect(vaultCard).toHaveAttribute('alt', /보관함/);
   });
 
+  test('locale pages claim Cup Vault favorites max 5 and dateModified 2026-07-09', async ({ page }) => {
+    const vaultSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
+      en: /Cup Vault|favorite|favorites/i,
+      ko: /보관함|즐겨찾기/,
+      ja: /保管庫|お気に入り/,
+    };
+    const fiveSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
+      en: /\b5\b|up to 5|max(?:imum)? 5/i,
+      ko: /최대\s*5|5개/,
+      ja: /最大\s*5|5件/,
+    };
+
+    for (const locale of AQUATICK_LOCALES) {
+      await page.goto(`/aquatick/${locale}/`);
+
+      const ldJson = await page.locator('script[type="application/ld+json"]').first().textContent();
+      expect(ldJson, `${locale} ld+json`).toBeTruthy();
+      expect(ldJson!, `${locale} dateModified`).toMatch(/"dateModified"\s*:\s*"2026-07-09"/);
+
+      const metaDescription = await page.locator('meta[name="description"]').getAttribute('content');
+      expect(metaDescription, `${locale} meta description`).toBeTruthy();
+      expect(metaDescription!, `${locale} meta vault signal`).toMatch(vaultSignals[locale]);
+      expect(metaDescription!, `${locale} meta favorites cap`).toMatch(fiveSignals[locale]);
+
+      const factCards = page.locator('.fact-card');
+      await expect(factCards, `${locale} fact-card count`).toHaveCount(4);
+      const factText = (await factCards.allTextContents()).join('\n');
+      expect(factText, `${locale} fact vault signal`).toMatch(vaultSignals[locale]);
+      expect(factText, `${locale} fact favorites cap`).toMatch(fiveSignals[locale]);
+
+      const faqText = (await page.locator('.faq-item').allTextContents()).join('\n');
+      expect(faqText, `${locale} faq vault signal`).toMatch(vaultSignals[locale]);
+      expect(faqText, `${locale} faq favorites cap`).toMatch(fiveSignals[locale]);
+
+      const filmCards = page.locator('.film-card');
+      await expect(filmCards, `${locale} film-card count`).toHaveCount(5);
+      const vaultFilm = page.locator('.film-card').filter({
+        has: page.locator('img[src*="screenshot-iphone-vault"]'),
+      });
+      await expect(vaultFilm, `${locale} vault film card`).toHaveCount(1);
+      const vaultFilmText = [
+        (await vaultFilm.locator('img').getAttribute('alt')) ?? '',
+        (await vaultFilm.locator('.film-caption').textContent()) ?? '',
+      ].join('\n');
+      expect(vaultFilmText, `${locale} vault film favorites`).toMatch(
+        locale === 'en'
+          ? /favorite|Home Quick Add|search/i
+          : locale === 'ko'
+            ? /즐겨찾기|홈 빠른 추가|검색/
+            : /お気に入り|クイック追加|検索/,
+      );
+    }
+  });
+
   test('AquaTick screenshot strip starts with the first card visible', async ({ page }) => {
     await page.setViewportSize({ width: 720, height: 800 });
     await page.goto('/aquatick/ko/');
