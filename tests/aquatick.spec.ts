@@ -8,7 +8,6 @@ import {
   expectHtmlRoute,
   expectImageResponse,
   localStorageValue,
-  requiredAttribute,
   sha256,
 } from './support/site-contracts';
 
@@ -99,7 +98,7 @@ test.describe('AquaTick route contracts', () => {
     await expect(vaultCard).toHaveAttribute('alt', /보관함/);
   });
 
-  test('locale pages claim Cup Vault favorites max 5 and dateModified 2026-07-09', async ({ page }) => {
+  test('locale pages claim Cup Vault favorites max 5 and dateModified 2026-07-10', async ({ page }) => {
     const vaultSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
       en: /Cup Vault|favorite|favorites/i,
       ko: /보관함|즐겨찾기/,
@@ -116,7 +115,7 @@ test.describe('AquaTick route contracts', () => {
 
       const ldJson = await page.locator('script[type="application/ld+json"]').first().textContent();
       expect(ldJson, `${locale} ld+json`).toBeTruthy();
-      expect(ldJson!, `${locale} dateModified`).toMatch(/"dateModified"\s*:\s*"2026-07-09"/);
+      expect(ldJson!, `${locale} dateModified`).toMatch(/"dateModified"\s*:\s*"2026-07-10"/);
 
       const metaDescription = await page.locator('meta[name="description"]').getAttribute('content');
       expect(metaDescription, `${locale} meta description`).toBeTruthy();
