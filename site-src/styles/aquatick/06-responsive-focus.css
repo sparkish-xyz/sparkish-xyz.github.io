@@ -35,8 +35,14 @@
     justify-content: flex-start;
     gap: 20px;
   }
+  .film-card {
+    width: 236px;
+  }
+  .faq-grid {
+    align-items: stretch;
+  }
   .final-cta h2 {
-    font-size: 2.6rem;
+    font-size: clamp(3rem, 6.8vw, 5rem);
   }
 }
 @media (min-width: 720px) and (max-width: 979px) {
@@ -57,6 +63,21 @@
 @media (min-width: 980px) {
   .hero-inner { max-width: 1080px; }
   .mood-inner, .judgment-inner, .cat-film-inner, .testimonials-inner { max-width: 980px; }
+  .quote-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .film-card {
+    width: 252px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .cat-film-inner, .testimonials-inner {
+    max-width: 1120px;
+  }
+  .film-card {
+    width: 240px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -85,10 +106,53 @@
   .nav-links a {
     padding: 5px 6px;
   }
+  body {
+    overflow-x: clip;
+  }
+  .cat-film,
+  .final-cta {
+    overflow-x: clip;
+  }
+  .film-strip {
+    width: 100%;
+    padding-right: 0;
+    scroll-padding-left: 0;
+  }
+  .film-card {
+    width: min(248px, calc(100vw - var(--page-pad) * 2));
+  }
+  .quote p {
+    margin-right: 0;
+  }
+  .quote::before {
+    position: static;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .faq-item {
+    padding-left: 18px;
+  }
+  .faq-item::before {
+    position: static;
+    display: block;
+    margin-bottom: 12px;
+  }
+  .final-inner {
+    padding: 26px 18px;
+  }
+}
+
+@media (max-width: 375px) {
+  .film-card {
+    width: min(232px, calc(100vw - var(--page-pad) * 2));
+  }
+  .final-cta h2 {
+    font-size: 2.25rem;
+  }
 }
 
 /* Tiny focus styles */
-.btn:focus-visible, .quick-add-btn:focus-visible, .undo-btn:focus-visible {
+.btn:focus-visible, .quick-add-btn:focus-visible, .undo-btn:focus-visible, footer a:focus-visible {
   outline: 3px solid var(--water-accent);
   outline-offset: 3px;
 }
