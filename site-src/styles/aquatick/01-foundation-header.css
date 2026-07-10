@@ -1,56 +1,38 @@
-/* Shared AquaTick landing styles. */
 :root {
   --ink: #0D2138;
-  --paper: #F7FAFC;
+  --paper: #F7F4EE;
   --cream: #FFFFFF;
-  --warm-surface: #F7FAFC;
-  --hero-surface: #FFFFFF;
-  --inset-surface: #FFFFFF;
-  --water-accent: #00AD9E;
+  --mint-soft: #F0F7FF;
+  --water-accent: #3B9EFF;
   --aqua: var(--water-accent);
-  --aqua-bright: #00B8A6;
-  --band-dark: #061B2E;
-  --band-teal: #063F46;
-  --lavender-accent: #335E8C;
-  --coral: #E63B59;
-  --coral-soft: rgba(230, 59, 89, 0.14);
-  --yellow: #E6F5F2;
+  --aqua-bright: #6BB6FF;
+  --band-dark: #0B2A4A;
+  --band-teal: #123A66;
+  --band-blue: var(--band-teal);
+  --coral: #E85A7A;
+  --yellow: #E8F3FF;
   --navy: #0A1F38;
-  /* Web CTAs use --navy on water-accent for WCAG AA; native app uses white actionInk on teal. */
-  --progress-track: rgba(13, 33, 56, 0.14);
-  /* #4A6270: WCAG body copy on paper; Swift Widget secondary is #597E82 */
-  --muted: #4A6270;
+  --muted: #5A6B7D;
   --line: rgba(13, 33, 56, 0.12);
-  --fine-border: rgba(13, 33, 56, 0.12);
-  --chip-surface: rgba(255, 255, 255, 0.82);
-  --chip-border: rgba(0, 173, 158, 0.24);
-  --sticker-border: rgba(13, 33, 56, 0.13);
-  --shadow-soft: 0 8px 16px rgba(13, 33, 56, 0.08);
+  --fine-border: var(--line);
+  --chip-surface: rgba(255, 255, 255, 0.9);
+  --chip-border: rgba(59, 158, 255, 0.28);
+  --shadow-soft: 0 8px 20px rgba(13, 33, 56, 0.08);
   --shadow-card: 0 18px 42px rgba(13, 33, 56, 0.12);
-  --shadow-float: 0 28px 70px rgba(6, 27, 46, 0.22);
-
+  --shadow-float: 0 28px 70px rgba(6, 27, 46, 0.2);
   --r-card: 24px;
   --r-control: 999px;
   --r-panel: 36px;
-  --r-16: 16px;
-  --r-24: 24px;
-  --r-28: 28px;
-  --r-32: 32px;
-  --r-full: 999px;
-
-  /* Type scale */
-  --hero-display: clamp(3.25rem, 9vw, 7.4rem);
-  --section-title: clamp(2.2rem, 5vw, 4.8rem);
-  --big: clamp(3.25rem, 9vw, 7.4rem);
-  --title: clamp(2.2rem, 5vw, 4.8rem);
-  --card-title: clamp(1.2rem, 2vw, 1.65rem);
+  --page-pad: clamp(18px, 4vw, 48px);
+  --section-y: clamp(64px, 10vw, 120px);
+  --card-gap: clamp(16px, 3vw, 28px);
+  --hero-display: clamp(2.9rem, 11vw, 6.6rem);
+  --section-title: clamp(2rem, 6vw, 4.2rem);
+  --title: var(--section-title);
+  --card-title: clamp(1.12rem, 2vw, 1.5rem);
   --body: 1.05rem;
   --label: 0.78rem;
-
-  --page-pad: clamp(18px, 4vw, 48px);
-  --section-y: clamp(64px, 10vw, 132px);
-  --card-gap: clamp(16px, 3vw, 28px);
-  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 * { box-sizing: border-box; }
@@ -61,94 +43,111 @@ html {
   scroll-behavior: smooth;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation: none !important; transition: none !important; }
-}
-
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 50% -10%, rgba(0, 173, 158, 0.10), transparent 34rem),
-    linear-gradient(180deg, var(--cream) 0%, var(--paper) 42%, var(--paper) 100%);
+    radial-gradient(circle at 12% 8%, color-mix(in srgb, var(--aqua-bright) 26%, transparent), transparent 24rem),
+    radial-gradient(circle at 88% 28%, color-mix(in srgb, var(--water-accent) 18%, transparent), transparent 28rem),
+    linear-gradient(180deg, var(--paper), var(--mint-soft) 52%, var(--paper));
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
   font-size: var(--body);
-  line-height: 1.48;
-  letter-spacing: 0;
+  line-height: 1.5;
   padding-bottom: env(safe-area-inset-bottom);
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
+  overflow-x: clip;
 }
 
 a { color: inherit; text-decoration: none; }
-
 img { display: block; max-width: 100%; height: auto; }
-
-/* === 2026 REFRESH SURFACES === */
 
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 200;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   padding: 12px var(--page-pad);
   padding-top: calc(12px + env(safe-area-inset-top));
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: saturate(160%) blur(18px);
-  -webkit-backdrop-filter: saturate(160%) blur(18px);
-  border-bottom: 1px solid var(--fine-border);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.75), 0 18px 40px rgba(13, 33, 56, 0.06);
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--cream) 84%, transparent);
+  box-shadow: var(--shadow-soft);
+  -webkit-backdrop-filter: saturate(170%) blur(18px);
+  backdrop-filter: saturate(170%) blur(18px);
+}
+
+.brand,
+.nav-links,
+.nav-links a,
+.btn {
+  display: inline-flex;
+  align-items: center;
 }
 
 .brand {
-  display: inline-flex;
-  align-items: center;
   gap: 10px;
-  font-weight: 850;
+  min-width: max-content;
   font-size: 1.02rem;
+  font-weight: 850;
   letter-spacing: -0.03em;
 }
+
 .brand img {
   width: 38px;
   height: 38px;
+  border: 1px solid var(--line);
   border-radius: 12px;
-  border: 1px solid var(--fine-border);
   box-shadow: var(--shadow-soft);
 }
 
 .nav-links {
-  display: flex;
-  align-items: center;
+  justify-content: flex-end;
   gap: 6px;
   font-size: 0.86rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
+  flex-wrap: wrap;
 }
-.nav-links a {
-  padding: 9px 14px;
-  border-radius: var(--r-control);
+
+.nav-links a,
+.btn {
   min-height: 44px;
-  display: inline-flex;
-  align-items: center;
   justify-content: center;
-  border: 1px solid transparent;
-  transition: background-color 140ms var(--ease-spring), border-color 140ms var(--ease-spring), color 140ms var(--ease-spring), transform 140ms var(--ease-spring), box-shadow 140ms var(--ease-spring);
+  border-radius: var(--r-control);
+  transition: transform 140ms var(--ease), box-shadow 140ms var(--ease), border-color 140ms var(--ease), filter 140ms var(--ease), background-color 140ms var(--ease);
 }
-.nav-links a:hover,
-.nav-links a:focus-visible {
-  background: var(--yellow);
-  color: var(--navy);
-  border-color: var(--chip-border);
+
+.nav-links a { padding: 8px 12px; }
+.nav-links a:hover { background: var(--yellow); color: var(--navy); }
+
+.btn {
+  min-height: 56px;
+  padding: 0 28px;
+  border: 1px solid var(--chip-border);
   box-shadow: var(--shadow-soft);
+  cursor: pointer;
+  font-size: 1.06rem;
+  font-weight: 850;
+  letter-spacing: -0.02em;
+  text-align: center;
 }
-.nav-links a:focus-visible {
-  outline: 2px solid var(--water-accent);
-  outline-offset: 2px;
+
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-card); }
+.btn:active,
+.nav-links a:active { transform: translateY(1px); }
+
+.btn-primary {
+  border-color: var(--water-accent);
+  background: linear-gradient(180deg, var(--aqua-bright), var(--water-accent));
+  color: var(--cream);
 }
-.nav-links a:active {
-  transform: translateY(1px);
+
+.btn-secondary {
+  background: var(--chip-surface);
+  color: var(--navy);
 }
+
+.btn-primary:hover { filter: saturate(1.08) brightness(1.02); }
+.btn-secondary:hover { border-color: var(--water-accent); background: var(--yellow); }

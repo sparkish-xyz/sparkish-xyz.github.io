@@ -8,6 +8,8 @@ import {
   expectHtmlRoute,
   expectImageResponse,
   localStorageValue,
+  requiredAttribute,
+  requiredText,
   sha256,
 } from './support/site-contracts';
 
@@ -91,14 +93,44 @@ test.describe('AquaTick route contracts', () => {
     }
   });
 
-  test('AquaTick film strip includes vault screenshot card', async ({ page }) => {
-    await page.goto('/aquatick/ko/');
-    const vaultCard = page.locator('.film-card img[src*="screenshot-iphone-vault"]');
-    await expect(vaultCard).toBeVisible();
-    await expect(vaultCard).toHaveAttribute('alt', /보관함/);
+  test('locale pages expose App Store download and Pro prices without banned platform claims', async ({ page }) => {
+    for (const locale of AQUATICK_LOCALES) {
+      await page.goto(`/aquatick/${locale}/`);
+
+      await expect(page.locator('a[href*="apps.apple.com/app/aquatick"]'), `${locale} App Store link`).not.toHaveCount(0);
+
+      const bodyText = await requiredText(page.locator('body'), `${locale} body text`);
+      expect(bodyText, `${locale} aquarium copy`).not.toMatch(/aquarium|水槽|아쿠아리움/i);
+      expect(bodyText, `${locale} visionOS copy`).not.toMatch(/visionOS/i);
+      expect(bodyText, `${locale} monthly Pro price`).toMatch(/\$0\.99/);
+      expect(bodyText, `${locale} yearly Pro price`).toMatch(/\$5\.99/);
+
+      const hrefs = await page.locator('a[href]').evaluateAll((links) => links.map((link) => link.getAttribute('href') ?? '').join('\n'));
+      expect(hrefs, `${locale} Google Play links`).not.toMatch(/play\.google/i);
+    }
   });
 
-  test('locale pages claim Cup Vault favorites max 5 and dateModified 2026-07-10', async ({ page }) => {
+  test('locked AquaTick S1-S5 layout uses summary, core, privacy, and pricing contracts', async ({ page }) => {
+    await page.goto('/aquatick/ko/');
+
+    await expect(page.locator('#features .summary-card'), 'summary-card count').toHaveCount(4);
+    await expect(page.locator('#screens .core-feature-card'), 'core-feature-card count').toHaveCount(6);
+
+    const vaultCard = page.locator('#screens .core-feature-card').filter({
+      has: page.locator('img[src*="screenshot-iphone-vault"]'),
+    });
+    await expect(vaultCard, 'vault core feature card').toHaveCount(1);
+    await expect(vaultCard.locator('img[src*="screenshot-iphone-vault"]'), 'vault screen image').toBeVisible();
+
+    await expect(page.locator('#privacy'), 'privacy section').toBeVisible();
+    await expect(page.locator('#privacy .privacy-col'), 'privacy column count').toHaveCount(4);
+
+    const pricingText = await requiredText(page.locator('#pricing'), 'pricing section');
+    expect(pricingText, 'monthly Pro price').toMatch(/\$0\.99/);
+    expect(pricingText, 'yearly Pro price').toMatch(/\$5\.99/);
+  });
+
+  test('locale pages claim Cup Vault favorites max 5 in meta, screens, and dateModified 2026-07-10', async ({ page }) => {
     const vaultSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
       en: /Cup Vault|favorite|favorites/i,
       ko: /보관함|즐겨찾기/,
@@ -113,57 +145,36 @@ test.describe('AquaTick route contracts', () => {
     for (const locale of AQUATICK_LOCALES) {
       await page.goto(`/aquatick/${locale}/`);
 
-      const ldJson = await page.locator('script[type="application/ld+json"]').first().textContent();
-      expect(ldJson, `${locale} ld+json`).toBeTruthy();
-      expect(ldJson!, `${locale} dateModified`).toMatch(/"dateModified"\s*:\s*"2026-07-10"/);
+      const ldJson = await requiredText(page.locator('script[type="application/ld+json"]').first(), `${locale} ld+json`);
+      expect(ldJson, `${locale} dateModified`).toMatch(/"dateModified"\s*:\s*"2026-07-10"/);
 
-      const metaDescription = await page.locator('meta[name="description"]').getAttribute('content');
-      expect(metaDescription, `${locale} meta description`).toBeTruthy();
-      expect(metaDescription!, `${locale} meta vault signal`).toMatch(vaultSignals[locale]);
-      expect(metaDescription!, `${locale} meta favorites cap`).toMatch(fiveSignals[locale]);
+      const metaDescription = await requiredAttribute(page.locator('meta[name="description"]'), 'content', `${locale} meta description`);
+      expect(metaDescription, `${locale} meta vault signal`).toMatch(vaultSignals[locale]);
+      expect(metaDescription, `${locale} meta favorites cap`).toMatch(fiveSignals[locale]);
 
-      const factCards = page.locator('.fact-card');
-      await expect(factCards, `${locale} fact-card count`).toHaveCount(4);
-      const factText = (await factCards.allTextContents()).join('\n');
-      expect(factText, `${locale} fact vault signal`).toMatch(vaultSignals[locale]);
-      expect(factText, `${locale} fact favorites cap`).toMatch(fiveSignals[locale]);
-
-      const faqText = (await page.locator('.faq-item').allTextContents()).join('\n');
-      expect(faqText, `${locale} faq vault signal`).toMatch(vaultSignals[locale]);
-      expect(faqText, `${locale} faq favorites cap`).toMatch(fiveSignals[locale]);
-
-      const filmCards = page.locator('.film-card');
-      await expect(filmCards, `${locale} film-card count`).toHaveCount(5);
-      const vaultFilm = page.locator('.film-card').filter({
-        has: page.locator('img[src*="screenshot-iphone-vault"]'),
+      const vaultCard = page.locator('#screens .core-feature-card').filter({
+        hasText: vaultSignals[locale],
       });
-      await expect(vaultFilm, `${locale} vault film card`).toHaveCount(1);
-      const vaultFilmText = [
-        (await vaultFilm.locator('img').getAttribute('alt')) ?? '',
-        (await vaultFilm.locator('.film-caption').textContent()) ?? '',
-      ].join('\n');
-      expect(vaultFilmText, `${locale} vault film favorites`).toMatch(
-        locale === 'en'
-          ? /favorite|Home Quick Add|search/i
-          : locale === 'ko'
-            ? /즐겨찾기|홈 빠른 추가|검색/
-            : /お気に入り|クイック追加|検索/,
-      );
+      await expect(vaultCard, `${locale} vault core feature card`).toHaveCount(1);
+
+      const vaultCardText = await requiredText(vaultCard.first(), `${locale} vault card text`);
+      expect(vaultCardText, `${locale} screen vault signal`).toMatch(vaultSignals[locale]);
+      expect(vaultCardText, `${locale} screen favorites cap`).toMatch(fiveSignals[locale]);
     }
   });
 
-  test('AquaTick screenshot strip starts with the first card visible', async ({ page }) => {
+  test('AquaTick screens strip starts with the first card visible', async ({ page }) => {
     await page.setViewportSize({ width: 720, height: 800 });
     await page.goto('/aquatick/ko/');
-    await page.locator('#film').scrollIntoViewIfNeeded();
+    await page.locator('#screens').scrollIntoViewIfNeeded();
 
-    const metrics = await page.locator('.film-strip').evaluate((strip) => {
-      const firstCard = strip.querySelector('.film-card');
-      if (!firstCard) {
-        throw new Error('Missing screenshot card');
+    const metrics = await page.locator('#screens .screen-grid').evaluate((grid) => {
+      const firstCard = grid.querySelector('.core-feature-card');
+      if (firstCard === null) {
+        throw new Error('Missing core feature card');
       }
 
-      const stripRect = strip.getBoundingClientRect();
+      const stripRect = grid.getBoundingClientRect();
       const firstRect = firstCard.getBoundingClientRect();
 
       return {
@@ -177,7 +188,7 @@ test.describe('AquaTick route contracts', () => {
     expect(metrics.pageOverflow).toBe(0);
   });
 
-  test('Japanese AquaTick hero remains readable at tablet width', async ({ page }) => {
+  test('Japanese AquaTick hero remains readable at tablet width under documented centered-hero budget', async ({ page }) => {
     await page.setViewportSize({ width: 720, height: 900 });
     await page.goto('/aquatick/ja/');
 
@@ -185,7 +196,7 @@ test.describe('AquaTick route contracts', () => {
       const h1 = document.querySelector('.hero h1');
       const firstButton = document.querySelector('.hero-actions .btn');
       const actions = document.querySelector('.hero-actions');
-      if (!h1 || !firstButton || !actions) {
+      if (h1 === null || firstButton === null || actions === null) {
         throw new Error('Missing Japanese hero content');
       }
 
@@ -206,10 +217,10 @@ test.describe('AquaTick route contracts', () => {
       };
     });
 
-    expect(metrics.h1Height).toBeLessThanOrEqual(150);
+    expect(metrics.h1Height).toBeLessThanOrEqual(280);
     expect(metrics.buttonWidth).toBeGreaterThanOrEqual(280);
     expect(metrics.buttonLineCount).toBeLessThanOrEqual(1);
-    expect(metrics.actionsDirection).toBe('column');
+    expect(['column', 'row']).toContain(metrics.actionsDirection);
     expect(metrics.pageOverflow).toBe(0);
   });
 

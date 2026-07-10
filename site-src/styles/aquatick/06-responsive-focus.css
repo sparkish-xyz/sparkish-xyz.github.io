@@ -1,158 +1,98 @@
-/* Responsive */
-@media (min-width: 720px) {
-  :root {
-    --big: 3.5rem;
-    --title: 2.35rem;
-  }
-  .hero-inner {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding: 58px 28px 50px;
-  }
-  .hero-visual {
-    max-width: 320px;
-    flex-shrink: 0;
-  }
-  .hero-actions {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .judgment-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .quote-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .fact-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .faq-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .film-strip {
-    justify-content: flex-start;
-    gap: 20px;
-  }
-  .film-card {
-    width: 236px;
-  }
-  .faq-grid {
-    align-items: stretch;
-  }
-  .final-cta h2 {
-    font-size: clamp(3rem, 6.8vw, 5rem);
+.brand:focus-visible,
+.nav-links a:focus-visible,
+.btn:focus-visible,
+.hero-pills span:focus-visible,
+.hero-proof span:focus-visible,
+footer a:focus-visible {
+  outline: 2px solid var(--water-accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
+
+@media (min-width: 720px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
+    text-align: left;
+  }
+
+  .hero-copy,
+  .hero-badge,
+  .hero h1,
+  .hero-tagline { margin-left: 0; margin-right: 0; }
+
+  .hero-actions { flex-direction: row; justify-content: flex-start; }
+  .hero-pills,
+  .hero-proof { justify-content: flex-start; }
+
+  .summary-grid,
+  .feature-grid,
+  .fact-grid,
+  .designed-for-grid,
+  .privacy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  .screen-grid,
+  .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pricing-grid { grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr); }
+  .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .screen-card,
+  .film-card { flex-basis: 300px; }
+}
+
+@media (min-width: 980px) {
+  .summary-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .screen-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .privacy-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  .screens-strip,
+  .film-strip { overflow: visible; }
+
+  .screen-card,
+  .film-card { flex: 1 1 0; }
+}
+
 @media (min-width: 720px) and (max-width: 979px) {
   html[lang="ja"] .hero h1 {
-    font-size: 3rem;
-    letter-spacing: 0;
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    letter-spacing: -0.04em;
   }
-  html[lang="ja"] .hero-actions {
-    flex-direction: column;
-    max-width: 320px;
-  }
-  html[lang="ja"] .hero-actions .btn {
-    width: 100%;
-    padding: 0 20px;
-    font-size: 1rem;
-  }
-}
-@media (min-width: 980px) {
-  .hero-inner { max-width: 1080px; }
-  .mood-inner, .judgment-inner, .cat-film-inner, .testimonials-inner { max-width: 980px; }
-  .quote-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .film-card {
-    width: 252px;
-  }
+
+  html[lang="ja"] .hero-actions { flex-direction: column; max-width: 340px; }
+  html[lang="ja"] .hero-actions .btn { width: 340px; }
 }
 
-@media (min-width: 1280px) {
-  .cat-film-inner, .testimonials-inner {
-    max-width: 1120px;
-  }
-  .film-card {
-    width: 240px;
-  }
-}
-
-@media (max-width: 720px) {
-  /* 720px boundary shared intentionally with existing min-width:720px hero for progressive enhancement; no soft transition added to keep change minimal (per review) */
+@media (max-width: 719px) {
   .site-header {
+    align-items: flex-start;
     gap: 6px;
     padding: 8px 10px;
     padding-top: calc(8px + env(safe-area-inset-top));
-    align-items: flex-start;
   }
-  .brand {
-    font-size: 0.95rem;
-    gap: 4px;
-  }
-  .brand img {
-    width: 28px;
-    height: 28px;
-  }
-  .nav-links {
-    gap: 2px;
-    row-gap: 2px;
-    font-size: 0.72rem;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  .nav-links a {
-    padding: 5px 6px;
-  }
-  body {
-    overflow-x: clip;
-  }
-  .cat-film,
-  .final-cta {
-    overflow-x: clip;
-  }
-  .film-strip {
-    width: 100%;
-    padding-right: 0;
-    scroll-padding-left: 0;
-  }
-  .film-card {
-    width: min(248px, calc(100vw - var(--page-pad) * 2));
-  }
-  .quote p {
-    margin-right: 0;
-  }
-  .quote::before {
-    position: static;
-    display: block;
-    margin-bottom: 12px;
-  }
-  .faq-item {
-    padding-left: 18px;
-  }
-  .faq-item::before {
-    position: static;
-    display: block;
-    margin-bottom: 12px;
-  }
-  .final-inner {
-    padding: 26px 18px;
-  }
+
+  .brand { gap: 4px; font-size: 0.95rem; }
+  .brand img { width: 28px; height: 28px; }
+
+  .nav-links { gap: 2px; font-size: 0.72rem; }
+  .nav-links a { padding: 5px 6px; }
+  .hero-actions .btn { width: 100%; }
+  .hero-visual,
+  .hero-devices { width: min(330px, calc(100vw - 44px)); }
+  .watch-frame { flex-basis: 112px; transform: translateY(-10px); }
+  .final-inner,
+  .cta-start,
+  .pro-card { padding: 26px 18px; }
 }
 
 @media (max-width: 375px) {
-  .film-card {
-    width: min(232px, calc(100vw - var(--page-pad) * 2));
-  }
-  .final-cta h2 {
-    font-size: 2.25rem;
-  }
-}
-
-/* Tiny focus styles */
-.btn:focus-visible, .quick-add-btn:focus-visible, .undo-btn:focus-visible, footer a:focus-visible {
-  outline: 3px solid var(--water-accent);
-  outline-offset: 3px;
+  .screen-card,
+  .film-card { flex-basis: min(248px, calc(100vw - var(--page-pad) * 2)); }
+  .btn { padding-inline: 20px; }
 }
