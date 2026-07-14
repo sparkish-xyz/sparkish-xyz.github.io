@@ -20,13 +20,13 @@
 #features,
 #features.summary-strip,
 #why,
-#screens.core-features,
 .answer-summary { background: var(--mint-soft); }
 
 #screens,
+#screens.core-features,
 #designed-for,
 #faq,
-.faq-section { background: color-mix(in srgb, var(--paper) 86%, var(--cream)); }
+.faq-section { background: var(--paper); }
 
 .section-inner,
 .summary-inner,
@@ -38,7 +38,7 @@
 .pricing-inner {
   width: min(100%, 980px);
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .screens-inner { width: min(100%, 1120px); }
@@ -56,12 +56,12 @@
 .mood-title,
 .judgment h2 {
   max-width: min(22ch, 100%);
-  margin: 0 auto 18px;
+  margin: 0 0 20px;
   font-size: var(--section-title);
   font-weight: 900;
-  line-height: 1.12;
-  letter-spacing: -0.04em;
-  text-wrap: balance;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  text-wrap: pretty;
 }
 
 #privacy h2 {
@@ -75,8 +75,9 @@
 .faq-grid,
 .screen-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--card-gap);
+  align-items: start;
 }
 
 .summary-card,
@@ -91,22 +92,15 @@
   border: 1px solid var(--line);
   border-radius: var(--r-card);
   background: var(--cream);
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-soft);
   text-align: left;
   overflow: hidden;
+  align-self: start;
 }
 
-.summary-card::before,
-.feature-card::before,
-.feature-grid > article::before,
-.fact-card::before,
-.core-feature-card::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 5px;
-  background: linear-gradient(90deg, var(--water-accent), var(--aqua-bright));
-}
+.summary-card:nth-child(2) { background: var(--yellow); }
+.summary-card:nth-child(3) { background: color-mix(in oklch, var(--cream) 70%, var(--mint-soft)); }
+.summary-card:nth-child(4) { border-color: var(--chip-border); box-shadow: none; }
 
 .summary-card h3,
 .feature-card h3,
@@ -115,7 +109,7 @@
 .designed-for-card h3,
 .faq-item h3,
 .core-feature-card h3 {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
   font-size: var(--card-title);
   font-weight: 850;
   line-height: 1.12;
@@ -135,21 +129,28 @@
   line-height: 1.5;
 }
 
-.core-feature-card img,
+.core-feature-card .product-shot,
+.screen-card img,
+.film-card img {
+  margin: 0 0 20px;
+}
+
+.core-feature-card .product-shot img,
 .screen-card img,
 .film-card img {
   width: 100%;
   aspect-ratio: 1206 / 2622;
   object-fit: cover;
   object-position: top center;
-  margin-bottom: 18px;
-  padding: 8px;
-  border-radius: calc(var(--r-card) - 6px);
-  background: linear-gradient(155deg, var(--band-dark), var(--band-teal));
 }
 
-/* Watch captures are nearly square — don't force iPhone aspect crop */
-.core-feature-card img[src*="screenshot-watch"] {
+.core-feature-card .product-shot:has(img[src*="screenshot-watch"]) {
+  display: grid;
+  place-items: center;
+  background: var(--yellow);
+}
+
+.core-feature-card .product-shot img[src*="screenshot-watch"] {
   aspect-ratio: 1 / 1.15;
   max-height: 280px;
   width: auto;
@@ -160,6 +161,15 @@
   object-position: center;
 }
 
+.core-feature-card-icon {
+  min-height: 0;
+  background: var(--band-dark);
+  color: var(--cream);
+}
+
+.core-feature-card-icon p { color: color-mix(in oklch, var(--cream) 76%, var(--water-accent)); }
+.core-feature-card-icon svg { margin-bottom: var(--space-xl); color: var(--water-accent); }
+
 .screens-strip,
 .film-strip {
   display: flex;
@@ -169,7 +179,7 @@
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior-x: contain;
-  padding: 4px 2px 22px;
+  padding: 4px 4px 24px;
 }
 
 .screens-strip::-webkit-scrollbar,
@@ -191,11 +201,11 @@
 .film-card img { margin-bottom: 0; }
 .screen-card h3,
 .screen-caption strong,
-.film-caption strong { display: block; margin: 0 0 6px; color: var(--ink); font-size: var(--card-title); font-weight: 850; line-height: 1.12; letter-spacing: -0.035em; }
-.screen-card h3 { padding: 18px 18px 0; }
+.film-caption strong { display: block; margin: 0 0 8px; color: var(--ink); font-size: var(--card-title); font-weight: 850; line-height: 1.12; letter-spacing: -0.035em; }
+.screen-card h3 { padding: 20px 20px 0; }
 .screen-card p,
 .screen-caption,
-.film-caption { margin: 0; padding: 0 18px 20px; color: var(--muted); font-weight: 650; line-height: 1.45; }
+.film-caption { margin: 0; padding: 0 20px 20px; color: var(--muted); font-weight: 650; line-height: 1.45; }
 
 #designed-for .section-inner,
 .designed-for-inner {
@@ -203,6 +213,6 @@
   padding: clamp(24px, 5vw, 48px);
   border: 1px solid var(--line);
   border-radius: var(--r-panel);
-  background: color-mix(in srgb, var(--cream) 76%, var(--mint-soft));
+  background: color-mix(in oklch, var(--cream) 76%, var(--mint-soft));
   box-shadow: var(--shadow-card);
 }

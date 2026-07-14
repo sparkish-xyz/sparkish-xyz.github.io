@@ -1,10 +1,14 @@
 .brand:focus-visible,
-.nav-links a:focus-visible,
+.nav-main a:focus-visible,
+.language-links a:focus-visible,
+.nav-menu summary:focus-visible,
+.nav-menu-panel a:focus-visible,
 .btn:focus-visible,
+.third-party a:focus-visible,
 .hero-pills span:focus-visible,
 .hero-proof span:focus-visible,
 footer a:focus-visible {
-  outline: 2px solid var(--water-accent);
+  outline: 2px solid var(--color-focus);
   outline-offset: 2px;
 }
 
@@ -17,20 +21,13 @@ footer a:focus-visible {
   }
 }
 
+@media (min-width: 480px) {
+  .hero-actions { flex-direction: row; }
+}
+
 @media (min-width: 720px) {
-  .hero-inner {
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 430px);
-    text-align: left;
-  }
-
-  .hero-copy,
-  .hero-badge,
-  .hero h1,
-  .hero-tagline { margin-left: 0; margin-right: 0; }
-
-  .hero-actions { flex-direction: row; justify-content: flex-start; }
-  .hero-pills,
-  .hero-proof { justify-content: flex-start; }
+  .hero-visual,
+  .hero-devices { width: min(100%, 560px); }
 
   .summary-grid,
   .feature-grid,
@@ -41,16 +38,28 @@ footer a:focus-visible {
   .screen-grid,
   .faq-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pricing-grid { grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr); }
-  .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .footer-layout { grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr); }
+  .footer-columns { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
   .screen-card,
   .film-card { flex-basis: 300px; }
 }
 
 @media (min-width: 980px) {
-  .summary-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .screen-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .privacy-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .hero-inner { grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr); }
+  .hero-visual,
+  .hero-devices { width: min(100%, 500px); }
+  .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .screen-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .screen-grid > :nth-child(1) { grid-column: span 5; }
+  .screen-grid > :nth-child(2) { grid-column: span 3; }
+  .screen-grid > :nth-child(3) { grid-column: span 4; }
+  .screen-grid > :nth-child(4) { grid-column: span 4; }
+  .screen-grid > :nth-child(5) { grid-column: span 5; }
+  .screen-grid > :nth-child(6) { grid-column: span 3; }
+  .privacy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  #screens h2 { margin-left: auto; text-align: right; }
 
   .screens-strip,
   .film-strip { overflow: visible; }
@@ -61,34 +70,35 @@ footer a:focus-visible {
 
 @media (min-width: 720px) and (max-width: 979px) {
   html[lang="ja"] .hero h1 {
-    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    font-size: clamp(2.8rem, 7vw, 4.4rem);
     letter-spacing: -0.04em;
   }
+}
 
-  html[lang="ja"] .hero-actions { flex-direction: column; max-width: 340px; }
-  html[lang="ja"] .hero-actions .btn { width: 340px; }
+@media (max-width: 899px) {
+  .header-shell { grid-template-columns: minmax(0, 1fr) auto; gap: var(--space-sm); }
+  .nav-main,
+  .language-links { display: none; }
+  .nav-menu { display: block; }
+  .header-actions { gap: 8px; }
 }
 
 @media (max-width: 719px) {
-  .site-header {
-    align-items: flex-start;
-    gap: 6px;
-    padding: 8px 10px;
-    padding-top: calc(8px + env(safe-area-inset-top));
-  }
-
-  .brand { gap: 4px; font-size: 0.95rem; }
-  .brand img { width: 28px; height: 28px; }
-
-  .nav-links { gap: 2px; font-size: 0.72rem; }
-  .nav-links a { padding: 5px 6px; }
   .hero-actions .btn { width: 100%; }
   .hero-visual,
-  .hero-devices { width: min(330px, calc(100vw - 44px)); }
-  .watch-frame { flex-basis: 112px; transform: translateY(-10px); }
+  .hero-devices { width: min(390px, calc(100vw - 40px)); }
+  .product-shot-watch { flex-basis: clamp(92px, 27vw, 122px); transform: translateY(-8px); }
   .final-inner,
   .cta-start,
-  .pro-card { padding: 26px 18px; }
+  .pro-card { padding: 24px 20px; }
+}
+
+@media (max-width: 419px) {
+  .site-header { padding-inline: 12px; }
+  .brand { gap: 8px; font-size: 0.92rem; }
+  .brand img { width: 32px; height: 32px; border-radius: 10px; }
+  .header-cta { padding-inline: 12px; font-size: 0.78rem; }
+  .nav-menu summary { padding-inline: 12px; }
 }
 
 @media (max-width: 375px) {

@@ -87,27 +87,45 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/aquatick/">
-      <img src="/aquatick/assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick アイコン">
-      <span>AquaTick</span>
-    </a>
-    <nav class="nav-links" aria-label="ページセクション">
-      <a href="#features">機能</a>
-      <a href="#screens">スクリーンショット</a>
-      <a href="#pricing">料金</a>
-      <a href="#privacy">プライバシー</a>
-      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-ja">サポート</a>
-      <a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">アプリをダウンロード</a>
-      <a href="/aquatick/ko/" data-aqua-lang="ko" aria-label="Switch to Korean">KO</a>
-      <a href="/aquatick/en/" data-aqua-lang="en" aria-label="Switch to English">EN</a>
-    </nav>
+    <div class="header-shell">
+      <a class="brand" href="/aquatick/">
+        <img src="/aquatick/assets/aquatick-app-icon-128.png" width="128" height="128" alt="AquaTick アイコン">
+        <span>AquaTick</span>
+      </a>
+      <nav class="nav-main" aria-label="ページセクション">
+        <a href="#features">機能</a>
+        <a href="#screens">画面</a>
+        <a href="#privacy">プライバシー</a>
+      </nav>
+      <div class="header-actions">
+        <nav class="language-links" aria-label="言語を選択">
+          <a href="/aquatick/ko/" data-aqua-lang="ko">KO</a>
+          <a href="/aquatick/en/" data-aqua-lang="en">EN</a>
+          <a href="/aquatick/ja/" data-aqua-lang="ja" aria-current="page">JA</a>
+        </nav>
+        <a class="btn btn-primary header-cta" href="https://apps.apple.com/app/aquatick/id6762686013">App Store</a>
+        <details class="nav-menu">
+          <summary aria-label="メニューを開く">メニュー</summary>
+          <nav class="nav-menu-panel" aria-label="全メニュー">
+            <a href="#features">機能</a>
+            <a href="#screens">スクリーンショット</a>
+            <a href="#privacy">プライバシー</a>
+            <a href="#pricing">料金</a>
+            <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-ja">サポート</a>
+            <a href="/aquatick/ko/" data-aqua-lang="ko">한국어</a>
+            <a href="/aquatick/en/" data-aqua-lang="en">English</a>
+            <a href="/aquatick/ja/" data-aqua-lang="ja" aria-current="page">日本語</a>
+          </nav>
+        </details>
+      </div>
+    </div>
   </header>
 
   <main>
     <section class="hero" aria-label="AquaTick の紹介">
       <div class="hero-inner">
         <div class="hero-copy">
-          <h1>ワンタップで今日の<span class="text-accent">水分</span>をチャージ</h1>
+          <h1><span class="hero-line">今日の<span class="text-accent">水分</span>を、</span><span class="hero-line">ワンタップで補給。</span></h1>
           <p class="hero-tagline">かわいい猫と一緒に、かんたんに水分記録を続けましょう。</p>
           <div class="hero-proof" aria-label="主な対応機能">
             <span>ウィジェット &amp; Apple Watch</span>
@@ -123,12 +141,12 @@
         </div>
         <div class="hero-visual" aria-label="AquaTick の iPhone と Apple Watch 画面">
           <div class="hero-devices">
-            <div class="iphone-frame">
+            <figure class="product-shot product-shot-phone">
               <img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" alt="AquaTick ホーム画面 — 猫の進捗と +200、+300 のクイック追加">
-            </div>
-            <div class="watch-frame">
+            </figure>
+            <figure class="product-shot product-shot-watch">
               <img src="/aquatick/assets/screenshot-watch-home.png" width="422" height="514" alt="AquaTick Apple Watch ホーム画面 — 手首からクイック記録">
-            </div>
+            </figure>
           </div>
           <img class="hero-cat" src="/aquatick/assets/cat-hero.png" width="280" height="250" alt="" loading="lazy">
         </div>
@@ -137,7 +155,6 @@
 
     <section id="features" aria-labelledby="features-title">
       <div class="section-inner">
-        <span class="section-label">機能</span>
         <h2 id="features-title">記録はすばやく、確認はひと目で。</h2>
         <div class="summary-grid">
           <article class="summary-card">
@@ -162,31 +179,30 @@
 
     <section id="screens" aria-labelledby="screens-title">
       <div class="section-inner">
-        <span class="section-label">スクリーンショット</span>
         <h2 id="screens-title">AquaTick の主な機能</h2>
         <div class="screen-grid">
           <article class="core-feature-card">
-            <img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" loading="lazy" alt="AquaTick ホームとウィジェットの進捗画面">
+            <figure class="product-shot"><img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" loading="lazy" alt="AquaTick ホームとウィジェットの進捗画面"></figure>
             <h3>ホーム &amp; ウィジェット</h3>
             <p>ホームやウィジェットで進捗を確認し、ホームの +200/+300 クイック追加で記録できます。</p>
           </article>
           <article class="core-feature-card">
-            <img src="/aquatick/assets/screenshot-watch-home.png" width="422" height="514" loading="lazy" alt="AquaTick Apple Watch クイック記録画面">
+            <figure class="product-shot"><img src="/aquatick/assets/screenshot-watch-home.png" width="422" height="514" loading="lazy" alt="AquaTick Apple Watch クイック記録画面"></figure>
             <h3>Apple Watch</h3>
             <p>iPhone を取り出さなくても、手首からすばやく記録できます。</p>
           </article>
           <article class="core-feature-card">
-            <img src="/aquatick/assets/screenshot-iphone-vault.png" width="1206" height="2622" loading="lazy" alt="AquaTick 保管庫 — よく使うカップとお気に入り">
+            <figure class="product-shot"><img src="/aquatick/assets/screenshot-iphone-vault.png" width="1206" height="2622" loading="lazy" alt="AquaTick 保管庫 — よく使うカップとお気に入り"></figure>
             <h3>保管庫</h3>
             <p>よく使うカップを保管庫に保存し、お気に入りは最大 5 件まで固定してすばやく記録できます。</p>
           </article>
           <article class="core-feature-card">
-            <img src="/aquatick/assets/screenshot-iphone-history.png" width="1206" height="2622" loading="lazy" alt="AquaTick 統計と達成記録の画面">
+            <figure class="product-shot"><img src="/aquatick/assets/screenshot-iphone-history.png" width="1206" height="2622" loading="lazy" alt="AquaTick 統計と達成記録の画面"></figure>
             <h3>統計 &amp; 連続達成</h3>
             <p>日・週・月の統計で、水分習慣と目標達成の流れを振り返れます。</p>
           </article>
           <article class="core-feature-card">
-            <img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" loading="lazy" alt="AquaTick 進捗確認画面">
+            <figure class="product-shot"><img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" loading="lazy" alt="AquaTick 進捗確認画面"></figure>
             <h3>Live Activity &amp; Dynamic Island</h3>
             <p>ロック画面や Dynamic Island では進捗を確認できます。記録はホームのクイック追加と Apple Watch から行います。</p>
           </article>
@@ -204,7 +220,6 @@
 
     <section id="privacy" aria-labelledby="privacy-title">
       <div class="section-inner">
-        <span class="section-label">プライバシー</span>
         <h2 id="privacy-title">プライバシーを大切にし、あなたの選択を尊重します。</h2>
         <div class="privacy-grid">
           <div class="privacy-col">
@@ -251,28 +266,31 @@
   </main>
 
   <footer>
-    <div class="footer-brand">
-      <a class="brand" href="/aquatick/">
-        <img src="/aquatick/assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick アイコン">
-        <span>AquaTick</span>
-      </a>
-      <p>かわいい猫と続ける、かんたんな水分記録。</p>
-    </div>
-    <div class="footer-columns">
-      <div>
-        <h2>アプリ</h2>
-        <a href="#features">機能</a>
-        <a href="#screens">スクリーンショット</a>
-        <a href="#pricing">料金</a>
+    <p class="footer-statement">今日の一杯が、明日の習慣になります。</p>
+    <div class="footer-layout">
+      <div class="footer-brand">
+        <a class="brand" href="/aquatick/">
+          <img src="/aquatick/assets/aquatick-app-icon-128.png" width="128" height="128" alt="AquaTick アイコン">
+          <span>AquaTick</span>
+        </a>
+        <p>かわいい猫と続ける、かんたんな水分記録。</p>
       </div>
-      <div>
-        <h2>サポート</h2>
-        <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-ja">Support-ja</a>
-      </div>
-      <div>
-        <h2>法的情報</h2>
-        <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">Privacy Policy</a>
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple EULA</a>
+      <div class="footer-columns">
+        <div>
+          <h2>アプリ</h2>
+          <a href="#features">機能</a>
+          <a href="#screens">スクリーンショット</a>
+          <a href="#pricing">料金</a>
+        </div>
+        <div>
+          <h2>サポート</h2>
+          <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-ja">Support-ja</a>
+        </div>
+        <div>
+          <h2>法的情報</h2>
+          <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">Privacy Policy</a>
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple EULA</a>
+        </div>
       </div>
     </div>
     <p class="copyright">© 2026 Sparkish</p>

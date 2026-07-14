@@ -1,33 +1,7 @@
 .hero {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
   border-bottom: 1px solid var(--line);
-}
-
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  border-radius: 999px;
-  pointer-events: none;
-}
-
-.hero::before {
-  width: min(42vw, 34rem);
-  height: min(42vw, 34rem);
-  right: -10rem;
-  top: 3rem;
-  background: color-mix(in srgb, var(--aqua-bright) 34%, transparent);
-  filter: blur(16px);
-}
-
-.hero::after {
-  width: min(36vw, 28rem);
-  height: min(36vw, 28rem);
-  left: -9rem;
-  bottom: -8rem;
-  background: color-mix(in srgb, var(--water-accent) 18%, transparent);
-  filter: blur(18px);
 }
 
 .hero-inner {
@@ -35,24 +9,23 @@
   z-index: 1;
   width: min(100%, 1120px);
   margin: 0 auto;
-  padding: clamp(56px, 9vw, 116px) var(--page-pad) clamp(52px, 8vw, 96px);
+  padding: clamp(44px, 6vw, 72px) var(--page-pad) clamp(72px, 9vw, 112px);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: clamp(28px, 6vw, 72px);
+  gap: clamp(36px, 7vw, 76px);
   align-items: center;
-  text-align: center;
+  text-align: left;
 }
 
-.hero-copy { max-width: 720px; margin: 0 auto; }
+.hero-copy { width: min(100%, 720px); min-width: 0; margin: 0; }
 
-.hero-badge,
-.section-label {
+.hero-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  margin: 0 auto 16px;
-  padding: 8px 14px;
+  margin: 0 0 16px;
+  padding: 8px 16px;
   border: 1px solid var(--chip-border);
   border-radius: var(--r-control);
   background: var(--chip-surface);
@@ -66,25 +39,24 @@
 }
 
 .hero h1 {
-  max-width: 11ch;
-  margin: 0 auto 18px;
+  max-width: 12ch;
+  margin: 0 0 20px;
   font-size: var(--hero-display);
   font-weight: 900;
-  line-height: 0.96;
-  letter-spacing: -0.06em;
-  text-wrap: balance;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  text-wrap: pretty;
 }
+
+.hero-line { display: block; }
 
 html[lang="ja"] .hero h1 {
-  max-width: 14ch;
-  font-size: clamp(2.8rem, 8vw, 5rem);
+  max-width: 13ch;
+  font-size: clamp(2.6rem, 8vw, 5rem);
 }
 
-html[lang="ja"] .hero-actions .btn { width: 340px; }
-
 .text-accent {
-  color: var(--water-accent);
-  text-shadow: 0 14px 40px color-mix(in srgb, var(--water-accent) 34%, transparent);
+  color: var(--color-accent-strong);
 }
 
 .hero-tagline,
@@ -95,7 +67,7 @@ html[lang="ja"] .hero-actions .btn { width: 340px; }
 .privacy-lead,
 .pricing-lead {
   max-width: 42rem;
-  margin: 0 auto 24px;
+  margin: 0 0 24px;
   color: var(--muted);
   font-weight: 650;
   line-height: 1.48;
@@ -106,16 +78,18 @@ html[lang="ja"] .hero-actions .btn { width: 340px; }
   display: flex;
   flex-direction: column;
   gap: 12px;
-  align-items: stretch;
-  margin-top: 10px;
+  align-items: flex-start;
+  margin-top: 12px;
 }
+
+.hero-actions .btn { max-width: 100%; }
 
 .hero-pills,
 .hero-proof {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   margin-top: 20px;
   color: var(--muted);
   font-size: var(--label);
@@ -133,8 +107,8 @@ html[lang="ja"] .hero-actions .btn { width: 340px; }
 .hero-visual,
 .hero-devices {
   position: relative;
-  width: min(100%, 430px);
-  margin: 8px auto 0;
+  width: min(100%, 520px);
+  margin: 0 auto;
 }
 
 .hero-devices {
@@ -144,35 +118,32 @@ html[lang="ja"] .hero-actions .btn { width: 340px; }
   gap: clamp(12px, 3vw, 24px);
 }
 
-.iphone-frame,
-.watch-frame,
-.phone-frame {
-  border: 1px solid color-mix(in srgb, var(--cream) 72%, var(--water-accent));
-  background: linear-gradient(155deg, var(--band-dark), var(--band-teal));
-  box-shadow: var(--shadow-float);
+.product-shot {
+  margin: 0;
+  border: var(--rule-hair) solid var(--line);
+  border-radius: var(--r-card);
+  background: var(--cream);
   overflow: hidden;
 }
 
-.iphone-frame,
-.phone-frame {
-  width: min(100%, 360px);
-  padding: 8px;
-  border-radius: var(--r-panel);
+.product-shot-phone { width: min(68vw, 310px); }
+
+.product-shot-watch {
+  flex: 0 0 clamp(108px, 22vw, 156px);
+  transform: translateY(-14px);
 }
 
-.watch-frame {
-  flex: 0 0 clamp(118px, 24vw, 168px);
-  padding: 7px;
-  border-radius: 34px;
-  transform: translateY(-18px);
-}
-
-.iphone-frame img,
-.phone-frame img,
-.watch-frame img {
+.product-shot img {
+  display: block;
   width: 100%;
-  border-radius: calc(var(--r-panel) - 10px);
-  background: var(--cream);
 }
 
-.watch-frame img { border-radius: 27px; }
+.hero-cat {
+  position: absolute;
+  right: -10px;
+  bottom: -34px;
+  width: clamp(92px, 18vw, 150px);
+  filter: drop-shadow(var(--shadow-cat));
+}
+
+.device-line { margin: 20px 0 0; color: var(--muted); font-size: 0.82rem; font-weight: 750; }

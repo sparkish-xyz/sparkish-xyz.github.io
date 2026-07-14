@@ -1,0 +1,15 @@
+{
+  "scannedAt": "2026-07-15",
+  "designSystem": "DESIGN.md",
+  "framework": "vanilla HTML/CSS/JS",
+  "fontStack": "Avenir Next/Trebuchet display roles with Apple system body via tokens.css",
+  "palette": "AquaTick soft cream and sky blue OKLCH custom properties",
+  "motion": "motion-cut with transform/opacity interaction feedback only",
+  "spacing": "4px-based semantic spacing tokens",
+  "preserve": [
+    "AquaTick routes and locale content intent",
+    "product facts and App Store pricing",
+    "Sparkish hub",
+    "Korea Map Link"
+  ]
+}

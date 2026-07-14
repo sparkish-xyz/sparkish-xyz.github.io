@@ -1,0 +1,28 @@
+[
+  {
+    "date": "2026-07-15",
+    "macrostructure": "Workbench",
+    "theme": "AquaTick locked system",
+    "enrichment": "real product screenshots",
+    "nav": "N1b compact disclosure",
+    "footer": "Ft5 Statement",
+    "brief": "Apply every AquaTick Hallmark audit finding across Korean, English, and Japanese landing pages",
+    "scores": {
+      "polish": 5,
+      "hierarchy": 5,
+      "emotion": 5,
+      "simplicity": 5,
+      "restraint": 5,
+      "variety": 5
+    },
+    "verification": {
+      "viewports": [320, 375, 414, 768, 1280],
+      "overflow": "pass",
+      "contrast": "pass",
+      "keyboard": "pass",
+      "reducedMotion": "pass",
+      "slopGates": "pass"
+    },
+    "outcome": "pass"
+  }
+]

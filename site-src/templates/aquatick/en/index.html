@@ -87,27 +87,45 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/aquatick/">
-      <img src="/aquatick/assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick icon">
-      <span>AquaTick</span>
-    </a>
-    <nav class="nav-links" aria-label="Page sections">
-      <a href="#features">Features</a>
-      <a href="#screens">Screenshots</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#privacy">Privacy</a>
-      <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Support</a>
-      <a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">Download app</a>
-      <a href="/aquatick/ko/" data-aqua-lang="ko" aria-label="Switch to Korean">KO</a>
-      <a href="/aquatick/ja/" data-aqua-lang="ja" aria-label="Switch to Japanese">JP</a>
-    </nav>
+    <div class="header-shell">
+      <a class="brand" href="/aquatick/">
+        <img src="/aquatick/assets/aquatick-app-icon-128.png" width="128" height="128" alt="AquaTick icon">
+        <span>AquaTick</span>
+      </a>
+      <nav class="nav-main" aria-label="Page sections">
+        <a href="#features">Features</a>
+        <a href="#screens">Screens</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+      <div class="header-actions">
+        <nav class="language-links" aria-label="Choose language">
+          <a href="/aquatick/ko/" data-aqua-lang="ko">KO</a>
+          <a href="/aquatick/en/" data-aqua-lang="en" aria-current="page">EN</a>
+          <a href="/aquatick/ja/" data-aqua-lang="ja">JA</a>
+        </nav>
+        <a class="btn btn-primary header-cta" href="https://apps.apple.com/app/aquatick/id6762686013">App Store</a>
+        <details class="nav-menu">
+          <summary aria-label="Open menu">Menu</summary>
+          <nav class="nav-menu-panel" aria-label="Full menu">
+            <a href="#features">Features</a>
+            <a href="#screens">Screenshots</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#pricing">Pricing</a>
+            <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Support</a>
+            <a href="/aquatick/ko/" data-aqua-lang="ko">한국어</a>
+            <a href="/aquatick/en/" data-aqua-lang="en" aria-current="page">English</a>
+            <a href="/aquatick/ja/" data-aqua-lang="ja">日本語</a>
+          </nav>
+        </details>
+      </div>
+    </div>
   </header>
 
   <main>
     <section class="hero" aria-label="AquaTick introduction">
       <div class="hero-inner">
         <div class="hero-copy">
-          <h1>Fill today's <span class="text-accent">hydration</span> with one tap.</h1>
+          <h1><span class="hero-line"><span class="text-accent">Hydration</span>,</span><span class="hero-line">one tap at a time.</span></h1>
           <p class="hero-tagline">Track water with a cute cat—simple and easy.</p>
           <div class="hero-proof" aria-label="Key supported features">
             <span>Widgets &amp; Apple Watch</span>
@@ -123,12 +141,12 @@
         </div>
         <div class="hero-visual" aria-label="AquaTick iPhone and Apple Watch screens">
           <div class="hero-devices">
-            <div class="iphone-frame">
+            <figure class="product-shot product-shot-phone">
               <img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" alt="AquaTick home screen — cat progress and +200, +300 quick add">
-            </div>
-            <div class="watch-frame">
+            </figure>
+            <figure class="product-shot product-shot-watch">
               <img src="/aquatick/assets/screenshot-watch-home.png" width="422" height="514" alt="AquaTick Apple Watch home screen — quick logging from your wrist">
-            </div>
+            </figure>
           </div>
           <img class="hero-cat" src="/aquatick/assets/cat-hero.png" width="280" height="250" alt="" loading="lazy">
         </div>
@@ -137,7 +155,6 @@
 
     <section id="features" aria-labelledby="features-title">
       <div class="section-inner">
-        <span class="section-label">Features</span>
         <h2 id="features-title">Quick to log, easy to check.</h2>
         <div class="summary-grid">
           <article class="summary-card">
@@ -162,31 +179,30 @@
 
     <section id="screens" aria-labelledby="screens-title">
       <div class="section-inner">
-        <span class="section-label">Screenshots</span>
         <h2 id="screens-title">AquaTick core features</h2>
         <div class="screen-grid">
           <article class="core-feature-card">
-            <img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" loading="lazy" alt="AquaTick home and widget progress screen">
+            <figure class="product-shot"><img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" loading="lazy" alt="AquaTick home and widget progress screen"></figure>
             <h3>Home &amp; Widgets</h3>
             <p>Check progress from Home and widgets, then log with +200/+300 quick add on Home.</p>
           </article>
           <article class="core-feature-card">
-            <img src="/aquatick/assets/screenshot-watch-home.png" width="422" height="514" loading="lazy" alt="AquaTick Apple Watch quick logging screen">
+            <figure class="product-shot"><img src="/aquatick/assets/screenshot-watch-home.png" width="422" height="514" loading="lazy" alt="AquaTick Apple Watch quick logging screen"></figure>
             <h3>Apple Watch</h3>
             <p>Log quickly from your wrist without taking out your phone.</p>
           </article>
           <article class="core-feature-card">
-            <img src="/aquatick/assets/screenshot-iphone-vault.png" width="1206" height="2622" loading="lazy" alt="AquaTick Cup Vault — saved cups and favorites">
+            <figure class="product-shot"><img src="/aquatick/assets/screenshot-iphone-vault.png" width="1206" height="2622" loading="lazy" alt="AquaTick Cup Vault — saved cups and favorites"></figure>
             <h3>Cup Vault</h3>
             <p>Save cups you use often, then pin up to 5 favorites for faster logging.</p>
           </article>
           <article class="core-feature-card">
-            <img src="/aquatick/assets/screenshot-iphone-history.png" width="1206" height="2622" loading="lazy" alt="AquaTick stats and streaks screen">
+            <figure class="product-shot"><img src="/aquatick/assets/screenshot-iphone-history.png" width="1206" height="2622" loading="lazy" alt="AquaTick stats and streaks screen"></figure>
             <h3>Stats &amp; streaks</h3>
             <p>Review your hydration habit and goal progress with daily, weekly, and monthly stats.</p>
           </article>
           <article class="core-feature-card">
-            <img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" loading="lazy" alt="AquaTick progress glance screen">
+            <figure class="product-shot"><img src="/aquatick/assets/screenshot-iphone-home.png" width="1206" height="2622" loading="lazy" alt="AquaTick progress glance screen"></figure>
             <h3>Live Activity &amp; Dynamic Island</h3>
             <p>Glance at progress on the Lock Screen and Dynamic Island. Logging stays on Home quick add and Apple Watch.</p>
           </article>
@@ -204,7 +220,6 @@
 
     <section id="privacy" aria-labelledby="privacy-title">
       <div class="section-inner">
-        <span class="section-label">Privacy</span>
         <h2 id="privacy-title">Your privacy matters, and your choices matter.</h2>
         <div class="privacy-grid">
           <div class="privacy-col">
@@ -251,28 +266,31 @@
   </main>
 
   <footer>
-    <div class="footer-brand">
-      <a class="brand" href="/aquatick/">
-        <img src="/aquatick/assets/aquatick-app-icon.png" width="1024" height="1024" alt="AquaTick icon">
-        <span>AquaTick</span>
-      </a>
-      <p>Simple hydration tracking with a cute cat.</p>
-    </div>
-    <div class="footer-columns">
-      <div>
-        <h2>App</h2>
-        <a href="#features">Features</a>
-        <a href="#screens">Screenshots</a>
-        <a href="#pricing">Pricing</a>
+    <p class="footer-statement">One glass today. A gentler habit tomorrow.</p>
+    <div class="footer-layout">
+      <div class="footer-brand">
+        <a class="brand" href="/aquatick/">
+          <img src="/aquatick/assets/aquatick-app-icon-128.png" width="128" height="128" alt="AquaTick icon">
+          <span>AquaTick</span>
+        </a>
+        <p>Simple hydration tracking with a cute cat.</p>
       </div>
-      <div>
-        <h2>Support</h2>
-        <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Support-en-US</a>
-      </div>
-      <div>
-        <h2>Legal</h2>
-        <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">Privacy Policy</a>
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple EULA</a>
+      <div class="footer-columns">
+        <div>
+          <h2>App</h2>
+          <a href="#features">Features</a>
+          <a href="#screens">Screenshots</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <div>
+          <h2>Support</h2>
+          <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US">Support-en-US</a>
+        </div>
+        <div>
+          <h2>Legal</h2>
+          <a href="https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy">Privacy Policy</a>
+          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple EULA</a>
+        </div>
       </div>
     </div>
     <p class="copyright">© 2026 Sparkish</p>
