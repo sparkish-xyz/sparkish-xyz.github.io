@@ -49,15 +49,6 @@ const requiredRouteFiles = [
   'kinetto/index.html',
   'kinetto/ja/index.html',
   'kinetto/ko/index.html',
-  'korea-map-link/index.html',
-  'korea-map-link/en/index.html',
-  'korea-map-link/fr/index.html',
-  'korea-map-link/ja/index.html',
-  'korea-map-link/ko/index.html',
-  'korea-map-link/privacy/index.html',
-  'korea-map-link/support/index.html',
-  'korea-map-link/zh-Hans/index.html',
-  'korea-map-link/zh-Hant/index.html',
 ];
 
 const requiredAssetFiles = [
@@ -79,13 +70,6 @@ const requiredAssetFiles = [
   'aquatick/assets/screenshot-iphone-history.png',
   'aquatick/assets/screenshot-iphone-settings.png',
   'aquatick/assets/screenshot-watch-home.png',
-  'korea-map-link/assets/app-icon.png',
-  'korea-map-link/assets/kmb-site.css',
-  'korea-map-link/assets/screenshot-home.png',
-  'korea-map-link/assets/screenshot-onboarding.png',
-  'korea-map-link/assets/screenshot-place-detail.png',
-  'korea-map-link/assets/screenshot-resolve.png',
-  'korea-map-link/assets/screenshot-taxi.png',
   'kinetto/assets/app-icon.png',
   'kinetto/assets/kinetto.css',
 ];

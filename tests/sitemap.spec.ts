@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import { AQUATICK_LOCALES, BASE_URL, KMB_LOCALES, aquatickUrl, kmbUrl } from './support/site-contracts';
+import { AQUATICK_LOCALES, BASE_URL, aquatickUrl } from './support/site-contracts';
 
 const KINETTO_LOCALES = ['en', 'ko', 'ja'] as const;
 
@@ -54,11 +54,7 @@ test.describe('sitemap route contracts', () => {
       `${BASE_URL}/`,
       `${BASE_URL}/aquatick/`,
       ...AQUATICK_LOCALES.map((locale) => aquatickUrl(locale)),
-      `${BASE_URL}/korea-map-link/`,
-      ...KMB_LOCALES.map((locale) => kmbUrl(locale)),
       ...KINETTO_LOCALES.map((locale) => kinettoUrl(locale)),
-      `${BASE_URL}/korea-map-link/privacy/`,
-      `${BASE_URL}/korea-map-link/support/`,
     ]);
   });
 
@@ -78,21 +74,6 @@ test.describe('sitemap route contracts', () => {
       const entry = byLoc.get(loc);
       expect(entry, loc).toBeDefined();
       expect(entry?.alternates, loc).toEqual(aquatickAlternates);
-    }
-
-    const kmbAlternates = new Map([
-      ['en', kmbUrl('en')],
-      ['fr', kmbUrl('fr')],
-      ['ko', kmbUrl('ko')],
-      ['ja', kmbUrl('ja')],
-      ['zh-Hans', kmbUrl('zh-Hans')],
-      ['zh-Hant', kmbUrl('zh-Hant')],
-      ['x-default', `${BASE_URL}/korea-map-link/`],
-    ]);
-    for (const loc of [`${BASE_URL}/korea-map-link/`, ...KMB_LOCALES.map((locale) => kmbUrl(locale))]) {
-      const entry = byLoc.get(loc);
-      expect(entry, loc).toBeDefined();
-      expect(entry?.alternates, loc).toEqual(kmbAlternates);
     }
 
     const kinettoAlternates = new Map([

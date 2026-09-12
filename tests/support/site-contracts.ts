@@ -4,7 +4,6 @@ import { createHash } from 'node:crypto';
 export const BASE_URL = 'https://sparkish-xyz.github.io';
 
 export const AQUATICK_LOCALES = ['ko', 'en', 'ja'] as const;
-export const KMB_LOCALES = ['en', 'fr', 'ko', 'ja', 'zh-Hans', 'zh-Hant'] as const;
 
 export const AQUATICK_IMAGE_ASSETS = [
   'aquatick-app-icon.png',
@@ -26,20 +25,8 @@ export const AQUATICK_SCREENSHOTS = [
   'screenshot-iphone-settings.png',
 ] as const;
 
-export const KMB_SCREENSHOTS = [
-  'screenshot-onboarding.png',
-  'screenshot-home.png',
-  'screenshot-resolve.png',
-  'screenshot-place-detail.png',
-  'screenshot-taxi.png',
-] as const;
-
 export function aquatickUrl(locale: (typeof AQUATICK_LOCALES)[number]): string {
   return `${BASE_URL}/aquatick/${locale}/`;
-}
-
-export function kmbUrl(locale: (typeof KMB_LOCALES)[number]): string {
-  return `${BASE_URL}/korea-map-link/${locale}/`;
 }
 
 export async function requiredAttribute(locator: Locator, name: string, label: string): Promise<string> {

@@ -13,14 +13,5 @@
   "aquatickLegacyMirrorExclusions": [
     "aquatick-site.css",
     "aquatick-site.js"
-  ],
-  "koreaMapLinkAssets": [
-    "app-icon.png",
-    "kmb-site.css",
-    "screenshot-home.png",
-    "screenshot-onboarding.png",
-    "screenshot-place-detail.png",
-    "screenshot-resolve.png",
-    "screenshot-taxi.png"
   ]
 }

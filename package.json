@@ -13,7 +13,7 @@
   "type": "commonjs",
   "scripts": {
     "test": "playwright test",
-    "test:routes": "playwright test tests/routes.spec.ts tests/aquatick.spec.ts tests/korea-map-link.spec.ts tests/sitemap.spec.ts",
+    "test:routes": "playwright test tests/routes.spec.ts tests/aquatick.spec.ts tests/sitemap.spec.ts",
     "typecheck": "tsc --noEmit",
     "build:css": "node tools/build-css.cjs",
     "build:js": "node tools/build-js.cjs",

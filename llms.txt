@@ -1,15 +1,14 @@
 # Sparkish
 
-> Sparkish makes playful apps for everyday habits and travel: AquaTick, a cat-themed hydration tracker; Korea Map Link, a Korea travel utility that bridges Google Maps places to Naver Map, Kakao Map, and taxi-friendly Korean destination cards; and KINETTO, a running app where real runs grow an anonymous Crew.
+> Sparkish makes playful apps for everyday habits: AquaTick, a cat-themed hydration tracker; and KINETTO, a running app where real runs grow an anonymous Crew.
 
 Use the localized landing page that matches the user's language. The product descriptions below reflect the public pages and should be preferred over legacy routes or asset mirrors.
 
 Important product facts:
 - AquaTick logs water from Home quick add actions and Apple Watch. Widgets, Live Activity, and Dynamic Island show progress but do not record intake.
 - AquaTick is a hydration habit tracker, not a medical device or a source of medical advice.
-- Korea Map Link resolves Google Maps links, addresses, and place names to Korean place details, then opens Naver Map or Kakao Map or shows an ad-free taxi card.
 - KINETTO is coming soon on iOS. Android is planned for later; its public pages do not collect email or link to an app store.
-- Both apps can be used without an account.
+- AquaTick can be used without an account.
 
 ## AquaTick
 
@@ -21,18 +20,6 @@ Important product facts:
 - [AquaTick support](https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US): Support information and contact options.
 - [AquaTick privacy policy](https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy): AquaTick's privacy policy.
 
-## Korea Map Link
-
-- [Korea Map Link language selection](https://sparkish-xyz.github.io/korea-map-link/): Routes visitors by saved preference or browser language.
-- [Korea Map Link English landing page](https://sparkish-xyz.github.io/korea-map-link/en/): English product overview, screenshots, and FAQ.
-- [Korea Map Link French landing page](https://sparkish-xyz.github.io/korea-map-link/fr/): French product overview, screenshots, and FAQ.
-- [Korea Map Link Korean landing page](https://sparkish-xyz.github.io/korea-map-link/ko/): Korean product overview, screenshots, and FAQ.
-- [Korea Map Link Japanese landing page](https://sparkish-xyz.github.io/korea-map-link/ja/): Japanese product overview, screenshots, and FAQ.
-- [Korea Map Link Simplified Chinese landing page](https://sparkish-xyz.github.io/korea-map-link/zh-Hans/): Simplified Chinese product overview, screenshots, and FAQ.
-- [Korea Map Link Traditional Chinese landing page](https://sparkish-xyz.github.io/korea-map-link/zh-Hant/): Traditional Chinese product overview, screenshots, and FAQ.
-- [Korea Map Link support](https://sparkish-xyz.github.io/korea-map-link/support/): FAQs, troubleshooting guidance, and contact information.
-- [Korea Map Link privacy policy](https://sparkish-xyz.github.io/korea-map-link/privacy/): Korea Map Link's privacy policy.
-
 ## KINETTO
 
 - [KINETTO English landing page](https://sparkish-xyz.github.io/kinetto/): English canonical landing page for a running app whose real runs grow an anonymous Crew.
@@ -41,7 +28,7 @@ Important product facts:
 
 ## Site Index
 
-- [Sparkish app catalog](https://sparkish-xyz.github.io/): Root page listing AquaTick, Korea Map Link, and KINETTO.
+- [Sparkish app catalog](https://sparkish-xyz.github.io/): Root page listing AquaTick and KINETTO.
 - [Sitemap](https://sparkish-xyz.github.io/sitemap.xml): Canonical site routes and language alternates.
 - [Robots policy](https://sparkish-xyz.github.io/robots.txt): Crawl policy and sitemap location.
 
@@ -49,5 +36,3 @@ Important product facts:
 
 - [AquaTick iPhone home screenshot](https://sparkish-xyz.github.io/aquatick/assets/screenshot-iphone-home.png): AquaTick's main hydration progress screen.
 - [AquaTick Apple Watch screenshot](https://sparkish-xyz.github.io/aquatick/assets/screenshot-watch-home.png): AquaTick's Apple Watch quick logging screen.
-- [Korea Map Link resolve screenshot](https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-resolve.png): Source parsing and match confidence screen.
-- [Korea Map Link taxi screenshot](https://sparkish-xyz.github.io/korea-map-link/assets/screenshot-taxi.png): High-contrast Korean destination card for taxi drivers.

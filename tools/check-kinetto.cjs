@@ -83,10 +83,10 @@ function checkPage([file, lang, canonical]) {
 try {
   for (const page of pages) checkPage(page);
   const hub = read('index.html');
-  const productNames = ['AquaTick', 'Korea Map Link', 'KINETTO'];
+  const productNames = ['AquaTick', 'KINETTO'];
   const hubNames = bodies(hub, 'h2').map(text).filter((name) => productNames.includes(name));
   assert.deepEqual(hubNames, productNames, 'hub app-card h2 order');
-  for (const product of ['/aquatick/', '/korea-map-link/', '/kinetto/']) {
+  for (const product of ['/aquatick/', '/kinetto/']) {
     assert([...hub.matchAll(/\bhref\s*=\s*["']([^"']+)["']/gi)].some((m) => m[1].startsWith(product)), 'hub link ' + product);
   }
   for (const match of hub.matchAll(/\b(?:href|src)\s*=\s*["']([^"']+)["']/gi)) localRef(match[1], 'index.html');

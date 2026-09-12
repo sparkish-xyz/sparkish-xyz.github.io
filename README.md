@@ -17,12 +17,6 @@ Static GitHub Pages site for **Sparkish** apps.
     ├── index.html          # AquaTick language chooser + auto-redirect
     ├── ko/ en/ ja/         # Localized landing pages
     └── assets/             # AquaTick images (canonical paths)
-├── korea-map-link/
-    ├── index.html          # Language chooser → en/ko/ja/zh-*
-    ├── en/ fr/ ko/ ja/ zh-Hans/ zh-Hant/
-    ├── privacy/ support/   # App Store legal pages (English)
-    ├── assets/             # App icon + screenshots
-    └── firebase.json       # Optional deploy to korea-map-link.web.app
 └── kinetto/
     ├── index.html          # English canonical landing page
     ├── ko/ ja/             # Korean and Japanese landing pages
@@ -35,15 +29,11 @@ When AquaTick images change, update **`aquatick/assets/`** and copy the same fil
 
 | Path | Purpose |
 |------|---------|
-| `/` | Sparkish portfolio hub (three app cards: AquaTick, Korea Map Link, and KINETTO) |
+| `/` | Sparkish portfolio hub (two app cards: AquaTick and KINETTO) |
 | `/aquatick/` | AquaTick language detector / chooser |
 | `/aquatick/ko/`, `/aquatick/en/`, `/aquatick/ja/` | Localized AquaTick landings |
 | `/ko/`, `/en/`, `/ja/` | Legacy stubs → redirect to `/aquatick/ko|en|ja/` |
 | `/assets/*` | Legacy mirror of `/aquatick/assets/*` (same files, not a redirect) |
-| `/korea-map-link/` | Korea Map Link chooser |
-| `/korea-map-link/en/` … | Localized landings, including French |
-| `/korea-map-link/privacy/` | Privacy Policy (App Store) |
-| `/korea-map-link/support/` | Support (App Store) |
 | `/kinetto/` | KINETTO English canonical landing page |
 | `/kinetto/ko/`, `/kinetto/ja/` | KINETTO Korean and Japanese landing pages |
 
