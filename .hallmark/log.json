@@ -1,6 +1,37 @@
 [
   {
     "date": "2026-09-12",
+    "macrostructure": "Portfolio Grid",
+    "theme": "Sparkish Studio",
+    "enrichment": "original AquaTick cat and KINETTO Runner artwork",
+    "nav": "N1a two destination wordmark",
+    "footer": "Ft2 inline rule",
+    "brief": "Root studio portfolio; user delegated the recommended design without candidate mockups",
+    "scores": {
+      "philosophy": 4,
+      "hierarchy": 5,
+      "execution": 4,
+      "specificity": 5,
+      "restraint": 5,
+      "variety": 5
+    },
+    "verification": {
+      "browser": "Safari",
+      "viewports": [
+        320,
+        375,
+        414,
+        768,
+        1280
+      ],
+      "contrast": "body minimum 6.30:1; focus minimum 5.88:1 on adjacent hub surfaces",
+      "keyboard": "native skip link and product focus/activation verified",
+      "staticContracts": "npm run check",
+      "reducedMotion": "no decorative animation; smooth scrolling disabled under reduced motion"
+    }
+  },
+  {
+    "date": "2026-09-12",
     "macrostructure": "Narrative Workflow",
     "theme": "KINETTO Pulse Trail (approved brand palette)",
     "enrichment": "existing Runner assets and labelled sample run",

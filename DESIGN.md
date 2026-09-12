@@ -73,6 +73,19 @@ CSS partials: `site-src/styles/aquatick/*.css`, ordered by existing manifest.
 JS partials: `site-src/scripts/aquatick/*.js`, ordered by existing manifest.
 Build with `npm run build:css`, `npm run build:js`, `npm run generate`; verify with `npm run check` and the menu behavioral check.
 
+## Sparkish hub — Studio, 2026-09-12
+
+The user delegated the design direction and asked to proceed without candidate mockups. The root page is a studio portfolio for AquaTick and KINETTO: a large, left-aligned two-line promise, two product artwork panels, clear release status, a short studio note, and a compact footer. Keep the page focused on product discovery.
+
+- Macrostructure: Portfolio Grid, adapted for two products without unnecessary filters. Nav: N1a with two real anchor destinations. Footer: Ft2.
+- Theme: warm near-white paper, dark green ink, original AquaTick mint and KINETTO dark/green product artwork. Avenir Next display and native system body inherit the existing font tokens.
+- Root-only color/spacing variables use the `--hub-*` namespace in `tokens.css`. Shared product token values remain unchanged.
+- Source: `site-src/templates/index.html`; generated output: `index.html`. Retain the existing static generator and no client JavaScript.
+- Art: original AquaTick cat and three existing KINETTO Runner assets, with their natural aspect ratios. No invented product screenshots, reviews, usage counts, or metrics.
+- Product links are whole-panel native anchors with explicit accessible names and descriptions. Focus is visible. Release labels distinguish Available now from In the making; KINETTO has no store destination.
+- Mobile: one product per row, intact headings and status labels; validate 320, 375, 414, 768 and desktop. Respect reduced motion.
+- Footer policy/support links are explicitly labelled AquaTick to avoid presenting its policy as a studio-wide policy.
+
 ## Other Sparkish products
 
-Sparkish hub and KINETTO retain their existing layouts, source ownership and values. The shared `tokens.css` file and their dedicated styles are unchanged by this AquaTick redesign. Do not propagate AquaTick's mint/paper overrides into these products.
+AquaTick and KINETTO retain their route ownership, product-specific themes and behavior. Hub styling must not change either product's page styles.

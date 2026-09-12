@@ -18,5 +18,13 @@
     "palette": "approved KINETTO Pulse Trail; isolated product stylesheet",
     "framework": "existing static copy generator; no client JavaScript",
     "scope": "add KINETTO product pages and third hub card"
+  },
+  "sparkishHub": {
+    "scannedAt": "2026-09-12",
+    "source": "site-src/templates/index.html",
+    "fontStack": "existing Avenir Next / native system font tokens",
+    "palette": "namespaced hub paper/ink plus existing mint and green artwork",
+    "framework": "static HTML/CSS; no client JavaScript",
+    "scope": "root studio portfolio for two active products"
   }
 }
