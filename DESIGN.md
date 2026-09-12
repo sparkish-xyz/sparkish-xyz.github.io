@@ -75,4 +75,4 @@ Build with `npm run build:css`, `npm run build:js`, `npm run generate`; verify w
 
 ## Other Sparkish products
 
-Sparkish hub, Korea Map Link, and KINETTO retain their existing layouts, source ownership and values. The shared `tokens.css` file and their dedicated styles are unchanged by this AquaTick redesign. Do not propagate AquaTick's mint/paper overrides into these products.
+Sparkish hub and KINETTO retain their existing layouts, source ownership and values. The shared `tokens.css` file and their dedicated styles are unchanged by this AquaTick redesign. Do not propagate AquaTick's mint/paper overrides into these products.

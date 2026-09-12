@@ -51,7 +51,6 @@ function buildOne(configPath) {
 function main() {
   const outputs = [
     buildOne('site-src/styles/aquatick/manifest.json'),
-    buildOne('site-src/styles/korea-map-link/manifest.json'),
   ];
   console.log(`[build:css] Built ${outputs.join(', ')}.`);
 }

@@ -68,7 +68,6 @@ function verifyManifest(manifestRelativePath, joiner, label) {
 
 function main() {
   verifyManifest('site-src/styles/aquatick/manifest.json', '', 'AquaTick CSS');
-  verifyManifest('site-src/styles/korea-map-link/manifest.json', '', 'Korea Map Link CSS');
   verifyManifest('site-src/scripts/aquatick/manifest.json', '\n\n', 'AquaTick JS');
   console.log('[verify:built-assets] Built CSS/JS outputs match committed outputs and templates.');
 }
