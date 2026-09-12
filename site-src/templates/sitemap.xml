@@ -150,6 +150,40 @@
     <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://sparkish-xyz.github.io/korea-map-link/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/korea-map-link/"/>
   </url>
+
+  <!-- KINETTO English canonical version -->
+  <url>
+    <loc>https://sparkish-xyz.github.io/kinetto/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/"/>
+  </url>
+  <!-- KINETTO Korean version -->
+  <url>
+    <loc>https://sparkish-xyz.github.io/kinetto/ko/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/"/>
+  </url>
+  <!-- KINETTO Japanese version -->
+  <url>
+    <loc>https://sparkish-xyz.github.io/kinetto/ja/</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/"/>
+  </url>
   <url>
     <loc>https://sparkish-xyz.github.io/korea-map-link/privacy/</loc>
     <lastmod>2026-06-06</lastmod>

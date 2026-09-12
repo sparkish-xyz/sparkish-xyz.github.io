@@ -11,5 +11,13 @@
     "product facts and App Store pricing",
     "Sparkish hub",
     "Korea Map Link"
-  ]
+  ],
+  "kinetto": {
+    "scannedAt": "2026-09-12",
+    "source": "site-src/templates/kinetto/",
+    "fontStack": "existing Avenir Next / Apple system stacks",
+    "palette": "approved KINETTO Pulse Trail; isolated product stylesheet",
+    "framework": "existing static copy generator; no client JavaScript",
+    "scope": "add KINETTO product pages and third hub card"
+  }
 }
