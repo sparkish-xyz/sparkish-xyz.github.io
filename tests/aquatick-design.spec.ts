@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 const REVIEW_WIDTHS = [320, 375, 414, 768, 1280] as const;
 const LOCALES = ['ko', 'en', 'ja'] as const;
 
-test.describe('AquaTick Hallmark review contracts', () => {
+test.describe('AquaTick design contracts', () => {
   test('Korean copy and controls stay readable at audited widths', async ({ page }) => {
     for (const width of REVIEW_WIDTHS) {
       // Given the Korean landing page at one of the audited viewport widths.
@@ -96,74 +96,46 @@ test.describe('AquaTick Hallmark review contracts', () => {
     // Then the header stays compact and exposes a native disclosure.
     expect(headerHeight, 'closed mobile header height').toBeLessThanOrEqual(76);
     await expect(menu).toBeVisible();
-    await expect(menu.locator('summary')).toHaveAttribute('aria-label', /메뉴/);
+    await expect(menu.locator('summary')).toHaveAccessibleName('메뉴');
 
     // When the disclosure is opened.
     await menu.locator('summary').click();
 
     // Then every required destination is visible and keyboard reachable.
     await expect(menu).toHaveAttribute('open', '');
-    await expect(menu.locator('.nav-menu-panel a')).toHaveCount(8);
+    await expect(menu.locator('.nav-menu-panel a')).toHaveCount(7);
     for (const link of await menu.locator('.nav-menu-panel a').all()) {
       await expect(link).toBeVisible();
+      await page.keyboard.press('Tab');
+      await expect(link).toBeFocused();
     }
   });
 
-  test('reviewed structure is connected across every locale', async ({ page, request }) => {
+  test('localized screenshots, privacy disclosure, and footer remain accessible', async ({ page }) => {
     for (const locale of LOCALES) {
-      // Given a generated locale page.
       await page.setViewportSize({ width: 1280, height: 900 });
       await page.goto(`/aquatick/${locale}/`);
 
-      // Then labels and hand-drawn device chrome are gone.
-      await expect(page.locator('.section-label, .iphone-frame, .watch-frame'), `${locale} removed review classes`).toHaveCount(0);
-      await expect(page.locator('figure.product-shot'), `${locale} semantic screenshot figures`).toHaveCount(7);
+      await expect(page.locator('.hero-phone img'), `${locale} localized home capture`).toHaveAttribute(
+        'src', `/aquatick/assets/landing/${locale}/home.png`,
+      );
 
-      // Then the actual privacy and footer classes receive their intended layout.
-      const disclosure = page.locator('.third-party');
-      await expect(disclosure).toBeVisible();
-      await expect(disclosure).toHaveCSS('text-align', 'left');
-      expect(await disclosure.evaluate((element) => getComputedStyle(element).paddingTop)).not.toBe('0px');
+      const disclosure = page.locator('#privacy details');
+      const policyLink = disclosure.locator('a[href$="/Privacy-Policy"]');
+      await expect(policyLink).not.toBeVisible();
+      await disclosure.locator('summary').focus();
+      await page.keyboard.press('Enter');
+      await expect(disclosure).toHaveJSProperty('open', true);
+      await expect(policyLink).toBeVisible();
+      await expect(disclosure).toContainText('iCloud');
 
-      const footerColumns = page.locator('.footer-columns');
-      await expect(footerColumns).toHaveCSS('display', 'grid');
-      await expect(footerColumns.locator(':scope > div').first()).toHaveCSS('display', 'flex');
-    }
-
-    // Given the desktop grid composition.
-    await page.setViewportSize({ width: 1280, height: 900 });
-    await page.goto('/aquatick/ko/');
-
-    // Then feature/pricing cards keep natural height and no universal stripe.
-    const gridMetrics = await page.evaluate(() => {
-      const summary = document.querySelector('.summary-grid');
-      const screens = document.querySelector('.screen-grid');
-      const pricing = document.querySelector('.pricing-grid');
-      const card = document.querySelector('.summary-card');
-      if (!(summary instanceof HTMLElement) || !(screens instanceof HTMLElement)
-        || !(pricing instanceof HTMLElement) || !(card instanceof HTMLElement)) {
-        return null;
+      const footer = page.locator('.site-footer nav');
+      await expect(footer).toHaveAccessibleName(/.+/);
+      await expect(footer.locator('a')).toHaveCount(4);
+      for (const link of await footer.locator('a').all()) {
+        await expect(link).toBeVisible();
+        await expect(link).toHaveAccessibleName(/.+/);
       }
-
-      return {
-        pricingAlign: getComputedStyle(pricing).alignItems,
-        screenAlign: getComputedStyle(screens).alignItems,
-        stripeContent: getComputedStyle(card, '::before').content,
-        summaryColumns: getComputedStyle(summary).gridTemplateColumns.split(' ').length,
-      };
-    });
-
-    expect(gridMetrics, 'desktop grid metrics').not.toBeNull();
-    expect(gridMetrics?.summaryColumns, 'summary grid columns').toBe(2);
-    expect(gridMetrics?.screenAlign, 'screen card alignment').toBe('start');
-    expect(gridMetrics?.pricingAlign, 'pricing card alignment').toBe('start');
-    expect(gridMetrics?.stripeContent, 'summary card stripe').toBe('none');
-
-    // Given the compiled production stylesheet.
-    const stylesheet = await request.get('/aquatick/assets/aquatick-site.css');
-    const css = await stylesheet.text();
-
-    // Then its first line records the Hallmark design contract.
-    expect(css.split('\n')[0]).toBe('/* Hallmark · genre: playful · macrostructure: Workbench · design-system: DESIGN.md · designed-as-app */');
+    }
   });
 });
