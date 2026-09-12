@@ -13,16 +13,20 @@ Static GitHub Pages site for **Sparkish** apps.
 ├── app-ads.txt             # AdMob domain root (must stay here)
 ├── assets/                 # Legacy mirror of AquaTick assets (old /assets/ URLs)
 ├── ko/ en/ ja/             # Legacy redirect stubs → /aquatick/ko|en|ja/
-└── aquatick/
+├── aquatick/
     ├── index.html          # AquaTick language chooser + auto-redirect
     ├── ko/ en/ ja/         # Localized landing pages
     └── assets/             # AquaTick images (canonical paths)
-└── korea-map-link/
+├── korea-map-link/
     ├── index.html          # Language chooser → en/ko/ja/zh-*
     ├── en/ fr/ ko/ ja/ zh-Hans/ zh-Hant/
     ├── privacy/ support/   # App Store legal pages (English)
     ├── assets/             # App icon + screenshots
     └── firebase.json       # Optional deploy to korea-map-link.web.app
+└── kinetto/
+    ├── index.html          # English canonical landing page
+    ├── ko/ ja/             # Korean and Japanese landing pages
+    └── assets/             # KINETTO app icon and landing-page CSS
 ```
 
 When AquaTick images change, update **`aquatick/assets/`** and copy the same files into **`assets/`** (legacy mirror).
@@ -31,7 +35,7 @@ When AquaTick images change, update **`aquatick/assets/`** and copy the same fil
 
 | Path | Purpose |
 |------|---------|
-| `/` | Sparkish portfolio hub (one app card: AquaTick) |
+| `/` | Sparkish portfolio hub (three app cards: AquaTick, Korea Map Link, and KINETTO) |
 | `/aquatick/` | AquaTick language detector / chooser |
 | `/aquatick/ko/`, `/aquatick/en/`, `/aquatick/ja/` | Localized AquaTick landings |
 | `/ko/`, `/en/`, `/ja/` | Legacy stubs → redirect to `/aquatick/ko|en|ja/` |
@@ -40,8 +44,18 @@ When AquaTick images change, update **`aquatick/assets/`** and copy the same fil
 | `/korea-map-link/en/` … | Localized landings, including French |
 | `/korea-map-link/privacy/` | Privacy Policy (App Store) |
 | `/korea-map-link/support/` | Support (App Store) |
+| `/kinetto/` | KINETTO English canonical landing page |
+| `/kinetto/ko/`, `/kinetto/ja/` | KINETTO Korean and Japanese landing pages |
 
 AquaTick hreflang **x-default** is `https://sparkish-xyz.github.io/aquatick/`.
+
+### KINETTO release status
+
+KINETTO source lives in `site-src/templates/kinetto/` and is published at `/kinetto/`, `/kinetto/ko/`, and `/kinetto/ja/`. It is an iOS coming-soon landing page; Android is planned for later. It has no signup form, email collection, or store button.
+
+The story follows private running records → anonymous Crew growth → Cheer and Relay → privacy → FAQ → launch status. The Pulse Trail palette and product claims follow KINETTO’s PRD, glossary, privacy rules, and landing specification. The icon and three Runner images are copied unchanged from KINETTO’s iOS assets (`AppIcon.appiconset/AppIcon.png` and `FeatureOnboarding/Resources/onboarding-runner-01…03.png`). The run summary is a labelled concept with sample data, not a screenshot or a real activity record.
+
+Edit `site-src/templates/kinetto/`, run `npm run generate`, then `npm run check`. Safari was used for this delivery’s desktop/mobile visual review, locale navigation, and native menu/FAQ keyboard interaction. No client JavaScript or new dependencies were added.
 
 ### AquaTick language preference
 

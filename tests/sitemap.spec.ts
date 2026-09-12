@@ -1,6 +1,12 @@
 import { expect, test } from '@playwright/test';
 import { AQUATICK_LOCALES, BASE_URL, KMB_LOCALES, aquatickUrl, kmbUrl } from './support/site-contracts';
 
+const KINETTO_LOCALES = ['en', 'ko', 'ja'] as const;
+
+function kinettoUrl(locale: (typeof KINETTO_LOCALES)[number]): string {
+  return locale === 'en' ? `${BASE_URL}/kinetto/` : `${BASE_URL}/kinetto/${locale}/`;
+}
+
 type SitemapEntry = {
   readonly loc: string;
   readonly alternates: ReadonlyMap<string, string>;
@@ -50,6 +56,7 @@ test.describe('sitemap route contracts', () => {
       ...AQUATICK_LOCALES.map((locale) => aquatickUrl(locale)),
       `${BASE_URL}/korea-map-link/`,
       ...KMB_LOCALES.map((locale) => kmbUrl(locale)),
+      ...KINETTO_LOCALES.map((locale) => kinettoUrl(locale)),
       `${BASE_URL}/korea-map-link/privacy/`,
       `${BASE_URL}/korea-map-link/support/`,
     ]);
@@ -86,6 +93,18 @@ test.describe('sitemap route contracts', () => {
       const entry = byLoc.get(loc);
       expect(entry, loc).toBeDefined();
       expect(entry?.alternates, loc).toEqual(kmbAlternates);
+    }
+
+    const kinettoAlternates = new Map([
+      ['en', kinettoUrl('en')],
+      ['ko', kinettoUrl('ko')],
+      ['ja', kinettoUrl('ja')],
+      ['x-default', kinettoUrl('en')],
+    ]);
+    for (const loc of KINETTO_LOCALES.map((locale) => kinettoUrl(locale))) {
+      const entry = byLoc.get(loc);
+      expect(entry, loc).toBeDefined();
+      expect(entry?.alternates, loc).toEqual(kinettoAlternates);
     }
   });
 });

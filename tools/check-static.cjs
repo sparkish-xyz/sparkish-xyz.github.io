@@ -46,6 +46,9 @@ const requiredRouteFiles = [
   'aquatick/en/index.html',
   'aquatick/ja/index.html',
   'aquatick/ko/index.html',
+  'kinetto/index.html',
+  'kinetto/ja/index.html',
+  'kinetto/ko/index.html',
   'korea-map-link/index.html',
   'korea-map-link/en/index.html',
   'korea-map-link/fr/index.html',
@@ -83,6 +86,8 @@ const requiredAssetFiles = [
   'korea-map-link/assets/screenshot-place-detail.png',
   'korea-map-link/assets/screenshot-resolve.png',
   'korea-map-link/assets/screenshot-taxi.png',
+  'kinetto/assets/app-icon.png',
+  'kinetto/assets/kinetto.css',
 ];
 
 let hasFailure = false;

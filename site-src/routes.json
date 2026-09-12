@@ -17,5 +17,10 @@
     "korea-map-link/zh-Hant/index.html",
     "korea-map-link/privacy/index.html",
     "korea-map-link/support/index.html"
+  ],
+  "kinetto": [
+    "kinetto/index.html",
+    "kinetto/ko/index.html",
+    "kinetto/ja/index.html"
   ]
 }

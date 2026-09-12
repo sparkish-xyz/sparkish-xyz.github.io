@@ -1,6 +1,6 @@
 # Sparkish
 
-> Sparkish publishes playful iOS apps for everyday habits and travel: AquaTick, a cat-themed hydration tracker, and Korea Map Link, a Korea travel utility that bridges Google Maps places to Naver Map, Kakao Map, and taxi-friendly Korean destination cards.
+> Sparkish makes playful apps for everyday habits and travel: AquaTick, a cat-themed hydration tracker; Korea Map Link, a Korea travel utility that bridges Google Maps places to Naver Map, Kakao Map, and taxi-friendly Korean destination cards; and KINETTO, a running app where real runs grow an anonymous Crew.
 
 Use the localized landing page that matches the user's language. The product descriptions below reflect the public pages and should be preferred over legacy routes or asset mirrors.
 
@@ -8,6 +8,7 @@ Important product facts:
 - AquaTick logs water from Home quick add actions and Apple Watch. Widgets, Live Activity, and Dynamic Island show progress but do not record intake.
 - AquaTick is a hydration habit tracker, not a medical device or a source of medical advice.
 - Korea Map Link resolves Google Maps links, addresses, and place names to Korean place details, then opens Naver Map or Kakao Map or shows an ad-free taxi card.
+- KINETTO is coming soon on iOS. Android is planned for later; its public pages do not collect email or link to an app store.
 - Both apps can be used without an account.
 
 ## AquaTick
@@ -32,9 +33,15 @@ Important product facts:
 - [Korea Map Link support](https://sparkish-xyz.github.io/korea-map-link/support/): FAQs, troubleshooting guidance, and contact information.
 - [Korea Map Link privacy policy](https://sparkish-xyz.github.io/korea-map-link/privacy/): Korea Map Link's privacy policy.
 
+## KINETTO
+
+- [KINETTO English landing page](https://sparkish-xyz.github.io/kinetto/): English canonical landing page for a running app whose real runs grow an anonymous Crew.
+- [KINETTO Korean landing page](https://sparkish-xyz.github.io/kinetto/ko/): Korean product overview and iOS coming-soon status.
+- [KINETTO Japanese landing page](https://sparkish-xyz.github.io/kinetto/ja/): Japanese product overview and iOS coming-soon status.
+
 ## Site Index
 
-- [Sparkish app catalog](https://sparkish-xyz.github.io/): Root page listing AquaTick and Korea Map Link.
+- [Sparkish app catalog](https://sparkish-xyz.github.io/): Root page listing AquaTick, Korea Map Link, and KINETTO.
 - [Sitemap](https://sparkish-xyz.github.io/sitemap.xml): Canonical site routes and language alternates.
 - [Robots policy](https://sparkish-xyz.github.io/robots.txt): Crawl policy and sitemap location.
 

@@ -23,12 +23,17 @@
     "korea-map-link/zh-Hant/index.html",
     "korea-map-link/privacy/index.html",
     "korea-map-link/support/index.html",
-    "korea-map-link/assets/kmb-site.css"
+    "korea-map-link/assets/kmb-site.css",
+    "kinetto/index.html",
+    "kinetto/ko/index.html",
+    "kinetto/ja/index.html",
+    "kinetto/assets/kinetto.css"
   ],
   "staticAssetDirectories": [
     "assets",
     "aquatick/assets",
-    "korea-map-link/assets"
+    "korea-map-link/assets",
+    "kinetto/assets"
   ],
   "rootOnlyFiles": [
     "index.html",
