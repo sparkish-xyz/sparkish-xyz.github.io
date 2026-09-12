@@ -3,7 +3,7 @@ import { expect, test } from '@playwright/test';
 test.describe('Sparkish hub route contracts', () => {
   test('hub links to AquaTick', async ({ page }) => {
     await page.goto('/');
-    await expect(page.getByRole('heading', { name: /Playful tools/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Small apps.*More good days/i })).toBeVisible();
     await page.getByRole('link', { name: /View AquaTick/i }).click();
     await expect(page).toHaveURL(/\/aquatick\/(ko|en|ja)\/?$/);
   });
@@ -54,5 +54,25 @@ test.describe('Sparkish hub route contracts', () => {
     await page.goto('/');
     await page.getByRole('link', { name: /View KINETTO/i }).click();
     await expect(page).toHaveURL(/\/kinetto\/?$/);
+  });
+
+  test('hub product panels and navigation fit desktop and mobile', async ({ page }) => {
+    for (const width of [320, 375, 414, 768, 1280]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto('/');
+      await expect(page.locator('.project-link')).toHaveCount(2);
+      await expect(page.locator('#aquatick-status')).toHaveText('Available now');
+      await expect(page.locator('#kinetto-status')).toHaveText('In the making');
+      const metrics = await page.evaluate(() => ({
+        overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+        wrappedLabels: Array.from(document.querySelectorAll('.site-header nav a, .project-cta, .status, .footer-links a')).filter(element => {
+          const range = document.createRange();
+          range.selectNodeContents(element);
+          return new Set(Array.from(range.getClientRects(), rect => Math.round(rect.top))).size > 1;
+        }).map(element => element.textContent),
+      }));
+      expect(metrics.overflow, `${width}px horizontal overflow`).toBe(0);
+      expect(metrics.wrappedLabels, `${width}px control labels`).toEqual([]);
+    }
   });
 });
