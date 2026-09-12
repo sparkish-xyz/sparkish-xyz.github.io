@@ -93,7 +93,13 @@ test.describe('AquaTick route contracts', () => {
     }
   });
 
-  test('locale pages expose App Store download and Pro prices without banned platform claims', async ({ page }) => {
+  test('locale pages expose App Store download and localized Pro pricing without banned platform claims', async ({ page }) => {
+    const pricingSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
+      en: /monthly.*yearly|local prices/i,
+      ko: /월.*연.*(?:요금|플랜)|가격/,
+      ja: /月.*年.*(?:料金|プラン)|価格/,
+    };
+
     for (const locale of AQUATICK_LOCALES) {
       await page.goto(`/aquatick/${locale}/`);
 
@@ -102,126 +108,165 @@ test.describe('AquaTick route contracts', () => {
       const bodyText = await requiredText(page.locator('body'), `${locale} body text`);
       expect(bodyText, `${locale} aquarium copy`).not.toMatch(/aquarium|水槽|아쿠아리움/i);
       expect(bodyText, `${locale} visionOS copy`).not.toMatch(/visionOS/i);
-      expect(bodyText, `${locale} monthly Pro price`).toMatch(/\$0\.99/);
-      expect(bodyText, `${locale} yearly Pro price`).toMatch(/\$5\.99/);
+
+      const pricingText = await requiredText(page.locator('#pricing'), `${locale} pricing text`);
+      expect(pricingText, `${locale} localized pricing reference`).toMatch(pricingSignals[locale]);
+      expect(pricingText, `${locale} hardcoded dollar pricing`).not.toMatch(/\$\s*\d/);
 
       const hrefs = await page.locator('a[href]').evaluateAll((links) => links.map((link) => link.getAttribute('href') ?? '').join('\n'));
       expect(hrefs, `${locale} Google Play links`).not.toMatch(/play\.google/i);
     }
   });
 
-  test('locked AquaTick S1-S5 layout uses summary, core, privacy, and pricing contracts', async ({ page }) => {
-    await page.goto('/aquatick/ko/');
+  test('locale pages expose logging, watch, privacy, and Pro contracts', async ({ page }) => {
+    const loggingSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
+      en: /log|tap/i,
+      ko: /기록|탭/,
+      ja: /記録|タップ/,
+    };
+    const watchSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
+      en: /Apple Watch|wrist/i,
+      ko: /Apple Watch|손목|워치/i,
+      ja: /Apple Watch|手首|ウォッチ/i,
+    };
+    const noAccountSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
+      en: /no account|without an account/i,
+      ko: /계정(?:은|이)?\s*(?:없이|불필요|필요\s*없)/,
+      ja: /アカウント(?:は)?\s*(?:なし|不要)/,
+    };
+    const optionalHealthSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
+      en: /Apple Health.*optional|optional.*Apple Health/i,
+      ko: /Apple Health.*(?:선택|임의)|(?:선택|임의).*Apple Health/,
+      ja: /Apple Health.*(?:任意|選択)|(?:任意|選択).*Apple Health/,
+    };
+    const iCloudSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
+      en: /iCloud/i,
+      ko: /iCloud|아이클라우드/i,
+      ja: /iCloud|アイクラウド/i,
+    };
+    const adFreeOnlySignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
+      en: /Pro(?:'s)? (?:benefit|feature).*ads only|Pro removes ads only/i,
+      ko: /Pro\s*(?:혜택|기능).*광고\s*제거(?:입니다)?|광고\s*제거(?:만|뿐)/,
+      ja: /Pro.*広告.*(?:のみ|だけ)|広告.*削除.*(?:のみ|だけ)/,
+    };
 
-    await expect(page.locator('#features .summary-card'), 'summary-card count').toHaveCount(4);
-    await expect(page.locator('#screens .core-feature-card'), 'core-feature-card count').toHaveCount(6);
+    for (const locale of AQUATICK_LOCALES) {
+      await page.goto(`/aquatick/${locale}/`);
 
-    const vaultCard = page.locator('#screens .core-feature-card').filter({
-      has: page.locator('img[src*="screenshot-iphone-vault"]'),
-    });
-    await expect(vaultCard, 'vault core feature card').toHaveCount(1);
-    await expect(vaultCard.locator('img[src*="screenshot-iphone-vault"]'), 'vault screen image').toBeVisible();
+      const features = page.locator('#features');
+      await expect(features, `${locale} logging section`).toHaveClass(/logging-section/);
+      const featuresText = await requiredText(features, `${locale} features text`);
+      expect(featuresText, `${locale} logging signal`).toMatch(loggingSignals[locale]);
 
-    await expect(page.locator('#privacy'), 'privacy section').toBeVisible();
-    await expect(page.locator('#privacy .privacy-col'), 'privacy column count').toHaveCount(4);
+      const watchSection = page.locator('.watch-section');
+      await expect(watchSection, `${locale} watch section`).toHaveCount(1);
+      const watchText = await requiredText(watchSection, `${locale} watch text`);
+      expect(watchText, `${locale} watch signal`).toMatch(watchSignals[locale]);
 
-    const pricingText = await requiredText(page.locator('#pricing'), 'pricing section');
-    expect(pricingText, 'monthly Pro price').toMatch(/\$0\.99/);
-    expect(pricingText, 'yearly Pro price').toMatch(/\$5\.99/);
+      const privacy = page.locator('#privacy');
+      await expect(privacy.locator('details'), `${locale} privacy details`).toHaveCount(1);
+      const privacyFacts = privacy.locator('.privacy-facts');
+      await expect(privacyFacts.locator('dt'), `${locale} privacy facts`).toHaveCount(2);
+      const privacyFactsText = await requiredText(privacyFacts, `${locale} privacy facts text`);
+      expect(privacyFactsText, `${locale} no-account privacy fact`).toMatch(noAccountSignals[locale]);
+      expect(privacyFactsText, `${locale} optional Health privacy fact`).toMatch(optionalHealthSignals[locale]);
+
+      const pricingText = await requiredText(page.locator('#pricing'), `${locale} pricing text`);
+      expect(pricingText, `${locale} iCloud Pro benefit`).toMatch(iCloudSignals[locale]);
+      expect(pricingText, `${locale} Pro ad-only claim`).not.toMatch(adFreeOnlySignals[locale]);
+    }
   });
 
-  test('locale pages claim Cup Vault favorites max 5 in meta, screens, and dateModified 2026-07-10', async ({ page }) => {
-    const vaultSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
-      en: /Cup Vault|favorite|favorites/i,
-      ko: /보관함|즐겨찾기/,
-      ja: /保管庫|お気に入り/,
-    };
-    const fiveSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
-      en: /\b5\b|up to 5|max(?:imum)? 5/i,
-      ko: /최대\s*5|5개/,
-      ja: /最大\s*5|5件/,
+  test('locale pages claim Cup Vault favorites max 6 in features and meta with dateModified 2026-09-12', async ({ page }) => {
+    const favoriteLimitSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
+      en: /up to\s*6\b|6\s+(?:Cup Vault\s+)?favorites/i,
+      ko: /최대\s*6(?:개|개까지)?|6개/,
+      ja: /最大\s*6\s*件?|6件/,
     };
 
     for (const locale of AQUATICK_LOCALES) {
       await page.goto(`/aquatick/${locale}/`);
 
       const ldJson = await requiredText(page.locator('script[type="application/ld+json"]').first(), `${locale} ld+json`);
-      expect(ldJson, `${locale} dateModified`).toMatch(/"dateModified"\s*:\s*"2026-07-10"/);
+      expect(ldJson, `${locale} dateModified`).toMatch(/"dateModified"\s*:\s*"2026-09-12"/);
 
       const metaDescription = await requiredAttribute(page.locator('meta[name="description"]'), 'content', `${locale} meta description`);
-      expect(metaDescription, `${locale} meta vault signal`).toMatch(vaultSignals[locale]);
-      expect(metaDescription, `${locale} meta favorites cap`).toMatch(fiveSignals[locale]);
+      expect(metaDescription, `${locale} meta favorites cap`).toMatch(favoriteLimitSignals[locale]);
 
-      const vaultCard = page.locator('#screens .core-feature-card').filter({
-        hasText: vaultSignals[locale],
-      });
-      await expect(vaultCard, `${locale} vault core feature card`).toHaveCount(1);
-
-      const vaultCardText = await requiredText(vaultCard.first(), `${locale} vault card text`);
-      expect(vaultCardText, `${locale} screen vault signal`).toMatch(vaultSignals[locale]);
-      expect(vaultCardText, `${locale} screen favorites cap`).toMatch(fiveSignals[locale]);
+      const featuresText = await requiredText(page.locator('#features'), `${locale} features text`);
+      expect(featuresText, `${locale} features favorites cap`).toMatch(favoriteLimitSignals[locale]);
     }
   });
 
-  test('AquaTick screens strip starts with the first card visible', async ({ page }) => {
-    await page.setViewportSize({ width: 720, height: 800 });
-    await page.goto('/aquatick/ko/');
-    await page.locator('#screens').scrollIntoViewIfNeeded();
+  test('mobile nav details close on same-page selection and restore summary focus on Escape', async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto('/aquatick/en/');
 
-    const metrics = await page.locator('#screens .screen-grid').evaluate((grid) => {
-      const firstCard = grid.querySelector('.core-feature-card');
-      if (firstCard === null) {
-        throw new Error('Missing core feature card');
-      }
+    const menu = page.locator('details.nav-menu');
+    const summary = menu.locator('summary');
+    await summary.click();
+    await expect(menu).toHaveJSProperty('open', true);
 
-      const stripRect = grid.getBoundingClientRect();
-      const firstRect = firstCard.getBoundingClientRect();
+    await menu.locator('a[href="#features"]').first().click();
+    await expect(menu).toHaveJSProperty('open', false);
 
-      return {
-        stripLeft: Math.round(stripRect.left),
-        firstLeft: Math.round(firstRect.left),
-        pageOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-      };
-    });
-
-    expect(metrics.firstLeft).toBeGreaterThanOrEqual(metrics.stripLeft);
-    expect(metrics.pageOverflow).toBe(0);
+    await summary.click();
+    await expect(menu).toHaveJSProperty('open', true);
+    await page.keyboard.press('Escape');
+    await expect(menu).toHaveJSProperty('open', false);
+    await expect(summary).toBeFocused();
   });
 
-  test('Japanese AquaTick hero remains readable at tablet width under documented centered-hero budget', async ({ page }) => {
-    await page.setViewportSize({ width: 720, height: 900 });
-    await page.goto('/aquatick/ja/');
+  test('AquaTick screen stories use linked full-size captures', async ({ page, request }) => {
+    await page.setViewportSize({ width: 720, height: 800 });
+    for (const locale of AQUATICK_LOCALES) {
+      await page.goto(`/aquatick/${locale}/`);
+      const stories = page.locator('#screens .screen-story');
+      await expect(stories, `${locale} screen story count`).toHaveCount(2);
 
-    const metrics = await page.evaluate(() => {
-      const h1 = document.querySelector('.hero h1');
-      const firstButton = document.querySelector('.hero-actions .btn');
-      const actions = document.querySelector('.hero-actions');
-      if (h1 === null || firstButton === null || actions === null) {
-        throw new Error('Missing Japanese hero content');
+      for (let index = 0; index < 2; index += 1) {
+        const story = stories.nth(index);
+        const image = story.locator('img').first();
+        const link = story.locator('a').first();
+        const src = await requiredAttribute(image, 'src', `${locale} screen ${index + 1} image`);
+        const href = await requiredAttribute(link, 'href', `${locale} screen ${index + 1} full-size link`);
+        expect(href, `${locale} screen ${index + 1} link target`).toBe(src);
+        expect(href, `${locale} screen ${index + 1} landing capture path`).toMatch(
+          /^\/aquatick\/assets\/landing\/(?:en|ko|ja)\/(?:vault|history)\.png$/,
+        );
+        if (locale !== 'en' && href.includes('/en/')) {
+          await expect(story.locator('.screen-caption')).toContainText(locale === 'ko' ? '영어' : '英語');
+        }
+        await expectImageResponse(request, href);
       }
+    }
+  });
 
-      const h1Rect = h1.getBoundingClientRect();
-      const buttonRect = firstButton.getBoundingClientRect();
-      const buttonTextRange = document.createRange();
-      buttonTextRange.selectNodeContents(firstButton);
-      const buttonLineCount = new Set(
-        Array.from(buttonTextRange.getClientRects(), (rect) => Math.round(rect.top)),
-      ).size;
+  test('AquaTick heroes fit tablet width without overflow or wrapped buttons', async ({ page }) => {
+    await page.setViewportSize({ width: 720, height: 900 });
+    for (const locale of AQUATICK_LOCALES) {
+      await page.goto(`/aquatick/${locale}/`);
 
-      return {
-        h1Height: Math.round(h1Rect.height),
-        buttonWidth: Math.round(buttonRect.width),
-        buttonLineCount,
-        actionsDirection: getComputedStyle(actions).flexDirection,
-        pageOverflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-      };
-    });
+      const metrics = await page.evaluate(() => {
+        const firstButton = document.querySelector('.hero-actions .btn');
+        if (firstButton === null) {
+          throw new Error('Missing hero button');
+        }
 
-    expect(metrics.h1Height).toBeLessThanOrEqual(280);
-    expect(metrics.buttonWidth).toBeGreaterThanOrEqual(280);
-    expect(metrics.buttonLineCount).toBeLessThanOrEqual(1);
-    expect(['column', 'row']).toContain(metrics.actionsDirection);
-    expect(metrics.pageOverflow).toBe(0);
+        const buttonTextRange = document.createRange();
+        buttonTextRange.selectNodeContents(firstButton);
+
+        return {
+          buttonLineCount: new Set(
+            Array.from(buttonTextRange.getClientRects(), (rect) => Math.round(rect.top)),
+          ).size,
+          pageOverflow: Math.max(0, document.documentElement.scrollWidth - document.documentElement.clientWidth),
+        };
+      });
+
+      expect(metrics.buttonLineCount, `${locale} hero button line count`).toBeLessThanOrEqual(1);
+      expect(metrics.pageOverflow, `${locale} hero page overflow`).toBe(0);
+    }
   });
 
   test('legacy and canonical app icons return image responses', async ({ request }) => {
