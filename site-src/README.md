@@ -9,3 +9,21 @@ This directory owns the source contracts for the static GitHub Pages generator a
 - `data/assets.json` drives the AquaTick legacy image mirror policy, its read-only checker, and its syncer.
 
 Sitemap alternates and route inventories are covered by the Playwright route contract tests, and `npm run verify:generated` keeps committed generated text files in lockstep with the templates.
+
+## AquaTick search content
+
+Edit all three localized AquaTick templates plus the language chooser and
+`templates/llms.txt` when product facts change. Website locales (en/ko/ja) are
+separate from the app's seven supported languages in `MobileApplication.inLanguage`.
+Update each affected page's `dateModified` and sitemap `lastmod` together only when
+its content changes. Keep pricing, privacy and FAQ answers visible in static HTML;
+do not add unverified ratings or reviews to structured data.
+
+The September 2026 content was checked against AquaTick's
+`CoreKit/Sources/Constant.swift` (`homePresetLimit = 6`),
+`DomainKit/Sources/Entities/WatchCupLayout.swift` (separate six-cup Watch layout),
+`Application/Sources/WidgetExtension/AquaTickQuickAddWidget.swift` (logging intent),
+and the public App Store listing (free download, seven languages, OS requirements).
+The App Store's older five-favorite description needs a separate metadata update;
+this repository cannot change that listing. Search Console indexing and real-user
+Core Web Vitals must be checked after publishing; local tests do not measure them.

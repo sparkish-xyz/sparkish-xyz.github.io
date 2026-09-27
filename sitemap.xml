@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- lastmod dates are representative snapshot at implementation time. Update on content changes. -->
+<!-- lastmod records the last substantive content change; update only affected routes. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Sparkish app catalog hub -->
@@ -13,7 +13,7 @@
   <!-- AquaTick language detector/chooser -->
   <url>
     <loc>https://sparkish-xyz.github.io/aquatick/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/"/>
@@ -25,7 +25,7 @@
   <!-- AquaTick Korean version (primary polished content) -->
   <url>
     <loc>https://sparkish-xyz.github.io/aquatick/ko/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/"/>
@@ -37,7 +37,7 @@
   <!-- AquaTick English version -->
   <url>
     <loc>https://sparkish-xyz.github.io/aquatick/en/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/"/>
@@ -49,7 +49,7 @@
   <!-- AquaTick Japanese version -->
   <url>
     <loc>https://sparkish-xyz.github.io/aquatick/ja/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/"/>

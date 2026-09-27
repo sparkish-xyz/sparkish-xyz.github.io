@@ -177,7 +177,8 @@ test.describe('AquaTick route contracts', () => {
     }
   });
 
-  test('locale pages claim Cup Vault favorites max 6 in features and meta with dateModified 2026-09-12', async ({ page }) => {
+  test('locale pages keep favorites and modification dates consistent with the sitemap', async ({ page, request }) => {
+    const sitemap = await (await request.get('/sitemap.xml')).text();
     const favoriteLimitSignals: Record<(typeof AQUATICK_LOCALES)[number], RegExp> = {
       en: /up to\s*6\b|6\s+(?:Cup Vault\s+)?favorites/i,
       ko: /최대\s*6(?:개|개까지)?|6개/,
@@ -188,7 +189,10 @@ test.describe('AquaTick route contracts', () => {
       await page.goto(`/aquatick/${locale}/`);
 
       const ldJson = await requiredText(page.locator('script[type="application/ld+json"]').first(), `${locale} ld+json`);
-      expect(ldJson, `${locale} dateModified`).toMatch(/"dateModified"\s*:\s*"2026-09-12"/);
+      const graph = JSON.parse(ldJson)['@graph'] as Array<Record<string, unknown>>;
+      const modified = graph.find((item) => item['@type'] === 'WebPage')?.['dateModified'];
+      expect(modified).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(sitemap).toContain(`<loc>${aquatickUrl(locale)}</loc>\n    <lastmod>${String(modified)}</lastmod>`);
 
       const metaDescription = await requiredAttribute(page.locator('meta[name="description"]'), 'content', `${locale} meta description`);
       expect(metaDescription, `${locale} meta favorites cap`).toMatch(favoriteLimitSignals[locale]);

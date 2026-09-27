@@ -9,3 +9,10 @@ Updated 2026-09-12 for Quiet Companion.
 - `leaf-edge.png`: generated decorative branch, 992×1586, white RGB background. CSS multiply blends it into the page.
 
 Only decorative art is generated. Product screenshots are actual app UI. Korean/Japanese pages identify English supporting screenshots. The quick-add detail uses CSS clipping of each locale's Home capture, and the gallery links to complete raw captures.
+
+### Web delivery variants
+
+The decorative `cat-hero.webp`, `leaf-edge.webp`, and `cat-resting.webp` files are
+lossless WebP encodings of their adjacent PNG originals. Localized templates use
+these smaller files; PNG source assets and full-size screenshot links are retained.
+Regenerate after changing an original with `cwebp -lossless -z 9 input.png -o output.webp`.

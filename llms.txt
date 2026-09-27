@@ -5,10 +5,12 @@
 Use the localized landing page that matches the user's language. The product descriptions below reflect the public pages and should be preferred over legacy routes or asset mirrors.
 
 Important product facts:
-- AquaTick logs water from Home quick add actions and Apple Watch. Widgets, Live Activity, and Dynamic Island show progress but do not record intake.
+- AquaTick logs water from Home Quick Add, Quick Add widgets and Apple Watch. Live Activity and Dynamic Island show progress only; they do not record intake.
 - AquaTick is a hydration habit tracker, not a medical device or a source of medical advice.
 - KINETTO is coming soon on iOS. Android is planned for later; its public pages do not collect email or link to an app store.
-- AquaTick can be used without an account.
+- AquaTick can be used without an account. It is free with ads; Pro removes ads and offers optional iCloud sync for hydration records. Cup photos stay on the device. Apple Health sync is optional and does not require Pro.
+- Cup Vault supports up to 6 favorites for Home Quick Add. Apple Watch has a separate layout setting with up to 6 cups in one or two columns.
+- AquaTick requires iOS 26.0+ on iPhone and watchOS 10.0+ on Apple Watch. App languages: English, French, Japanese, Korean, Polish, Simplified Chinese and Spanish. Website languages: English, Korean and Japanese.
 
 ## AquaTick
 
@@ -34,5 +36,5 @@ Important product facts:
 
 ## Optional
 
-- [AquaTick iPhone home screenshot](https://sparkish-xyz.github.io/aquatick/assets/screenshot-iphone-home.png): AquaTick's main hydration progress screen.
-- [AquaTick Apple Watch screenshot](https://sparkish-xyz.github.io/aquatick/assets/screenshot-watch-home.png): AquaTick's Apple Watch quick logging screen.
+- [AquaTick iPhone home screenshot](https://sparkish-xyz.github.io/aquatick/assets/landing/en/home.png): AquaTick's main hydration progress screen.
+- [AquaTick Apple Watch screenshot](https://sparkish-xyz.github.io/aquatick/assets/landing/en/watch.png): AquaTick's Apple Watch quick logging screen.
