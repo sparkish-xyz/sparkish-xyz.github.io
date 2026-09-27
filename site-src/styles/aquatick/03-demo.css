@@ -1,11 +1,11 @@
-/* Actual product imagery, with a focused detail followed by full screenshots. */
+/* Keep product captures at their native aspect ratio without cropping app UI. */
 .logging-section { background: var(--cream); padding-block: 60px; }
 .story-row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: clamp(36px, 7vw, 100px); }
 .story-copy { max-width: 520px; }
 .story-copy h2 { margin-bottom: 24px; }
 .story-copy p { color: var(--muted); }
-.cup-detail { aspect-ratio: 1.5; border: 1px solid var(--line); border-radius: 20px; overflow: clip; background: var(--paper); }
-.cup-detail img { width: 100%; height: auto; transform: translateY(-32%); }
+.cup-detail { width: min(100%, 345px); justify-self: center; border: 1px solid var(--line); border-radius: 20px; overflow: clip; background: var(--paper); }
+.cup-detail img { width: 100%; height: auto; }
 .screens-section { padding-block: var(--section-space); background: var(--cream); }
 .section-heading { margin-bottom: 46px; display: flex; justify-content: space-between; gap: 40px; align-items: end; }
 .section-heading h2 { max-width: 560px; }

@@ -8,7 +8,7 @@ Updated 2026-09-12 for Quiet Companion.
 - `cat-resting.png`: generated decorative illustration in the selected concept's style, 1560×1008, white RGB background. CSS multiply blends it into the page.
 - `leaf-edge.png`: generated decorative branch, 992×1586, white RGB background. CSS multiply blends it into the page.
 
-Only decorative art is generated. Product screenshots are actual app UI. Korean/Japanese pages identify English supporting screenshots. The quick-add detail uses CSS clipping of each locale's Home capture, and the gallery links to complete raw captures.
+Only decorative art is generated. Product screenshots are actual app UI. Korean/Japanese pages identify English supporting screenshots. The quick-add section displays each locale's complete Home capture at its native aspect ratio, and the gallery links to complete raw captures.
 
 ### Web delivery variants
 
