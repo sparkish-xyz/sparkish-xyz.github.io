@@ -5,7 +5,7 @@
   <!-- Sparkish app catalog hub -->
   <url>
     <loc>https://sparkish-xyz.github.io/</loc>
-    <lastmod>2026-09-12</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -90,5 +90,36 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/"/>
+  </url>
+  <!-- AlarmCrew localized product pages -->
+  <url>
+    <loc>https://sparkish-xyz.github.io/alarmcrew/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/alarmcrew/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/alarmcrew/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/alarmcrew/en/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/alarmcrew/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/alarmcrew/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/alarmcrew/ja/</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/alarmcrew/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/alarmcrew/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/"/>
   </url>
 </urlset>

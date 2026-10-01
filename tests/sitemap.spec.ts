@@ -55,6 +55,7 @@ test.describe('sitemap route contracts', () => {
       `${BASE_URL}/aquatick/`,
       ...AQUATICK_LOCALES.map((locale) => aquatickUrl(locale)),
       ...KINETTO_LOCALES.map((locale) => kinettoUrl(locale)),
+      `${BASE_URL}/alarmcrew/`, `${BASE_URL}/alarmcrew/en/`, `${BASE_URL}/alarmcrew/ja/`,
     ]);
   });
 
@@ -76,6 +77,13 @@ test.describe('sitemap route contracts', () => {
       expect(entry?.alternates, loc).toEqual(aquatickAlternates);
     }
 
+    const alarmcrewAlternates = new Map([
+      ['ko', `${BASE_URL}/alarmcrew/`], ['en', `${BASE_URL}/alarmcrew/en/`],
+      ['ja', `${BASE_URL}/alarmcrew/ja/`], ['x-default', `${BASE_URL}/alarmcrew/`],
+    ]);
+    for (const path of ['/alarmcrew/', '/alarmcrew/en/', '/alarmcrew/ja/']) {
+      expect(byLoc.get(`${BASE_URL}${path}`)?.alternates, path).toEqual(alarmcrewAlternates);
+    }
     const kinettoAlternates = new Map([
       ['en', kinettoUrl('en')],
       ['ko', kinettoUrl('ko')],

@@ -1,5 +1,41 @@
 [
   {
+    "date": "2026-10-01",
+    "macrostructure": "Split Studio",
+    "theme": "AlarmCrew brand (user-selected black and orange)",
+    "theme_axes": "dark / geometric-sans / warm",
+    "enrichment": "E5 generated morning friends illustration + actual localized iOS screenshots",
+    "nav": "N1 two destinations + language disclosure",
+    "footer": "Ft5 statement with inline links",
+    "brief": "Friend-first AlarmCrew landing; public iOS App Store release, Android preparation",
+    "scores": {
+      "philosophy": 4,
+      "hierarchy": 5,
+      "execution": 4,
+      "specificity": 5,
+      "restraint": 5,
+      "variety": 4
+    },
+    "verification": {
+      "browser": "Chromium",
+      "viewports": [
+        320,
+        375,
+        414,
+        768,
+        1280,
+        1440
+      ],
+      "contrast": "minimum computed text contrast 6.35:1; no failures",
+      "heroFold": "essential content fits 1280×800; visual focal point ends at 622px",
+      "keyboard": "language menu Escape/outside click and FAQ activation",
+      "reducedMotion": "smooth scrolling and transitions disabled",
+      "images": "actual locale-specific images and full-size links; optimized WebP derivatives",
+      "staticContracts": "npm run check: pass",
+      "tests": "npm test: 40 passed, 6 workers"
+    }
+  },
+  {
     "date": "2026-09-12",
     "macrostructure": "Portfolio Grid",
     "theme": "Sparkish Studio",

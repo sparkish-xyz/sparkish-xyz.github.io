@@ -1,0 +1,51 @@
+{
+  "sourceProduct": "AlarmCrew",
+  "captured": "2026-09-28",
+  "illustrationGenerated": "2026-10-01",
+  "originalFiles": {
+    "app-icon.png": {
+      "sha256": "00a5c3e6aca4f9590e9f4e7aba07aae879acfd6b0a04ee54dc7f728394593cfd",
+      "bytes": 1268987
+    },
+    "en/alarm.png": {
+      "sha256": "1df2872769a4ad340186b295b87f64b3da563a9b89ecfda4aec66a9b58e60616",
+      "bytes": 171563
+    },
+    "en/crew.png": {
+      "sha256": "76d060c62dba059fbd6c5881b53d2f69dd1f686d50075449819b5bbbbb03e9fc",
+      "bytes": 289659
+    },
+    "en/friends.png": {
+      "sha256": "bb4f2b6bacabf96672999aae46eab25498bcb46f265f102b66bd9aebdaa35501",
+      "bytes": 197896
+    },
+    "ja/alarm.png": {
+      "sha256": "f66c8e2d0304b4644923d9eca85c1c7a31cbfc48e4dfd7f566583ab2339dc0af",
+      "bytes": 172095
+    },
+    "ja/crew.png": {
+      "sha256": "8fafd043fca0534f0f5fd92dfa95b9fe27efe7cf4f8473f940a4556ffd335f28",
+      "bytes": 312627
+    },
+    "ja/friends.png": {
+      "sha256": "affbb8bc88ae8152605839370f488fb78432ac05dc854a067b5b1452b11438a1",
+      "bytes": 210943
+    },
+    "ko/alarm.png": {
+      "sha256": "f81678d0b9071db291b007d322eaec218a1097a2039110290c8028b2e5bdc704",
+      "bytes": 162724
+    },
+    "ko/crew.png": {
+      "sha256": "0bca7294c29f906b166b03eb63085469ff58d6e0bd48c24a8e14327784ce91aa",
+      "bytes": 259369
+    },
+    "ko/friends.png": {
+      "sha256": "05a20297ef5584e880f282256a2bae78b9b14f92afd790b32a2364ab3ffd7df7",
+      "bytes": 175621
+    },
+    "morning-friends.png": {
+      "sha256": "d92211f4133d295211de766c2e47da553cbdc3cff70358ef7db3259821d2f49c",
+      "bytes": 1778378
+    }
+  }
+}

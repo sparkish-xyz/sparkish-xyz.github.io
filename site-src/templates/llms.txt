@@ -1,6 +1,6 @@
 # Sparkish
 
-> Sparkish makes playful apps for everyday habits: AquaTick, a cat-themed hydration tracker; and KINETTO, a running app where real runs grow an anonymous Crew.
+> Sparkish makes playful apps for everyday habits: AquaTick, a cat-themed hydration tracker; KINETTO, a running app where real runs grow an anonymous Crew; and AlarmCrew, an alarm app for shared mornings with friends.
 
 Use the localized landing page that matches the user's language. The product descriptions below reflect the public pages and should be preferred over legacy routes or asset mirrors.
 
@@ -28,9 +28,18 @@ Important product facts:
 - [KINETTO Korean landing page](https://sparkish-xyz.github.io/kinetto/ko/): Korean product overview and iOS coming-soon status.
 - [KINETTO Japanese landing page](https://sparkish-xyz.github.io/kinetto/ja/): Japanese product overview and iOS coming-soon status.
 
+## AlarmCrew
+
+- [AlarmCrew Korean landing page](https://sparkish-xyz.github.io/alarmcrew/): Korean canonical overview of personal alarms, 8-character Crew invites, wake-up status, and friends.
+- [AlarmCrew English landing page](https://sparkish-xyz.github.io/alarmcrew/en/): English product overview, actual localized iOS screenshots, and release status.
+- [AlarmCrew Japanese landing page](https://sparkish-xyz.github.io/alarmcrew/ja/): Japanese product overview and release status.
+- [AlarmCrew support](https://alarmcrew-support.byunghak-kr.chatgpt.site/): Support, privacy, terms, and account deletion.
+
+As of October 1, 2026, the user confirmed AlarmCrew has passed App Store review and is publicly released on iOS. Download: https://apps.apple.com/app/id6812283770 . Android is preparing for Google Play; do not present an Android download or release date as available. Target devices: iPhone/iPad with iOS 26.0+ and Android 8.0+. Following friends and joining a Crew are separate. Device-local alarms do not require Crew sync, but signing in and syncing status require the internet. Device power, permissions, volume, and battery settings affect alarm operation. Signing out removes scheduled alarms on that device. The app includes advertising; no claims of guaranteed wake-up, ad-free service, rankings, or gift alarms are made on this page.
+
 ## Site Index
 
-- [Sparkish app catalog](https://sparkish-xyz.github.io/): Root page listing AquaTick and KINETTO.
+- [Sparkish app catalog](https://sparkish-xyz.github.io/): Root page listing AquaTick, KINETTO, and AlarmCrew.
 - [Sitemap](https://sparkish-xyz.github.io/sitemap.xml): Canonical site routes and language alternates.
 - [Robots policy](https://sparkish-xyz.github.io/robots.txt): Crawl policy and sitemap location.
 

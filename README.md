@@ -29,15 +29,27 @@ When AquaTick images change, update **`aquatick/assets/`** and copy the same fil
 
 | Path | Purpose |
 |------|---------|
-| `/` | Sparkish portfolio hub (two app cards: AquaTick and KINETTO) |
+| `/` | Sparkish portfolio hub (AquaTick, KINETTO, and AlarmCrew) |
 | `/aquatick/` | AquaTick language detector / chooser |
 | `/aquatick/ko/`, `/aquatick/en/`, `/aquatick/ja/` | Localized AquaTick landings |
 | `/ko/`, `/en/`, `/ja/` | Legacy stubs → redirect to `/aquatick/ko|en|ja/` |
 | `/assets/*` | Legacy mirror of `/aquatick/assets/*` (same files, not a redirect) |
 | `/kinetto/` | KINETTO English canonical landing page |
 | `/kinetto/ko/`, `/kinetto/ja/` | KINETTO Korean and Japanese landing pages |
+| `/alarmcrew/` | AlarmCrew Korean canonical landing page |
+| `/alarmcrew/en/`, `/alarmcrew/ja/` | AlarmCrew English and Japanese landing pages |
 
 AquaTick hreflang **x-default** is `https://sparkish-xyz.github.io/aquatick/`.
+
+### AlarmCrew landing page
+
+AlarmCrew targets friends building a shared morning routine. Its story is shared wake-up status → personal alarm settings → finding friends → practical FAQ → platform availability. The user chose a friendly black/orange direction; the page uses an alternating Split Studio layout, the original app icon, three actual iOS screens localized in Korean/English/Japanese, and one decorative generated morning illustration.
+
+As of **October 1, 2026**, the user confirmed the iOS app is publicly released. The hero and release section link to `https://apps.apple.com/app/id6812283770`. Android remains in preparation for Google Play; no Android store button is shown. The product source is `/Users/byunghak/Documents/vscode_workspace/AlarmCrew`. Source code, rather than older PRD plans, establishes the 8-character Crew invites, separate friend/Crew membership, personal alarms, five-minute snooze, and wake-up status. Rankings, gift alarms, and guaranteed waking are not advertised.
+
+Edit `site-src/templates/alarmcrew/` and run `npm run generate`, then `npm run check` and `npx playwright test tests/alarmcrew.spec.ts`. Product tokens are namespaced `--ac-*` in `/tokens.css`; page CSS/JS are snapshot templates copied by the existing generator. Change launch status consistently across all three pages, the hub, JSON-LD, `llms.txt`, and route tests. App release and website publishing are separate: this change prepares committed static output for the existing GitHub Pages workflow.
+
+See `alarmcrew/assets/README.md` for screenshot provenance and the illustration prompt. The page adds no analytics, signup forms, third-party font requests, or runtime dependencies.
 
 ### KINETTO release status
 
@@ -54,7 +66,7 @@ Edit `site-src/templates/kinetto/`, run `npm run generate`, then `npm run check`
 ## Local preview
 
 ```bash
-python3 -m http.server 8080
+python3 tools/serve-static.py
 # Hub: http://127.0.0.1:8080/
 # AquaTick KO: http://127.0.0.1:8080/aquatick/ko/
 ```
@@ -72,7 +84,7 @@ Runs Playwright route checks against `http://127.0.0.1:8080` (starts `python3 -m
 Requires a local server (absolute `/aquatick/assets/` paths):
 
 ```bash
-python3 -m http.server 8080 &
+python3 tools/serve-static.py &
 npm run capture:local
 npm run capture:deployed
 ```

@@ -89,3 +89,71 @@ The user delegated the design direction and asked to proceed without candidate m
 ## Other Sparkish products
 
 AquaTick and KINETTO retain their route ownership, product-specific themes and behavior. Hub styling must not change either product's page styles.
+
+## AlarmCrew — Friends at Seven, 2026-10-01
+
+The user selected friends as the audience and a friendly black/orange mood, and confirmed the iOS app is publicly released. The page's primary action is App Store download; Android remains in preparation. Korean is canonical at `/alarmcrew/`, with English and Japanese at `/alarmcrew/en/` and `/alarmcrew/ja/`. All three share one layout and locale-matched iOS captures.
+
+Split Studio composition: a left-aligned greeting and tactile morning illustration; a warm-paper Crew proof section; dark alarm and friend sections with alternating screenshot positions; native FAQ; platform-specific release actions and an inline studio footer. Nav uses two useful destinations plus a language disclosure. Original screenshot content is preserved; the new illustration is decorative. The build adds no runtime dependencies, analytics, or external fonts.
+
+Source templates are in `site-src/templates/alarmcrew/`; CSS and the small disclosure-dismissal script are generated from templates with the existing site generator. The `--ac-*` tokens in root `tokens.css` are scoped to AlarmCrew. Avenir Next display and the native body stack inherit the site's established typography, with Korean-native fallback. Mobile grids explicitly use `minmax(0, 1fr)`; actual screenshots retain their aspect ratios, and full-size originals are linked.
+
+Product sources: `AlarmCrew/ios/Projects/Features/Sources/{CrewFeature,AlarmFeature,SocialFeature}`, Android store draft copy, and actual release captures. Personal alarms, five-minute snooze, 8-character Crew invites, today's wake-up status and response times, and nickname-based friends are supported claims. Friend following and Crew membership stay distinct. The September PRD's gift/leaderboard promises are not used. Local-time, power, permissions, internet sync, logout, advertising and account controls are explained in the FAQ.
+
+### Exports — AlarmCrew
+
+The full CSS source of truth is the `--ac-*` block in `/tokens.css`. These mappings are portable references; this static site does not depend on Tailwind or shadcn.
+
+```css
+/* CSS variables — source roles */
+:root {
+  --ac-color-night: oklch(17% 0.006 55);
+  --ac-color-light: oklch(96% 0.012 75);
+  --ac-color-orange: oklch(77% 0.16 60);
+  --ac-color-accent-ink: var(--ac-color-night);
+  --ac-color-muted: oklch(75% 0.012 65);
+  --ac-color-surface: oklch(22% 0.006 55);
+  --ac-color-focus: oklch(84% 0.14 70);
+}
+/* Tailwind v4 — load tokens.css before this mapping */
+@theme inline {
+  --color-background: var(--ac-color-night);
+  --color-foreground: var(--ac-color-light);
+  --color-primary: var(--ac-color-orange);
+  --color-primary-foreground: var(--ac-color-accent-ink);
+  --color-muted-foreground: var(--ac-color-muted);
+  --font-display: var(--ac-font-display);
+  --font-sans: var(--ac-font-body);
+}
+/* shadcn/ui — role mapping */
+.alarmcrew-theme {
+  --background: var(--ac-color-night);
+  --foreground: var(--ac-color-light);
+  --card: var(--ac-color-surface);
+  --card-foreground: var(--ac-color-light);
+  --primary: var(--ac-color-orange);
+  --primary-foreground: var(--ac-color-accent-ink);
+  --muted: var(--ac-color-surface);
+  --muted-foreground: var(--ac-color-muted);
+  --border: var(--ac-color-rule);
+  --ring: var(--ac-color-focus);
+  --radius: var(--ac-radius-small);
+}
+```
+
+```json
+{
+  "alarmcrew": {
+    "color": {
+      "$type": "color",
+      "background": { "$value": { "colorSpace": "oklch", "components": [0.17, 0.006, 55], "alpha": 1 } },
+      "foreground": { "$value": { "colorSpace": "oklch", "components": [0.96, 0.012, 75], "alpha": 1 } },
+      "accent": { "$value": { "colorSpace": "oklch", "components": [0.77, 0.16, 60], "alpha": 1 } },
+      "accentInk": { "$value": "{alarmcrew.color.background}" },
+      "muted": { "$value": { "colorSpace": "oklch", "components": [0.75, 0.012, 65], "alpha": 1 } },
+      "surface": { "$value": { "colorSpace": "oklch", "components": [0.22, 0.006, 55], "alpha": 1 } },
+      "focus": { "$value": { "colorSpace": "oklch", "components": [0.84, 0.14, 70], "alpha": 1 } }
+    }
+  }
+}
+```

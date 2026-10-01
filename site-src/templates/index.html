@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="format-detection" content="telephone=no">
   <title>Sparkish — Small apps. More good days.</title>
-  <meta name="description" content="Small apps with a little character. Meet AquaTick, your hydration companion, and KINETTO, a running app in the making.">
+  <meta name="description" content="Small apps with a little character. Meet AquaTick for hydration, KINETTO for running, and AlarmCrew for shared mornings with friends.">
   <meta property="og:title" content="Sparkish — Small apps. More good days.">
-  <meta property="og:description" content="Thoughtful apps for everyday life. Build a water habit with AquaTick, or meet KINETTO, where real runs grow an anonymous Crew.">
+  <meta property="og:description" content="Thoughtful apps for everyday life. Build a water habit with AquaTick, meet KINETTO for running, and wake up with friends in AlarmCrew.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sparkish-xyz.github.io/">
   <meta property="og:site_name" content="Sparkish">
@@ -16,7 +16,7 @@
   <meta property="og:image:alt" content="AquaTick app icon">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Sparkish — Small apps. More good days.">
-  <meta name="twitter:description" content="Thoughtful apps for everyday life. Build a water habit with AquaTick, or meet KINETTO, where real runs grow an anonymous Crew.">
+  <meta name="twitter:description" content="Thoughtful apps for everyday life. Build a water habit with AquaTick, meet KINETTO for running, and wake up with friends in AlarmCrew.">
   <meta name="twitter:image" content="https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png">
   <meta name="theme-color" content="#f7f8f4">
   <link rel="icon" href="/aquatick/assets/aquatick-app-icon.png" type="image/png">
@@ -24,52 +24,65 @@
   <link rel="canonical" href="https://sparkish-xyz.github.io/">
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://sparkish-xyz.github.io/#organization",
-        "name": "Sparkish",
-        "url": "https://sparkish-xyz.github.io/",
-        "logo": "https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png"
-      },
-      {
-        "@type": "ItemList",
-        "@id": "https://sparkish-xyz.github.io/#apps",
-        "name": "Sparkish apps",
-        "numberOfItems": 2,
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "MobileApplication",
-              "name": "AquaTick",
-              "applicationCategory": "HealthApplication",
-              "operatingSystem": "iOS, watchOS",
-              "url": "https://sparkish-xyz.github.io/aquatick/",
-              "installUrl": "https://apps.apple.com/app/aquatick/id6762686013",
-              "image": "https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png",
-              "description": "A cat-themed hydration companion for iPhone and Apple Watch. Log water, save your usual cups, and follow your daily rhythm. No account required."
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "MobileApplication",
-              "name": "KINETTO",
-              "applicationCategory": "HealthApplication",
-              "operatingSystem": "iOS (coming soon), Android (later)",
-              "url": "https://sparkish-xyz.github.io/kinetto/",
-              "image": "https://sparkish-xyz.github.io/kinetto/assets/app-icon.png",
-              "description": "A running app whose real runs grow an anonymous Crew. iOS in development; Android later."
-            }
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://sparkish-xyz.github.io/#organization",
+      "name": "Sparkish",
+      "url": "https://sparkish-xyz.github.io/",
+      "logo": "https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://sparkish-xyz.github.io/#apps",
+      "name": "Sparkish apps",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "MobileApplication",
+            "name": "AquaTick",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "iOS, watchOS",
+            "url": "https://sparkish-xyz.github.io/aquatick/",
+            "installUrl": "https://apps.apple.com/app/aquatick/id6762686013",
+            "image": "https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png",
+            "description": "A cat-themed hydration companion for iPhone and Apple Watch. Log water, save your usual cups, and follow your daily rhythm. No account required."
           }
-        ]
-      }
-    ]
-  }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "MobileApplication",
+            "name": "KINETTO",
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "iOS (coming soon), Android (later)",
+            "url": "https://sparkish-xyz.github.io/kinetto/",
+            "image": "https://sparkish-xyz.github.io/kinetto/assets/app-icon.png",
+            "description": "A running app whose real runs grow an anonymous Crew. iOS in development; Android later."
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "MobileApplication",
+            "name": "AlarmCrew",
+            "applicationCategory": "UtilitiesApplication",
+            "operatingSystem": "iOS 26.0+; Android 8.0+ (coming soon)",
+            "url": "https://sparkish-xyz.github.io/alarmcrew/",
+            "image": "https://sparkish-xyz.github.io/alarmcrew/assets/app-icon.png",
+            "installUrl": "https://apps.apple.com/app/id6812283770"
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
   <link rel="stylesheet" href="/tokens.css?v=sparkish-20260912">
   <style>
@@ -117,6 +130,10 @@
     .runner-group { position: absolute; bottom: 0; inset-inline: 20px; display: flex; align-items: end; justify-content: center; }
     .runner-group img { width: 30%; max-width: 155px; image-rendering: pixelated;  }
     .runner-group img:nth-child(2) { width: 37%; max-width: 190px; margin-inline: -3%; z-index: 1; }
+    .alarmcrew-art { background: var(--ac-color-night); color: var(--ac-color-light); }
+    .alarmcrew-art .art-copy { color: var(--ac-color-orange); }
+    .morning-friends { position: absolute; width: 70%; max-width: 320px; right: 5%; bottom: 0; }
+    .app-card:last-child { grid-column: 1 / -1; max-width: 700px; width: 100%; }
     .project-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
     .app-icon { width: 40px; height: 40px; border-radius: 10px; }
     .project-heading h2 { font-size: 25px; font-weight: 700; letter-spacing: -0.055em; }
@@ -180,7 +197,7 @@
   <main id="main" class="shell">
     <section class="hero" aria-labelledby="hero-title">
       <h1 id="hero-title"><span>Small apps.</span><span>More good days.</span></h1>
-      <p class="intro">A little care. A little movement.<br>We make thoughtful apps that bring a little character to everyday life.</p>
+      <p class="intro">A little care. A little movement. A shared morning.<br>We make thoughtful apps that bring a little character to everyday life.</p>
     </section>
     <section id="apps" aria-label="Our apps">
       <div class="section-heading"><p class="eyebrow">The apps</p><p>Made to become part of your day.</p></div>
@@ -216,6 +233,21 @@
             </div>
             <p class="project-description" id="kinetto-description">Real runs grow an anonymous Crew. A new reason to lace up. Coming soon to iOS.</p>
             <span class="project-cta" id="kinetto-cta">View KINETTO</span>
+          </a>
+        </article>
+        <article class="app-card">
+          <a class="project-link" href="/alarmcrew/" aria-labelledby="alarmcrew-name alarmcrew-cta" aria-describedby="alarmcrew-description alarmcrew-status">
+            <div class="project-heading">
+              <img class="app-icon" src="/alarmcrew/assets/app-icon-128.webp" width="128" height="128" alt="">
+              <h2 id="alarmcrew-name">AlarmCrew</h2><span class="status" id="alarmcrew-status">Available on iOS</span>
+            </div>
+            <div class="project-art alarmcrew-art" aria-hidden="true">
+              <p class="art-copy">Good mornings.<br>Better together.</p>
+              <img class="morning-friends" src="/alarmcrew/assets/morning-friends-480.webp" width="1280" height="1280" loading="lazy" alt="">
+              <p class="art-note">A shared start.<br>A familiar face.</p>
+            </div>
+            <p class="project-description" id="alarmcrew-description">Set an alarm with your friends. See who is up. Available on iOS. Android preparing for launch.</p>
+            <span class="project-cta" id="alarmcrew-cta">View AlarmCrew</span>
           </a>
         </article>
       </div>

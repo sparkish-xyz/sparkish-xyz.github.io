@@ -27,3 +27,9 @@ and the public App Store listing (free download, seven languages, OS requirement
 The App Store's older five-favorite description needs a separate metadata update;
 this repository cannot change that listing. Search Console indexing and real-user
 Core Web Vitals must be checked after publishing; local tests do not measure them.
+
+## AlarmCrew
+
+Korean is canonical at `/alarmcrew/`; English and Japanese live under `/alarmcrew/en/` and `/alarmcrew/ja/`. Source snapshots are in `templates/alarmcrew/`, including product CSS/JS. The generator copies these through `generated-files.json`. Real screens and generated decorative artwork are in `alarmcrew/assets/` with provenance beside them.
+
+App Store availability was confirmed by the user on 2026-10-01. Keep release status, App Store links, the hub, structured data and `llms.txt` consistent when changing it. Android remains in preparation. A browser that disables JavaScript can still read all content, use language links and native FAQ disclosures; JavaScript only adds language-menu dismissal.

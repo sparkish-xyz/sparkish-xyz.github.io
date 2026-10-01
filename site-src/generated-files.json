@@ -17,12 +17,18 @@
     "kinetto/index.html",
     "kinetto/ko/index.html",
     "kinetto/ja/index.html",
-    "kinetto/assets/kinetto.css"
+    "kinetto/assets/kinetto.css",
+    "alarmcrew/index.html",
+    "alarmcrew/en/index.html",
+    "alarmcrew/ja/index.html",
+    "alarmcrew/assets/alarmcrew.css",
+    "alarmcrew/assets/alarmcrew.js"
   ],
   "staticAssetDirectories": [
     "assets",
     "aquatick/assets",
-    "kinetto/assets"
+    "kinetto/assets",
+    "alarmcrew/assets"
   ],
   "rootOnlyFiles": [
     "index.html",

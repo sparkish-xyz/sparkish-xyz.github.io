@@ -1,6 +1,12 @@
 {
-  "hub": ["index.html"],
-  "legacyAquatickStubs": ["ko/index.html", "en/index.html", "ja/index.html"],
+  "hub": [
+    "index.html"
+  ],
+  "legacyAquatickStubs": [
+    "ko/index.html",
+    "en/index.html",
+    "ja/index.html"
+  ],
   "aquatick": [
     "aquatick/index.html",
     "aquatick/ko/index.html",
@@ -11,5 +17,10 @@
     "kinetto/index.html",
     "kinetto/ko/index.html",
     "kinetto/ja/index.html"
+  ],
+  "alarmcrew": [
+    "alarmcrew/index.html",
+    "alarmcrew/en/index.html",
+    "alarmcrew/ja/index.html"
   ]
 }

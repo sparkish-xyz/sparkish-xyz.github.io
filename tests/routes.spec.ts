@@ -8,13 +8,13 @@ test.describe('Sparkish hub route contracts', () => {
     await expect(page).toHaveURL(/\/aquatick\/(ko|en|ja)\/?$/);
   });
 
-  test('hub JSON-LD includes the two active MobileApplication cards', async ({ page }) => {
+  test('hub JSON-LD includes the three MobileApplication cards', async ({ page }) => {
     await page.goto('/');
     const jsonLd = await page.locator('script[type="application/ld+json"]').textContent();
     expect(jsonLd).toContain('"@type": "Organization"');
     expect(jsonLd).toContain('"@type": "MobileApplication"');
     expect(jsonLd).toContain('AquaTick');
-    expect(jsonLd).toContain('"numberOfItems": 2');
+    expect(jsonLd).toContain('"numberOfItems": 3');
     expect(jsonLd).toContain('KINETTO');
 
     const graph = JSON.parse(jsonLd ?? '')['@graph'] as Array<{
@@ -36,6 +36,11 @@ test.describe('Sparkish hub route contracts', () => {
     expect(kinetto).not.toHaveProperty('installUrl');
     expect(kinetto).not.toHaveProperty('price');
     expect(kinetto).not.toHaveProperty('offers');
+    const alarmcrew = graph.flatMap(({ itemListElement }) => itemListElement ?? [])
+      .find(({ item }) => item?.['name'] === 'AlarmCrew');
+    expect(alarmcrew).toMatchObject({ position: 3, item: { url: 'https://sparkish-xyz.github.io/alarmcrew/' } });
+    expect(alarmcrew?.item?.['installUrl']).toBe('https://apps.apple.com/app/id6812283770');
+    expect(alarmcrew?.item).not.toHaveProperty('offers');
   });
 
   test('retired Korea Map Link pages are absent from the public site', async ({ request }) => {
@@ -60,9 +65,10 @@ test.describe('Sparkish hub route contracts', () => {
     for (const width of [320, 375, 414, 768, 1280]) {
       await page.setViewportSize({ width, height: 900 });
       await page.goto('/');
-      await expect(page.locator('.project-link')).toHaveCount(2);
+      await expect(page.locator('.project-link')).toHaveCount(3);
       await expect(page.locator('#aquatick-status')).toHaveText('Available now');
       await expect(page.locator('#kinetto-status')).toHaveText('In the making');
+      await expect(page.locator('#alarmcrew-status')).toHaveText('Available on iOS');
       const metrics = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
         wrappedLabels: Array.from(document.querySelectorAll('.site-header nav a, .project-cta, .status, .footer-links a')).filter(element => {

@@ -12,7 +12,7 @@ export default defineConfig({
     baseURL: 'http://127.0.0.1:8080',
   },
   webServer: {
-    command: 'python3 -m http.server 8080',
+    command: 'python3 tools/serve-static.py',
     url: 'http://127.0.0.1:8080/',
     reuseExistingServer: !isCI,
     timeout: 120_000,

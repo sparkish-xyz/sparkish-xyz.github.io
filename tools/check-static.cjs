@@ -39,6 +39,9 @@ const requiredRootFiles = [
 ];
 
 const requiredRouteFiles = [
+  'alarmcrew/index.html',
+  'alarmcrew/en/index.html',
+  'alarmcrew/ja/index.html',
   'en/index.html',
   'ja/index.html',
   'ko/index.html',
@@ -52,6 +55,10 @@ const requiredRouteFiles = [
 ];
 
 const requiredAssetFiles = [
+  'alarmcrew/assets/alarmcrew.css',
+  'alarmcrew/assets/alarmcrew.js',
+  'alarmcrew/assets/app-icon.png',
+  'alarmcrew/assets/morning-friends-800.webp',
   'assets/aquatick-app-icon.png',
   'assets/cat-empty.png',
   'assets/cat-hero.png',
