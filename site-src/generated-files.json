@@ -22,7 +22,8 @@
     "alarmcrew/en/index.html",
     "alarmcrew/ja/index.html",
     "alarmcrew/assets/alarmcrew.css",
-    "alarmcrew/assets/alarmcrew.js"
+    "alarmcrew/assets/alarmcrew.js",
+    "legal/assets/legal.css"
   ],
   "staticAssetDirectories": [
     "assets",

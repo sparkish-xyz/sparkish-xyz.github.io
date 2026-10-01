@@ -10,6 +10,11 @@ This directory owns the source contracts for the static GitHub Pages generator a
 
 Sitemap alternates and route inventories are covered by the Playwright route contract tests, and `npm run verify:generated` keeps committed generated text files in lockstep with the templates.
 
+`legal/documents.json` and `legal/content/` own the project-hosted support and legal
+documents. `tools/render-legal.cjs` renders them during the same generator run;
+`verify:generated` also checks their committed output. See `legal/README.md` for
+routes, original language coverage, and migration provenance.
+
 ## AquaTick search content
 
 Edit all three localized AquaTick templates plus the language chooser and

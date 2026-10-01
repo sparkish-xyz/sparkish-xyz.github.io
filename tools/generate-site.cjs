@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { legalPages } = require('./render-legal.cjs');
 
 const root = path.resolve(__dirname, '..');
 const sourceRoot = path.join(root, 'site-src');
@@ -67,14 +68,23 @@ function generatedFiles() {
     throw new GeneratorError('site-src/generated-files.json must define generatedTextFiles as strings');
   }
 
-  return files;
+  return [...files, ...legalPages().map(page => page.file)];
 }
 
 function generateSite(options) {
   const files = generatedFiles();
+  const documents = new Map(legalPages().map(page => [page.file, page]));
 
   for (const relativePath of files) {
-    writeGeneratedFile(relativePath, options.outDir);
+    const document = documents.get(relativePath);
+    if (document) {
+      assertSafeRelativePath(relativePath);
+      const targetPath = path.join(options.outDir, relativePath);
+      fs.mkdirSync(path.dirname(targetPath), { recursive: true });
+      fs.writeFileSync(targetPath, document.render());
+    } else {
+      writeGeneratedFile(relativePath, options.outDir);
+    }
   }
 
   return files;

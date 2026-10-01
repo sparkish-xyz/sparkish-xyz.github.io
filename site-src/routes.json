@@ -22,5 +22,30 @@
     "alarmcrew/index.html",
     "alarmcrew/en/index.html",
     "alarmcrew/ja/index.html"
+  ],
+  "legal": [
+    "legal/index.html",
+    "legal/ko/index.html",
+    "legal/ja/index.html",
+    "aquatick/privacy/index.html",
+    "aquatick/en/support/index.html",
+    "aquatick/ko/support/index.html",
+    "aquatick/ja/support/index.html",
+    "aquatick/en/terms/index.html",
+    "aquatick/ko/terms/index.html",
+    "aquatick/ja/terms/index.html",
+    "kinetto/privacy/index.html",
+    "kinetto/ko/privacy/index.html",
+    "kinetto/ja/privacy/index.html",
+    "kinetto/terms/index.html",
+    "kinetto/ko/terms/index.html",
+    "kinetto/ja/terms/index.html",
+    "kinetto/support/index.html",
+    "kinetto/ko/support/index.html",
+    "kinetto/ja/support/index.html",
+    "alarmcrew/privacy/index.html",
+    "alarmcrew/terms/index.html",
+    "alarmcrew/support/index.html",
+    "alarmcrew/delete-account/index.html"
   ]
 }

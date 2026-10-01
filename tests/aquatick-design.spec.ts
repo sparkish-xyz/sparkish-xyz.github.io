@@ -121,7 +121,7 @@ test.describe('AquaTick design contracts', () => {
       );
 
       const disclosure = page.locator('#privacy details');
-      const policyLink = disclosure.locator('a[href$="/Privacy-Policy"]');
+      const policyLink = disclosure.locator('a[href="/aquatick/privacy/"]');
       await expect(policyLink).not.toBeVisible();
       await disclosure.locator('summary').focus();
       await page.keyboard.press('Enter');

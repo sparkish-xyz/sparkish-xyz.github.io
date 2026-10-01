@@ -52,9 +52,11 @@ const requiredRouteFiles = [
   'kinetto/index.html',
   'kinetto/ja/index.html',
   'kinetto/ko/index.html',
+  ...JSON.parse(fs.readFileSync(path.join(root, 'site-src/routes.json'), 'utf8')).legal,
 ];
 
 const requiredAssetFiles = [
+  'legal/assets/legal.css',
   'alarmcrew/assets/alarmcrew.css',
   'alarmcrew/assets/alarmcrew.js',
   'alarmcrew/assets/app-icon.png',

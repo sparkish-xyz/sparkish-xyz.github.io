@@ -19,8 +19,8 @@ Important product facts:
 - [AquaTick English landing page](https://sparkish-xyz.github.io/aquatick/en/): English product overview, features, screenshots, privacy details, Pro pricing, and App Store links.
 - [AquaTick Japanese landing page](https://sparkish-xyz.github.io/aquatick/ja/): Japanese product overview, features, screenshots, privacy details, Pro pricing, and App Store links.
 - [AquaTick on the App Store](https://apps.apple.com/app/aquatick/id6762686013): Official App Store listing for downloading AquaTick.
-- [AquaTick support](https://github.com/sparkish-xyz/AquaTick-Support/wiki/Support-en-US): Support information and contact options.
-- [AquaTick privacy policy](https://github.com/sparkish-xyz/AquaTick-Support/wiki/Privacy-Policy): AquaTick's privacy policy.
+- [AquaTick support](https://sparkish-xyz.github.io/aquatick/en/support/): Support information and contact options.
+- [AquaTick privacy policy](https://sparkish-xyz.github.io/aquatick/privacy/): AquaTick's privacy policy.
 
 ## KINETTO
 
@@ -33,7 +33,7 @@ Important product facts:
 - [AlarmCrew Korean landing page](https://sparkish-xyz.github.io/alarmcrew/): Korean canonical overview of personal alarms, 8-character Crew invites, wake-up status, and friends.
 - [AlarmCrew English landing page](https://sparkish-xyz.github.io/alarmcrew/en/): English product overview, actual localized iOS screenshots, and release status.
 - [AlarmCrew Japanese landing page](https://sparkish-xyz.github.io/alarmcrew/ja/): Japanese product overview and release status.
-- [AlarmCrew support](https://alarmcrew-support.byunghak-kr.chatgpt.site/): Support, privacy, terms, and account deletion.
+- [AlarmCrew support](https://sparkish-xyz.github.io/alarmcrew/support/): Support, privacy, terms, and account deletion.
 
 As of October 1, 2026, the user confirmed AlarmCrew has passed App Store review and is publicly released on iOS. Download: https://apps.apple.com/app/id6812283770 . Android is preparing for Google Play; do not present an Android download or release date as available. Target devices: iPhone/iPad with iOS 26.0+ and Android 8.0+. Following friends and joining a Crew are separate. Device-local alarms do not require Crew sync, but signing in and syncing status require the internet. Device power, permissions, volume, and battery settings affect alarm operation. Signing out removes scheduled alarms on that device. The app includes advertising; no claims of guaranteed wake-up, ad-free service, rankings, or gift alarms are made on this page.
 
@@ -47,3 +47,11 @@ As of October 1, 2026, the user confirmed AlarmCrew has passed App Store review 
 
 - [AquaTick iPhone home screenshot](https://sparkish-xyz.github.io/aquatick/assets/landing/en/home.png): AquaTick's main hydration progress screen.
 - [AquaTick Apple Watch screenshot](https://sparkish-xyz.github.io/aquatick/assets/landing/en/watch.png): AquaTick's Apple Watch quick logging screen.
+
+## Support and legal documents
+
+- [All app documents](https://sparkish-xyz.github.io/legal/): Support and legal index, also available at /legal/ko/ and /legal/ja/.
+- [AquaTick terms](https://sparkish-xyz.github.io/aquatick/en/terms/): Information about the Apple Standard EULA and its official source. AquaTick privacy is the original English policy; support and terms information are available in English, Korean, and Japanese.
+- [KINETTO privacy](https://sparkish-xyz.github.io/kinetto/privacy/), [terms](https://sparkish-xyz.github.io/kinetto/terms/), and [support](https://sparkish-xyz.github.io/kinetto/support/): English documents; Korean and Japanese documents live below /kinetto/ko/ and /kinetto/ja/.
+- [AlarmCrew privacy](https://sparkish-xyz.github.io/alarmcrew/privacy/) and [terms](https://sparkish-xyz.github.io/alarmcrew/terms/): Original Korean policies.
+- [AlarmCrew account and data deletion](https://sparkish-xyz.github.io/alarmcrew/delete-account/): Korean and English instructions for in-app deletion or an email request with ownership verification.

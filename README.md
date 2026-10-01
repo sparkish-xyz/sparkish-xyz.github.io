@@ -38,8 +38,23 @@ When AquaTick images change, update **`aquatick/assets/`** and copy the same fil
 | `/kinetto/ko/`, `/kinetto/ja/` | KINETTO Korean and Japanese landing pages |
 | `/alarmcrew/` | AlarmCrew Korean canonical landing page |
 | `/alarmcrew/en/`, `/alarmcrew/ja/` | AlarmCrew English and Japanese landing pages |
+| `/legal/`, `/legal/ko/`, `/legal/ja/` | Localized app support and legal document index |
+| `/aquatick/privacy/` | AquaTick's original English privacy policy |
+| `/aquatick/en/terms/`, `/aquatick/ko/terms/`, `/aquatick/ja/terms/` | Apple Standard EULA information |
+| `/aquatick/en/support/`, `/aquatick/ko/support/`, `/aquatick/ja/support/` | Localized AquaTick support |
+| `/kinetto/privacy/`, `/kinetto/terms/`, `/kinetto/support/` | KINETTO English documents (also under `/kinetto/ko/` and `/kinetto/ja/`) |
+| `/alarmcrew/privacy/`, `/alarmcrew/terms/`, `/alarmcrew/support/` | AlarmCrew Korean documents |
+| `/alarmcrew/delete-account/` | Korean and English account/data deletion instructions |
 
 AquaTick hreflang **x-default** is `https://sparkish-xyz.github.io/aquatick/`.
+
+All landing-page support and policy links now open this project's static HTML.
+The shared document layout includes app navigation, a section contents list,
+available-language links, keyboard access, mobile layout, and print styles. It
+requires no JavaScript, API calls, or new dependencies. Authored source and
+migration details live in `site-src/legal/`; run `npm run generate` after editing.
+Original policy languages and effective dates are retained. AquaTick's terms
+page links to its existing Apple Standard EULA on Apple's official website.
 
 ### AlarmCrew landing page
 

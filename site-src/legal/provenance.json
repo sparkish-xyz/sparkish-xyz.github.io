@@ -1,0 +1,137 @@
+{
+  "retrievedOn": "2026-10-01",
+  "sources": [
+    {
+      "app": "aquatick",
+      "document": "privacy",
+      "language": "en",
+      "url": "https://raw.githubusercontent.com/wiki/sparkish-xyz/AquaTick-Support/Privacy-Policy.md",
+      "sha256": "08a2b5486bc597bac33061355b5a9026d238a9c76e58dd40bf991460e8ab65f4"
+    },
+    {
+      "app": "aquatick",
+      "document": "support",
+      "language": "en",
+      "url": "https://raw.githubusercontent.com/wiki/sparkish-xyz/AquaTick-Support/Support-en-US.md",
+      "sha256": "c984d30860f43dfcda3b33161dad3f816a1b88d445ef68dc1a79bc1e84d006b4"
+    },
+    {
+      "app": "aquatick",
+      "document": "support",
+      "language": "ko",
+      "url": "https://raw.githubusercontent.com/wiki/sparkish-xyz/AquaTick-Support/Support-ko.md",
+      "sha256": "b2e3e37ab2de2d881e83a4c60f08d6a1311ec8b723443156995bbea0b73b6d11"
+    },
+    {
+      "app": "aquatick",
+      "document": "support",
+      "language": "ja",
+      "url": "https://raw.githubusercontent.com/wiki/sparkish-xyz/AquaTick-Support/Support-ja.md",
+      "sha256": "429795992e7bcd685141dd5d0edb8f9ed35ddae47a5ecc9a052174ffe4b6a860"
+    },
+    {
+      "app": "kinetto",
+      "document": "privacy",
+      "language": "en",
+      "url": "https://kinetto-api.sparking.win/v1/legal/privacy?lang=en",
+      "sha256": "9b76f9836fe2e9913966743abdee5d3e38679d517ea1701e704f27b27e22e5e3"
+    },
+    {
+      "app": "kinetto",
+      "document": "terms",
+      "language": "en",
+      "url": "https://kinetto-api.sparking.win/v1/legal/terms?lang=en",
+      "sha256": "34258ebfd359da99b221c214b411c136ea45703df796e398db51f819ccfe8b2b"
+    },
+    {
+      "app": "kinetto",
+      "document": "support",
+      "language": "en",
+      "url": "https://kinetto-api.sparking.win/v1/legal/support?lang=en",
+      "sha256": "b5322196e2e7cca357eb28f4d0b7b5de1c326ae3a1c96b4862e559a1030c0e19"
+    },
+    {
+      "app": "kinetto",
+      "document": "privacy",
+      "language": "ko",
+      "url": "https://kinetto-api.sparking.win/v1/legal/privacy?lang=ko",
+      "sha256": "d11acb4f94faf5627fdaf83dc27bc74b844f91ced0fd6fb4c8e6d683d96b45bc"
+    },
+    {
+      "app": "kinetto",
+      "document": "terms",
+      "language": "ko",
+      "url": "https://kinetto-api.sparking.win/v1/legal/terms?lang=ko",
+      "sha256": "2483253f337c05472fc261c06aec4a0a58a42611d4818840bc1b7fea6ebbb56d"
+    },
+    {
+      "app": "kinetto",
+      "document": "support",
+      "language": "ko",
+      "url": "https://kinetto-api.sparking.win/v1/legal/support?lang=ko",
+      "sha256": "648ca48a186d4e2f843b7a9d8e4940f3fda90e64d60f6a2ad53c203cd66f589b"
+    },
+    {
+      "app": "kinetto",
+      "document": "privacy",
+      "language": "ja",
+      "url": "https://kinetto-api.sparking.win/v1/legal/privacy?lang=ja",
+      "sha256": "68a557074206cef3bfada9e26f35918705bbcc0530e83056230f7287cd2935d0"
+    },
+    {
+      "app": "kinetto",
+      "document": "terms",
+      "language": "ja",
+      "url": "https://kinetto-api.sparking.win/v1/legal/terms?lang=ja",
+      "sha256": "169bad90d1a1bd2d0bfd7ca7436a81751569e4a95e679bb4e025fb1bc42d1332"
+    },
+    {
+      "app": "kinetto",
+      "document": "support",
+      "language": "ja",
+      "url": "https://kinetto-api.sparking.win/v1/legal/support?lang=ja",
+      "sha256": "56b4dd1a83197ad563d488e66e937e309432b7aeb5b706c5f27477cfccdad2b8"
+    },
+    {
+      "app": "alarmcrew",
+      "document": "privacy",
+      "language": "ko",
+      "url": "https://alarmcrew-support.byunghak-kr.chatgpt.site/privacy",
+      "sha256": "9c6a32e32e56b1399cdaef0e1a8694c30ed8fe24c0f85ed093830a818a8d95b8"
+    },
+    {
+      "app": "alarmcrew",
+      "document": "terms",
+      "language": "ko",
+      "url": "https://alarmcrew-support.byunghak-kr.chatgpt.site/terms",
+      "sha256": "45851bc424a2712b3fe513d412fed3f9ac79d64470e5c20bcf4099ac58a70b30"
+    },
+    {
+      "app": "alarmcrew",
+      "document": "support",
+      "language": "ko",
+      "url": "https://alarmcrew-support.byunghak-kr.chatgpt.site/",
+      "sha256": "5129bcebcc423dafa22fb31111403afc083d843e40a9fd423df5dd32737e629f"
+    },
+    {
+      "app": "alarmcrew",
+      "document": "delete-account",
+      "language": "ko",
+      "url": "https://alarmcrew-support.byunghak-kr.chatgpt.site/delete-account",
+      "sha256": "de7ac32c72175c7d4390b8baef07ce854489651f3297db02c3c44b4ecd8ccad2"
+    }
+  ],
+  "transformations": [
+    "Extract document content only; remove source page chrome and scripts.",
+    "Replace former document-host URLs with local routes when rendering.",
+    "Add headings, navigation, section anchors and email links without changing policy clauses or effective dates.",
+    "AquaTick terms pages explain the existing Apple Standard EULA link; the third-party agreement stays at Apple’s official URL.",
+    "Use alarmcrew.support@gmail.com from AlarmCrew’s latest local legal source instead of the older published contact byunghak.kr@gmail.com. No other policy clauses change."
+  ],
+  "contactSource": {
+    "path": "AlarmCrew/docs/legal/privacy.txt and terms.txt",
+    "email": "alarmcrew.support@gmail.com",
+    "checkedOn": "2026-10-01",
+    "selection": "User confirmed alarmcrew.support@gmail.com on 2026-10-01."
+  }
+}

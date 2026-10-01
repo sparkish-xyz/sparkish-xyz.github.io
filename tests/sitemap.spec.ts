@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
 import { AQUATICK_LOCALES, BASE_URL, aquatickUrl } from './support/site-contracts';
 
 const KINETTO_LOCALES = ['en', 'ko', 'ja'] as const;
@@ -56,6 +57,8 @@ test.describe('sitemap route contracts', () => {
       ...AQUATICK_LOCALES.map((locale) => aquatickUrl(locale)),
       ...KINETTO_LOCALES.map((locale) => kinettoUrl(locale)),
       `${BASE_URL}/alarmcrew/`, `${BASE_URL}/alarmcrew/en/`, `${BASE_URL}/alarmcrew/ja/`,
+      ...(JSON.parse(readFileSync('site-src/routes.json', 'utf8')) as { legal: string[] }).legal
+        .map(file => `${BASE_URL}/${file.replace(/index\.html$/, '')}`),
     ]);
   });
 

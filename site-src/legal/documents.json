@@ -1,0 +1,162 @@
+{
+  "origin": "https://sparkish-xyz.github.io",
+  "publishedOn": "2026-10-01",
+  "apps": {
+    "aquatick": {
+      "name": "AquaTick",
+      "icon": "/aquatick/assets/aquatick-app-icon.png",
+      "defaultLanguage": "en",
+      "landings": {
+        "en": "/aquatick/en/",
+        "ko": "/aquatick/ko/",
+        "ja": "/aquatick/ja/"
+      },
+      "documents": {
+        "privacy": {
+          "locales": {
+            "en": {
+              "content": "aquatick/privacy-en.html",
+              "title": "Privacy Policy"
+            }
+          }
+        },
+        "support": {
+          "locales": {
+            "en": {
+              "content": "aquatick/support-en.html",
+              "title": "Support"
+            },
+            "ko": {
+              "content": "aquatick/support-ko.html",
+              "title": "고객지원"
+            },
+            "ja": {
+              "content": "aquatick/support-ja.html",
+              "title": "サポート"
+            }
+          }
+        },
+        "terms": {
+          "locales": {
+            "en": {
+              "content": "aquatick/terms-en.html",
+              "title": "Terms of Use"
+            },
+            "ko": {
+              "content": "aquatick/terms-ko.html",
+              "title": "이용약관"
+            },
+            "ja": {
+              "content": "aquatick/terms-ja.html",
+              "title": "利用規約"
+            }
+          }
+        }
+      }
+    },
+    "kinetto": {
+      "name": "KINETTO",
+      "icon": "/kinetto/assets/app-icon.png",
+      "defaultLanguage": "en",
+      "landings": {
+        "en": "/kinetto/",
+        "ko": "/kinetto/ko/",
+        "ja": "/kinetto/ja/"
+      },
+      "documents": {
+        "privacy": {
+          "locales": {
+            "en": {
+              "content": "kinetto/privacy-en.html",
+              "title": "Privacy Policy"
+            },
+            "ko": {
+              "content": "kinetto/privacy-ko.html",
+              "title": "개인정보 처리방침"
+            },
+            "ja": {
+              "content": "kinetto/privacy-ja.html",
+              "title": "プライバシーポリシー"
+            }
+          }
+        },
+        "terms": {
+          "locales": {
+            "en": {
+              "content": "kinetto/terms-en.html",
+              "title": "Terms of Use"
+            },
+            "ko": {
+              "content": "kinetto/terms-ko.html",
+              "title": "이용약관"
+            },
+            "ja": {
+              "content": "kinetto/terms-ja.html",
+              "title": "利用規約"
+            }
+          }
+        },
+        "support": {
+          "locales": {
+            "en": {
+              "content": "kinetto/support-en.html",
+              "title": "Support"
+            },
+            "ko": {
+              "content": "kinetto/support-ko.html",
+              "title": "고객지원"
+            },
+            "ja": {
+              "content": "kinetto/support-ja.html",
+              "title": "サポート"
+            }
+          }
+        }
+      }
+    },
+    "alarmcrew": {
+      "name": "AlarmCrew",
+      "icon": "/alarmcrew/assets/app-icon.png",
+      "defaultLanguage": "ko",
+      "landings": {
+        "ko": "/alarmcrew/",
+        "en": "/alarmcrew/en/",
+        "ja": "/alarmcrew/ja/"
+      },
+      "documents": {
+        "privacy": {
+          "locales": {
+            "ko": {
+              "content": "alarmcrew/privacy-ko.html",
+              "title": "개인정보 처리방침"
+            }
+          }
+        },
+        "terms": {
+          "locales": {
+            "ko": {
+              "content": "alarmcrew/terms-ko.html",
+              "title": "이용약관"
+            }
+          }
+        },
+        "support": {
+          "locales": {
+            "ko": {
+              "content": "alarmcrew/support-ko.html",
+              "title": "고객지원"
+            }
+          }
+        },
+        "delete-account": {
+          "locales": {
+            "ko": {
+              "content": "alarmcrew/delete-account-ko.html",
+              "title": "계정 및 데이터 삭제"
+            }
+          }
+        }
+      }
+    }
+  }
+}
