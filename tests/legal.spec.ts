@@ -96,13 +96,17 @@ test.describe('Project-hosted support and legal documents', () => {
   });
 
   test('language navigation keeps the same document and the index identifies original languages', async ({ page }) => {
-    await page.goto('/kinetto/terms/');
+    await page.goto('/kinetto/privacy/');
+    await page.locator('footer').getByRole('link', { name: 'Terms of Use', exact: true }).click();
+    await expect(page).toHaveURL(/\/kinetto\/terms\/$/);
     await page.locator('.language-links').getByRole('link', { name: '한국어' }).click();
     await expect(page).toHaveURL(/\/kinetto\/ko\/terms\/$/);
     await expect(page.locator('html')).toHaveAttribute('lang', 'ko');
     await page.locator('.language-links').getByRole('link', { name: '日本語' }).click();
     await expect(page).toHaveURL(/\/kinetto\/ja\/terms\/$/);
     await expect(page.locator('.document-body')).toContainText('基本規約');
+    await page.locator('footer').getByRole('link', { name: 'プライバシーポリシー', exact: true }).click();
+    await expect(page).toHaveURL(/\/kinetto\/ja\/privacy\/$/);
     await page.goto('/legal/ja/');
     await expect(page.locator('[data-app="aquatick"] nav a').first()).toContainText('English');
     await expect(page.locator('[data-app="alarmcrew"] nav a').first()).toContainText('한국어');

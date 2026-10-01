@@ -67,6 +67,8 @@ h2 { font-size: 1.35rem; }
 .document-end { margin-top: 48px; border-top: 1px solid var(--rule); padding-top: 24px; display: flex; }
 .site-footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 24px; align-items: center; border-top: 1px solid var(--rule); padding-block: 24px; font-size: .8rem; color: var(--muted); }
 .site-footer a { min-height: 44px; display: inline-flex; align-items: center; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 4px 24px; }
+.footer-links a[aria-current="page"] { color: var(--accent); font-weight: 650; }
 .document-hub { padding-block: 64px 96px; }
 .hub-heading { max-width: 760px; margin-bottom: 56px; }
 .hub-heading .eyebrow { margin-top: 0; }

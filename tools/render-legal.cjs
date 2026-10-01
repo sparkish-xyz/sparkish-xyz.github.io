@@ -55,6 +55,11 @@ function languageLinks(locales, lang, target) {
 function pageShell({ lang, title, route, alternates, content, appId = '' }) {
   const text = copy[lang];
   const description = `${title} — ${text.intro}`;
+  const app = appId ? config.apps[appId] : undefined;
+  const footerLinks = app ? Object.keys(app.documents).map(kind => {
+    const href = documentPath(appId, kind, lang);
+    return `<a href="${href}"${href === route ? ' aria-current="page"' : ''}>${text[kind]}</a>`;
+  }).join('') : '';
   return `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -80,22 +85,10 @@ ${Object.entries(alternates).map(([language, url]) => `  <link rel="alternate" h
     <a class="hub-link" href="${hubPath(lang)}">${text.hub}</a>
   </header>
 ${content}
-  <footer class="site-footer shell"><span>© 2026 Sparkish</span><a href="${hubPath(lang)}">${text.all}</a></footer>
+  <footer class="site-footer shell"><span>© 2026 Sparkish</span><nav class="footer-links" aria-label="${app ? `${app.name} ${text.documents}` : text.documents}">${footerLinks}<a href="${hubPath(lang)}">${text.all}</a></nav></footer>
 </body>
 </html>
 `;
-}
-
-function localizeReferences(body, appId, lang) {
-  // Only rewrite the former document hosts. Third-party service policies remain authoritative links.
-  const alarmRoutes = { 'privacy': 'privacy', 'terms': 'terms', 'delete-account': 'delete-account' };
-  body = body.replace(/https:\/\/alarmcrew-support\.byunghak-kr\.chatgpt\.site\/(privacy|terms|delete-account)(?:\.html)?\/?/g,
-    (_, kind) => `${config.origin}${documentPath('alarmcrew', alarmRoutes[kind], 'ko')}`);
-  if (appId === 'alarmcrew') {
-    body = body.replace(/href="\/(privacy|terms|delete-account)\.html"/g, (_, kind) => `href="${documentPath(appId, kind, lang)}"`);
-  }
-  body = body.replace(/href="https:\/\/sparkish-xyz\.github\.io(\/[^"\s]*)"/g, 'href="$1"');
-  return body;
 }
 
 function documentPage(appId, kind, lang) {
@@ -107,7 +100,7 @@ function documentPage(appId, kind, lang) {
   if (/<(?:script|iframe|form)\b|\bon\w+\s*=|javascript:/i.test(body)) throw new Error(`Unexpected active content in ${sourcePath}`);
   // The page header supplies the single H1; all authored paragraphs are kept.
   body = body.replace(/<h1\b[^>]*>[\s\S]*?<\/h1>/i, '');
-  body = localizeReferences(body, appId, lang);
+  body = body.replace(/href="https:\/\/sparkish-xyz\.github\.io(\/[^"\s]*)"/g, 'href="$1"');
   body = body.replace(/<p>([\s\S]*?)<\/p>/g, (_, paragraph) => `<p>${paragraph.replace(/<br\s*\/?\s*>/g, '</p><p>')}</p>`);
   const headings = [];
   body = body.replace(/<h2\b[^>]*>([\s\S]*?)<\/h2>/g, (_, heading) => {

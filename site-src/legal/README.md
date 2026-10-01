@@ -12,6 +12,8 @@ an API, ChatGPT Sites, or a GitHub wiki.
 - `content/<app>/<document>-<language>.html` holds the authored body. Keep policy
   clauses and their effective/version dates explicit. The renderer supplies the
   page heading, navigation, section anchors, language links, and print layout.
+  Store internal references as the current root-relative document URLs. Each
+  document footer links to the same app's policies/support in its available language.
 - `provenance.json` records the migration sources and original response hashes,
   checked on October 1, 2026. It is an audit reference, not a live dependency.
 - `../templates/legal/assets/legal.css` is the shared document stylesheet. It
