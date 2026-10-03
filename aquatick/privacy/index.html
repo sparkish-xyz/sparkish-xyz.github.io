@@ -38,19 +38,23 @@
 
       </header>
       <article class="document-body" lang="en" aria-label="Privacy Policy">
-<p>Effective date: May 7, 2026</p>
+<p>Effective date: October 3, 2026</p>
 <p>AquaTick is a hydration tracking app for iPhone and Apple Watch. The app is designed to work without an account.</p>
 <h2 id="section-1">Data AquaTick Handles</h2>
 <p>AquaTick may store hydration entries, daily hydration goals, reminder preferences, and app settings on your device and in the app group shared with its widgets, Live Activities, and Apple Watch app.</p>
+<p>AquaTick is local-first. Anyone can export and import drink logs as a JSON file from Settings. The backup includes hydration records and a cup snapshot (name, volume, drink type, and emoji). Cup photos are not included in the file.</p>
+<p>If you subscribe to AquaTick Pro, AquaTick can optionally sync hydration records with iCloud using CloudKit. This sync is optional, uses the <code>iCloud.com.benghak.AquaTick</code> container, and does not upload cup photos, settings, ads, or paywall state. Turning Pro off stops iCloud sync and does not delete drink logs stored on your device. Re-subscribing can resume sync. Apple Watch logging still uses WatchConnectivity, not CloudKit. Apple Health is optional and is not the source of truth.</p>
 <p>If you allow Apple Health access, AquaTick may read and write water intake data through HealthKit. Apple Health access is optional and only uses the permissions you grant in iOS.</p>
 <p>If you allow notifications, AquaTick may schedule local reminders on your device. Notification settings can be changed in iOS Settings or inside the app.</p>
 <h2 id="section-2">Third-Party Services</h2>
 <p>AquaTick uses RevenueCat to process purchases and subscription status.</p>
 <p>AquaTick uses Google Mobile Ads to show ads to users without an active subscription.</p>
 <p>AquaTick uses Firebase Analytics and Crashlytics to understand app usage and diagnose crashes.</p>
+<p>AquaTick also uses Amplitude to analyze screen visits, sessions, and feature attempts and outcomes. Amplitude processes an SDK-generated persistent random device identifier and basic app, device, operating system, and language information. AquaTick does not set an account identifier or connect Amplitude's identifier with Firebase or RevenueCat identifiers. IDFV and IP-based location collection are disabled in the Amplitude integration.</p>
+<p>Custom product analytics events sent to Firebase and Amplitude do not contain water intake amounts, hydration goals, actual drink-log dates or times, HealthKit records, cup names or photos, search text, backup contents, or raw error messages. Analytics events do include when an app interaction occurred. Screen, element, and network autocapture and Session Replay are not enabled for Amplitude.</p>
 <h2 id="section-3">Data Sharing</h2>
 <p>AquaTick does not require a user account and does not sell personal data.</p>
-<p>Hydration and settings data are used to provide app features such as widgets, Live Activities, Apple Watch logging, reminders, and optional Apple Health sync.</p>
+<p>Hydration and settings data are used to provide app features such as widgets, Live Activities, Apple Watch logging, reminders, optional Apple Health sync, JSON backup, and optional Pro iCloud drink-log sync.</p>
 <p>Third-party services may process purchase, subscription, advertising, analytics, and crash diagnostic data as needed to provide subscriptions, ads, analytics, and crash reporting.</p>
 <h2 id="section-4">Your Choices</h2>
 <p>You can disable notifications in iOS Settings.</p>

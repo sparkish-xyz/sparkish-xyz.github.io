@@ -61,3 +61,12 @@ perform deletion or send mail. Fulfillment still follows account-ownership
 verification by the operator. Existing app-bundled URLs, App Store / Google Play
 metadata, and former-host redirects are outside this website repository; they
 must be changed in their owning projects when retiring those hosts.
+
+## AquaTick policy update — October 3, 2026
+
+AquaTick’s privacy document now matches the app repository’s `PRIVACY.md` dated
+October 3, 2026, including JSON backups, optional Pro CloudKit synchronization,
+and the Amplitude integration and its collection limits. The support address
+remains `qkwl4678@naver.com`; the localized terms pages still link to Apple’s
+Standard EULA. The original migration hashes in `provenance.json` remain an
+audit of the October 1 import.

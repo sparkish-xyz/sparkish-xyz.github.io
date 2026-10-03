@@ -75,7 +75,7 @@ test.describe('Project-hosted support and legal documents', () => {
     await page.goto('/aquatick/privacy/');
     const aqua = page.locator('.document-body');
     await expect(aqua.locator('h2')).toHaveCount(5);
-    for (const text of ['May 7, 2026', 'RevenueCat', 'Google Mobile Ads', 'Firebase Analytics and Crashlytics', 'does not sell personal data', 'delete the app', 'qkwl4678@naver.com']) {
+    for (const text of ['October 3, 2026', 'CloudKit', 'JSON', 'Amplitude', 'IDFV and IP-based location collection are disabled', 'Session Replay are not enabled', 'RevenueCat', 'Google Mobile Ads', 'Firebase Analytics and Crashlytics', 'does not sell personal data', 'delete the app', 'qkwl4678@naver.com']) {
       await expect(aqua).toContainText(text);
     }
     await page.goto('/alarmcrew/privacy/');
