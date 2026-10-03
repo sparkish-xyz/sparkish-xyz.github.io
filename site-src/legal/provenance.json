@@ -126,7 +126,8 @@
     "Replace former document-host URLs with local routes when rendering.",
     "Add headings, navigation, section anchors and email links without changing policy clauses or effective dates.",
     "AquaTick terms pages explain the existing Apple Standard EULA link; the third-party agreement stays at Apple’s official URL.",
-    "Use alarmcrew.support@gmail.com from AlarmCrew’s latest local legal source instead of the older published contact byunghak.kr@gmail.com. No other policy clauses change."
+    "Use alarmcrew.support@gmail.com from AlarmCrew’s latest local legal source instead of the older published contact byunghak.kr@gmail.com. No other policy clauses change.",
+    "On 2026-10-04, the user selected alarmcrew.support@gmail.com for all website contacts, including AquaTick’s privacy/support pages and KINETTO’s support pages. Update visible addresses and mailto links."
   ],
   "contactSource": {
     "path": "AlarmCrew/docs/legal/privacy.txt and terms.txt",

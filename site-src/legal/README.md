@@ -49,7 +49,8 @@ service privacy links also remain at the provider's official websites.
 The existing published documents were imported in full, including data-processing
 details, account-deletion scope, diagnostic retention, and effective dates.
 KINETTO's public server HTML was used rather than a potentially newer, unpublished
-local implementation. Its published support email is `qkwl4678@naver.com`.
+local implementation. Its support contact was subsequently updated as described
+below.
 
 AlarmCrew's published policy clauses match its local legal sources. Its older
 published contact (`byunghak.kr@gmail.com`) was updated to the latest local
@@ -66,7 +67,13 @@ must be changed in their owning projects when retiring those hosts.
 
 AquaTick’s privacy document now matches the app repository’s `PRIVACY.md` dated
 October 3, 2026, including JSON backups, optional Pro CloudKit synchronization,
-and the Amplitude integration and its collection limits. The support address
-remains `qkwl4678@naver.com`; the localized terms pages still link to Apple’s
-Standard EULA. The original migration hashes in `provenance.json` remain an
-audit of the October 1 import.
+and the Amplitude integration and its collection limits. The localized terms
+pages still link to Apple’s Standard EULA. The original migration hashes in
+`provenance.json` remain an audit of the October 1 import.
+
+## Support contact update — October 4, 2026
+
+The user selected `alarmcrew.support@gmail.com` as the contact for all website
+pages. AquaTick’s privacy policy and English, Korean, and Japanese support pages,
+and KINETTO’s three support pages now use this address for both visible text and
+email links. AlarmCrew’s documents already use the same address.
