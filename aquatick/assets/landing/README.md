@@ -1,3 +1,23 @@
+# AquaTick landing imagery — October 4, 2026
+
+The motion redesign uses localized native UI, a real screen recording, and one decorative generated background. All app data shown is synthetic screenshot-fixture data.
+
+- `{ko,en,ja}/home.png`, `home-after.png`, `history.png`: captured in this session from local AquaTick **1.2.5 (142)** on the dedicated AquaTick Amplitude QA iPhone 17 / iOS 27 simulator, using `-AquaTickScreenshotMode` with the matching `-AppleLanguages` and `-AppleLocale`. Home is 1.55L; after one real +200mL tap, it is 1.75L. Images are raw 1206×2622 captures saved by mobile MCP, with no UI drawn or generated.
+- `{ko,en,ja}/vault.png`: unchanged native captures from `AquaTick/screenshots/app-store-20261004/raw/iphone/{ko,en-US,ja}_vault.png`, also version 1.2.5 (142) with screenshot fixtures.
+- `{ko,en,ja}/watch.png`: unchanged 416×496 localized native exports from `AquaTick/fastlane/screenshots/{ko,en-US,ja}/APP_WATCH_SERIES_10_01_home.png`. These are pre-existing Watch captures, not a claim of the current iPhone build's Watch UI.
+- `{ko,en,ja}/quick-add.mp4`: genuine recordings of a +200mL tap in the above screenshot mode. Encoded H.264, 604px wide, 30fps, no audio, fast-start metadata. Trimmed to about 1.8s before the action and held on the final recorded frame for 1.5s. Playback is explicitly requested by the visitor and has native controls. The website does not record real water intake.
+- `water-light.webp`: decorative 1536×1024 image, generated with the built-in image tool on October 4, 2026; quality-85 WebP, about 67 KiB. Original: `/Users/byunghak/.codex/generated_images/01a10487-6301-7a52-88b7-3a6a119c6598/exec-f767084f-d6f4-4b49-b7b8-421c64d9dccf.png`.
+
+Generation prompt: Premium macro photographic background of crystal-clear water in pale mint and warm off-white; broad subtle ripples and caustic reflections concentrated toward the lower third and edges; clean pale negative space in the upper half and center; soft morning studio light, no objects, leaves, text, logos, interface, phone or border. The frame contains only the water surface, no basin rim.
+
+Native repository: `/Users/byunghak/Documents/xcode_workspace/MiniProjects/AquaTick`. Original screen recordings and session captures are under `/tmp/aquatick-motion-captures/`; delivered optimized assets are all stored in this folder.
+
+The original cat and resting-cat assets below remain in use. The leaf asset remains available for older references but is not used by the new composition.
+
+---
+
+## Previous capture provenance (September 12, 2026)
+
 # AquaTick landing imagery
 
 Updated 2026-09-12 for Quiet Companion.

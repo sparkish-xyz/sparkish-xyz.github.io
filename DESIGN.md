@@ -1,77 +1,48 @@
 # Sparkish static site design system
 
-## AquaTick — Quiet Companion, 2026-09-12
+## AquaTick — One glass at a time, 2026-10-04
 
-The user selected the first displayed Quiet Companion mockup after a Safari design audit and explicitly requested a fresh redesign. This replaces the previous AquaTick Workbench/card-count contract. The source target is `exec-20c1c373-bf59-45df-a6d7-65b464c3415e.png`; the audit and concept mapping live in the current task's `aquatick-design-review/redesign-context.md` artifact.
+The user approved the proposed modern redesign and explicitly requested scroll choreography. This supersedes Quiet Companion's September no-motion rule. Public references are Apple AirPods Pro (product scale, sequential storytelling) and Dia (warmth and use-case selection), as studied in the current chat. These are structural references, not a pixel-cloning target.
 
-### Direction
+### Direction and page sequence
 
-Warm paper, quiet mint, navy ink, the original watercolor kitten, and real product imagery. A broad split hero on desktop leads into alternating product stories. Type and whitespace create hierarchy; avoid a repeated feature-card inventory. Supporting language pages share layout and behavior with natural localized copy.
+The October 4 follow-up asks for a stronger resemblance to the supplied references. Product scale now leads: a floating navigation capsule, a restrained two-line promise, three overlapping native app captures, a curved foreground download area, warm near-white, dark green ink, and one deep navy Watch chapter. Large product stage → three-step logging close-up → Watch → selectable Cup Vault / History → privacy → Pro → product facts / guides / FAQ → download. Korean branding uses 물눈금 in the navigation; English and Japanese keep AquaTick. The user rejected the large background wordmark in the next review: do not reintroduce brand lettering behind the product.
 
-- Hero: a two-line daily-care promise, concise explanation, one filled App Store action, a quiet outlined tour action (inline on mobile), compatibility, real Home screenshot and original cat.
-- `#features`: real Home quick-add detail and a short explanation of quick logging and up to 6 favorites.
-- Watch: a mint band, accurate wrist-logging copy, a real screen capture. Never draw a new watch UI and present it as the product.
-- `#screens`: two actual screenshots, Cup Vault and History, with concise explanations and full-size image links. Supporting English screenshots on other locales must be identified as English.
-- `#privacy`: no account, optional Health, calm resting-cat illustration, native disclosure for storage, sync, subscriptions, ads and analytics.
-- `#pricing`: Pro benefits and the app as the authoritative source for local subscription pricing, without repeated or unverified fixed dollar amounts.
-- Close: a concise download reminder and compact footer with support, privacy, terms and Pro.
+- Hero: a short two-line promise at 44–64px on desktop. Genuine localized Home / Vault / History captures sit below it with clear breathing room; a curved foreground carries the download link and tour anchor. Water photography is a subdued texture. The original cat remains in the app captures and closing section.
+- `#features`: real before/after captures of logging 200mL in screenshot fixture mode, three readable steps, and an explicitly opened real screen recording. Desktop scroll enlarges and pans the capture to the cup controls, then returns to the updated total. The visual is a crop of the native image, not a replacement app UI. Do not draw replacement app UI or present the website as recording a user's water.
+- `#watch`: deep navy background, a larger native localized Watch capture and oversized headline, wrist logging. The Quick Add widget logs water; Live Activity and Dynamic Island show progress only.
+- `#screens`: keyboard-operable tabs select real localized Vault / History captures. Without JavaScript, both stories are visible. Large captures extend through the bottom of the gallery panels, with full-size image links always available.
+- Privacy, Pro, product reference, guide links and FAQs remain static HTML. No invented reviews, ratings, prices, adoption numbers or health outcomes.
 
 ### Product truth
 
-Native AquaTick source is the implementation authority for current features. Marketing images are visual references, not authority for feature claims.
+Native source remains the implementation authority. iOS 26.0+ and watchOS 10.0+; iPhone and Apple Watch. No account required. Apple Health is optional and available without Pro. Home favorites are capped at 6; Watch has its own up-to-6-cup layout. Pro removes ads and offers optional iCloud hydration-record sync; cup photos remain on-device. The app supplies current localized monthly/yearly subscription prices. RevenueCat, Google Mobile Ads, Firebase Analytics, Crashlytics and Amplitude are disclosed in the existing privacy content. No blanket all-data-on-device claim.
 
-- iOS 26.0+; iPhone and Apple Watch. No Android, visionOS or aquarium claims.
-- No AquaTick account is required; Apple Health is optional.
-- Home and saved cups support quick water logging; favorites cap is 6.
-- The small Quick Add widget supports +200/+300 logging; Home/Grass widgets and Live Activity/Dynamic Island must not all be described as interactive loggers. Live Activity/Dynamic Island show progress.
-- Pro includes ad removal and optional iCloud hydration-record sync. Cup photos stay on-device. The previous “ad-free only” claim is stale.
-- RevenueCat supplies localized subscription prices in the app. Do not assert a dollar price based on old website copy.
-- RevenueCat, Google Mobile Ads, Firebase Analytics and Crashlytics are used. Do not claim that every kind of data stays on device or that analytics is completely anonymous. Keep the published Privacy Policy link; do not imply the website is a legal audit.
+### Tokens and typography
 
-Source references: native `Constant.homePresetLimit` (6), `KitSettings.swift`, `SubscriptionPaywallViewController.swift`, `AquaTickQuickAddWidget.swift`, Live Activity Swift source, `docs/PRODUCT_ANALYTICS.md` and `RevenueCatSubscriptionAdapter.swift`.
+Shared `/tokens.css` and the older foundation remain intact. Product-specific overrides live under `.aqua-story` in `site-src/styles/aquatick/07-scroll-story.css`:
 
-### Runtime tokens and typography
+- Paper `#fafbf8`, surface `#ffffff`, ink `#123c3a`, secondary text `#57716c`.
+- Action mint `#087f78`, hero mint `#b2dece`, soft mint `#eaf3ec`, gallery blue `#eaf0f4`, navy `#0b242a`, navy secondary `#b1c9c6`.
+- Existing Avenir Next / Trebuchet MS display and native system body stacks; no external fonts. Roman headings; natural Korean/Japanese wrapping.
+- Content width up to 1200px; desktop hero heading 44–64px, mobile 28–38px (Japanese 25–34px). No large brand wordmark. The product collage deliberately extends toward the viewport edges.
+- Actual screenshots retain their aspect ratios, with restrained rounding and shadows. No fabricated hardware frames.
 
-`site-src/styles/aquatick/01-foundation-header.css` contains AquaTick's scoped overrides after importing the unchanged shared `/tokens.css`.
+### Motion and accessibility
 
-| Role | Value |
-| --- | --- |
-| Paper | `--paper: #fcfaf6` |
-| Near-white surface | `--cream: #fffefd` |
-| Ink | `--ink: #102e3c` |
-| Body secondary | `--muted: #5c6f78` |
-| Mint action | `--water-accent: #087f78` |
-| Action hover | `--accent-hover: #066a65` |
-| Pale mint section | `--mint-soft: #e8f4ef` |
-| Divider | `--line: #d9e2df` |
-| Focus | `--color-focus: #075d9c` |
-| Handwritten annotation | `--color-note: #607e8b` |
+- GSAP / ScrollTrigger 3.14.2 are pinned and served locally through the existing JS builder. No third-party runtime requests.
+- Desktop at least 900px wide and 760px tall: native scroll drives a 180svh sticky hero (headline recedes, captures spread and enlarge, download remains visible), a 230svh logging chapter with a CSS-sticky scene, before/after crossfade, and active step emphasis. The page always uses native scrolling.
+- On smaller or shorter viewports, the story is a regular vertical flow. Video is user-initiated on all devices; no initial video download or autoplay loop.
+- Motion uses reversible `gsap.matchMedia` contexts. Changing reduced-motion or viewport resets transforms and removes the tall sticky chapter. Reduced-motion uses readable static content.
+- Gallery supports arrow keys, Home/End and a roving tab stop; selecting a panel does not scroll the page. Without JS, show both panels.
+- Video uses a native modal dialog, native controls, Escape/close/backdrop dismissal, return focus, and pause on close, page hide or hidden tab. Without JS, its link opens the MP4 directly.
+- Retain native language/privacy disclosures, menu dismissal, skip link, visible focus, and static SEO/product answers.
 
-Display: Avenir Next / Trebuchet MS / sans-serif, weight 700. Body: native system sans, normally weight 400. Decorative notes: Bradley Hand / Segoe Print / cursive, localized system text for KO/JA. No italic headings. Hero 28–96px responsive; section headings 32–50px; body 17–24px depending on role; footer and secondary labels 12–15px.
+### Asset provenance and build ownership
 
-Content width is 1200px, header 1280px. Desktop hero is asymmetric; below 850px it stacks with a focused full screenshot. Screenshots retain their aspect ratios. The focused Home quick-add detail uses an intentional crop, and full-size original links are available below. All image-bearing grid tracks use `minmax(0, 1fr)`.
+See `aquatick/assets/landing/README.md`. Home, after-entry, History and recordings were captured from native AquaTick 1.2.5 (142), with synthetic screenshot fixtures; Vault uses the existing October 4 native captures. Watch captures come from the native repository's existing localized raw exports. Decorative water is generated, never product UI.
 
-### Interaction and accessibility
-
-- Use native `<details>` for language/mobile navigation and privacy disclosure.
-- Menu closes on selected link, outside click, and Escape. Escape returns focus to summary.
-- No account, backend, demo controls or fake app interactions on the marketing page.
-- Primary buttons are mint with light text. Links and summaries have visible keyboard focus and usable tap areas.
-- A skip link reaches `#main`; headings and images have meaningful semantics.
-- Anchors clear the sticky header. No autoplay, parallax or scrolling reveals; reduced-motion disables smooth scrolling and transitions.
-- Verify 320, 375, 414, 768px and desktop in Safari, including menu and disclosure states and localized label wrapping.
-- Do not substitute a passing source check for visual verification.
-
-### Asset policy
-
-Reuse the original app icon and high-resolution native cat. Product screens must be genuine captures and clearly localized or labelled. Generated resting-cat/leaf artwork is decorative only and must not claim product behavior. Keep provenance beside new assets. Never use generated phone/watch UI as an actual screenshot. No generated metric claims, reviews or testimonials.
-
-### Build ownership
-
-Editable templates: `site-src/templates/aquatick/{en,ko,ja}/index.html`.
-CSS partials: `site-src/styles/aquatick/*.css`, ordered by existing manifest.
-JS partials: `site-src/scripts/aquatick/*.js`, ordered by existing manifest.
-Build with `npm run build:css`, `npm run build:js`, `npm run generate`; verify with `npm run check` and the menu behavioral check.
+Edit `site-src/templates/aquatick/{ko,en,ja}/index.html`, CSS/JS partials and manifests. Build with `npm run build:css`, `npm run build:js`, `npm run generate`. Run `npm run check`, `node tools/test-aquatick-menu.cjs`, `npm test`. `tests/aquatick-motion.spec.ts` covers scroll reversal, responsive/reduced-motion cleanup, keyboard tabs, requested video loading and dismissal, and no-JS reading. Verify visually at 320, 375, 414, 768 and desktop; tests do not replace visual review.
 
 ## Sparkish hub — Studio, 2026-09-12
 

@@ -117,7 +117,7 @@ test.describe('AquaTick design contracts', () => {
       await page.goto(`/aquatick/${locale}/`);
 
       await expect(page.locator('.hero-phone img'), `${locale} localized home capture`).toHaveAttribute(
-        'src', `/aquatick/assets/landing/${locale}/home.png`,
+        'src', `/aquatick/assets/landing/${locale}/home.png?v=20261004`,
       );
 
       const disclosure = page.locator('#privacy details');

@@ -236,7 +236,7 @@ test.describe('AquaTick route contracts', () => {
         const href = await requiredAttribute(link, 'href', `${locale} screen ${index + 1} full-size link`);
         expect(href, `${locale} screen ${index + 1} link target`).toBe(src);
         expect(href, `${locale} screen ${index + 1} landing capture path`).toMatch(
-          /^\/aquatick\/assets\/landing\/(?:en|ko|ja)\/(?:vault|history)\.png$/,
+          /^\/aquatick\/assets\/landing\/(?:en|ko|ja)\/(?:vault|history)\.png(?:\?v=\d+)?$/,
         );
         if (locale !== 'en' && href.includes('/en/')) {
           await expect(story.locator('.screen-caption')).toContainText(locale === 'ko' ? '영어' : '英語');

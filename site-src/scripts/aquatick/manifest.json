@@ -2,7 +2,10 @@
   "partials": [
     "01-language-preference.js",
     "03-header-shadow.js",
-    "04-nav-menu.js"
+    "04-nav-menu.js",
+    "vendor/gsap.min.js",
+    "vendor/ScrollTrigger.min.js",
+    "05-scroll-story.js"
   ],
   "output": "aquatick/assets/aquatick-site.js",
   "templateOutput": "site-src/templates/aquatick/assets/aquatick-site.js"

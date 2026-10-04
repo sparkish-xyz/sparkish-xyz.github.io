@@ -22,7 +22,7 @@
   <meta name="theme-color" content="#087f78">
   <link rel="icon" href="/aquatick/assets/aquatick-app-icon.png" type="image/png">
   <link rel="apple-touch-icon" href="/aquatick/assets/aquatick-app-icon.png">
-  <link rel="preload" href="/aquatick/assets/landing/ko/home.png" as="image">
+  <link rel="preload" href="/aquatick/assets/landing/ko/home.png?v=20261004" as="image">
   <link rel="canonical" href="https://sparkish-xyz.github.io/aquatick/ko/">
   <link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/">
   <link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/">
@@ -48,7 +48,7 @@
         },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": "https://sparkish-xyz.github.io/aquatick/assets/landing/ko/home.png"
+          "url": "https://sparkish-xyz.github.io/aquatick/assets/landing/ko/home.png?v=20261004"
         }
       },
       {
@@ -61,9 +61,9 @@
         "installUrl": "https://apps.apple.com/app/aquatick/id6762686013",
         "image": "https://sparkish-xyz.github.io/aquatick/assets/aquatick-app-icon.png",
         "screenshot": [
-          "https://sparkish-xyz.github.io/aquatick/assets/landing/ko/home.png",
-          "https://sparkish-xyz.github.io/aquatick/assets/landing/en/vault.png",
-          "https://sparkish-xyz.github.io/aquatick/assets/landing/en/history.png",
+          "https://sparkish-xyz.github.io/aquatick/assets/landing/ko/home.png?v=20261004",
+          "https://sparkish-xyz.github.io/aquatick/assets/landing/en/vault.png?v=20261004",
+          "https://sparkish-xyz.github.io/aquatick/assets/landing/en/history.png?v=20261004",
           "https://sparkish-xyz.github.io/aquatick/assets/landing/en/watch.png"
         ],
         "description": "iPhone, 위젯, Apple Watch에서 물을 기록하세요. 최대 6개 컵 즐겨찾기와 선택적 Apple Health 연동으로 매일 수분 습관을 이어가세요. 계정 없이 무료로 시작할 수 있어요.",
@@ -108,17 +108,17 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="/aquatick/assets/aquatick-site.css">
+  <link rel="stylesheet" href="/aquatick/assets/aquatick-site.css?v=20261004c">
   <link rel="stylesheet" href="/guides/assets/guides.css">
   <link rel="describedby" href="/llms.txt" type="text/plain">
 </head>
-<body>
+<body class="aqua-story">
   <a class="skip-link" href="#main">본문으로 건너뛰기</a>
   <header class="site-header">
     <div class="header-shell">
       <a class="brand" href="/aquatick/ko/" aria-label="AquaTick 홈">
         <img src="/aquatick/assets/aquatick-app-icon-128.png" width="128" height="128" alt="">
-        <span>AquaTick</span>
+        <span>물눈금</span>
       </a>
       <nav class="nav-main" aria-label="페이지 섹션">
         <a href="#features">사용 방법</a>
@@ -144,71 +144,74 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <div class="hero-copy">
-          <h1 id="hero-title"><span>물 마시기 기록,</span><span>가볍게 매일.</span></h1>
-          <p class="hero-tagline">AquaTick은 iPhone과 Apple Watch에서 쓰는 물 마시기 기록 앱이에요. 고양이와 함께 마신 물을 기록하고 하루의 수분 습관을 살펴보세요.</p>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">App Store에서 받기</a>
-            <a class="text-link" href="#features">사용 방법 보기</a>
+      <div class="hero-stage">
+        <img class="hero-water" src="/aquatick/assets/landing/water-light.webp" width="1536" height="1024" alt="" aria-hidden="true">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <h1 id="hero-title"><span>한 잔씩,</span><span>나를 채우는 습관.</span></h1>
           </div>
-          <p class="device-line">iPhone · iOS 26.0+<br>Apple Watch · watchOS 10.0+</p>
-          <p class="handwritten hero-note">늘 같은 고양이.<br>매일 곁에서 함께.</p>
+          <div class="hero-visual">
+            <figure class="hero-satellite hero-vault" aria-hidden="true"><img src="/aquatick/assets/landing/ko/vault.png?v=20261004" width="1206" height="2622" alt=""></figure>
+            <figure class="hero-satellite hero-history" aria-hidden="true"><img src="/aquatick/assets/landing/ko/history.png?v=20261004" width="1206" height="2622" alt=""></figure>
+            <figure class="hero-phone product-shot"><img src="/aquatick/assets/landing/ko/home.png?v=20261004" width="1206" height="2622" alt="물눈금 홈: 오늘 마신 물과 자주 쓰는 컵" fetchpriority="high"></figure>
+          </div>
         </div>
-        <div class="hero-visual">
-          <figure class="hero-phone product-shot">
-            <img src="/aquatick/assets/landing/ko/home.png" width="1206" height="2622" alt="AquaTick 홈: 오늘의 수분 진행률과 빠른 기록을 위한 저장 컵" fetchpriority="high">
-          </figure>
-          <p class="handwritten visual-note">한 잔씩<br>천천히.</p>
-          <img class="hero-cat" src="/aquatick/assets/landing/cat-hero.webp" width="1020" height="912" alt="" aria-hidden="true">
+        <div class="hero-footer">
+          <div class="hero-actions"><a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">App Store에서 받기<span aria-hidden="true">↗</span></a><a class="text-link" href="#features">어떻게 쓰나요?<span aria-hidden="true">↓</span></a></div>
+          <p class="hero-tagline">고양이와 함께하는 물 마시기 기록, AquaTick.</p>
+          <p class="device-line">iPhone · iOS 26.0+ <span aria-hidden="true">/</span> Apple Watch · watchOS 10.0+</p>
         </div>
       </div>
-      <img class="leaf-edge hero-leaf" src="/aquatick/assets/landing/leaf-edge.webp" width="992" height="1586" alt="" aria-hidden="true" loading="lazy">
     </section>
 
-    <section id="features" class="logging-section" aria-labelledby="logging-title">
-      <div class="section-inner story-row">
-        <figure class="cup-detail">
-          <img src="/aquatick/assets/landing/ko/home.png" width="1206" height="2622" loading="lazy" alt="홈 빠른 기록: 자주 쓰는 컵과 직접 입력">
-        </figure>
+    <section id="features" class="logging-section" aria-labelledby="logging-title" data-active-step="0">
+      <div class="story-stage section-inner">
         <div class="story-copy">
-          <h2 id="logging-title">늘 쓰는 컵.<br>가볍게 한 번 탭.</h2>
-          <p>아침 물잔, 책상 위 보틀. 자주 쓰는 컵을 저장해 두고 마신 물을 탭 한 번으로 기록해요.</p>
-          <p>자주 쓰는 컵은 최대 6개까지 즐겨찾기에 담아두세요. 원하는 양을 직접 입력해도 돼요.</p>
-          <a class="text-link" href="#screens">자세히 보기</a>
+          <p class="eyebrow">01 / 한 잔을 기록하는 방법</p>
+          <h2 id="logging-title">늘 쓰는 컵으로.<br>가볍게 한 번에.</h2>
+          <p class="story-intro">아침의 물잔도, 책상 위 보틀도.<br>마신 만큼 기록하고 일상을 이어가세요.</p>
+          <ol class="story-steps">
+            <li data-story-step="0"><span class="step-number" aria-hidden="true">01</span><div><h3>내 컵을 가까이</h3><p>자주 쓰는 컵을 최대 6개까지 즐겨찾기에 담아두세요.</p></div></li>
+            <li data-story-step="1"><span class="step-number" aria-hidden="true">02</span><div><h3>한 번 탭하면</h3><p>저장한 컵의 용량만큼 마신 물이 기록돼요.</p></div></li>
+            <li data-story-step="2"><span class="step-number" aria-hidden="true">03</span><div><h3>오늘의 한 잔이 쌓여요</h3><p>달라진 수분 진행률을 바로 확인하세요.</p></div></li>
+          </ol>
+          <a class="text-link demo-trigger" href="/aquatick/assets/landing/ko/quick-add.mp4">실제 앱 시연 보기</a>
         </div>
+        <figure class="logging-visual">
+          <div class="logging-captures">
+            <img class="logging-before" src="/aquatick/assets/landing/ko/home.png?v=20261004" width="1206" height="2622" loading="lazy" alt="200mL 기록 전, 1.55L가 표시된 물눈금 홈">
+            <img class="logging-after" src="/aquatick/assets/landing/ko/home-after.png" width="1206" height="2622" loading="lazy" alt="200mL 기록 후, 1.75L로 바뀐 물눈금 홈">
+          </div>
+          <figcaption>실제 앱 화면 · 예시 데이터</figcaption>
+        </figure>
+        <div class="story-progress" aria-hidden="true"><span></span></div>
       </div>
     </section>
 
-    <section class="watch-section" aria-labelledby="watch-title">
+    <section id="watch" class="watch-section" aria-labelledby="watch-title">
       <div class="section-inner watch-row">
-        <div class="story-copy">
-          <h2 id="watch-title">조금씩 기록.<br>손목에서 바로.</h2>
-          <p>휴대폰은 주머니에 두세요. Apple Watch에서 물을 더하고 하루를 계속하세요.</p>
-          <p class="watch-support">iPhone의 빠른 기록 위젯으로도 물을 더할 수 있어요. Live Activity와 Dynamic Island에서는 진행률을 확인할 수 있어요.</p>
-        </div>
-        <figure class="watch-shot">
-          <img src="/aquatick/assets/landing/en/watch.png" width="416" height="496" loading="lazy" alt="AquaTick Apple Watch: 수분 진행률과 빠른 기록 버튼">
-          <figcaption class="handwritten">작은 한 잔이<br>쌓여가요.<br><small>화면은 영어로 표시됩니다.</small></figcaption>
-        </figure>
+        <div class="story-copy"><p class="eyebrow">02 / APPLE WATCH</p><h2 id="watch-title">손목에서도,<br>바로 기록.</h2><p>휴대폰은 주머니에 두세요.<br>Apple Watch에서 물을 더하고,<br>다시 나의 하루로.</p></div>
+        <figure class="watch-shot"><img src="/aquatick/assets/landing/ko/watch.png" width="416" height="496" loading="lazy" alt="물눈금 Apple Watch의 물 기록 화면"><figcaption>실제 앱 화면 · 예시 데이터</figcaption></figure>
+        <div class="watch-support"><div><h3>홈 화면에서 한 번에</h3><p>빠른 기록 위젯으로도 물을 더할 수 있어요.</p></div><div><h3>진행률은 한눈에</h3><p>Live Activity와 Dynamic Island에서 오늘의 진행률을 확인하세요.</p></div></div>
       </div>
-      <img class="leaf-edge watch-leaf" src="/aquatick/assets/landing/leaf-edge.webp" width="992" height="1586" alt="" aria-hidden="true" loading="lazy">
     </section>
 
     <section id="screens" class="screens-section" aria-labelledby="screens-title">
       <div class="section-inner">
-        <div class="section-heading">
-          <h2 id="screens-title">매일의 습관에 스며들어요.</h2>
-          <p>좋아하는 컵을 위한 자리.<br>오늘의 흐름을 돌아보는 시간.</p>
+        <div class="section-heading"><div><p class="eyebrow">03 / 나에게 맞는 기록</p><h2 id="screens-title">내 컵으로 기록하고.<br>나의 흐름을 알아가요.</h2></div>
+          <div class="screen-tabs" aria-label="03 / 나에게 맞는 기록" hidden>
+            <button type="button" id="screen-tab-0" data-screen-tab="0" aria-controls="screen-panel-0">내 컵</button>
+            <button type="button" id="screen-tab-1" data-screen-tab="1" aria-controls="screen-panel-1">기록 돌아보기</button>
+          </div>
         </div>
         <div class="screen-grid">
-          <figure class="screen-story">
-            <a href="/aquatick/assets/landing/en/vault.png" aria-label="컵 보관함 스크린샷 전체 보기"><img src="/aquatick/assets/landing/en/vault.png" width="1206" height="2622" loading="lazy" alt="저장한 컵, 용량, 즐겨찾기가 있는 컵 보관함"></a>
-            <figcaption><h3>내 컵 같은 컵.</h3><p>매일 쓰는 컵과 보틀을 저장하세요. 즐겨찾기라면 다음 한 잔도 바로 기록할 수 있어요.</p><span class="screen-caption">이미지를 탭하면 전체 화면으로 볼 수 있어요. 화면은 영어로 표시됩니다.</span></figcaption>
+          <figure class="screen-story" id="screen-panel-0" data-screen-panel="0">
+            <a href="/aquatick/assets/landing/ko/vault.png?v=20261004" aria-label="사진과 용량으로 정리된 물눈금 컵 보관함"><img src="/aquatick/assets/landing/ko/vault.png?v=20261004" width="1206" height="2622" loading="lazy" alt="사진과 용량으로 정리된 물눈금 컵 보관함"></a>
+            <figcaption><span class="panel-number" aria-hidden="true">01</span><h3>매일 쓰는 컵 그대로.</h3><p>컵과 보틀을 사진, 이름, 용량과 함께 저장하세요. 내 컵이 준비되어 있으니 다음 한 잔도 간편해요.</p><a class="text-link" href="/aquatick/assets/landing/ko/vault.png?v=20261004">원본 화면 보기</a><span class="screen-caption">실제 앱 화면 · 예시 데이터</span></figcaption>
           </figure>
-          <figure class="screen-story">
-            <a href="/aquatick/assets/landing/en/history.png" aria-label="수분 기록 스크린샷 전체 보기"><img src="/aquatick/assets/landing/en/history.png" width="1206" height="2622" loading="lazy" alt="달력과 일별 기록이 있는 수분 기록"></a>
-            <figcaption><h3>습관의 흐름을 살펴봐요.</h3><p>지난 기록을 돌아보고, 나만의 리듬을 알아가며 다음 날도 가볍게 이어가요.</p><span class="screen-caption">이미지를 탭하면 전체 화면으로 볼 수 있어요. 화면은 영어로 표시됩니다.</span></figcaption>
+          <figure class="screen-story" id="screen-panel-1" data-screen-panel="1">
+            <a href="/aquatick/assets/landing/ko/history.png?v=20261004" aria-label="달력과 날짜별 수분 기록이 있는 물눈금 히스토리"><img src="/aquatick/assets/landing/ko/history.png?v=20261004" width="1206" height="2622" loading="lazy" alt="달력과 날짜별 수분 기록이 있는 물눈금 히스토리"></a>
+            <figcaption><span class="panel-number" aria-hidden="true">02</span><h3>한 잔이 모여,<br>나만의 흐름으로.</h3><p>날짜별 기록을 돌아보고, 하루하루 이어지는 수분 습관을 확인하세요. 완벽한 하루보다 꾸준한 한 잔으로.</p><a class="text-link" href="/aquatick/assets/landing/ko/history.png?v=20261004">원본 화면 보기</a><span class="screen-caption">실제 앱 화면 · 예시 데이터</span></figcaption>
           </figure>
         </div>
       </div>
@@ -216,7 +219,7 @@
 
     <section id="privacy" class="privacy-section" aria-labelledby="privacy-title">
       <div class="section-inner privacy-layout">
-        <div class="privacy-copy">
+        <div class="privacy-copy"><p class="eyebrow">04 / 나의 선택</p>
           <h2 id="privacy-title">나의 습관.<br>나의 선택.</h2>
           <p class="privacy-lead">계정 없이 시작하세요. Apple Health는 원할 때만 연결할 수 있어요.</p>
           <dl class="privacy-facts">
@@ -279,17 +282,22 @@
     </section>
 
     <section class="closing-section" aria-labelledby="closing-title">
-      <div class="section-inner closing-layout"><h2 id="closing-title">다음 한 잔부터 시작하세요.</h2><a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">App Store에서 받기</a></div>
+      <div class="section-inner closing-layout"><img src="/aquatick/assets/landing/cat-hero.webp" width="1020" height="912" loading="lazy" alt="" aria-hidden="true"><p class="eyebrow">매일, 작은 나를 돌보는 일.</p><h2 id="closing-title">다음 한 잔부터<br>시작하세요.</h2><a class="btn btn-primary" href="https://apps.apple.com/app/aquatick/id6762686013">App Store에서 받기</a><p>iPhone · Apple Watch. 고양이와 함께, 한 잔씩.</p></div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="section-inner footer-layout">
-      <a class="brand" href="/aquatick/ko/"><img src="/aquatick/assets/aquatick-app-icon-128.png" width="128" height="128" alt=""><span>AquaTick</span></a>
+      <a class="brand" href="/aquatick/ko/"><img src="/aquatick/assets/aquatick-app-icon-128.png" width="128" height="128" alt=""><span>물눈금</span></a>
       <nav aria-label="푸터"><a href="/aquatick/ko/support/">지원</a><a href="/aquatick/privacy/">개인정보</a><a href="/aquatick/ko/terms/">이용 약관</a><a href="#pricing">Pro</a></nav>
       <p>© 2026 <a href="https://sparkish-xyz.github.io/">Sparkish</a></p>
     </div>
   </footer>
-  <script src="/aquatick/assets/aquatick-site.js"></script>
+  <dialog class="demo-dialog" aria-labelledby="demo-title">
+    <div class="demo-dialog-heading"><h2 id="demo-title">한 잔을 기록하는 순간</h2><button type="button" class="demo-close">닫기</button></div>
+    <video controls playsinline preload="none" poster="/aquatick/assets/landing/ko/home.png?v=20261004" aria-label="한 잔을 기록하는 순간"></video>
+    <p>실제 앱 화면 · 예시 데이터</p>
+  </dialog>
+  <script src="/aquatick/assets/aquatick-site.js?v=20261004b" defer></script>
 </body>
 </html>

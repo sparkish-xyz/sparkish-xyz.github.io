@@ -283,3 +283,283 @@ html[lang="ko"] .handwritten,html[lang="ja"] .handwritten { font-family: var(--f
   html { scroll-behavior: auto; }
   *,*::before,*::after { animation: none !important; transition: none !important; }
 }
+/* Hallmark · modern-minimal · product story · mint / ink · DESIGN.md
+ * Public references: Apple product scale; Dia warmth and use-case selection.
+ * Pre-emit critique: P5 H5 E4 S5 R4 V5. Real native captures; decorative water only. */
+.aqua-story {
+  --paper: #fafbf8;
+  --cream: #ffffff;
+  --ink: #123c3a;
+  --muted: #57716c;
+  --water-accent: #087f78;
+  --accent-hover: #06655f;
+  --mint-soft: #eaf3ec;
+  --hero-mint: #b2dece;
+  --gallery-blue: #eaf0f4;
+  --shadow-nav: 0 8px 32px rgb(14 59 50 / 8%);
+  --line: #d6e2da;
+  --night: #0b242a;
+  --night-muted: #b1c9c6;
+  --night-line: #365055;
+  --mint-bright: #bde9d3;
+  --glass: rgb(250 251 248 / 92%);
+  --veil: rgb(8 30 34 / 72%);
+  --shadow-product: 0 24px 70px rgb(14 59 50 / 14%);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --section-space: clamp(80px, 10vw, 144px);
+  --page-pad: clamp(22px, 5vw, 80px);
+  background: var(--paper);
+}
+.aqua-story [hidden] { display: none !important; }
+.aqua-story h1,.aqua-story h2,.aqua-story h3 { text-wrap: balance; }
+.aqua-story .eyebrow { color: var(--water-accent); font-size: 11px; font-weight: 600; letter-spacing: .14em; line-height: 1.5; margin: 0 0 24px; }
+/* Floating product navigation, kept clear of the scroll scenes. */
+.aqua-story .site-header { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); width: min(680px, calc(100% - 40px)); padding: 0; border: 0; border-radius: 99px; background: transparent; }
+.aqua-story .header-shell { min-height: 60px; padding: 6px 8px 6px 18px; gap: 24px; border: 1px solid var(--line); border-radius: inherit; background: var(--glass); backdrop-filter: blur(18px); box-shadow: var(--shadow-nav); }
+.aqua-story .brand { font-size: 20px; letter-spacing: -.05em; gap: 9px; }
+.aqua-story .brand img { width: 30px; height: 30px; border-radius: 8px; }
+.aqua-story .nav-main { font-size: 12px; gap: 22px; }
+.aqua-story .header-actions { gap: 4px; }
+.aqua-story .nav-menu summary { height: 40px; min-width: 44px; padding-inline: 10px; border: 0; font-size: 12px; }
+.aqua-story .btn { box-shadow: none; min-height: 52px; font-size: 14px; padding: 12px 25px; }
+.aqua-story .header-cta { min-height: 40px; font-size: 12px; padding: 10px 22px; background: var(--ink); }
+.aqua-story .text-link { font-size: 14px; }
+/* A restrained headline leads into the actual app captures, with no backdrop lettering. */
+.aqua-story .hero { background: var(--hero-mint); overflow: visible; }
+.hero-stage { position: relative; isolation: isolate; overflow: clip; background: var(--hero-mint); }
+.hero-water { position: absolute; inset: 0; width: 100%; height: 120%; object-fit: cover; object-position: center bottom; opacity: .3; z-index: -1; }
+.aqua-story .hero-inner { display: grid; grid-template-columns: minmax(0, 1fr); align-content: start; align-items: start; width: 100%; max-width: none; height: max(600px, calc(100svh - 148px)); padding: 132px var(--page-pad) 0; gap: 0; }
+.aqua-story .hero-copy { text-align: center; padding: 0; position: relative; z-index: 1; }
+.aqua-story .hero #hero-title { max-width: 900px; margin: 0 auto; font-size: clamp(44px, 4.4vw, 64px); line-height: 1.16; font-weight: 600; letter-spacing: -.05em; }
+.aqua-story .hero-visual { position: absolute; z-index: 2; top: 340px; left: 50%; width: min(1040px, 90vw); height: 850px; margin: 0; padding: 0; transform: translateX(-50%); perspective: 1400px; }
+.aqua-story .hero-phone { position: relative; z-index: 3; width: clamp(300px, 28vw, 380px); max-width: none; border-radius: 30px; box-shadow: var(--shadow-product); border: 1px solid var(--line); margin: 0 auto; }
+.aqua-story .hero-phone img { width: 100%; height: auto; }
+.hero-satellite { position: absolute; top: 65px; width: clamp(260px, 24vw, 325px); border: 1px solid var(--line); border-radius: 26px; overflow: clip; box-shadow: var(--shadow-product); }
+.hero-satellite img { width: 100%; height: auto; }
+.hero-vault { left: 3%; transform: rotate(-10deg); }
+.hero-history { right: 3%; transform: rotate(10deg); }
+.hero-footer { position: relative; z-index: 3; background: var(--paper); text-align: center; padding: 12px var(--page-pad) 26px; }
+.hero-footer::before { content: ""; position: absolute; z-index: -1; top: -48px; left: -10%; width: 120%; height: 96px; border-radius: 50% 50% 0 0; background: var(--paper); }
+.aqua-story .hero-actions { justify-content: center; gap: 26px; }
+.aqua-story .hero-actions .btn { min-width: 255px; gap: 24px; background: var(--ink); }
+.aqua-story .hero-actions .btn:hover { background: var(--water-accent); }
+.aqua-story .hero-actions .text-link { gap: 16px; padding: 8px 0; border: 0; background: none; min-height: 48px; text-decoration: none; }
+.aqua-story .hero-tagline { max-width: none; margin: 17px 0 0; font-size: 13px; line-height: 1.5; color: var(--ink); }
+.aqua-story .device-line { margin: 5px 0 0; color: var(--muted); font-size: 9px; }
+.device-line span { margin-inline: 10px; }
+.aqua-story .logging-section { background: var(--paper); padding: var(--section-space) 0; }
+.story-stage { position: relative; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 90px; align-items: center; }
+.aqua-story .story-copy { max-width: 570px; }
+.aqua-story .story-copy h2 { font-size: clamp(42px, 4.7vw, 67px); line-height: 1.15; letter-spacing: -.05em; margin-bottom: 22px; }
+.story-intro { font-size: 17px; line-height: 1.65; }
+.story-steps { list-style: none; padding: 0; margin: 28px 0 20px; }
+.story-steps li { display: flex; gap: 18px; padding: 17px 0; border-top: 1px solid var(--line); }
+.step-number { font-size: 12px; padding-top: 3px; color: var(--water-accent); font-variant-numeric: tabular-nums; }
+.aqua-story .story-steps h3 { font-size: 18px; margin: 0 0 6px; letter-spacing: -.03em; }
+.aqua-story .story-steps p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.logging-visual { justify-self: center; width: min(100%, 350px); }
+.logging-captures { position: relative; border-radius: 23px; border: 1px solid var(--line); overflow: clip; box-shadow: var(--shadow-product); }
+.logging-captures img { width: 100%; height: auto; }
+.logging-after { position: absolute; inset: 0; opacity: 0; }
+.logging-visual figcaption { margin-top: 18px; color: var(--muted); text-align: center; font-size: 10px; }
+.story-progress { display: none; }
+.aqua-story .watch-section { background: var(--night); color: var(--cream); padding: 150px 0 90px; }
+.aqua-story .watch-row { gap: 70px; }
+.aqua-story .watch-section .eyebrow { color: var(--mint-bright); }
+.aqua-story .watch-section h2 { font-size: clamp(60px, 7vw, 100px); line-height: 1.08; }
+.aqua-story .watch-section .story-copy > p:not(.eyebrow) { color: var(--night-muted); font-size: 19px; line-height: 1.8; margin-bottom: 0; }
+.aqua-story .watch-shot { display: flex; flex-direction: column; gap: 26px; align-items: center; }
+.aqua-story .watch-shot img { width: min(100%, 400px); max-width: 100%; height: auto; border-radius: 40px; box-shadow: none; }
+.aqua-story .watch-shot figcaption { transform: none; text-align: center; font: 11px var(--font-body); color: var(--night-muted); }
+.aqua-story .watch-support { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: none; gap: 70px; padding-top: 32px; margin-top: 12px; border-top: 1px solid var(--night-line); }
+.watch-support h3 { font-size: 18px; margin-bottom: 12px; }
+.watch-support p { color: var(--night-muted); font-size: 14px; line-height: 1.7; max-width: 420px; margin: 0; }
+.aqua-story .screens-section { background: var(--cream); padding-block: var(--section-space); }
+.aqua-story .section-heading { gap: 40px; margin-bottom: 48px; }
+.aqua-story .section-heading h2 { font-size: clamp(40px, 4.8vw, 68px); max-width: 830px; line-height: 1.18; }
+.aqua-story .section-heading .eyebrow { margin-bottom: 22px; }
+.screen-tabs { display: flex; gap: 4px; padding: 5px; flex-shrink: 0; border-radius: 99px; background: var(--paper); border: 1px solid var(--line); }
+.screen-tabs button { border: 0; background: transparent; color: var(--muted); border-radius: 99px; min-height: 43px; padding: 10px 20px; font: 500 13px var(--font-body); white-space: nowrap; cursor: pointer; transition: background-color .2s, color .2s; }
+.screen-tabs button[aria-selected="true"] { color: var(--cream); background: var(--ink); }
+.aqua-story .screen-grid { display: block; }
+.screen-grid.is-enhanced .screen-story:not([hidden]) { animation: aqua-panel-in .4s var(--ease-out) both; }
+@keyframes aqua-panel-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+.aqua-story .screen-story { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); height: 690px; overflow: clip; padding: 70px 80px 0; background: var(--mint-soft); border-radius: 32px; align-items: start; gap: 95px; max-width: none; margin-bottom: 24px; }
+.aqua-story .screen-story:nth-child(2) { background: var(--gallery-blue); }
+.aqua-story .screen-story > a { width: 370px; max-width: 100%; margin: 0 auto; border-radius: 28px; box-shadow: var(--shadow-product); transform: rotate(-5deg); transform-origin: center top; }
+.aqua-story .screen-story:nth-child(2) > a { transform: rotate(5deg); }
+.aqua-story .screen-story figcaption { min-width: 0; align-self: center; padding-bottom: 70px; }
+.panel-number { display: block; font-size: 12px; letter-spacing: .12em; color: var(--water-accent); margin-bottom: 36px; }
+.aqua-story .screen-story h3 { font-size: clamp(34px, 3.7vw, 54px); line-height: 1.22; letter-spacing: -.04em; margin-bottom: 22px; }
+.aqua-story .screen-story p { font-size: 17px; line-height: 1.8; max-width: 390px; margin-bottom: 18px; }
+.aqua-story .screen-caption { font-size: 10px; margin-top: 16px; }
+.aqua-story .privacy-section { padding-block: var(--section-space); background: var(--paper); }
+.aqua-story .privacy-copy h2 { font-size: clamp(40px, 4.7vw, 66px); line-height: 1.13; }
+.aqua-story .privacy-lead { font-size: 18px; }
+.aqua-story .privacy-layout { gap: 64px; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); }
+.aqua-story .pricing-section { padding-block: 70px; border-bottom: 0; }
+.aqua-story .pricing-layout h2 { font-size: 38px; }
+.aqua-story .plan-comparison { margin-top: 48px; }
+.aqua-story .plan-comparison table { font-size: 14px; }
+.aqua-story .plan-comparison th,.aqua-story .plan-comparison td { padding-block: 20px; }
+.aqua-story .product-reference { background: var(--cream); padding-block: 54px; }
+.aqua-story .faq-section { background: var(--cream); padding-block: 64px 100px; }
+.aqua-story .faq-section .section-inner { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 70px; }
+.aqua-story .faq-section h2 { font-size: 36px; line-height: 1.25; }
+.aqua-story .faq-list dt { font-size: 16px; }
+.aqua-story .faq-list dd { font-size: 14px; }
+.aqua-story .closing-section { padding: 74px 0 70px; background: var(--mint-soft); }
+.aqua-story .closing-layout { display: flex; flex-direction: column; text-align: center; align-items: center; gap: 0; }
+.closing-layout > img { width: 125px; margin: 0 auto 26px; mix-blend-mode: multiply; }
+.aqua-story .closing-layout .eyebrow { margin-bottom: 18px; font-size: 11px; }
+.aqua-story .closing-layout h2 { font-size: clamp(46px, 5.7vw, 80px); line-height: 1.14; margin-bottom: 30px; }
+.aqua-story .closing-layout > p:last-child { color: var(--muted); font-size: 11px; margin: 18px 0 0; }
+.aqua-story .site-footer { background: var(--paper); }
+.aqua-story .site-footer .brand { font-size: 20px; }
+.demo-dialog { border: 1px solid var(--line); border-radius: 22px; background: var(--paper); color: var(--ink); padding: 22px; max-width: min(94vw, 510px); width: 510px; max-height: 92svh; }
+.demo-dialog::backdrop { background: var(--veil); backdrop-filter: blur(8px); }
+.demo-dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 16px; }
+.demo-dialog-heading h2 { font-size: 18px; line-height: 1.4; letter-spacing: -.03em; }
+.demo-close { cursor: pointer; min-height: 44px; padding: 8px 14px; border: 1px solid var(--line); background: var(--cream); color: var(--ink); border-radius: 99px; font: 13px var(--font-body); white-space: nowrap; }
+.demo-dialog video { display: block; max-width: 100%; width: auto; height: min(67svh, 650px); aspect-ratio: 1206 / 2622; margin: auto; border-radius: 14px; background: var(--night); }
+.demo-dialog > p { font-size: 11px; text-align: center; color: var(--muted); margin: 16px 0 0; }
+@media (min-width: 900px) and (min-height: 760px) and (prefers-reduced-motion: no-preference) {
+  .aqua-story .hero.motion-hero { height: 180svh; }
+  .motion-hero .hero-stage { position: sticky; top: 0; }
+  .aqua-story .logging-section.motion-story { height: 230svh; padding: 0; }
+  .motion-story .story-stage { position: sticky; top: 76px; min-height: calc(100svh - 76px); padding-block: 32px 42px; }
+  .motion-story .story-copy h2 { font-size: clamp(42px, 4.5vw, 64px); }
+  .motion-story .eyebrow { margin-bottom: 18px; }
+  .motion-story .story-intro { margin-bottom: 0; }
+  .motion-story .story-steps { margin-top: 24px; }
+  .motion-story .story-steps li { opacity: 1; transition: border-color .3s; }
+  .motion-story .story-steps li h3 { color: var(--muted); }
+  .motion-story .story-steps li.is-active { border-color: var(--water-accent); }
+  .motion-story .story-steps li.is-active h3 { color: var(--water-accent); }
+  .motion-story .logging-visual { width: min(100%, 520px); }
+  .motion-story .logging-captures { height: min(61svh, 570px); border-radius: 28px; }
+  .motion-story .logging-captures img { position: absolute; top: 0; left: 0; }
+  .motion-story .logging-visual figcaption { margin-top: 24px; }
+  .motion-story .story-progress { display: block; position: absolute; bottom: 20px; left: 0; width: 100%; height: 2px; background: var(--line); }
+  .story-progress span { display: block; height: 100%; background: var(--water-accent); transform: scaleX(0); transform-origin: left; }
+}
+@media (max-width: 1100px) {
+  .aqua-story .screen-story { padding: 60px 50px 0; gap: 60px; height: 620px; }
+  .aqua-story .section-heading { flex-direction: column; align-items: start; gap: 28px; }
+}
+@media (max-width: 899px) {
+  .aqua-story .hero-inner { height: 680px; padding-top: 130px; }
+  .aqua-story .hero #hero-title { font-size: 48px; }
+  .aqua-story .hero-visual { top: 300px; width: 90vw; }
+  .aqua-story .hero-phone { width: 280px; }
+  .hero-satellite { width: 230px; }
+  .hero-vault { left: -5%; }
+  .hero-history { right: -5%; }
+  .story-stage { gap: 40px; }
+  .aqua-story .story-copy h2 { font-size: 42px; }
+  .logging-visual { width: min(100%, 265px); }
+  .story-steps li { gap: 12px; }
+  .aqua-story .watch-section { padding-top: 80px; }
+  .aqua-story .watch-row { gap: 45px; }
+  .aqua-story .watch-section h2 { font-size: 48px; }
+  .aqua-story .watch-shot img { width: 250px; }
+  .aqua-story .watch-support { gap: 36px; }
+  .aqua-story .screen-story { padding: 45px 38px 0; gap: 40px; height: 600px; }
+  .aqua-story .screen-story h3 { font-size: 34px; }
+  .aqua-story .screen-story p { font-size: 15px; }
+  .aqua-story .privacy-layout { gap: 30px; }
+  .aqua-story .faq-section .section-inner { gap: 35px; }
+}
+@media (max-width: 600px) {
+  .aqua-story { --page-pad: 22px; --section-space: 74px; }
+  .aqua-story .site-header { top: 12px; width: calc(100% - 24px); }
+  .aqua-story .header-shell { min-height: 52px; padding: 5px 6px 5px 13px; gap: 8px; }
+  .aqua-story .brand { font-size: 18px; gap: 7px; }
+  .aqua-story .brand img { width: 27px; height: 27px; }
+  .aqua-story .header-cta { font-size: 11px; min-height: 36px; padding: 8px 14px; }
+  .aqua-story .nav-menu summary { font-size: 11px; min-width: 40px; padding-inline: 8px; }
+  .aqua-story .hero-inner { height: 565px; padding: 111px 16px 0; }
+  .aqua-story .hero #hero-title { font-size: clamp(28px, 8.5vw, 38px); line-height: 1.2; }
+  html[lang="ja"] .aqua-story .hero #hero-title { font-size: clamp(25px, 7.6vw, 34px); }
+  .aqua-story .hero-visual { top: 246px; width: 100%; height: 600px; }
+  .aqua-story .hero-phone { width: 215px; border-radius: 20px; }
+  .hero-satellite { width: 175px; top: 47px; border-radius: 18px; }
+  .hero-vault { left: calc(50% - 258px); }
+  .hero-history { right: calc(50% - 258px); }
+  .hero-footer { padding: 2px 20px 26px; }
+  .hero-footer::before { top: -28px; height: 56px; }
+  .aqua-story .hero-actions { flex-direction: column; align-items: center; gap: 2px; }
+  .aqua-story .hero-actions .btn { width: auto; min-width: 245px; max-width: 100%; min-height: 49px; padding: 11px 23px; font-size: 13px; }
+  .aqua-story .hero-actions .text-link { font-size: 12px; min-height: 40px; padding: 8px 0; }
+  .aqua-story .hero-tagline { font-size: 11px; margin-top: 10px; }
+  .aqua-story .device-line { font-size: 8px; margin-top: 5px; }
+  .device-line span { margin-inline: 2px; }
+  .story-stage { grid-template-columns: minmax(0, 1fr); gap: 42px; }
+  .aqua-story .eyebrow { font-size: 9px; margin-bottom: 22px; }
+  .aqua-story .story-copy h2 { font-size: 39px; }
+  .story-intro { font-size: 15px; }
+  .aqua-story .story-steps h3 { font-size: 16px; }
+  .aqua-story .story-steps p { font-size: 12px; }
+  .logging-visual { width: 238px; }
+  .aqua-story .watch-row { grid-template-columns: minmax(0, 1fr); gap: 42px; }
+  .aqua-story .watch-section { padding: 70px 0 55px; }
+  .aqua-story .watch-section h2 { font-size: 47px; }
+  .aqua-story .watch-section .story-copy > p:not(.eyebrow) { font-size: 16px; }
+  .aqua-story .watch-shot { flex-direction: column; gap: 20px; }
+  .aqua-story .watch-shot img { width: 240px; max-width: 100%; border-radius: 32px; }
+  .aqua-story .watch-shot figcaption { max-width: none; font-size: 10px; }
+  .aqua-story .watch-support { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-top: 30px; }
+  .watch-support h3 { font-size: 17px; }
+  .watch-support p { font-size: 13px; }
+  .aqua-story .section-heading { margin-bottom: 30px; }
+  .aqua-story .section-heading h2 { font-size: 36px; }
+  .screen-tabs { margin-top: 26px; width: fit-content; max-width: 100%; }
+  .screen-tabs button { font-size: 12px; padding-inline: 18px; }
+  .aqua-story .screen-story { display: flex; flex-direction: column-reverse; gap: 34px; height: auto; padding: 32px 28px 0; border-radius: 24px; }
+  .aqua-story .screen-story figcaption { padding-bottom: 0; align-self: start; }
+  .panel-number { margin-bottom: 20px; }
+  .aqua-story .screen-story h3 { font-size: 30px; margin-bottom: 16px; }
+  .aqua-story .screen-story p { font-size: 14px; line-height: 1.7; }
+  .aqua-story .screen-story > a { width: 240px; margin-bottom: -140px; transform: none; }
+  .aqua-story .screen-story:nth-child(2) > a { transform: none; }
+  .aqua-story .screen-story .text-link { font-size: 12px; }
+  .aqua-story .privacy-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .aqua-story .privacy-copy h2 { font-size: 40px; }
+  .aqua-story .privacy-lead { font-size: 16px; }
+  .aqua-story .privacy-facts { gap: 18px; }
+  .aqua-story .resting-cat { width: 230px; }
+  .aqua-story .pricing-section { padding-block: 55px; }
+  .aqua-story .pricing-layout h2 { font-size: 32px; }
+  .aqua-story .pricing-layout p { font-size: 14px; }
+  .aqua-story .plan-comparison { margin-top: 28px; }
+  .aqua-story .plan-comparison table { font-size: 12px; }
+  .aqua-story .plan-comparison th,.aqua-story .plan-comparison td { padding-block: 16px; }
+  .aqua-story .faq-section .section-inner { display: block; }
+  .aqua-story .faq-section h2 { font-size: 30px; margin-bottom: 28px; }
+  .aqua-story .closing-section { padding-block: 60px; }
+  .aqua-story .closing-layout h2 { font-size: 43px; }
+  .aqua-story .closing-layout .btn { font-size: 13px; }
+  .closing-layout > img { width: 100px; }
+  .demo-dialog { padding: 16px; }
+  .demo-dialog-heading h2 { font-size: 15px; }
+}
+@media (max-width: 360px) {
+  .aqua-story { --page-pad: 18px; }
+  .aqua-story .hero-inner { height: 510px; padding-top: 102px; }
+  .aqua-story .hero-visual { top: 220px; }
+  .aqua-story .hero-phone { width: 195px; }
+  .hero-satellite { width: 160px; }
+  .hero-vault { left: calc(50% - 231px); }
+  .hero-history { right: calc(50% - 231px); }
+  .aqua-story .device-line { font-size: 8px; }
+  .aqua-story .story-copy h2 { font-size: 35px; }
+  .aqua-story .section-heading h2 { font-size: 32px; }
+  .aqua-story .screen-story { padding-inline: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aqua-story .logging-section { height: auto; }
+  .story-stage { position: relative; top: auto; }
+  .aqua-story .story-steps li { opacity: 1; }
+  .hero-water,.hero-phone,.watch-shot { transform: none !important; }
+  .hero-satellite { transform: none; }
+}

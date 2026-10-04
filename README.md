@@ -74,6 +74,12 @@ The story follows private running records → anonymous Crew growth → Cheer an
 
 Edit `site-src/templates/kinetto/`, run `npm run generate`, then `npm run check`. Safari was used for this delivery’s desktop/mobile visual review, locale navigation, and native menu/FAQ keyboard interaction. No client JavaScript or new dependencies were added.
 
+### AquaTick motion landing page
+
+The October 4 redesign combines a restrained two-line headline, overlapping native app captures, a floating navigation capsule, a native-scroll logging close-up, a dark Watch chapter, and keyboard-accessible Cup Vault / History tabs. The desktop hero stays in view while the headline recedes and the captures spread and enlarge; its curved foreground keeps the download action visible. It uses real localized screen captures and user-requested screen recordings. Smaller viewports and reduced-motion users get a regular vertical story. Static HTML remains complete without JavaScript.
+
+Author new styles in `site-src/styles/aquatick/07-scroll-story.css`, behavior in `site-src/scripts/aquatick/05-scroll-story.js`, and content in the three existing localized templates. GSAP 3.14.2 is pinned and served locally from the JS manifest; update instructions are in `site-src/scripts/aquatick/vendor/NOTICE.md`. Run `npm run build:css`, `npm run build:js`, `npm run generate`, `npm run check`, and `npm test`. The asset provenance is in `aquatick/assets/landing/README.md`.
+
 ### AquaTick language preference
 
 `localStorage.aquaLangPref` (`ko` | `en` | `ja`) is a **UX-only**, same-origin preference for the language chooser. It is not authentication and can be changed by any script on this origin.
