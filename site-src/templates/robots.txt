@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap: Sparkish hub + AquaTick pages under /aquatick/
+# Sitemap: Sparkish app pages, support documents and product guides
 Sitemap: https://sparkish-xyz.github.io/sitemap.xml

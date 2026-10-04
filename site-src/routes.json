@@ -47,5 +47,13 @@
     "alarmcrew/terms/index.html",
     "alarmcrew/support/index.html",
     "alarmcrew/delete-account/index.html"
+  ],
+  "guides": [
+    "aquatick/ko/guides/apple-watch/index.html",
+    "aquatick/en/guides/apple-watch/index.html",
+    "aquatick/ko/guides/free-and-pro/index.html",
+    "alarmcrew/guides/crew-invites/index.html",
+    "alarmcrew/en/guides/crew-invites/index.html",
+    "alarmcrew/guides/friends-and-crews/index.html"
   ]
 }

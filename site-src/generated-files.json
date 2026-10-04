@@ -23,13 +23,15 @@
     "alarmcrew/ja/index.html",
     "alarmcrew/assets/alarmcrew.css",
     "alarmcrew/assets/alarmcrew.js",
-    "legal/assets/legal.css"
+    "legal/assets/legal.css",
+    "guides/assets/guides.css"
   ],
   "staticAssetDirectories": [
     "assets",
     "aquatick/assets",
     "kinetto/assets",
-    "alarmcrew/assets"
+    "alarmcrew/assets",
+    "guides/assets"
   ],
   "rootOnlyFiles": [
     "index.html",

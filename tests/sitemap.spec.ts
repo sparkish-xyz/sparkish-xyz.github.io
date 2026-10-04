@@ -59,6 +59,8 @@ test.describe('sitemap route contracts', () => {
       `${BASE_URL}/alarmcrew/`, `${BASE_URL}/alarmcrew/en/`, `${BASE_URL}/alarmcrew/ja/`,
       ...(JSON.parse(readFileSync('site-src/routes.json', 'utf8')) as { legal: string[] }).legal
         .map(file => `${BASE_URL}/${file.replace(/index\.html$/, '')}`),
+      ...(JSON.parse(readFileSync('site-src/routes.json', 'utf8')) as { guides: string[] }).guides
+        .map(file => `${BASE_URL}/${file.replace(/index\.html$/, '')}`),
     ]);
   });
 

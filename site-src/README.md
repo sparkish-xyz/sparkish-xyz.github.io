@@ -33,6 +33,31 @@ The App Store's older five-favorite description needs a separate metadata update
 this repository cannot change that listing. Search Console indexing and real-user
 Core Web Vitals must be checked after publishing; local tests do not measure them.
 
+## Product guides and search content
+
+`guides/documents.json` and `guides/content/` own the six authored product guides
+(four Korean articles and two English equivalents). `tools/render-guides.cjs`
+renders them through the existing generator using the shared document layout.
+The stylesheet is in `templates/guides/assets/guides.css`; it also styles the
+scoped product facts and guide navigation on all three AquaTick/AlarmCrew landings.
+Register new guide routes in `routes.json`, `templates/sitemap.xml` and
+`templates/llms.txt`. Add language alternates only for authored equivalents.
+
+The October 4, 2026 guides use public product facts already verified for the
+landings. AlarmCrew invite sharing and join steps were also checked against its
+iOS `CrewDetailViewController.swift` and `AlarmListViewController.swift`. Real
+screens remain clearly labelled as examples; there are no invented ratings,
+reviews, subscription prices or unreleased Android downloads.
+
+Run `npm run generate`, `npm run check` and `npm test` after editing.
+`tests/guides.spec.ts` covers static reading with JavaScript disabled, metadata,
+language alternates, working links/media, product facts and mobile layout.
+
+The crawl policy already allows all bots. Search/AI citations require external
+measurement after publishing; this site does not claim crawler visits or AI
+recommendations were observed. No analytics or third-party requests were added by
+this content update.
+
 ## AlarmCrew
 
 Korean is canonical at `/alarmcrew/`; English and Japanese live under `/alarmcrew/en/` and `/alarmcrew/ja/`. Source snapshots are in `templates/alarmcrew/`, including product CSS/JS. The generator copies these through `generated-files.json`. Real screens and generated decorative artwork are in `alarmcrew/assets/` with provenance beside them.

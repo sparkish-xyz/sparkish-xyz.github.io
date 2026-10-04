@@ -2,7 +2,7 @@
 
 > Sparkish makes playful apps for everyday habits: AquaTick, a cat-themed hydration tracker; KINETTO, a running app where real runs grow an anonymous Crew; and AlarmCrew, an alarm app for shared mornings with friends.
 
-Use the localized landing page that matches the user's language. The product descriptions below reflect the public pages and should be preferred over legacy routes or asset mirrors.
+Localized landing pages provide product information in English, Korean and Japanese. Product guides below explain supported features and their limits.
 
 Important product facts:
 - AquaTick logs water from Home Quick Add, Quick Add widgets and Apple Watch. Live Activity and Dynamic Island show progress only; they do not record intake.
@@ -35,7 +35,16 @@ Important product facts:
 - [AlarmCrew Japanese landing page](https://sparkish-xyz.github.io/alarmcrew/ja/): Japanese product overview and release status.
 - [AlarmCrew support](https://sparkish-xyz.github.io/alarmcrew/support/): Support, privacy, terms, and account deletion.
 
-As of October 1, 2026, the user confirmed AlarmCrew has passed App Store review and is publicly released on iOS. Download: https://apps.apple.com/app/id6812283770 . Android is preparing for Google Play; do not present an Android download or release date as available. Target devices: iPhone/iPad with iOS 26.0+ and Android 8.0+. Following friends and joining a Crew are separate. Device-local alarms do not require Crew sync, but signing in and syncing status require the internet. Device power, permissions, volume, and battery settings affect alarm operation. Signing out removes scheduled alarms on that device. The app includes advertising; no claims of guaranteed wake-up, ad-free service, rankings, or gift alarms are made on this page.
+AlarmCrew is publicly available on iOS. Product information last checked October 4, 2026. Download: https://apps.apple.com/app/id6812283770 . Android is preparing for Google Play; do not present an Android download or release date as available. Current supported devices: iPhone/iPad with iOS 26.0+. The planned Android version targets Android 8.0+ and is not yet available. Following friends and joining a Crew are separate. Device-local alarms do not require Crew sync, but signing in and syncing status require the internet. Device power, permissions, volume, and battery settings affect alarm operation. Signing out removes scheduled alarms on that device. The app includes advertising; no claims of guaranteed wake-up, ad-free service, rankings, or gift alarms are made on this page.
+
+## Product guides
+
+- [Apple Watch에서 물 마신 양 기록하기](https://sparkish-xyz.github.io/aquatick/ko/guides/apple-watch/): AquaTick으로 Apple Watch에서 물 섭취량을 기록하는 방법. 지원 OS, 별도의 6개 컵 배치, 빠른 기록과 진행률 표시의 차이를 확인하세요.
+- [How to log water on Apple Watch](https://sparkish-xyz.github.io/aquatick/en/guides/apple-watch/): Use AquaTick to log water on Apple Watch. Check supported OS versions, the separate six-cup Watch layout, and which surfaces log intake or only show progress.
+- [계정 없이 시작하는 AquaTick: 무료·Pro 기능과 데이터 저장](https://sparkish-xyz.github.io/aquatick/ko/guides/free-and-pro/): AquaTick 무료 기능과 Pro 구독을 비교하세요. 계정 필요 여부, Apple Health 연동, 수분 기록의 iCloud 동기화와 컵 사진 저장 방식을 설명합니다.
+- [알람크루 초대 코드로 친구와 기상 현황 공유하기](https://sparkish-xyz.github.io/alarmcrew/guides/crew-invites/): 알람크루의 8자리 초대 코드를 공유하고 크루에 참여하는 방법. 친구 팔로우와 크루 참여의 차이, 기상 현황 동기화에 필요한 조건을 확인하세요.
+- [How to join an AlarmCrew and share wake-up status](https://sparkish-xyz.github.io/alarmcrew/en/guides/crew-invites/): Share an eight-character AlarmCrew invite code, join a Crew, and check wake-up status. Learn how Crew membership differs from following friends and when internet access is needed.
+- [알람크루 친구 추가와 크루 가입은 어떻게 다른가요?](https://sparkish-xyz.github.io/alarmcrew/guides/friends-and-crews/): 알람크루의 친구 팔로우와 크루 참여를 비교합니다. 닉네임 검색, 서로 팔로우하기, 초대 코드 가입과 프로필 검색 공개 설정을 알아보세요.
 
 ## Site Index
 

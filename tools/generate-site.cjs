@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { legalPages } = require('./render-legal.cjs');
+const { guidePages } = require('./render-guides.cjs');
 
 const root = path.resolve(__dirname, '..');
 const sourceRoot = path.join(root, 'site-src');
@@ -68,12 +69,12 @@ function generatedFiles() {
     throw new GeneratorError('site-src/generated-files.json must define generatedTextFiles as strings');
   }
 
-  return [...files, ...legalPages().map(page => page.file)];
+  return [...files, ...legalPages().map(page => page.file), ...guidePages().map(page => page.file)];
 }
 
 function generateSite(options) {
   const files = generatedFiles();
-  const documents = new Map(legalPages().map(page => [page.file, page]));
+  const documents = new Map([...legalPages(), ...guidePages()].map(page => [page.file, page]));
 
   for (const relativePath of files) {
     const document = documents.get(relativePath);
