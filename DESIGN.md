@@ -1,5 +1,13 @@
 # Sparkish static site design system
 
+## AquaTick Android support and legal documents, 2026-10-06
+
+Android and Wear OS policy content lives under `/aquatick/android/` and `/aquatick/android/ko/`. It uses the existing static legal document shell, typography, mobile contents menu, language navigation, and print rules. There is no new visual system or client-side script. English is the fallback in the Japanese legal hub.
+
+Edit `site-src/legal/content/aquatick-android/`, its entry in `site-src/legal/documents.json`, and the two index templates. Maintain `site-src/routes.json`, `site-src/generated-files.json`, and the source sitemap together. Existing iOS documents, product stories, motion, assets, and download actions keep their own routes.
+
+The Android pages identify release preparation rather than claiming a Play release. They explain optional Google-account cloud sync, Health Connect import/export, Wear Data Layer, on-device ML Kit and SDK metrics, Google Play/RevenueCat purchase handling, Google ads, Firebase/Amplitude analytics, and the distinction between cloud deletion, device copies, and subscription cancellation. Verify the disclosures against the final Android release and deployed backend before review submission.
+
 ## AquaTick — One glass at a time, 2026-10-04
 
 The user approved the proposed modern redesign and explicitly requested scroll choreography. This supersedes Quiet Companion's September no-motion rule. Public references are Apple AirPods Pro (product scale, sequential storytelling) and Dia (warmth and use-case selection), as studied in the current chat. These are structural references, not a pixel-cloning target.

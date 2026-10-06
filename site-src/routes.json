@@ -46,7 +46,17 @@
     "alarmcrew/privacy/index.html",
     "alarmcrew/terms/index.html",
     "alarmcrew/support/index.html",
-    "alarmcrew/delete-account/index.html"
+    "alarmcrew/delete-account/index.html",
+    "aquatick/android/index.html",
+    "aquatick/android/privacy/index.html",
+    "aquatick/android/terms/index.html",
+    "aquatick/android/support/index.html",
+    "aquatick/android/delete-account/index.html",
+    "aquatick/android/ko/index.html",
+    "aquatick/android/ko/privacy/index.html",
+    "aquatick/android/ko/terms/index.html",
+    "aquatick/android/ko/support/index.html",
+    "aquatick/android/ko/delete-account/index.html"
   ],
   "guides": [
     "aquatick/ko/guides/apple-watch/index.html",
