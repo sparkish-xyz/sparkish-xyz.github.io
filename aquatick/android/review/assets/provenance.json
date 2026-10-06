@@ -1,0 +1,48 @@
+{
+  "captured_at": "2026-10-06",
+  "development_build": true,
+  "app_version": "1.1.6",
+  "version_code": 97,
+  "package_name": "com.benghak.aquatick",
+  "api_level": 36,
+  "device": "AquaTick_Phone_API_36 dedicated emulator",
+  "synthetic_data_only": true,
+  "cloud_sync_enabled": false,
+  "firebase_app_analytics_collection": false,
+  "amplitude_collection": false,
+  "health_sdk": "1.1.0",
+  "toolbox_version": "2.3.5",
+  "toolbox_official_source": "https://www.gstatic.com/health-ecosystems/health_connect_toolbox.zip",
+  "toolbox_apk_sha256": "3902036615b69071616dcdaee8fc2cf70f18846bc937cdb96c1648db24aff87b",
+  "capture": "Two native screenrecord phases joined at app restart; encoded 30fps H264 yuv420p with faststart, no redrawn UI",
+  "sources": {
+    "health-connect-review-debug-v2-phase-one.mp4": "e21ac01ab45ebec3598085f928b255745180372d0273f364bfca87194d876d12",
+    "health-connect-review-debug-v2-phase-two.mp4": "d67c65a78b7407c8e1ea7b938f17bc43dd7f17e66cd4783dde04c7c4aede5b1a"
+  },
+  "files": {
+    "health-connect-review.mp4": "3cd12c11f810abcdc980c91d2bdcb17be3df2425176e77b67768ce2f81f96157",
+    "health-connect-poster.png": "77580b9597623ce6766910b4db5d2b27a59721fb206dc015f42e71dc924d75d1"
+  },
+  "duration_seconds": 41.866667,
+  "pixel_size": [
+    1080,
+    2424
+  ],
+  "verified": [
+    "real system hydration read/write permission UI",
+    "official Toolbox 350mL import",
+    "idempotent repeated import",
+    "UI 200mL write to provider",
+    "undo deletes only AquaTick provider record",
+    "sync off keeps local recording and does not export",
+    "fresh-process permissions absent after SDK self-revocation",
+    "imported record retained and local recording continues"
+  ],
+  "not_verified": [
+    "final signed candidate equivalence",
+    "production cloud sync",
+    "production purchase and restore",
+    "paired Wear Data Layer",
+    "Google Play declaration acceptance"
+  ]
+}

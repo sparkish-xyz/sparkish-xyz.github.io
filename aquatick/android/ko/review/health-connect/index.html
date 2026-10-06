@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="가상 수분 기록으로 촬영한 실제 Android 시연입니다. 개발 검증 빌드이며 Google Play 출시 완료를 뜻하지 않습니다.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light">
+  <title>AquaTick Android Health Connect 검토 영상 | Sparkish</title>
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/legal/assets/legal.css">
+  <link rel="stylesheet" href="/aquatick/android/review/assets/review.css">
+</head>
+<body data-app="aquatick-android">
+  <a class="skip-link" href="#main">본문으로 이동</a>
+  <header class="site-header shell"><a class="brand" href="/">Sparkish<span aria-hidden="true">.</span></a><a class="hub-link" href="/aquatick/android/">Android 지원</a></header>
+  <main id="main" class="shell document-hub">
+    <header class="hub-heading"><p class="eyebrow">AquaTick Android · Development verification</p><h1>AquaTick Android Health Connect 검토 영상</h1><p class="intro">가상 수분 기록으로 촬영한 실제 Android 시연입니다. 개발 검증 빌드이며 Google Play 출시 완료를 뜻하지 않습니다.</p><nav class="language-links" aria-label="Language"><a href="/aquatick/android/review/health-connect/" lang="en">English</a><a href="/aquatick/android/ko/review/health-connect/" lang="ko">한국어</a></nav></header>
+    <article class="document-body">
+      <figure class="health-review-video"><video id="health-demo" controls playsinline preload="metadata" width="1080" height="2424" poster="/aquatick/android/review/assets/health-connect-poster.png" aria-label="AquaTick Android Health Connect 검토 영상"><source src="/aquatick/android/review/assets/health-connect-review.mp4" type="video/mp4"></video><figcaption>앱 재실행을 기준으로 두 네이티브 촬영 구간을 연결했습니다. 브라우저 재생을 위해 30fps로 인코딩했으며 앱 화면과 수치는 다시 그리지 않았습니다.</figcaption></figure>
+      <p><a class="action" href="/aquatick/android/review/assets/health-connect-review.mp4">영상 파일 열기</a></p>
+      <h2>검증한 흐름</h2><ol><li><strong>권한 선택</strong> Android 시스템 화면에서 수분 데이터 읽기·쓰기만 요청합니다. 개인정보 링크에서 앱 안내와 공개 처리방침 링크를 확인합니다.</li><li><strong>가져오기</strong> Google의 공식 Health Connect Toolbox가 쓴 350mL 가상 기록을 가져옵니다. 같은 기록을 다시 동기화해도 중복되지 않습니다.</li><li><strong>쓰기와 취소</strong> 앱에서 200mL 컵을 기록하면 총량이 550mL가 되고 앱 소유의 제공자 기록이 생성됩니다. 취소하면 350mL로 돌아오고 앱이 만든 기록만 삭제됩니다.</li><li><strong>연동 끄기</strong> 연동을 끈 상태에서도 로컬 200mL 기록이 가능하며 새 제공자 기록은 만들지 않습니다.</li><li><strong>권한 철회</strong> SDK는 프로세스 종료 시 자체 권한 철회를 적용합니다. 재실행 뒤 두 권한이 없는 상태에서도 로컬 기록이 가능하고 총량이 750mL가 됩니다.</li></ol>
+      <h2>촬영 환경과 범위</h2>
+      <p>AquaTick 1.1.6 (97), Debug · com.benghak.aquatick · Android 16 / API 36 · 1080 × 2424 · 2026-10-06. Health Connect SDK 1.1.0, official Toolbox 2.3.5.</p>
+      <p>가상 데이터만 사용했습니다. 클라우드와 앱 분석 수집을 끈 검증 빌드입니다. 운영 구매·클라우드·Wear 연결, 최종 서명 AAB 검증이나 Play 심사 승인을 증명하는 영상은 아닙니다.</p>
+      <p><a href="/aquatick/android/ko/privacy/">개인정보 처리방침</a> · <a href="https://developer.android.com/health-and-fitness/health-connect/test/health-connect-toolbox">Official Health Connect Toolbox</a></p>
+      <p>문의: <a href="mailto:alarmcrew.support@gmail.com">alarmcrew.support@gmail.com</a></p>
+    </article>
+  </main>
+  <footer class="site-footer shell"><span>© 2026 Sparkish</span><a href="/aquatick/android/support/">지원</a></footer>
+</body>
+</html>
