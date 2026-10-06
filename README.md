@@ -64,7 +64,7 @@ As of **October 1, 2026**, the user confirmed the iOS app is publicly released. 
 
 Edit `site-src/templates/alarmcrew/` and run `npm run generate`, then `npm run check` and `npx playwright test tests/alarmcrew.spec.ts`. Product tokens are namespaced `--ac-*` in `/tokens.css`; page CSS/JS are snapshot templates copied by the existing generator. Change launch status consistently across all three pages, the hub, JSON-LD, `llms.txt`, and route tests. App release and website publishing are separate: this change prepares committed static output for the existing GitHub Pages workflow.
 
-See `alarmcrew/assets/README.md` for screenshot provenance and the illustration prompt. The page adds no analytics, signup forms, third-party font requests, or runtime dependencies.
+See `alarmcrew/assets/README.md` for screenshot provenance and the illustration prompt. The page uses the shared Firebase Analytics module described below and adds no signup forms or third-party font requests.
 
 ### KINETTO release status
 
@@ -72,7 +72,7 @@ KINETTO source lives in `site-src/templates/kinetto/` and is published at `/kine
 
 The story follows private running records → anonymous Crew growth → Cheer and Relay → privacy → FAQ → launch status. The Pulse Trail palette and product claims follow KINETTO’s PRD, glossary, privacy rules, and landing specification. The icon and three Runner images are copied unchanged from KINETTO’s iOS assets (`AppIcon.appiconset/AppIcon.png` and `FeatureOnboarding/Resources/onboarding-runner-01…03.png`). The run summary is a labelled concept with sample data, not a screenshot or a real activity record.
 
-Edit `site-src/templates/kinetto/`, run `npm run generate`, then `npm run check`. Safari was used for this delivery’s desktop/mobile visual review, locale navigation, and native menu/FAQ keyboard interaction. No client JavaScript or new dependencies were added.
+Edit `site-src/templates/kinetto/`, run `npm run generate`, then `npm run check`. Safari was used for this delivery’s desktop/mobile visual review, locale navigation, and native menu/FAQ keyboard interaction. The layout and navigation work without JavaScript; analytics uses the shared module below.
 
 ### AquaTick motion landing page
 
@@ -83,6 +83,18 @@ Author new styles in `site-src/styles/aquatick/07-scroll-story.css`, behavior in
 ### AquaTick language preference
 
 `localStorage.aquaLangPref` (`ko` | `en` | `ja`) is a **UX-only**, same-origin preference for the language chooser. It is not authentication and can be changed by any script on this origin.
+
+## Firebase Analytics
+
+The Firebase project [`sparkish-landingpage`](https://console.firebase.google.com/project/sparkish-landingpage/overview) uses the free Spark plan. Its registered web app is **Sparkish Landing Page**, linked to GA4 property **557581612** and measurement ID **`G-JFG6NYZJ9K`**.
+
+The hub and all nine localized product landings load `/assets/site-analytics.js`. Firebase App and Analytics SDK 12.19.0 load from Google's CDN. The module logs one `page_view` per page and `app_store_click` for App Store links, with `app_name`, `page_language`, and `page_path`; clicks also include `link_url` and `placement`. The Firebase initialization disables automatic page views to avoid counting the explicit event twice. Redirects, the AquaTick language chooser, guides, and legal documents do not load analytics.
+
+GA4 has event-scoped custom dimensions **Landing app** (`app_name`), **Landing language** (`page_language`), and **CTA placement** (`placement`) registered for report breakdowns.
+
+Production collection is limited to `sparkish-xyz.github.io`. Local previews stay untracked unless opened with `?analytics_debug=1`, which enables Firebase DebugView. Unsupported browsers or blocked SDK requests leave the landing usable. The public web configuration lives in `site-src/templates/assets/firebase-config.js`; edit the source templates and run `npm run generate`. `tests/analytics.spec.ts` verifies production/local behavior and events using mocked SDKs, without sending test-suite traffic to GA.
+
+Setup follows the [Firebase web Analytics guide](https://firebase.google.com/docs/analytics/web/get-started). Publishing the generated changes through GitHub Pages enables collection on the public site.
 
 ## Local preview
 

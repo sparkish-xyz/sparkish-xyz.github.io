@@ -1,6 +1,8 @@
 {
   "generatedTextFiles": [
     "index.html",
+    "assets/firebase-config.js",
+    "assets/site-analytics.js",
     "robots.txt",
     "sitemap.xml",
     "llms.txt",

@@ -42,7 +42,7 @@ Shared `/tokens.css` and the older foundation remain intact. Product-specific ov
 
 ### Motion and accessibility
 
-- GSAP / ScrollTrigger 3.14.2 are pinned and served locally through the existing JS builder. No third-party runtime requests.
+- GSAP / ScrollTrigger 3.14.2 are pinned and served locally through the existing JS builder. Shared Firebase Analytics loads its App and Analytics SDKs from Google's CDN on production or explicit local DebugView visits.
 - Desktop at least 900px wide and 760px tall: native scroll drives a 180svh sticky hero (headline recedes, captures spread and enlarge, download remains visible), a 230svh logging chapter with a CSS-sticky scene, before/after crossfade, and active step emphasis. The page always uses native scrolling.
 - On smaller or shorter viewports, the story is a regular vertical flow. Video is user-initiated on all devices; no initial video download or autoplay loop.
 - Motion uses reversible `gsap.matchMedia` contexts. Changing reduced-motion or viewport resets transforms and removes the tall sticky chapter. Reduced-motion uses readable static content.
@@ -77,7 +77,7 @@ AquaTick and KINETTO retain their route ownership, product-specific themes and b
 
 The user selected friends as the audience and a friendly black/orange mood, and confirmed the iOS app is publicly released. The page's primary action is App Store download; Android remains in preparation. Korean is canonical at `/alarmcrew/`, with English and Japanese at `/alarmcrew/en/` and `/alarmcrew/ja/`. All three share one layout and locale-matched iOS captures.
 
-Split Studio composition: a left-aligned greeting and tactile morning illustration; a warm-paper Crew proof section; dark alarm and friend sections with alternating screenshot positions; native FAQ; platform-specific release actions and an inline studio footer. Nav uses two useful destinations plus a language disclosure. Original screenshot content is preserved; the new illustration is decorative. The build adds no runtime dependencies, analytics, or external fonts.
+Split Studio composition: a left-aligned greeting and tactile morning illustration; a warm-paper Crew proof section; dark alarm and friend sections with alternating screenshot positions; native FAQ; platform-specific release actions and an inline studio footer. Nav uses two useful destinations plus a language disclosure. Original screenshot content is preserved; the new illustration is decorative. The page uses the shared Firebase Analytics module and adds no external fonts.
 
 Source templates are in `site-src/templates/alarmcrew/`; CSS and the small disclosure-dismissal script are generated from templates with the existing site generator. The `--ac-*` tokens in root `tokens.css` are scoped to AlarmCrew. Avenir Next display and the native body stack inherit the site's established typography, with Korean-native fallback. Mobile grids explicitly use `minmax(0, 1fr)`; actual screenshots retain their aspect ratios, and full-size originals are linked.
 

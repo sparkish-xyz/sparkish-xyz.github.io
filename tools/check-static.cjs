@@ -57,6 +57,8 @@ const requiredRouteFiles = [
 ];
 
 const requiredAssetFiles = [
+  'assets/firebase-config.js',
+  'assets/site-analytics.js',
   'legal/assets/legal.css',
   'guides/assets/guides.css',
   'alarmcrew/assets/alarmcrew.css',

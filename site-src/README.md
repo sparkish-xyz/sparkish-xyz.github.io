@@ -5,6 +5,7 @@ This directory owns the source contracts for the static GitHub Pages generator a
 - `generated-files.json` lists the text outputs copied by `tools/generate-site.cjs` from `templates/`.
 - `routes.json` groups the current public route families without changing any URLs.
 - `templates/` contains the committed snapshot sources for generated HTML and text files.
+- `templates/assets/firebase-config.js` and `templates/assets/site-analytics.js` own shared Firebase Analytics for the hub and nine localized landings. They generate to `/assets/`; collection runs on the production hostname, with explicit local DebugView opt-in via `?analytics_debug=1`.
 - `styles/*/manifest.json` and `scripts/aquatick/manifest.json` define the CSS/JS partials, output paths, and template output paths used by `tools/build-css.cjs`, `tools/build-js.cjs`, and `tools/verify-built-assets.cjs`.
 - `data/assets.json` drives the AquaTick legacy image mirror policy, its read-only checker, and its syncer.
 

@@ -67,6 +67,10 @@ function checkPage([file, lang, canonical]) {
   assert(scripts.length > 0, file + ': JSON-LD required');
   for (const match of scripts) {
     const scriptTag = '<script' + match[1] + '>';
+    if (attr(scriptTag, 'src') === '/assets/site-analytics.js') {
+      assert.equal(attr(scriptTag, 'type'), 'module', file + ': analytics module');
+      continue;
+    }
     assert.equal(attr(scriptTag, 'type').toLowerCase(), 'application/ld+json', file + ': executable script');
     let data;
     assert.doesNotThrow(() => { data = JSON.parse(match[2].trim()); }, file + ': valid JSON-LD');
