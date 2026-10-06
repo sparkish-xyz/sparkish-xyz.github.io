@@ -257,18 +257,32 @@ test.describe('AquaTick route contracts', () => {
           throw new Error('Missing hero button');
         }
 
-        const buttonTextRange = document.createRange();
-        buttonTextRange.selectNodeContents(firstButton);
+        // Decorative arrows and fallback font runs can have different top edges
+        // on the same row. Measure visible label text and group its row centers.
+        const walker = document.createTreeWalker(firstButton, NodeFilter.SHOW_TEXT);
+        const textRects: DOMRect[] = [];
+        while (walker.nextNode()) {
+          const node = walker.currentNode;
+          if (!node.textContent?.trim() || node.parentElement?.closest('[aria-hidden="true"]')) continue;
+          const range = document.createRange();
+          range.selectNodeContents(node);
+          textRects.push(...Array.from(range.getClientRects()).filter(rect => rect.width > 0 && rect.height > 0));
+        }
+        const rows: Array<{ center: number; height: number }> = [];
+        for (const rect of textRects) {
+          const center = rect.top + rect.height / 2;
+          if (!rows.some(row => Math.abs(row.center - center) < Math.min(row.height, rect.height) / 2)) {
+            rows.push({ center, height: rect.height });
+          }
+        }
 
         return {
-          buttonLineCount: new Set(
-            Array.from(buttonTextRange.getClientRects(), (rect) => Math.round(rect.top)),
-          ).size,
+          buttonLineCount: rows.length,
           pageOverflow: Math.max(0, document.documentElement.scrollWidth - document.documentElement.clientWidth),
         };
       });
 
-      expect(metrics.buttonLineCount, `${locale} hero button line count`).toBeLessThanOrEqual(1);
+      expect(metrics.buttonLineCount, `${locale} hero button line count`).toBe(1);
       expect(metrics.pageOverflow, `${locale} hero page overflow`).toBe(0);
     }
   });
