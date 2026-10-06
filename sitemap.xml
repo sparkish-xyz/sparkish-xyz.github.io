@@ -125,7 +125,7 @@
   <!-- Support and legal documents, with authored language variants only -->
   <url>
     <loc>https://sparkish-xyz.github.io/legal/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/legal/"/>
@@ -135,7 +135,7 @@
   </url>
   <url>
     <loc>https://sparkish-xyz.github.io/legal/ko/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/legal/"/>
@@ -145,7 +145,7 @@
   </url>
   <url>
     <loc>https://sparkish-xyz.github.io/legal/ja/</loc>
-    <lastmod>2026-10-01</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/legal/"/>
@@ -344,6 +344,97 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/delete-account/"/>
   </url>
   <!-- Product guides: only authored language variants are listed. -->
+  <!-- AquaTick Android support and legal documents -->
+  <url>
+    <loc>https://sparkish-xyz.github.io/aquatick/android/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/aquatick/android/privacy/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/privacy/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/aquatick/android/terms/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/terms/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/aquatick/android/support/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/support/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/aquatick/android/delete-account/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/aquatick/android/ko/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/aquatick/android/ko/privacy/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/privacy/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/aquatick/android/ko/terms/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/terms/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/aquatick/android/ko/support/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/support/"/>
+  </url>
+  <url>
+    <loc>https://sparkish-xyz.github.io/aquatick/android/ko/delete-account/</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/"/>
+  </url>
   <url>
     <loc>https://sparkish-xyz.github.io/aquatick/ko/guides/apple-watch/</loc>
     <lastmod>2026-10-04</lastmod>

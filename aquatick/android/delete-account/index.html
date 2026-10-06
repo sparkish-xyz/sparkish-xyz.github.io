@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AquaTick Android Account &amp; Data Deletion — Help, privacy, and terms for each Sparkish app.">
+  <meta name="color-scheme" content="light">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>AquaTick Android Account &amp; Data Deletion | Sparkish</title>
+  <link rel="canonical" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/">
+  <link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/">
+  <link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/delete-account/">
+  <link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AquaTick Android Account &amp; Data Deletion | Sparkish">
+  <meta property="og:description" content="AquaTick Android Account &amp; Data Deletion — Help, privacy, and terms for each Sparkish app.">
+  <meta property="og:url" content="https://sparkish-xyz.github.io/aquatick/android/delete-account/">
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/legal/assets/legal.css">
+</head>
+<body data-app="aquatick-android">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header shell">
+    <a class="brand" href="/">Sparkish<span aria-hidden="true">.</span></a>
+    <a class="hub-link" href="/legal/">Support & Legal</a>
+  </header>
+  <main id="main" class="shell document-layout">
+    <aside class="document-sidebar">
+      <a class="product-link" href="/aquatick/android/"><img src="/aquatick/assets/aquatick-app-icon.png" width="40" height="40" alt=""><span>AquaTick Android</span></a>
+      <nav class="document-nav" aria-label="Documents"><a href="/aquatick/android/privacy/">Privacy Policy</a><a href="/aquatick/android/terms/">Terms of Use</a><a href="/aquatick/android/support/">Support</a><a href="/aquatick/android/delete-account/" aria-current="page">Account & Data Deletion</a></nav>
+      <nav class="desktop-toc" aria-label="On this page"><p>On this page</p><ul><li><a href="#section-1">What to include and how we verify ownership</a></li><li><a href="#section-2">Delete from the app</a></li><li><a href="#section-3">Server data removed and limited retention</a></li><li><a href="#section-4">Local data, health data, and subscriptions</a></li></ul></nav>
+      <details class="table-of-contents"><summary>On this page</summary><ul><li><a href="#section-1">What to include and how we verify ownership</a></li><li><a href="#section-2">Delete from the app</a></li><li><a href="#section-3">Server data removed and limited retention</a></li><li><a href="#section-4">Local data, health data, and subscriptions</a></li></ul></details>
+    </aside>
+    <div class="document-main">
+      <header class="document-heading">
+        <a class="back-link" href="/aquatick/android/">← Back to the app</a>
+        <p class="eyebrow">AquaTick Android</p>
+        <h1>Account &amp; Data Deletion</h1>
+<nav class="language-links" aria-label="Document language"><a href="/aquatick/android/delete-account/" lang="en" hreflang="en" aria-current="page">English</a><a href="/aquatick/android/ko/delete-account/" lang="ko" hreflang="ko">한국어</a></nav>
+      </header>
+      <article class="document-body" lang="en" aria-label="Account &amp; Data Deletion"><p>Effective date: October 6, 2026. AquaTick Android · Sparkish.</p>
+<p>You can request deletion without reinstalling AquaTick or signing in to the app. This page provides an email request route; sending the email does not delete an account automatically.</p>
+<p><a class="action" href="mailto:alarmcrew.support@gmail.com?subject=AquaTick%20Android%20cloud%20account%20deletion%20request">Write a deletion request</a></p>
+<p>Email <a href="mailto:alarmcrew.support@gmail.com">alarmcrew.support@gmail.com</a> with the subject <strong>AquaTick Android cloud account deletion request</strong>. If the link does not open a mail app, copy this address and subject into your usual email service.</p>
+<h2 id="section-1">What to include and how we verify ownership</h2>
+<p>State that you want your AquaTick Android cloud account and associated cloud data deleted. Identify the Google account you connected in AquaTick and provide a reply address. Support will explain how to verify control of that account and confirm when the request can be processed. An email address, sender address, Firebase identifier, or RevenueCat customer identifier alone cannot authorize deletion. We will not delete an account we cannot match and verify.</p>
+<p>Do not send your password, Google sign-in token, payment credentials, or a copy of your hydration history. If you never connected a Google account, you may only have local data; use the local-data controls below.</p>
+<h2 id="section-2">Delete from the app</h2>
+<p>When cloud account controls are available, open AquaTick <strong>Settings → Android cloud sync → Delete cloud account and data</strong> and confirm. The app may require you to authenticate again with the same Google account. A current Pro entitlement is not required to delete an existing cloud account. Export a backup first if you want to keep a copy of your records.</p>
+<p>After server deletion succeeds, this route signs the account out and clears that account’s cloud cache and pending sync work on the current phone. An email request performs server deletion and cannot remotely clear all your devices.</p>
+<h2 id="section-3">Server data removed and limited retention</h2>
+<p>Verified deletion removes the Firebase Authentication user, Firestore account profile and stored email, cloud hydration records and cancellations, sync metadata, and RevenueCat link metadata for that Firebase account.</p>
+<p>A server-only deletion marker retains the Firebase identifier, deletion time, expiry time, and blocked sync generation to prevent stale work from recreating the account. It contains no email, hydration records, or RevenueCat customer identifier. It is configured for 90 days plus daily cleanup, normally about 90–91 days. If authentication deletion or remaining cloud-data cleanup fails, the marker remains until deletion and verified cleanup succeed. Providers’ backup and security-log retention can apply separately.</p>
+<h2 id="section-4">Local data, health data, and subscriptions</h2>
+<p>Cloud deletion does not erase every phone or watch cache, local-only record, cup preset, cup photo, app setting, exported backup, or Health Connect record. Use each device’s AquaTick controls or Android <strong>Settings → Apps → AquaTick → Storage → Clear storage</strong> to clear app data; labels vary by Android device. Manage Wear OS app data on the watch. Delete exported files where you saved them. Manage hydration records and permissions separately in Health Connect. iOS records and purchases are separate.</p>
+<p>Deleting the cloud account or uninstalling the app does not cancel Google Play billing and does not delete Google Play or RevenueCat customer and transaction records. Open Google Play <strong>Payments &amp; subscriptions → Subscriptions → AquaTick → Cancel subscription</strong> with the Google account that made the purchase. See <a href="https://support.google.com/googleplay/answer/7018481">Google Play subscription help</a>. Contact support about privacy requests involving purchase records; provider retention and legal obligations can apply.</p>
+<p>This process does not delete your Google account. Read the <a href="/aquatick/android/privacy/">Android Privacy Policy</a> or contact <a href="mailto:alarmcrew.support@gmail.com">alarmcrew.support@gmail.com</a> for help.</p></article>
+      <a class="back-link document-end" href="/aquatick/android/">← AquaTick Android · Back to the app</a>
+    </div>
+  </main>
+  <footer class="site-footer shell"><span>© 2026 Sparkish</span><nav class="footer-links" aria-label="AquaTick Android Documents"><a href="/aquatick/android/privacy/">Privacy Policy</a><a href="/aquatick/android/terms/">Terms of Use</a><a href="/aquatick/android/support/">Support</a><a href="/aquatick/android/delete-account/" aria-current="page">Account & Data Deletion</a><a href="/legal/">All app documents</a></nav></footer>
+</body>
+</html>

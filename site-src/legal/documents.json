@@ -157,6 +157,66 @@
           }
         }
       }
+    },
+    "aquatick-android": {
+      "name": "AquaTick Android",
+      "icon": "/aquatick/assets/aquatick-app-icon.png",
+      "defaultLanguage": "en",
+      "landings": {
+        "en": "/aquatick/android/",
+        "ko": "/aquatick/android/ko/",
+        "ja": "/aquatick/android/"
+      },
+      "documents": {
+        "privacy": {
+          "locales": {
+            "en": {
+              "content": "aquatick-android/privacy-en.html",
+              "title": "Privacy Policy"
+            },
+            "ko": {
+              "content": "aquatick-android/privacy-ko.html",
+              "title": "개인정보 처리방침"
+            }
+          }
+        },
+        "terms": {
+          "locales": {
+            "en": {
+              "content": "aquatick-android/terms-en.html",
+              "title": "Terms of Use"
+            },
+            "ko": {
+              "content": "aquatick-android/terms-ko.html",
+              "title": "이용약관"
+            }
+          }
+        },
+        "support": {
+          "locales": {
+            "en": {
+              "content": "aquatick-android/support-en.html",
+              "title": "Support"
+            },
+            "ko": {
+              "content": "aquatick-android/support-ko.html",
+              "title": "고객지원"
+            }
+          }
+        },
+        "delete-account": {
+          "locales": {
+            "en": {
+              "content": "aquatick-android/delete-account-en.html",
+              "title": "Account & Data Deletion"
+            },
+            "ko": {
+              "content": "aquatick-android/delete-account-ko.html",
+              "title": "계정 및 데이터 삭제"
+            }
+          }
+        }
+      }
     }
   }
 }
