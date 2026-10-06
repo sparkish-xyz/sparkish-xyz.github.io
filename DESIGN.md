@@ -1,5 +1,9 @@
 # Sparkish static site design system
 
+## AquaTick Android reviewer demonstration, 2026-10-06
+
+The English/Korean noindex pages under `/aquatick/android/review/health-connect/` and `/aquatick/android/ko/review/health-connect/` use the existing legal shell and an isolated responsive video rule. They provide native controls, direct MP4 access and an equivalent text flow. There is no autoplay or new client-side script. The two real emulator recordings are joined at the app restart and encoded to 30fps. Keep the synthetic-data, development-build, version, cloud/analytics and final-AAB limits visible. These pages are not indexed, not part of the product launch flow, and not included in the sitemap. Media provenance is stored alongside the video.
+
 ## AquaTick Android support and legal documents, 2026-10-06
 
 Android and Wear OS policy content lives under `/aquatick/android/` and `/aquatick/android/ko/`. It uses the existing static legal document shell, typography, mobile contents menu, language navigation, and print rules. There is no new visual system or client-side script. English is the fallback in the Japanese legal hub.

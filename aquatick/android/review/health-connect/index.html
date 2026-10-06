@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Native Android demonstration using synthetic hydration records. This is a development verification build, not a published Google Play release.">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="color-scheme" content="light">
+  <title>AquaTick Android Health Connect review demo | Sparkish</title>
+  <link rel="stylesheet" href="/tokens.css">
+  <link rel="stylesheet" href="/legal/assets/legal.css">
+  <link rel="stylesheet" href="/aquatick/android/review/assets/review.css">
+</head>
+<body data-app="aquatick-android">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header shell"><a class="brand" href="/">Sparkish<span aria-hidden="true">.</span></a><a class="hub-link" href="/aquatick/android/">Android support</a></header>
+  <main id="main" class="shell document-hub">
+    <header class="hub-heading"><p class="eyebrow">AquaTick Android · Development verification</p><h1>AquaTick Android Health Connect review demo</h1><p class="intro">Native Android demonstration using synthetic hydration records. This is a development verification build, not a published Google Play release.</p><nav class="language-links" aria-label="Language"><a href="/aquatick/android/review/health-connect/" lang="en">English</a><a href="/aquatick/android/ko/review/health-connect/" lang="ko">한국어</a></nav></header>
+    <article class="document-body">
+      <figure class="health-review-video"><video id="health-demo" controls playsinline preload="metadata" width="1080" height="2424" poster="/aquatick/android/review/assets/health-connect-poster.png" aria-label="AquaTick Android Health Connect review demo"><source src="/aquatick/android/review/assets/health-connect-review.mp4" type="video/mp4"></video><figcaption>Two native recording phases are joined at the app restart. The video is encoded at 30 fps for browser playback; the app interface and values were not redrawn.</figcaption></figure>
+      <p><a class="action" href="/aquatick/android/review/assets/health-connect-review.mp4">Open video file</a></p>
+      <h2>Verified flow</h2><ol><li><strong>Grant access</strong> Request only hydration read and write through the Android system screen. The privacy link opens the app explanation and published policy link.</li><li><strong>Read</strong> A 350mL synthetic record written by the official Health Connect Toolbox is imported into AquaTick. Repeated reconciliation does not duplicate it.</li><li><strong>Write and undo</strong> Logging a 200mL cup changes the app total to 550mL and writes an AquaTick-owned provider record. Undo returns to 350mL and deletes only that app record.</li><li><strong>Turn syncing off</strong> A new local 200mL record remains available while syncing is off; no new provider record is written.</li><li><strong>Revoke access</strong> The SDK schedules self-revocation for process termination. A fresh process confirms both permissions are absent and can still log locally, reaching 750mL.</li></ol>
+      <h2>Environment and scope</h2>
+      <p>AquaTick 1.1.6 (97), Debug · com.benghak.aquatick · Android 16 / API 36 · 1080 × 2424 · 2026-10-06. Health Connect SDK 1.1.0, official Toolbox 2.3.5.</p>
+      <p>Only synthetic data is used. Cloud sync and app analytics collection are disabled in this verification build. This video does not prove production purchases, cloud recovery, paired Wear behavior, the final signed AAB, or Google Play approval.</p>
+      <p><a href="/aquatick/android/privacy/">Privacy policy</a> · <a href="https://developer.android.com/health-and-fitness/health-connect/test/health-connect-toolbox">Official Health Connect Toolbox</a></p>
+      <p>Support: <a href="mailto:alarmcrew.support@gmail.com">alarmcrew.support@gmail.com</a></p>
+    </article>
+  </main>
+  <footer class="site-footer shell"><span>© 2026 Sparkish</span><a href="/aquatick/android/support/">Support</a></footer>
+</body>
+</html>

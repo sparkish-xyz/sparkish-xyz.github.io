@@ -26,14 +26,18 @@
     "legal/assets/legal.css",
     "guides/assets/guides.css",
     "aquatick/android/index.html",
-    "aquatick/android/ko/index.html"
+    "aquatick/android/ko/index.html",
+    "aquatick/android/review/health-connect/index.html",
+    "aquatick/android/ko/review/health-connect/index.html",
+    "aquatick/android/review/assets/review.css"
   ],
   "staticAssetDirectories": [
     "assets",
     "aquatick/assets",
     "kinetto/assets",
     "alarmcrew/assets",
-    "guides/assets"
+    "guides/assets",
+    "aquatick/android/review/assets"
   ],
   "rootOnlyFiles": [
     "index.html",

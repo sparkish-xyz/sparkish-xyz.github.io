@@ -65,5 +65,9 @@
     "alarmcrew/guides/crew-invites/index.html",
     "alarmcrew/en/guides/crew-invites/index.html",
     "alarmcrew/guides/friends-and-crews/index.html"
+  ],
+  "androidReview": [
+    "aquatick/android/review/health-connect/index.html",
+    "aquatick/android/ko/review/health-connect/index.html"
   ]
 }
