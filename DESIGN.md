@@ -1,5 +1,77 @@
 # Sparkish static site design system
 
+## AlarmCrew — Cinematic Edition, 2026-10-10
+
+The user subsequently requested Apple Watch / MacBook-style product presentation
+and active animation. This supersedes Morning Edition's quiet composition and
+motion stance. The established app content, public release status and capture
+provenance are unchanged. Apple's public MacBook Pro page informed product scale,
+bold typography, a sticky translucent product navigation and alternating light/dark
+chapters. No Apple graphics, code or product copy were reused.
+
+- Neutral near-white #f8f8fa, ink #1d1d1f and dark stage #0e0e10; AlarmCrew's coral
+  accent and genuine screenshot colors remain. Existing native body font also
+  supplies display typography.
+- Hero: three real app captures in an asymmetric fan, large central headline,
+  a native scroll cue and a separate static download area. Desktop scroll opens
+  the fan, enlarges the central capture, recedes the headline and reveals the
+  closing sentence. No device frames or simulated UI.
+- Crew: dark chapter, numbered step emphasis and progressive panning of the
+  actual Korean capture from shared alarm to invitations and participants.
+- Next alarm: headline rises and the actual card crop enlarges into place.
+  Supporting alarm/friend features use broad, rounded surfaces.
+- GSAP / ScrollTrigger 3.14.2 are served locally from `alarmcrew/assets/vendor/`.
+  The product script remains authored in its template, copied by `generate`.
+  No additional npm dependencies.
+- At widths ≥900px and heights ≥640px with no reduced-motion preference, the hero
+  uses 220svh and Crew 270svh native scroll tracks with CSS sticky stages below
+  the 64px navigation. Short desktop windows have a compact composition.
+- Smaller screens retain a natural vertical flow with a one-time entrance and
+  two short product reveals. Reduced motion disables all GSAP enhancement and
+  smooth scrolling. matchMedia reverts inline transforms and removes stage
+  classes/active-step state when preferences or viewport change. No scroll hijack.
+- No-JS and missing-library paths retain readable content, image links, language
+  links, download links and native FAQ. Animated duplicate hero text is decorative;
+  the semantic headline remains in the document.
+
+Validation: `tests/alarmcrew-motion.spec.ts` verifies forward/reverse hero travel,
+Crew steps/pan/sticky release, download keyboard focus, dynamic responsive and
+reduced-motion cleanup, no-JS reading and missing-library fallback. It and the
+existing AlarmCrew tests pass (14 tests). Visual review covered 320, 375, 414, 768
+and desktop, including the short desktop window used by the app preview.
+
+
+## AlarmCrew — Morning Edition, 2026-10-10
+
+This supersedes the October 1 AlarmCrew visual direction. The user requested a
+redesign grounded in the current AlarmCrew implementation, using RingLink as an
+inspiration without copying it, then selected a simpler, premium tone.
+
+Warm cream, charcoal and restrained coral follow the native app’s October 10
+design. The page uses upright existing Avenir Next/native typography, a quiet
+edge-aligned navigation, an asymmetric product-led hero with an arched visual
+field, a three-step invitation explanation, a dark next-alarm close-up, two
+localized supporting stories, static product facts/guides, native FAQ and download.
+It avoids RingLink’s centered serif headline, overlapping phones, notification
+collage and use-case tabs. No new dependencies, external fonts or animation library.
+
+The product stylesheet owns the Morning Edition tokens: paper #f6f2e9, ink
+#28221e, secondary #6e6258, accent #a13b29, coral #ff8c6e, night #13110f. Shared
+`tokens.css` and other products are unchanged. Existing language-menu behavior
+and analytics remain. Reduced motion disables smooth scrolling and transitions.
+
+Real Korean iOS update captures are labelled as previews on all three locales,
+with full originals linked. Existing localized release screenshots remain in the
+alarm/friends stories. See `alarmcrew/assets/README.md` for provenance and crop
+details. Alarm dismissal records do not verify wakefulness; device-local time and
+separate friend/Crew membership are explained. Android remains publicly unavailable.
+
+Edit the three `site-src/templates/alarmcrew/` pages and the product CSS template;
+run `npm run generate`. Metadata dates and the three sitemap entries are aligned.
+The existing regression suite covers routes, all locales, images, keyboard menus
+and FAQ, no-JS product information, responsive layouts and reduced motion.
+
+
 ## AquaTick Android reviewer demonstration, 2026-10-06
 
 The English/Korean noindex pages under `/aquatick/android/review/health-connect/` and `/aquatick/android/ko/review/health-connect/` use the existing legal shell and an isolated responsive video rule. They provide native controls, direct MP4 access and an equivalent text flow. There is no autoplay or new client-side script. The two real emulator recordings are joined at the app restart and encoded to 30fps. Keep the synthetic-data, development-build, version, cloud/analytics and final-AAB limits visible. These pages are not indexed, not part of the product launch flow, and not included in the sitemap. Media provenance is stored alongside the video.

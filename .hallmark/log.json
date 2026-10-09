@@ -1,5 +1,71 @@
 [
   {
+    "date": "2026-10-10",
+    "macrostructure": "Feature Stack with cinematic product hero",
+    "theme": "AlarmCrew Cinematic Edition — user-requested Apple-style presentation",
+    "enrichment": "Three native product captures, reversible scroll zoom/fan, guided real-capture pan",
+    "nav": "Sticky translucent product navigation with download action",
+    "footer": "Existing inline product footer",
+    "brief": "User explicitly requested Apple Watch / MacBook promotional-page feel and active animation",
+    "scores": {
+      "philosophy": 5,
+      "hierarchy": 5,
+      "execution": 4,
+      "specificity": 5,
+      "restraint": 4,
+      "variety": 5
+    },
+    "verification": {
+      "viewports": [
+        320,
+        375,
+        414,
+        768,
+        1440
+      ],
+      "motion": "Forward/reverse scroll, sticky release, matched step indicator and capture panning",
+      "fallback": "Reduced-motion changes, small/short viewports, no-JS, missing GSAP",
+      "tests": "14 AlarmCrew tests passed",
+      "captures": "design-review-screenshots/alarmcrew-cinematic-20261010"
+    }
+  },
+  {
+    "date": "2026-10-10",
+    "macrostructure": "Workbench",
+    "theme": "AlarmCrew Morning Edition — native cream, charcoal and coral",
+    "theme_axes": "light / existing sans / warm",
+    "enrichment": "Real native iOS update previews and localized release screenshots",
+    "nav": "Quiet edge-aligned links with native language disclosure",
+    "footer": "Ft2 inline rule",
+    "brief": "Premium, concise redesign informed by current AlarmCrew implementation; RingLink warmth and contrast as inspiration, distinct composition",
+    "scores": {
+      "philosophy": 5,
+      "hierarchy": 5,
+      "execution": 4,
+      "specificity": 5,
+      "restraint": 5,
+      "variety": 4
+    },
+    "verification": {
+      "browser": "Chromium automated regression and Codex browser visual review",
+      "viewports": [
+        320,
+        375,
+        414,
+        768,
+        1280,
+        1440
+      ],
+      "contrast": "Rendered Japanese page minimum text contrast 4.55:1; no failures on the shared palette",
+      "keyboard": "Native language disclosure, Escape and outside click, locale navigation and FAQ",
+      "reducedMotion": "Smooth scrolling and CSS transitions disabled",
+      "noJavaScript": "Product facts, guides, language links and native FAQ remain readable",
+      "tests": "Full suite: 75 passed; after final crop/metadata refinements: 24 related tests passed",
+      "staticContracts": "npm run check passed",
+      "previews": "Real Korean update captures labelled as previews; full originals linked"
+    }
+  },
+  {
     "date": "2026-10-01",
     "macrostructure": "Split Studio",
     "theme": "AlarmCrew brand (user-selected black and orange)",

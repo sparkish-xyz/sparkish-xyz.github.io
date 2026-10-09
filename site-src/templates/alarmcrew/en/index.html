@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="format-detection" content="telephone=no">
-  <title>AlarmCrew — iPhone alarms with shared wake-up status</title>
-  <meta name="description" content="Set an alarm with your friends and see who is up in your Crew. Make your morning routine a shared one. iOS is available on the App Store; Android is preparing for launch.">
-  <meta name="theme-color" content="#14120f">
+  <title>AlarmCrew — A morning routine, shared</title>
+  <meta name="description" content="Set an alarm with friends and share alarm response records with your Crew. Make your morning routine a shared one. iOS is available on the App Store; Android is preparing for launch.">
+  <meta name="theme-color" content="#f8f8fa">
   <link rel="canonical" href="https://sparkish-xyz.github.io/alarmcrew/en/">
   <link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/">
   <link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/alarmcrew/en/">
@@ -15,88 +15,90 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="AlarmCrew">
   <meta property="og:locale" content="en_US">
-  <meta property="og:title" content="AlarmCrew — iPhone alarms with shared wake-up status">
-  <meta property="og:description" content="Set an alarm with your friends and see who is up in your Crew. Make your morning routine a shared one. iOS is available on the App Store; Android is preparing for launch.">
+  <meta property="og:title" content="AlarmCrew — A morning routine, shared">
+  <meta property="og:description" content="Set an alarm with friends and share alarm response records with your Crew. Make your morning routine a shared one. iOS is available on the App Store; Android is preparing for launch.">
   <meta property="og:url" content="https://sparkish-xyz.github.io/alarmcrew/en/">
   <meta property="og:image" content="https://sparkish-xyz.github.io/alarmcrew/assets/app-icon.png">
   <meta property="og:image:alt" content="AlarmCrew">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="AlarmCrew — iPhone alarms with shared wake-up status">
-  <meta name="twitter:description" content="Set an alarm with your friends and see who is up in your Crew. Make your morning routine a shared one. iOS is available on the App Store; Android is preparing for launch.">
+  <meta name="twitter:title" content="AlarmCrew — A morning routine, shared">
+  <meta name="twitter:description" content="Set an alarm with friends and share alarm response records with your Crew. Make your morning routine a shared one. iOS is available on the App Store; Android is preparing for launch.">
   <meta name="twitter:image" content="https://sparkish-xyz.github.io/alarmcrew/assets/app-icon.png">
   <link rel="icon" href="/alarmcrew/assets/app-icon-128.webp" type="image/webp">
   <link rel="apple-touch-icon" href="/alarmcrew/assets/app-icon.png">
-  <link rel="stylesheet" href="/alarmcrew/assets/alarmcrew.css">
+  <script src="/alarmcrew/assets/vendor/gsap.min.js" defer></script>
+  <script src="/alarmcrew/assets/vendor/ScrollTrigger.min.js" defer></script>
   <script src="/alarmcrew/assets/alarmcrew.js" defer></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "AlarmCrew — iPhone alarms with shared wake-up status", "description": "Set an alarm with your friends and see who is up in your Crew. Make your morning routine a shared one. iOS is available on the App Store; Android is preparing for launch.", "url": "https://sparkish-xyz.github.io/alarmcrew/en/", "inLanguage": "en", "dateModified": "2026-10-04", "isPartOf": {"@type": "WebSite", "name": "Sparkish", "url": "https://sparkish-xyz.github.io/"}, "about": {"@type": "MobileApplication", "name": "AlarmCrew", "applicationCategory": "UtilitiesApplication", "operatingSystem": "iOS 26.0 or later", "url": "https://sparkish-xyz.github.io/alarmcrew/", "image": "https://sparkish-xyz.github.io/alarmcrew/assets/app-icon.png", "installUrl": "https://apps.apple.com/app/id6812283770", "@id": "https://sparkish-xyz.github.io/alarmcrew/#app", "publisher": {"@type": "Organization", "@id": "https://sparkish-xyz.github.io/#organization", "name": "Sparkish", "url": "https://sparkish-xyz.github.io/"}, "sameAs": ["https://apps.apple.com/app/id6812283770"]}}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "AlarmCrew — A morning routine, shared", "description": "Set an alarm with friends and share alarm response records with your Crew. Make your morning routine a shared one. iOS is available on the App Store; Android is preparing for launch.", "url": "https://sparkish-xyz.github.io/alarmcrew/en/", "inLanguage": "en", "dateModified": "2026-10-10", "isPartOf": {"@type": "WebSite", "name": "Sparkish", "url": "https://sparkish-xyz.github.io/"}, "about": {"@type": "MobileApplication", "name": "AlarmCrew", "applicationCategory": "UtilitiesApplication", "operatingSystem": "iOS 26.0 or later", "url": "https://sparkish-xyz.github.io/alarmcrew/", "image": "https://sparkish-xyz.github.io/alarmcrew/assets/app-icon.png", "installUrl": "https://apps.apple.com/app/id6812283770", "@id": "https://sparkish-xyz.github.io/alarmcrew/#app", "publisher": {"@type": "Organization", "@id": "https://sparkish-xyz.github.io/#organization", "name": "Sparkish", "url": "https://sparkish-xyz.github.io/"}, "sameAs": ["https://apps.apple.com/app/id6812283770"]}}</script>
   <link rel="stylesheet" href="/guides/assets/guides.css">
+  <link rel="stylesheet" href="/alarmcrew/assets/alarmcrew.css">
   <link rel="describedby" href="/llms.txt" type="text/plain">
   <script type="module" src="/assets/site-analytics.js"></script>
 </head>
-<body>
+<body class="morning-edition cinematic-edition">
   <a class="skip-link" href="#main">Skip to content</a>
-  <!-- N1: two useful destinations, plus an explicit language disclosure. -->
+  <!-- Quiet edge-aligned navigation; native language disclosure. -->
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="/alarmcrew/en/" aria-label="AlarmCrew"><img src="/alarmcrew/assets/app-icon-128.webp" width="128" height="128" alt="">AlarmCrew</a>
-      <nav class="header-nav" aria-label="AlarmCrew"><a href="#crew">Explore the app</a><a href="#launch">Launch status</a></nav>
+      <nav class="header-nav" aria-label="AlarmCrew"><a href="#crew">See how it works</a><a href="#launch">Download <span aria-hidden="true">↗</span></a></nav>
       <details class="language-menu"><summary>English <span class="chevron" aria-hidden="true">⌄</span></summary><nav class="language-panel" aria-label="Language"><a href="/alarmcrew/" lang="ko" hreflang="ko">한국어</a><a href="/alarmcrew/en/" lang="en" hreflang="en" aria-current="page">English<span aria-hidden="true">✓</span></a><a href="/alarmcrew/ja/" lang="ja" hreflang="ja">日本語</a></nav></details>
     </div>
   </header>
   <main id="main" tabindex="-1">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <h1 id="hero-title">Good mornings.<span class="accent">Better together.</span></h1>
-            <p>Add a friend to your morning alarm. Wake at the same time, see who is up, and build a morning routine you can share.</p>
-            <div class="actions"><a class="button" href="https://apps.apple.com/app/id6812283770">Get on the App Store <span aria-hidden="true">↗</span></a><a class="text-link" href="#crew">Explore the app</a></div>
-            <div class="release-note"><span>iOS available now</span><span aria-hidden="true">·</span><span>Android coming soon</span></div>
-          </div>
-          <figure class="hero-art">
-            <img src="/alarmcrew/assets/morning-friends-800.webp" srcset="/alarmcrew/assets/morning-friends-480.webp 480w, /alarmcrew/assets/morning-friends-800.webp 800w" sizes="(min-width: 960px) 470px, (min-width: 520px) 470px, calc(100vw - 32px)" width="1280" height="1280" fetchpriority="high" alt="">
-            <figcaption class="hero-caption"><strong>07:00</strong><span>A little company for your morning.</span></figcaption>
-          </figure>
+      <div class="hero-stage">
+        <div class="container hero-copy"><p class="hero-kicker">AlarmCrew</p><h1 id="hero-title">A good morning.<span>A shared start.</span></h1><p class="hero-description">Your own alarm. A morning you share. <br>Set a time with friends and see each other’s alarm responses.</p></div>
+        <div class="hero-product" aria-label="iOS update preview · Korean test screen">
+          <div class="hero-wing hero-wing-left" aria-hidden="true"><img src="/alarmcrew/assets/en/alarm-660.webp" width="1320" height="2868" alt="" decoding="async"></div>
+          <figure class="hero-main"><a class="hero-capture" href="/alarmcrew/assets/preview/crew.png" aria-label="View full screen"><img src="/alarmcrew/assets/preview/crew-800.webp" width="1206" height="2622" fetchpriority="high" alt="iOS update preview · Korean test screen"></a></figure>
+          <div class="hero-wing hero-wing-right" aria-hidden="true"><img src="/alarmcrew/assets/en/friends-660.webp" width="1320" height="2868" alt="" decoding="async"></div>
         </div>
-        <div class="hero-bottom"><p>Before class. Before work. An earlier start, with your people.</p><span class="down" aria-hidden="true">↓</span></div>
+        <p class="hero-finale" aria-hidden="true">Your own alarm.<br>Our kind of morning.</p>
+        <div class="hero-scroll-cue" aria-hidden="true">Scroll to explore <span>↓</span></div>
       </div>
     </section>
+    <div class="hero-purchase container"><div class="actions"><a class="button" href="https://apps.apple.com/app/id6812283770">Get on the App Store <span aria-hidden="true">↗</span></a></div><p class="release-note">iPhone · iPad / iOS 26.0+<br>Android in preparation</p><p class="capture-note">iOS update preview · Korean test screen<br>Released app screens · example data</p></div>
     <section id="crew" class="crew-section" aria-labelledby="crew-title">
-      <div class="container split">
-        <div class="story-copy"><h2 id="crew-title">See who’s up.<span>Skip the group chat.</span></h2><p>Dismiss your alarm and your Crew sees that you’re up. Check your friends’ wake-up status and response times in the same room.</p><ul class="story-list"><li><h3>One code brings you together</h3><p>Share an 8-character invite code so friends can join your Crew.</p></li><li><h3>Your morning, at a glance</h3><p>See who has dismissed their alarm and who is still waiting.</p></li></ul></div>
-        <figure class="screen-figure">
-          <a href="/alarmcrew/assets/en/crew.png" aria-label="View actual crew app screen at full size"><img src="/alarmcrew/assets/en/crew-660.webp" srcset="/alarmcrew/assets/en/crew-440.webp 440w, /alarmcrew/assets/en/crew-660.webp 660w" sizes="(min-width: 960px) 294px, (min-width: 340px) 294px, calc(100vw - 32px)" width="1320" height="2868" loading="lazy" decoding="async" alt="Actual iOS screen · example records from a test Crew"></a>
-          <figcaption>Actual iOS screen · example records from a test Crew<br><a class="text-link" href="/alarmcrew/assets/en/crew.png">View full screen <span aria-hidden="true">↗</span></a></figcaption>
-        </figure>
+      <div class="crew-stage container">
+        <div class="crew-copy"><p class="eyebrow">TOGETHER</p><h2 id="crew-title">A shared morning.<br>One simple start.</h2><ol class="crew-steps"><li data-crew-step><span class="step-number" aria-hidden="true">01</span><h3>Choose your time</h3><p>Set a time and repeat days. Start with a personal alarm if you like.</p></li><li data-crew-step><span class="step-number" aria-hidden="true">02</span><h3>Share your code</h3><p>Send an 8-character invite code. Your friends enter it to join your Crew.</p></li><li data-crew-step><span class="step-number" aria-hidden="true">03</span><h3>See the responses</h3><p>Alarm dismissals are shared with your Crew, along with recorded response times.</p></li></ol><p class="honest-note">An alarm response records a dismissal; it does not verify that someone is awake. Alarms follow each device’s local time.</p></div>
+        <figure class="crew-visual"><a class="crew-window" href="/alarmcrew/assets/preview/crew.png" aria-label="View full screen"><img src="/alarmcrew/assets/preview/crew-800.webp" width="1206" height="2622" loading="lazy" alt="iOS update preview · Korean test screen"></a><figcaption>iOS update preview · Korean test screen</figcaption></figure>
+        <div class="crew-progress" aria-hidden="true"><span></span></div>
       </div>
     </section>
+    <section class="next-section" aria-labelledby="next-title"><div class="container next-layout">
+      <div class="next-copy"><p class="eyebrow">YOUR RHYTHM</p><h2 id="next-title">Your next morning.<span>At a glance.</span></h2><p>The next upcoming alarm comes first.<br>See the time, repeat days and people sharing it.</p><p class="preview-note">A preview of the next update. The current App Store version may differ.</p></div>
+      <figure class="next-figure"><a class="next-capture" href="/alarmcrew/assets/preview/home.png" aria-label="View full screen"><img src="/alarmcrew/assets/preview/home-800.webp" width="1206" height="2622" loading="lazy" alt="iOS update preview · Korean test screen"></a><figcaption>iOS update preview · Korean test screen · <a href="/alarmcrew/assets/preview/home.png">View full screen ↗</a></figcaption></figure>
+    </div></section>
+    <div class="container details-grid">
     <section class="alarm-section" aria-labelledby="alarm-title">
-      <div class="container split">
-        <div class="story-copy"><h2 id="alarm-title">Your mornings.<span>Your rhythm.</span></h2><p>Seven on weekdays. A slower start on weekends. Choose a time, set repeat days, and give your alarm a name that feels like you.</p><ul class="story-list"><li><h3>An alarm that fits your day</h3><p>Start with a personal alarm, then share one with your Crew.</p></li><li><h3>Five more minutes, if you need them</h3><p>Dismiss the alarm or snooze it for another five minutes.</p></li></ul></div>
+      <div class="feature-inner">
+        <div class="story-copy"><p class="eyebrow">TIME & REPEAT DAYS</p><h2 id="alarm-title">A rhythm of your own.</h2><p>Seven on weekdays. A slower start on weekends. Choose a time, set repeat days, and give your alarm a name that feels like you.</p><ul class="story-list"><li><h3>An alarm that fits your day</h3><p>Start with a personal alarm, then share one with your Crew.</p></li><li><h3>Five more minutes, if you need them</h3><p>Dismiss the alarm or snooze it for another five minutes.</p></li></ul></div>
         <figure class="screen-figure">
           <a href="/alarmcrew/assets/en/alarm.png" aria-label="View actual alarm app screen at full size"><img src="/alarmcrew/assets/en/alarm-660.webp" srcset="/alarmcrew/assets/en/alarm-440.webp 440w, /alarmcrew/assets/en/alarm-660.webp 660w" sizes="(min-width: 960px) 294px, (min-width: 340px) 294px, calc(100vw - 32px)" width="1320" height="2868" loading="lazy" decoding="async" alt="Actual iOS screen · time and repeat-day settings"></a>
-          <figcaption>Actual iOS screen · time and repeat-day settings<br><a class="text-link" href="/alarmcrew/assets/en/alarm.png">View full screen <span aria-hidden="true">↗</span></a></figcaption>
+          <figcaption>Released iOS screen · example data<br><a class="text-link" href="/alarmcrew/assets/en/alarm.png">View full screen <span aria-hidden="true">↗</span></a></figcaption>
         </figure>
       </div>
     </section>
     <section class="friends-section" aria-labelledby="friends-title">
-      <div class="container split">
-        <div class="story-copy"><h2 id="friends-title">Find your people.<span>Start the day together.</span></h2><p>Find friends by nickname and follow each other. Then share the invite code for the Crew you want to wake up with.</p><div class="friend-note">Following a friend and joining a Crew are separate. You choose which Crew to join with an invite code.</div><a class="text-link" href="/alarmcrew/privacy/">About your privacy <span aria-hidden="true">→</span></a></div>
+      <div class="feature-inner">
+        <div class="story-copy"><p class="eyebrow">FRIENDS & CREWS</p><h2 id="friends-title">Your people. Your choice.</h2><p>Find friends by nickname and follow each other. Then share the invite code for the Crew you want to wake up with.</p><div class="friend-note">Following a friend and joining a Crew are separate. You choose which Crew to join with an invite code.</div><a class="text-link" href="/alarmcrew/privacy/">About your privacy <span aria-hidden="true">→</span></a></div>
         <figure class="screen-figure">
           <a href="/alarmcrew/assets/en/friends.png" aria-label="View actual friends app screen at full size"><img src="/alarmcrew/assets/en/friends-660.webp" srcset="/alarmcrew/assets/en/friends-440.webp 440w, /alarmcrew/assets/en/friends-660.webp 660w" sizes="(min-width: 960px) 294px, (min-width: 340px) 294px, calc(100vw - 32px)" width="1320" height="2868" loading="lazy" decoding="async" alt="Actual iOS screen · finding and following friends"></a>
-          <figcaption>Actual iOS screen · finding and following friends<br><a class="text-link" href="/alarmcrew/assets/en/friends.png">View full screen <span aria-hidden="true">↗</span></a></figcaption>
+          <figcaption>Released iOS screen · example data<br><a class="text-link" href="/alarmcrew/assets/en/friends.png">View full screen <span aria-hidden="true">↗</span></a></figcaption>
         </figure>
       </div>
     </section>
+    </div>
     <section id="app-info" class="product-reference" data-product="alarmcrew" aria-labelledby="app-info-title">
       <div class="reference-inner reference-layout">
-        <div><h2 id="app-info-title">AlarmCrew at a glance</h2><table class="reference-table"><caption>Features and requirements</caption><tbody><tr><th scope="row">App name</th><td>AlarmCrew · 알람크루</td></tr><tr><th scope="row">Devices</th><td>iPhone and iPad / iOS 26.0+</td></tr><tr><th scope="row">Availability</th><td>Available on the iOS App Store. Android is preparing for launch; no confirmed release date</td></tr><tr><th scope="row">Crew features</th><td>Eight-character invite codes, completed/waiting wake-up states, and reaction times</td></tr><tr><th scope="row">Friends and Crews</th><td>Find people by nickname and follow each other. Join each Crew separately with its invite code</td></tr><tr><th scope="row">Account and internet</th><td>Sign in with Apple. Internet is needed for sign-in and Crew status sync</td></tr><tr><th scope="row">Price and ads</th><td>Check the App Store for the current download price. The app includes ads</td></tr></tbody></table><p class="reference-checked">Last checked <time datetime="2026-10-04">2026-10-04</time> · Sparkish</p></div>
+        <div><h2 id="app-info-title">AlarmCrew at a glance</h2><table class="reference-table"><caption>Features and requirements</caption><tbody><tr><th scope="row">App name</th><td>AlarmCrew · 알람크루</td></tr><tr><th scope="row">Devices</th><td>iPhone and iPad / iOS 26.0+</td></tr><tr><th scope="row">Availability</th><td>Available on the iOS App Store. Android is preparing for launch; no confirmed release date</td></tr><tr><th scope="row">Crew features</th><td>Eight-character invite codes, alarm response records and reaction times</td></tr><tr><th scope="row">Friends and Crews</th><td>Find people by nickname and follow each other. Join each Crew separately with its invite code</td></tr><tr><th scope="row">Account and internet</th><td>Sign in with Apple. Internet is needed for sign-in and Crew status sync</td></tr><tr><th scope="row">Price and ads</th><td>Check the App Store for the current download price. The app includes ads</td></tr></tbody></table><p class="reference-checked">Last checked <time datetime="2026-10-10">2026-10-10</time> · Sparkish</p></div>
         <nav id="guides" class="reference-guides" aria-labelledby="guides-title"><h3 id="guides-title">Guides and feature details</h3><ul><li><a href="/alarmcrew/en/guides/crew-invites/">How to join a Crew and share wake-up status</a></li><li><a href="/alarmcrew/en/#faq">Read the availability and privacy FAQ</a></li></ul></nav>
       </div>
     </section>
 
     <section id="faq" class="faq-section" aria-labelledby="faq-title">
-      <div class="container faq-layout"><div class="faq-intro"><h2 id="faq-title">A few morning questions.</h2><p>Good to know before your first shared alarm.</p></div><div class="faq-list"><details><summary>Can I download AlarmCrew now?</summary><p>Yes. Download the iOS app from the App Store. Android is preparing for Google Play launch; its download link will appear here after release.</p></details>
+      <div class="container faq-layout"><div class="faq-intro"><h2 id="faq-title">Before your first morning.</h2><p>Good to know before your first shared alarm.</p></div><div class="faq-list"><details><summary>Can I download AlarmCrew now?</summary><p>Yes. Download the iOS app from the App Store. Android is preparing for Google Play launch; its download link will appear here after release.</p></details>
 <details><summary>Can I use it on my own?</summary><p>Yes. Set a personal alarm for yourself. When you want company, share an invite code to connect an alarm to your Crew.</p></details>
 <details><summary>Does following a friend share my alarms?</summary><p>No. Mutual following and Crew membership are separate. Enter a shared 8-character invite code to join the Crew you choose.</p></details>
 <details><summary>Which devices will it support?</summary><p>We’re preparing AlarmCrew for iPhone and iPad with iOS 26.0 or later, and devices with Android 8.0 or later. Allow alarm and notification permissions. On Android, also check exact alarm and full-screen notification access, volume, and battery settings.</p></details>
@@ -105,7 +107,7 @@
     </section>
     <section id="launch" class="launch-section" aria-labelledby="launch-title">
       <div class="container">
-        <div class="launch-heading"><h2 id="launch-title">Start tomorrow<br>with your people.</h2><p>Your next shared morning starts here. Get AlarmCrew for iPhone and iPad.</p></div>
+        <div class="launch-heading"><h2 id="launch-title">Make tomorrow<br>a shared morning.</h2><p>Your next shared morning starts here. Get AlarmCrew for iPhone and iPad.</p></div>
         <div class="platforms"><article class="platform"><div class="platform-top"><h3>iOS</h3><span class="platform-status">Available on the App Store</span></div><p>Start a morning routine with your friends.</p><p class="compatibility">iPhone · iPad / iOS 26.0+</p><a class="text-link" href="https://apps.apple.com/app/id6812283770">Get on the App Store <span aria-hidden="true">↗</span></a></article><article class="platform"><div class="platform-top"><h3>Android</h3><span class="platform-status">Preparing for Google Play</span></div><p>Meet us here when launch preparations are complete.</p><p class="compatibility">Android 8.0+</p></article></div>
         <p class="launch-meta">As of October 1, 2026 · iOS released. Android’s launch date has not been set.</p>
         <a class="text-link" href="/alarmcrew/support/">Get in touch <span aria-hidden="true">→</span></a>

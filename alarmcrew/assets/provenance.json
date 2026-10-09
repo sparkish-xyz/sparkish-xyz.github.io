@@ -47,5 +47,22 @@
       "sha256": "d92211f4133d295211de766c2e47da553cbdc3cff70358ef7db3259821d2f49c",
       "bytes": 1778378
     }
+  },
+  "updatePreview": {
+    "captured": "2026-10-10",
+    "source": "AlarmCrew/release/verification/morning-design-20261010/",
+    "locale": "ko",
+    "status": "Native iOS update preview using temporary QA users; may differ from the current public store version",
+    "presentation": "CSS crops with full original links; no UI retouching",
+    "files": {
+      "home.png": {
+        "sha256": "2568cd648b971a82bf6c159c25755640fc960421c1385c8dd296da23bf181575",
+        "source": "ios-home.png"
+      },
+      "crew.png": {
+        "sha256": "58beba667dfd97e855fc660c20f6d9c1ba87c440c7ff88e9a076a2004972a5e6",
+        "source": "ios-crew.png"
+      }
+    }
   }
 }

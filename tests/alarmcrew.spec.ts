@@ -1,9 +1,9 @@
 import { expect, test } from '@playwright/test';
 
 const locales = [
-  { lang: 'ko', path: '/alarmcrew/', label: '한국어', heading: '같이 일어나면,아침이 달라져요.' },
-  { lang: 'en', path: '/alarmcrew/en/', label: 'English', heading: 'Good mornings.Better together.' },
-  { lang: 'ja', path: '/alarmcrew/ja/', label: '日本語', heading: '一緒に起きると、朝が変わる。' },
+  { lang: 'ko', path: '/alarmcrew/', label: '한국어', heading: '좋은 아침은,함께 시작돼요.' },
+  { lang: 'en', path: '/alarmcrew/en/', label: 'English', heading: 'A good morning.A shared start.' },
+  { lang: 'ja', path: '/alarmcrew/ja/', label: '日本語', heading: 'いい朝は、一緒に始まる。' },
 ] as const;
 
 test('Sparkish links to the AlarmCrew Korean canonical page', async ({ page }) => {

@@ -63,4 +63,25 @@ this content update.
 
 Korean is canonical at `/alarmcrew/`; English and Japanese live under `/alarmcrew/en/` and `/alarmcrew/ja/`. Source snapshots are in `templates/alarmcrew/`, including product CSS/JS. The generator copies these through `generated-files.json`. Real screens and generated decorative artwork are in `alarmcrew/assets/` with provenance beside them.
 
-App Store availability was confirmed by the user on 2026-10-01. Keep release status, App Store links, the hub, structured data and `llms.txt` consistent when changing it. Android remains in preparation. A browser that disables JavaScript can still read all content, use language links and native FAQ disclosures; JavaScript only adds language-menu dismissal.
+App Store availability was confirmed by the user on 2026-10-01. Keep release status, App Store links, the hub, structured data and `llms.txt` consistent when changing it. Android remains in preparation. A browser that disables JavaScript can still read all content, use language links and native FAQ disclosures; JavaScript adds language-menu dismissal and the progressive scroll story described below.
+
+### AlarmCrew Morning Edition, 2026-10-10
+
+The cream/charcoal/coral redesign uses real Korean update previews alongside
+localized release screenshots. Preview source and hashes live in
+`alarmcrew/assets/{README.md,provenance.json}`. Keep the update-preview labels and
+response-record semantics: dismissal does not confirm wakefulness. The new visual
+tokens are isolated in the product stylesheet, and the existing JS remains the
+native language-disclosure dismissal enhancement.
+
+### AlarmCrew cinematic follow-up
+
+The product CSS contains the cinematic overrides after its static foundation.
+`templates/alarmcrew/assets/alarmcrew.js` owns the native language-menu behavior
+and GSAP enhancement. The two local vendor files under `alarmcrew/assets/vendor/`
+are pinned to the existing GSAP 3.14.2 dependency; their provenance is recorded
+there. Do not load AquaTick's product-specific bundle into AlarmCrew.
+
+Run `npm run generate`, `npm run check` and
+`npx playwright test tests/alarmcrew.spec.ts tests/alarmcrew-motion.spec.ts`.
+Preserve the no-JS fallback and the matchMedia cleanup on preference/size changes.

@@ -10,3 +10,20 @@
 Use case: stylized-concept. Decorative hero illustration for AlarmCrew, a friends' morning alarm app. A warm, premium handmade clay illustration of three young adult friends starting their morning together, in a small asymmetric sculptural composition. One friend in charcoal pajamas with orange cuffs stretches both arms, one wearing a warm ivory sweatshirt waves hello, and one friend in burnt orange loungewear holds a ceramic coffee mug. A charming small orange twin-bell alarm clock anchors the foreground; simple clock hands point approximately to seven o'clock, no digits. The friends are different heights, distinct poses, dark hair, casually kind expressions with simple sculpted features, understated Korean character-design sensibility.
 
 Tactile matte clay miniature, softly sculpted forms, beautiful material detail, editorial consumer-app illustration. Sophisticated and friendly, not corporate flat-vector people, not Pixar or glossy plastic. Three people only; natural human proportions, believable hands. Square artwork; three friends and clock form one grounded cohesive group with generous empty transparent margin, asymmetric silhouette and gently overlapping figures. All people fully visible, no text. Designed to sit on very dark warm charcoal website background. Soft amber morning rim light, restrained shadows. Warm charcoal, toasted orange, pale cream, natural skin tones. Transparent background. No words, logos, numbers, phones, screens, app UI, extra floating objects, watermarks, badges or decorative stars; no blue, purple, pink gradients or neon glow.
+
+## Morning Edition — 2026-10-10
+
+`preview/{crew,home}.png` are unchanged copies of the real Korean iOS captures
+`AlarmCrew/release/verification/morning-design-20261010/ios-{crew,home}.png`.
+The native repository identifies these as authenticated QA captures with temporary
+test accounts that were subsequently deleted. They show the 1.1.0 update, not a
+claim that the update is already publicly available. All locales explicitly label
+them as Korean update previews; existing localized release screens remain below.
+
+`preview/*-800.webp` are width-800, quality-88 WebP conversions of the originals.
+No screenshot UI is reconstructed or retouched. CSS presents a cropped view of the
+Crew summary and the next-alarm card; the original PNG is always linked. The home
+original includes a test advertising banner, while the feature crop focuses on the
+next-alarm card. The page continues to disclose that the app contains ads.
+
+The October 1 illustration is retained as an asset but is not used on this design.
