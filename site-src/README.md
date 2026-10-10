@@ -67,7 +67,7 @@ App Store availability was confirmed by the user on 2026-10-01. Keep release sta
 
 ### AlarmCrew Morning Edition, 2026-10-10
 
-The cream/charcoal/coral redesign uses real Korean update previews alongside
+The cream/charcoal/coral redesign uses real locale-matched update previews alongside
 localized release screenshots. Preview source and hashes live in
 `alarmcrew/assets/{README.md,provenance.json}`. Keep the update-preview labels and
 response-record semantics: dismissal does not confirm wakefulness. The new visual
@@ -85,3 +85,8 @@ there. Do not load AquaTick's product-specific bundle into AlarmCrew.
 Run `npm run generate`, `npm run check` and
 `npx playwright test tests/alarmcrew.spec.ts tests/alarmcrew-motion.spec.ts`.
 Preserve the no-JS fallback and the matchMedia cleanup on preference/size changes.
+
+The English and Japanese hero, Crew and next-alarm images and full-size links
+resolve under `alarmcrew/assets/preview/{en,ja}/`. Korean retains the original
+`preview/{crew,home}` captures. `tests/alarmcrew.spec.ts` checks every app capture
+and full-size preview link for language isolation, not only supporting figures.

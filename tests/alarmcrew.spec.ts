@@ -32,6 +32,26 @@ for (const locale of locales) {
       const source = await figure.locator('img').getAttribute('src');
       expect(source).toContain(`/assets/${locale.lang}/`);
     }
+    // Every app capture must follow the page locale, including hero, scroll story,
+    // next-alarm crop and their full-size destinations (the original regression).
+    const screenshots = page.locator('.hero-product img, .crew-visual img, .next-figure img, .screen-figure img');
+    for (const screenshot of await screenshots.all()) {
+      const src = (await screenshot.getAttribute('src'))!;
+      const localized = src.includes(`/assets/${locale.lang}/`) ||
+        src.includes(`/assets/preview/${locale.lang}/`) ||
+        (locale.lang === 'ko' && /^\/alarmcrew\/assets\/preview\/(crew|home)-800\.webp$/.test(src));
+      expect(localized, `${locale.lang} app screen: ${src}`).toBe(true);
+    }
+    const previewRoot = `/alarmcrew/assets/preview/${locale.lang === 'ko' ? '' : `${locale.lang}/`}`;
+    for (const link of await page.locator('.hero-capture, .crew-window, .next-capture, .next-figure figcaption a').all()) {
+      expect(await link.getAttribute('href')).toMatch(new RegExp(`^${previewRoot}(crew|home)\\.png$`));
+      expect((await request.get((await link.getAttribute('href'))!)).status()).toBe(200);
+    }
+    if (locale.lang !== 'ko') {
+      for (const caption of await page.locator('.hero-product, .crew-visual, .next-figure, .capture-note').all()) {
+        await expect(caption).not.toContainText(/Korean|韓国語/);
+      }
+    }
     // Check actual route references rather than duplicating an asset inventory.
     const references = await page.locator('img, script[src], link[rel="stylesheet"], .screen-figure a').evaluateAll(elements =>
       [...new Set(elements.map(element => element.getAttribute('src') ?? element.getAttribute('href')).filter((value): value is string => Boolean(value)))],

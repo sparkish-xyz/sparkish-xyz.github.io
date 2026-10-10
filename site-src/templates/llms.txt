@@ -31,7 +31,7 @@ Important product facts:
 ## AlarmCrew
 
 - [AlarmCrew Korean landing page](https://sparkish-xyz.github.io/alarmcrew/): Korean canonical overview of personal alarms, 8-character Crew invites, alarm response records, and friends.
-- [AlarmCrew English landing page](https://sparkish-xyz.github.io/alarmcrew/en/): English product overview, localized release screenshots, labelled Korean update previews, and release status.
+- [AlarmCrew English landing page](https://sparkish-xyz.github.io/alarmcrew/en/): English product overview, localized release screenshots, labelled localized update previews, and release status.
 - [AlarmCrew Japanese landing page](https://sparkish-xyz.github.io/alarmcrew/ja/): Japanese product overview and release status.
 - [AlarmCrew support](https://sparkish-xyz.github.io/alarmcrew/support/): Support, privacy, terms, and account deletion.
 

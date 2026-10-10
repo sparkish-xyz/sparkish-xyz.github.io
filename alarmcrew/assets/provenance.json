@@ -64,5 +64,44 @@
         "source": "ios-crew.png"
       }
     }
+  },
+  "localizedUpdatePreviews": {
+    "captured": "2026-10-10",
+    "app": "AlarmCrew iOS 1.1.0 (23) Debug simulator build",
+    "sourceApp": "/tmp/AlarmCrewMorningApp/Build/Products/Debug-iphonesimulator/App.app",
+    "device": "iPhone 17 Pro / iOS 27 simulator",
+    "captureMethod": "Existing ALARMCREW_SCREENSHOTS route entry points; native UIKit with disposable authenticated fixture data",
+    "locales": [
+      "en",
+      "ja"
+    ],
+    "fixtureCleanup": "Temporary accounts and their fixture data removed after capture; task simulator shut down and deleted",
+    "presentation": "Unretouched PNG originals, width-800 quality-88 WebP derivatives; CSS crop with full-size original links",
+    "files": {
+      "en/home.png": {
+        "sha256": "5c051708f87a3fbef434c0776bc324d0a38fee79b438fbb1f8f971b497c4101f",
+        "bytes": 240378,
+        "locale": "en",
+        "route": "list"
+      },
+      "en/crew.png": {
+        "sha256": "8859e14e71166c69e03a9f27c5bb4490f31c82be4fad110934c9d05ae823f669",
+        "bytes": 284570,
+        "locale": "en",
+        "route": "crew"
+      },
+      "ja/home.png": {
+        "sha256": "119049987e0c182e14dab9c8f4dc1a14849f3e174776488bcb80f37db9de4248",
+        "bytes": 237398,
+        "locale": "ja",
+        "route": "list"
+      },
+      "ja/crew.png": {
+        "sha256": "d9b883824c88bc11c27fecbab8a217adec6135e016ed3c9dab9fb93905945983",
+        "bytes": 326375,
+        "locale": "ja",
+        "route": "crew"
+      }
+    }
   }
 }

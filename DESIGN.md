@@ -4,8 +4,7 @@
 
 The user subsequently requested Apple Watch / MacBook-style product presentation
 and active animation. This supersedes Morning Edition's quiet composition and
-motion stance. The established app content, public release status and capture
-provenance are unchanged. Apple's public MacBook Pro page informed product scale,
+motion stance. The established app content and public release status are unchanged. Apple's public MacBook Pro page informed product scale,
 bold typography, a sticky translucent product navigation and alternating light/dark
 chapters. No Apple graphics, code or product copy were reused.
 
@@ -30,6 +29,10 @@ chapters. No Apple graphics, code or product copy were reused.
   two short product reveals. Reduced motion disables all GSAP enhancement and
   smooth scrolling. matchMedia reverts inline transforms and removes stage
   classes/active-step state when preferences or viewport change. No scroll hijack.
+- English and Japanese use real localized iOS 1.1.0 update captures in the hero,
+  Crew pan and next-alarm crop, with locale-matched PNG links. Korean retains the
+  original Korean update captures. Captions and alt text identify the actual
+  language. See `alarmcrew/assets/README.md` and `provenance.json`.
 - No-JS and missing-library paths retain readable content, image links, language
   links, download links and native FAQ. Animated duplicate hero text is decorative;
   the semantic headline remains in the document.
