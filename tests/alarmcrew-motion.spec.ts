@@ -2,8 +2,9 @@ import { expect, test, type Page } from '@playwright/test';
 
 async function scrub(page: Page, selector: string, progress: number) {
   await page.locator(selector).evaluate((el, value) => {
-    const top = el.getBoundingClientRect().top + scrollY - 64;
-    const distance = el.getBoundingClientRect().height - innerHeight + 64;
+    const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ac-nav-height'));
+    const top = el.getBoundingClientRect().top + scrollY - offset;
+    const distance = el.getBoundingClientRect().height - innerHeight + offset;
     window.scrollTo({ top: top + distance * value, behavior: 'instant' });
   }, progress);
 }
@@ -37,7 +38,7 @@ test('AlarmCrew crew walkthrough pans the real capture, advances steps and relea
     await scrub(page, '#crew', progress);
     await expect(page.locator('#crew')).toHaveAttribute('data-active-step', step);
     await expect(page.locator('[aria-current="step"]')).toHaveCount(1);
-    await expect.poll(() => page.locator('.crew-stage').evaluate(el => Math.round(el.getBoundingClientRect().top))).toBe(64);
+    await expect.poll(() => page.locator('.crew-stage').evaluate(el => Math.round(el.getBoundingClientRect().top))).toBe(88);
     if (step === '2') await expect.poll(async () => (await matrix(page, '.crew-window img')).y).toBeLessThan(-150);
   }
   await page.locator('.next-section h2').scrollIntoViewIfNeeded();

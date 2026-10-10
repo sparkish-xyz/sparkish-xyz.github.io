@@ -72,6 +72,18 @@ for (const locale of locales) {
     await toggle.click();
     await page.locator('h1').click();
     await expect(menu).not.toHaveAttribute('open');
+    // On mobile the same disclosure also provides the page-section navigation.
+    await page.setViewportSize({ width: 320, height: 812 });
+    await expect(page.locator('.header-nav')).not.toBeVisible();
+    await toggle.click();
+    await expect(menu.locator('.mobile-nav-link')).toHaveCount(4);
+    await menu.locator('a[href="#screens"]').click();
+    await expect(menu).not.toHaveAttribute('open');
+    await expect(page).toHaveURL(/#screens$/);
+    await expect(page.locator('#screens')).toBeInViewport();
+    await page.locator('.header-cta').click();
+    await expect(page).toHaveURL(/#launch$/);
+    await expect(page.locator('#launch')).toBeInViewport();
     const faq = page.locator('.faq-list details').first();
     await faq.locator('summary').focus();
     await page.keyboard.press('Enter');
@@ -95,11 +107,11 @@ for (const locale of locales) {
       }
       const layout = await page.evaluate(() => ({
         overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
-        outside: [...document.querySelectorAll('h1, h2, .button, .screen-figure, .platform, .footer-links a')].filter(element => {
+        outside: [...document.querySelectorAll('h1, h2, .button, .site-header, .brand, .header-cta, .language-menu > summary, .screen-figure, .platform, .footer-links a')].filter(element => {
           const box = element.getBoundingClientRect();
           return box.left < -1 || box.right > innerWidth + 1;
         }).map(element => element.className || element.tagName),
-        wrapped: [...document.querySelectorAll('.button, .header-nav a, .footer-links a, .text-link, .brand')].filter(element => {
+        wrapped: [...document.querySelectorAll('.button, .header-cta, .header-nav a, .language-menu > summary, .footer-links a, .text-link, .brand')].filter(element => {
           const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
           const centers: number[] = [];
           while (walker.nextNode()) {

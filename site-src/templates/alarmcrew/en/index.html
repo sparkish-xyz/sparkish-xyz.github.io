@@ -37,12 +37,26 @@
 </head>
 <body class="morning-edition cinematic-edition">
   <a class="skip-link" href="#main">Skip to content</a>
-  <!-- Quiet edge-aligned navigation; native language disclosure. -->
+  <!-- Floating product navigation, shared with the AquaTick landing. -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="header-inner">
       <a class="brand" href="/alarmcrew/en/" aria-label="AlarmCrew"><img src="/alarmcrew/assets/app-icon-128.webp" width="128" height="128" alt="">AlarmCrew</a>
-      <nav class="header-nav" aria-label="AlarmCrew"><a href="#crew">See how it works</a><a href="#launch">Download <span aria-hidden="true">↗</span></a></nav>
-      <details class="language-menu"><summary>English <span class="chevron" aria-hidden="true">⌄</span></summary><nav class="language-panel" aria-label="Language"><a href="/alarmcrew/" lang="ko" hreflang="ko">한국어</a><a href="/alarmcrew/en/" lang="en" hreflang="en" aria-current="page">English<span aria-hidden="true">✓</span></a><a href="/alarmcrew/ja/" lang="ja" hreflang="ja">日本語</a></nav></details>
+      <nav class="header-nav" aria-label="Page sections"><a href="#crew">How it works</a><a href="/alarmcrew/privacy/">Privacy</a></nav>
+      <div class="header-actions">
+        <details class="language-menu">
+          <summary><span class="desktop-menu-label">EN</span><span class="mobile-menu-label">Menu</span></summary>
+          <nav class="language-panel" aria-label="Navigation and language">
+            <a class="mobile-nav-link" href="#crew">How it works</a>
+            <a class="mobile-nav-link" href="#screens">App screens</a>
+            <a class="mobile-nav-link" href="#faq">FAQ</a>
+            <a class="mobile-nav-link" href="/alarmcrew/privacy/">Privacy</a>
+              <a href="/alarmcrew/" lang="ko" hreflang="ko">한국어</a>
+              <a href="/alarmcrew/en/" lang="en" hreflang="en" aria-current="page">English</a>
+              <a href="/alarmcrew/ja/" lang="ja" hreflang="ja">日本語</a>
+          </nav>
+        </details>
+        <a class="header-cta" href="#launch">Download</a>
+      </div>
     </div>
   </header>
   <main id="main" tabindex="-1">
@@ -70,7 +84,7 @@
       <div class="next-copy"><p class="eyebrow">YOUR RHYTHM</p><h2 id="next-title">Your next morning.<span>At a glance.</span></h2><p>The next upcoming alarm comes first.<br>See the time, repeat days and people sharing it.</p><p class="preview-note">A preview of the next update. The current App Store version may differ.</p></div>
       <figure class="next-figure"><a class="next-capture" href="/alarmcrew/assets/preview/en/home.png" aria-label="View full screen"><img src="/alarmcrew/assets/preview/en/home-800.webp" width="1206" height="2622" loading="lazy" alt="iOS update preview · English test screen"></a><figcaption>iOS update preview · English test screen · <a href="/alarmcrew/assets/preview/en/home.png">View full screen ↗</a></figcaption></figure>
     </div></section>
-    <div class="container details-grid">
+    <div id="screens" class="container details-grid">
     <section class="alarm-section" aria-labelledby="alarm-title">
       <div class="feature-inner">
         <div class="story-copy"><p class="eyebrow">TIME & REPEAT DAYS</p><h2 id="alarm-title">A rhythm of your own.</h2><p>Seven on weekdays. A slower start on weekends. Choose a time, set repeat days, and give your alarm a name that feels like you.</p><ul class="story-list"><li><h3>An alarm that fits your day</h3><p>Start with a personal alarm, then share one with your Crew.</p></li><li><h3>Five more minutes, if you need them</h3><p>Dismiss the alarm or snooze it for another five minutes.</p></li></ul></div>

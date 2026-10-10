@@ -1,4 +1,4 @@
-// Native language disclosure, with dismissal and keyboard focus restoration.
+// Native navigation and language disclosure, with dismissal and keyboard focus restoration.
 (() => {
   const menu = document.querySelector('.language-menu');
   if (!(menu instanceof HTMLDetailsElement)) return;
@@ -36,7 +36,8 @@
   media.add('(min-width: 900px) and (min-height: 640px) and (prefers-reduced-motion: no-preference)', () => {
     hero.classList.add('motion-hero');
     crew.classList.add('motion-crew');
-    const heroTimeline = gsap.timeline({ scrollTrigger: { trigger: hero, start: 'top top+=64', end: 'bottom bottom', scrub: .6, invalidateOnRefresh: true } });
+    const navigationOffset = () => parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ac-nav-height'));
+    const heroTimeline = gsap.timeline({ scrollTrigger: { trigger: hero, start: () => `top top+=${navigationOffset()}`, end: 'bottom bottom', scrub: .6, invalidateOnRefresh: true } });
     heroTimeline.to('.hero-copy', { y: -70, opacity: 0, duration: .35, ease: 'none' }, 0)
       .to('.hero-product', { y: -40, scale: 1.12, duration: 1, ease: 'none' }, 0)
       .to('.hero-wing-left', { x: -100, rotation: -18, y: 60, duration: 1, ease: 'none' }, 0)
@@ -55,7 +56,7 @@
     }
     setStep(0);
     const crewTimeline = gsap.timeline({ scrollTrigger: {
-      trigger: crew, start: 'top top+=64', end: 'bottom bottom', scrub: .45, invalidateOnRefresh: true,
+      trigger: crew, start: () => `top top+=${navigationOffset()}`, end: 'bottom bottom', scrub: .45, invalidateOnRefresh: true,
       onUpdate: self => setStep(self.progress < .3 ? 0 : self.progress < .64 ? 1 : 2)
     } });
     // Pan the genuine capture from the shared time to its invite and members.

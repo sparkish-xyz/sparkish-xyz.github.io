@@ -5,12 +5,16 @@
 The user subsequently requested Apple Watch / MacBook-style product presentation
 and active animation. This supersedes Morning Edition's quiet composition and
 motion stance. The established app content and public release status are unchanged. Apple's public MacBook Pro page informed product scale,
-bold typography, a sticky translucent product navigation and alternating light/dark
+bold typography, translucent product navigation and alternating light/dark
 chapters. No Apple graphics, code or product copy were reused.
 
 - Neutral near-white #f8f8fa, ink #1d1d1f and dark stage #0e0e10; AlarmCrew's coral
   accent and genuine screenshot colors remain. Existing native body font also
   supplies display typography.
+- Navigation follows AquaTick's floating capsule: a centered 680px translucent
+  shell, app icon and name, section links, language disclosure and a dark download
+  button. At 600px and below, section links join the language menu and the download
+  button precedes it. Menu dismissal and keyboard focus restoration remain native.
 - Hero: three real app captures in an asymmetric fan, large central headline,
   a native scroll cue and a separate static download area. Desktop scroll opens
   the fan, enlarges the central capture, recedes the headline and reveals the
@@ -24,7 +28,9 @@ chapters. No Apple graphics, code or product copy were reused.
   No additional npm dependencies.
 - At widths ≥900px and heights ≥640px with no reduced-motion preference, the hero
   uses 220svh and Crew 270svh native scroll tracks with CSS sticky stages below
-  the 64px navigation. Short desktop windows have a compact composition.
+  the 88px reserved navigation area. The mobile reserved area is 76px. ScrollTrigger
+  reads this CSS offset so scenes stay clear of the floating header. Short desktop
+  windows have a compact composition.
 - Smaller screens retain a natural vertical flow with a one-time entrance and
   two short product reveals. Reduced motion disables all GSAP enhancement and
   smooth scrolling. matchMedia reverts inline transforms and removes stage

@@ -37,12 +37,26 @@
 </head>
 <body class="morning-edition cinematic-edition">
   <a class="skip-link" href="#main">本文へスキップ</a>
-  <!-- Quiet edge-aligned navigation; native language disclosure. -->
+  <!-- Floating product navigation, shared with the AquaTick landing. -->
   <header class="site-header">
-    <div class="container header-inner">
+    <div class="header-inner">
       <a class="brand" href="/alarmcrew/ja/" aria-label="AlarmCrew"><img src="/alarmcrew/assets/app-icon-128.webp" width="128" height="128" alt="">AlarmCrew</a>
-      <nav class="header-nav" aria-label="AlarmCrew"><a href="#crew">使い方を見る</a><a href="#launch">入手 <span aria-hidden="true">↗</span></a></nav>
-      <details class="language-menu"><summary>日本語 <span class="chevron" aria-hidden="true">⌄</span></summary><nav class="language-panel" aria-label="Language"><a href="/alarmcrew/" lang="ko" hreflang="ko">한국어</a><a href="/alarmcrew/en/" lang="en" hreflang="en">English</a><a href="/alarmcrew/ja/" lang="ja" hreflang="ja" aria-current="page">日本語<span aria-hidden="true">✓</span></a></nav></details>
+      <nav class="header-nav" aria-label="ページ内のセクション"><a href="#crew">使い方</a><a href="/alarmcrew/privacy/">プライバシー</a></nav>
+      <div class="header-actions">
+        <details class="language-menu">
+          <summary><span class="desktop-menu-label">JA</span><span class="mobile-menu-label">メニュー</span></summary>
+          <nav class="language-panel" aria-label="ナビゲーションと言語">
+            <a class="mobile-nav-link" href="#crew">使い方</a>
+            <a class="mobile-nav-link" href="#screens">アプリ画面</a>
+            <a class="mobile-nav-link" href="#faq">FAQ</a>
+            <a class="mobile-nav-link" href="/alarmcrew/privacy/">プライバシー</a>
+              <a href="/alarmcrew/" lang="ko" hreflang="ko">한국어</a>
+              <a href="/alarmcrew/en/" lang="en" hreflang="en">English</a>
+              <a href="/alarmcrew/ja/" lang="ja" hreflang="ja" aria-current="page">日本語</a>
+          </nav>
+        </details>
+        <a class="header-cta" href="#launch">入手</a>
+      </div>
     </div>
   </header>
   <main id="main" tabindex="-1">
@@ -70,7 +84,7 @@
       <div class="next-copy"><p class="eyebrow">YOUR RHYTHM</p><h2 id="next-title">次の朝を、<span>ひと目で。</span></h2><p>次に鳴るアラームを最初に表示。<br>時刻、曜日、一緒に使う人を確認できます。</p><p class="preview-note">次のアップデートのプレビューです。公開中のバージョンと異なる場合があります。</p></div>
       <figure class="next-figure"><a class="next-capture" href="/alarmcrew/assets/preview/ja/home.png" aria-label="全画面を見る"><img src="/alarmcrew/assets/preview/ja/home-800.webp" width="1206" height="2622" loading="lazy" alt="iOSアップデートのプレビュー · 日本語のテスト画面"></a><figcaption>iOSアップデートのプレビュー · 日本語のテスト画面 · <a href="/alarmcrew/assets/preview/ja/home.png">全画面を見る ↗</a></figcaption></figure>
     </div></section>
-    <div class="container details-grid">
+    <div id="screens" class="container details-grid">
     <section class="alarm-section" aria-labelledby="alarm-title">
       <div class="feature-inner">
         <div class="story-copy"><p class="eyebrow">時刻と繰り返し</p><h2 id="alarm-title">自分に合った朝のリズム。</h2><p>平日は朝7時。週末は少しゆっくり。時間と繰り返す曜日を選び、アラームに好きな名前を付けてみましょう。</p><ul class="story-list"><li><h3>自分に合ったアラーム</h3><p>個人用アラームから始めて、一緒に起きたいアラームはクルーで共有。</p></li><li><h3>あと5分、も選べます</h3><p>アラームを止めるか、5分後にもう一度鳴らすかを選べます。</p></li></ul></div>
