@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <!-- Sparkish app catalog hub -->
   <url>
-    <loc>https://sparkish-xyz.github.io/</loc>
+    <loc>https://sparking.win/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -12,463 +12,463 @@
 
   <!-- AquaTick language detector/chooser -->
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/</loc>
+    <loc>https://sparking.win/aquatick/</loc>
     <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/aquatick/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/"/>
   </url>
 
   <!-- AquaTick Korean version (primary polished content) -->
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/ko/</loc>
+    <loc>https://sparking.win/aquatick/ko/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/aquatick/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/"/>
   </url>
 
   <!-- AquaTick English version -->
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/en/</loc>
+    <loc>https://sparking.win/aquatick/en/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/aquatick/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/"/>
   </url>
 
   <!-- AquaTick Japanese version -->
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/ja/</loc>
+    <loc>https://sparking.win/aquatick/ja/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/aquatick/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/"/>
   </url>
 
   <!-- KINETTO English canonical version -->
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/</loc>
+    <loc>https://sparking.win/kinetto/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/"/>
   </url>
   <!-- KINETTO Korean version -->
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/ko/</loc>
+    <loc>https://sparking.win/kinetto/ko/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/"/>
   </url>
   <!-- KINETTO Japanese version -->
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/ja/</loc>
+    <loc>https://sparking.win/kinetto/ja/</loc>
     <lastmod>2026-10-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/"/>
   </url>
   <!-- AlarmCrew localized product pages -->
   <url>
-    <loc>https://sparkish-xyz.github.io/alarmcrew/</loc>
+    <loc>https://sparking.win/alarmcrew/</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/alarmcrew/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/alarmcrew/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/alarmcrew/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/alarmcrew/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/alarmcrew/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/alarmcrew/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/alarmcrew/en/</loc>
+    <loc>https://sparking.win/alarmcrew/en/</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/alarmcrew/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/alarmcrew/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/alarmcrew/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/alarmcrew/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/alarmcrew/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/alarmcrew/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/alarmcrew/ja/</loc>
+    <loc>https://sparking.win/alarmcrew/ja/</loc>
     <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/alarmcrew/en/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/alarmcrew/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/alarmcrew/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/alarmcrew/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/alarmcrew/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/alarmcrew/"/>
   </url>
   <!-- Support and legal documents, with authored language variants only -->
   <url>
-    <loc>https://sparkish-xyz.github.io/legal/</loc>
+    <loc>https://sparking.win/legal/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/legal/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/legal/ko/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/legal/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/legal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/legal/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/legal/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/legal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/legal/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/legal/ko/</loc>
+    <loc>https://sparking.win/legal/ko/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/legal/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/legal/ko/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/legal/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/legal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/legal/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/legal/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/legal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/legal/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/legal/ja/</loc>
+    <loc>https://sparking.win/legal/ja/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/legal/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/legal/ko/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/legal/ja/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/legal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/legal/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/legal/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/legal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/legal/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/privacy/</loc>
+    <loc>https://sparking.win/aquatick/privacy/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/privacy/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/en/support/</loc>
+    <loc>https://sparking.win/aquatick/en/support/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/support/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/support/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/support/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/aquatick/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/en/support/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/ko/support/</loc>
+    <loc>https://sparking.win/aquatick/ko/support/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/support/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/support/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/support/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/aquatick/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/en/support/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/ja/support/</loc>
+    <loc>https://sparking.win/aquatick/ja/support/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/support/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/support/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/support/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/aquatick/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/en/support/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/en/terms/</loc>
+    <loc>https://sparking.win/aquatick/en/terms/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/terms/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/aquatick/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/en/terms/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/ko/terms/</loc>
+    <loc>https://sparking.win/aquatick/ko/terms/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/terms/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/aquatick/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/en/terms/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/ja/terms/</loc>
+    <loc>https://sparking.win/aquatick/ja/terms/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/aquatick/ja/terms/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/aquatick/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/en/terms/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/privacy/</loc>
+    <loc>https://sparking.win/kinetto/privacy/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/privacy/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/ko/privacy/</loc>
+    <loc>https://sparking.win/kinetto/ko/privacy/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/privacy/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/ja/privacy/</loc>
+    <loc>https://sparking.win/kinetto/ja/privacy/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/privacy/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/terms/</loc>
+    <loc>https://sparking.win/kinetto/terms/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/terms/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/terms/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/ko/terms/</loc>
+    <loc>https://sparking.win/kinetto/ko/terms/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/terms/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/terms/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/ja/terms/</loc>
+    <loc>https://sparking.win/kinetto/ja/terms/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/terms/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/terms/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/support/</loc>
+    <loc>https://sparking.win/kinetto/support/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/support/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/support/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/support/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/support/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/ko/support/</loc>
+    <loc>https://sparking.win/kinetto/ko/support/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/support/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/support/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/support/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/support/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/kinetto/ja/support/</loc>
+    <loc>https://sparking.win/kinetto/ja/support/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/kinetto/support/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/kinetto/ko/support/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://sparkish-xyz.github.io/kinetto/ja/support/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/kinetto/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/kinetto/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/kinetto/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/kinetto/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/kinetto/support/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/alarmcrew/privacy/</loc>
+    <loc>https://sparking.win/alarmcrew/privacy/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/alarmcrew/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/alarmcrew/privacy/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/alarmcrew/terms/</loc>
+    <loc>https://sparking.win/alarmcrew/terms/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/terms/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/alarmcrew/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/alarmcrew/terms/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/alarmcrew/support/</loc>
+    <loc>https://sparking.win/alarmcrew/support/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/support/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/alarmcrew/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/alarmcrew/support/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/alarmcrew/delete-account/</loc>
+    <loc>https://sparking.win/alarmcrew/delete-account/</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/alarmcrew/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/alarmcrew/delete-account/"/>
   </url>
   <!-- Product guides: only authored language variants are listed. -->
   <!-- AquaTick Android support and legal documents -->
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/android/</loc>
+    <loc>https://sparking.win/aquatick/android/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/android/privacy/</loc>
+    <loc>https://sparking.win/aquatick/android/privacy/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/privacy/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/android/terms/</loc>
+    <loc>https://sparking.win/aquatick/android/terms/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/terms/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/terms/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/android/support/</loc>
+    <loc>https://sparking.win/aquatick/android/support/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/support/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/support/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/support/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/android/delete-account/</loc>
+    <loc>https://sparking.win/aquatick/android/delete-account/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/delete-account/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/android/ko/</loc>
+    <loc>https://sparking.win/aquatick/android/ko/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/android/ko/privacy/</loc>
+    <loc>https://sparking.win/aquatick/android/ko/privacy/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/privacy/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/android/ko/terms/</loc>
+    <loc>https://sparking.win/aquatick/android/ko/terms/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/terms/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/terms/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/terms/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/android/ko/support/</loc>
+    <loc>https://sparking.win/aquatick/android/ko/support/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/support/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/support/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/support/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/support/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/android/ko/delete-account/</loc>
+    <loc>https://sparking.win/aquatick/android/ko/delete-account/</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/android/ko/delete-account/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/android/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/delete-account/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/delete-account/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/ko/guides/apple-watch/</loc>
+    <loc>https://sparking.win/aquatick/ko/guides/apple-watch/</loc>
     <lastmod>2026-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/guides/apple-watch/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/guides/apple-watch/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/en/guides/apple-watch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/guides/apple-watch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/guides/apple-watch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/en/guides/apple-watch/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/en/guides/apple-watch/</loc>
+    <loc>https://sparking.win/aquatick/en/guides/apple-watch/</loc>
     <lastmod>2026-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/aquatick/ko/guides/apple-watch/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/aquatick/en/guides/apple-watch/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/aquatick/en/guides/apple-watch/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/guides/apple-watch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/en/guides/apple-watch/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/en/guides/apple-watch/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/aquatick/ko/guides/free-and-pro/</loc>
+    <loc>https://sparking.win/aquatick/ko/guides/free-and-pro/</loc>
     <lastmod>2026-10-04</lastmod>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/alarmcrew/guides/crew-invites/</loc>
+    <loc>https://sparking.win/alarmcrew/guides/crew-invites/</loc>
     <lastmod>2026-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/guides/crew-invites/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/alarmcrew/en/guides/crew-invites/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/en/guides/crew-invites/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/alarmcrew/guides/crew-invites/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/alarmcrew/en/guides/crew-invites/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/alarmcrew/en/guides/crew-invites/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/alarmcrew/en/guides/crew-invites/</loc>
+    <loc>https://sparking.win/alarmcrew/en/guides/crew-invites/</loc>
     <lastmod>2026-10-04</lastmod>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://sparkish-xyz.github.io/alarmcrew/guides/crew-invites/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://sparkish-xyz.github.io/alarmcrew/en/guides/crew-invites/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkish-xyz.github.io/alarmcrew/en/guides/crew-invites/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/alarmcrew/guides/crew-invites/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/alarmcrew/en/guides/crew-invites/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/alarmcrew/en/guides/crew-invites/"/>
   </url>
   <url>
-    <loc>https://sparkish-xyz.github.io/alarmcrew/guides/friends-and-crews/</loc>
+    <loc>https://sparking.win/alarmcrew/guides/friends-and-crews/</loc>
     <lastmod>2026-10-04</lastmod>
   </url>
 </urlset>

@@ -14,53 +14,53 @@ Important product facts:
 
 ## AquaTick
 
-- [AquaTick language selection](https://sparkish-xyz.github.io/aquatick/): Routes visitors to Korean, English, or Japanese content.
-- [AquaTick Korean landing page](https://sparkish-xyz.github.io/aquatick/ko/): Korean product overview, features, screenshots, privacy details, Pro pricing, and App Store links.
-- [AquaTick English landing page](https://sparkish-xyz.github.io/aquatick/en/): English product overview, features, screenshots, privacy details, Pro pricing, and App Store links.
-- [AquaTick Japanese landing page](https://sparkish-xyz.github.io/aquatick/ja/): Japanese product overview, features, screenshots, privacy details, Pro pricing, and App Store links.
+- [AquaTick language selection](https://sparking.win/aquatick/): Routes visitors to Korean, English, or Japanese content.
+- [AquaTick Korean landing page](https://sparking.win/aquatick/ko/): Korean product overview, features, screenshots, privacy details, Pro pricing, and App Store links.
+- [AquaTick English landing page](https://sparking.win/aquatick/en/): English product overview, features, screenshots, privacy details, Pro pricing, and App Store links.
+- [AquaTick Japanese landing page](https://sparking.win/aquatick/ja/): Japanese product overview, features, screenshots, privacy details, Pro pricing, and App Store links.
 - [AquaTick on the App Store](https://apps.apple.com/app/aquatick/id6762686013): Official App Store listing for downloading AquaTick.
-- [AquaTick support](https://sparkish-xyz.github.io/aquatick/en/support/): Support information and contact options.
-- [AquaTick privacy policy](https://sparkish-xyz.github.io/aquatick/privacy/): AquaTick's privacy policy.
+- [AquaTick support](https://sparking.win/aquatick/en/support/): Support information and contact options.
+- [AquaTick privacy policy](https://sparking.win/aquatick/privacy/): AquaTick's privacy policy.
 
 ## KINETTO
 
-- [KINETTO English landing page](https://sparkish-xyz.github.io/kinetto/): English canonical landing page for a running app whose real runs grow an anonymous Crew.
-- [KINETTO Korean landing page](https://sparkish-xyz.github.io/kinetto/ko/): Korean product overview and iOS coming-soon status.
-- [KINETTO Japanese landing page](https://sparkish-xyz.github.io/kinetto/ja/): Japanese product overview and iOS coming-soon status.
+- [KINETTO English landing page](https://sparking.win/kinetto/): English canonical landing page for a running app whose real runs grow an anonymous Crew.
+- [KINETTO Korean landing page](https://sparking.win/kinetto/ko/): Korean product overview and iOS coming-soon status.
+- [KINETTO Japanese landing page](https://sparking.win/kinetto/ja/): Japanese product overview and iOS coming-soon status.
 
 ## AlarmCrew
 
-- [AlarmCrew Korean landing page](https://sparkish-xyz.github.io/alarmcrew/): Korean canonical overview of personal alarms, 8-character Crew invites, alarm response records, and friends.
-- [AlarmCrew English landing page](https://sparkish-xyz.github.io/alarmcrew/en/): English product overview, localized release screenshots, labelled localized update previews, and release status.
-- [AlarmCrew Japanese landing page](https://sparkish-xyz.github.io/alarmcrew/ja/): Japanese product overview and release status.
-- [AlarmCrew support](https://sparkish-xyz.github.io/alarmcrew/support/): Support, privacy, terms, and account deletion.
+- [AlarmCrew Korean landing page](https://sparking.win/alarmcrew/): Korean canonical overview of personal alarms, 8-character Crew invites, alarm response records, and friends.
+- [AlarmCrew English landing page](https://sparking.win/alarmcrew/en/): English product overview, localized release screenshots, labelled localized update previews, and release status.
+- [AlarmCrew Japanese landing page](https://sparking.win/alarmcrew/ja/): Japanese product overview and release status.
+- [AlarmCrew support](https://sparking.win/alarmcrew/support/): Support, privacy, terms, and account deletion.
 
 AlarmCrew is publicly available on iOS. Product information last checked October 10, 2026. Download: https://apps.apple.com/app/id6812283770 . Android is preparing for Google Play; do not present an Android download or release date as available. Current supported devices: iPhone/iPad with iOS 26.0+. The planned Android version targets Android 8.0+ and is not yet available. Following friends and joining a Crew are separate. Alarm responses record dismissal, not verified wakefulness, and alarms follow each device’s local time. The landing shows labelled previews of the next iOS update, including next-occurrence ordering; these may differ from the current store release. Device-local alarms do not require Crew sync, but signing in and syncing status require the internet. Device power, permissions, volume, and battery settings affect alarm operation. Signing out removes scheduled alarms on that device. The app includes advertising; no claims of guaranteed wake-up, ad-free service, rankings, or gift alarms are made on this page.
 
 ## Product guides
 
-- [Apple Watch에서 물 마신 양 기록하기](https://sparkish-xyz.github.io/aquatick/ko/guides/apple-watch/): AquaTick으로 Apple Watch에서 물 섭취량을 기록하는 방법. 지원 OS, 별도의 6개 컵 배치, 빠른 기록과 진행률 표시의 차이를 확인하세요.
-- [How to log water on Apple Watch](https://sparkish-xyz.github.io/aquatick/en/guides/apple-watch/): Use AquaTick to log water on Apple Watch. Check supported OS versions, the separate six-cup Watch layout, and which surfaces log intake or only show progress.
-- [계정 없이 시작하는 AquaTick: 무료·Pro 기능과 데이터 저장](https://sparkish-xyz.github.io/aquatick/ko/guides/free-and-pro/): AquaTick 무료 기능과 Pro 구독을 비교하세요. 계정 필요 여부, Apple Health 연동, 수분 기록의 iCloud 동기화와 컵 사진 저장 방식을 설명합니다.
-- [알람크루 초대 코드로 친구와 기상 현황 공유하기](https://sparkish-xyz.github.io/alarmcrew/guides/crew-invites/): 알람크루의 8자리 초대 코드를 공유하고 크루에 참여하는 방법. 친구 팔로우와 크루 참여의 차이, 기상 현황 동기화에 필요한 조건을 확인하세요.
-- [How to join an AlarmCrew and share wake-up status](https://sparkish-xyz.github.io/alarmcrew/en/guides/crew-invites/): Share an eight-character AlarmCrew invite code, join a Crew, and check wake-up status. Learn how Crew membership differs from following friends and when internet access is needed.
-- [알람크루 친구 추가와 크루 가입은 어떻게 다른가요?](https://sparkish-xyz.github.io/alarmcrew/guides/friends-and-crews/): 알람크루의 친구 팔로우와 크루 참여를 비교합니다. 닉네임 검색, 서로 팔로우하기, 초대 코드 가입과 프로필 검색 공개 설정을 알아보세요.
+- [Apple Watch에서 물 마신 양 기록하기](https://sparking.win/aquatick/ko/guides/apple-watch/): AquaTick으로 Apple Watch에서 물 섭취량을 기록하는 방법. 지원 OS, 별도의 6개 컵 배치, 빠른 기록과 진행률 표시의 차이를 확인하세요.
+- [How to log water on Apple Watch](https://sparking.win/aquatick/en/guides/apple-watch/): Use AquaTick to log water on Apple Watch. Check supported OS versions, the separate six-cup Watch layout, and which surfaces log intake or only show progress.
+- [계정 없이 시작하는 AquaTick: 무료·Pro 기능과 데이터 저장](https://sparking.win/aquatick/ko/guides/free-and-pro/): AquaTick 무료 기능과 Pro 구독을 비교하세요. 계정 필요 여부, Apple Health 연동, 수분 기록의 iCloud 동기화와 컵 사진 저장 방식을 설명합니다.
+- [알람크루 초대 코드로 친구와 기상 현황 공유하기](https://sparking.win/alarmcrew/guides/crew-invites/): 알람크루의 8자리 초대 코드를 공유하고 크루에 참여하는 방법. 친구 팔로우와 크루 참여의 차이, 기상 현황 동기화에 필요한 조건을 확인하세요.
+- [How to join an AlarmCrew and share wake-up status](https://sparking.win/alarmcrew/en/guides/crew-invites/): Share an eight-character AlarmCrew invite code, join a Crew, and check wake-up status. Learn how Crew membership differs from following friends and when internet access is needed.
+- [알람크루 친구 추가와 크루 가입은 어떻게 다른가요?](https://sparking.win/alarmcrew/guides/friends-and-crews/): 알람크루의 친구 팔로우와 크루 참여를 비교합니다. 닉네임 검색, 서로 팔로우하기, 초대 코드 가입과 프로필 검색 공개 설정을 알아보세요.
 
 ## Site Index
 
-- [Sparkish app catalog](https://sparkish-xyz.github.io/): Root page listing AquaTick, KINETTO, and AlarmCrew.
-- [Sitemap](https://sparkish-xyz.github.io/sitemap.xml): Canonical site routes and language alternates.
-- [Robots policy](https://sparkish-xyz.github.io/robots.txt): Crawl policy and sitemap location.
+- [Sparkish app catalog](https://sparking.win/): Root page listing AquaTick, KINETTO, and AlarmCrew.
+- [Sitemap](https://sparking.win/sitemap.xml): Canonical site routes and language alternates.
+- [Robots policy](https://sparking.win/robots.txt): Crawl policy and sitemap location.
 
 ## Optional
 
-- [AquaTick iPhone home screenshot](https://sparkish-xyz.github.io/aquatick/assets/landing/en/home.png): AquaTick's main hydration progress screen.
-- [AquaTick Apple Watch screenshot](https://sparkish-xyz.github.io/aquatick/assets/landing/en/watch.png): AquaTick's Apple Watch quick logging screen.
+- [AquaTick iPhone home screenshot](https://sparking.win/aquatick/assets/landing/en/home.png): AquaTick's main hydration progress screen.
+- [AquaTick Apple Watch screenshot](https://sparking.win/aquatick/assets/landing/en/watch.png): AquaTick's Apple Watch quick logging screen.
 
 ## Support and legal documents
 
-- [All app documents](https://sparkish-xyz.github.io/legal/): Support and legal index, also available at /legal/ko/ and /legal/ja/.
-- [AquaTick terms](https://sparkish-xyz.github.io/aquatick/en/terms/): Information about the Apple Standard EULA and its official source. AquaTick privacy is the original English policy; support and terms information are available in English, Korean, and Japanese.
-- [KINETTO privacy](https://sparkish-xyz.github.io/kinetto/privacy/), [terms](https://sparkish-xyz.github.io/kinetto/terms/), and [support](https://sparkish-xyz.github.io/kinetto/support/): English documents; Korean and Japanese documents live below /kinetto/ko/ and /kinetto/ja/.
-- [AlarmCrew privacy](https://sparkish-xyz.github.io/alarmcrew/privacy/) and [terms](https://sparkish-xyz.github.io/alarmcrew/terms/): Original Korean policies.
-- [AlarmCrew account and data deletion](https://sparkish-xyz.github.io/alarmcrew/delete-account/): Korean and English instructions for in-app deletion or an email request with ownership verification.
+- [All app documents](https://sparking.win/legal/): Support and legal index, also available at /legal/ko/ and /legal/ja/.
+- [AquaTick terms](https://sparking.win/aquatick/en/terms/): Information about the Apple Standard EULA and its official source. AquaTick privacy is the original English policy; support and terms information are available in English, Korean, and Japanese.
+- [KINETTO privacy](https://sparking.win/kinetto/privacy/), [terms](https://sparking.win/kinetto/terms/), and [support](https://sparking.win/kinetto/support/): English documents; Korean and Japanese documents live below /kinetto/ko/ and /kinetto/ja/.
+- [AlarmCrew privacy](https://sparking.win/alarmcrew/privacy/) and [terms](https://sparking.win/alarmcrew/terms/): Original Korean policies.
+- [AlarmCrew account and data deletion](https://sparking.win/alarmcrew/delete-account/): Korean and English instructions for in-app deletion or an email request with ownership verification.

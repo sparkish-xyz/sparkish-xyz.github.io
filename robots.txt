@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap: Sparkish app pages, support documents and product guides
-Sitemap: https://sparkish-xyz.github.io/sitemap.xml
+Sitemap: https://sparking.win/sitemap.xml

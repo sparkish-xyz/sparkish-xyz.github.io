@@ -1,7 +1,7 @@
 import { expect, type APIRequestContext, type Locator, type Page } from '@playwright/test';
 import { createHash } from 'node:crypto';
 
-export const BASE_URL = 'https://sparkish-xyz.github.io';
+export const BASE_URL = 'https://sparking.win';
 
 export const AQUATICK_LOCALES = ['ko', 'en', 'ja'] as const;
 

@@ -7,6 +7,7 @@ Static GitHub Pages site for **Sparkish** apps.
 ```
 /
 ├── index.html              # Sparkish app catalog (hub)
+├── CNAME                   # GitHub Pages canonical domain: sparking.win
 ├── robots.txt
 ├── sitemap.xml
 ├── llms.txt
@@ -46,7 +47,7 @@ When AquaTick images change, update **`aquatick/assets/`** and copy the same fil
 | `/alarmcrew/privacy/`, `/alarmcrew/terms/`, `/alarmcrew/support/` | AlarmCrew Korean documents |
 | `/alarmcrew/delete-account/` | Korean and English account/data deletion instructions |
 
-AquaTick hreflang **x-default** is `https://sparkish-xyz.github.io/aquatick/`.
+AquaTick hreflang **x-default** is `https://sparking.win/aquatick/`.
 
 All landing-page support and policy links now open this project's static HTML.
 The shared document layout includes app navigation, a section contents list,
@@ -92,9 +93,32 @@ The hub and all nine localized product landings load `/assets/site-analytics.js`
 
 GA4 has event-scoped custom dimensions **Landing app** (`app_name`), **Landing language** (`page_language`), and **CTA placement** (`placement`) registered for report breakdowns.
 
-Production collection is limited to `sparkish-xyz.github.io`. Local previews stay untracked unless opened with `?analytics_debug=1`, which enables Firebase DebugView. Unsupported browsers or blocked SDK requests leave the landing usable. The public web configuration lives in `site-src/templates/assets/firebase-config.js`; edit the source templates and run `npm run generate`. `tests/analytics.spec.ts` verifies production/local behavior and events using mocked SDKs, without sending test-suite traffic to GA.
+Production collection is limited to `sparking.win` and the legacy `sparkish-xyz.github.io` hostname. Local previews stay untracked unless opened with `?analytics_debug=1`, which enables Firebase DebugView. Unsupported browsers or blocked SDK requests leave the landing usable. The public web configuration lives in `site-src/templates/assets/firebase-config.js`; edit the source templates and run `npm run generate`. `tests/analytics.spec.ts` verifies production/local behavior and events using mocked SDKs, without sending test-suite traffic to GA.
 
 Setup follows the [Firebase web Analytics guide](https://firebase.google.com/docs/analytics/web/get-started). Publishing the generated changes through GitHub Pages enables collection on the public site.
+
+## Canonical domain and deployment
+
+The canonical production origin is **https://sparking.win**. The repository name
+and GitHub remote remain `sparkish-xyz/sparkish-xyz.github.io`. Edit
+`site-src/templates/CNAME` (hostname only) and run `npm run generate`; the generator
+and parity check own the published root `CNAME`, just like `robots.txt` and the sitemap.
+All canonical, social, language-alternate, structured-data and crawl URLs use the
+new origin. Routes, store links, `/ko/` / `/en/` / `/ja/` redirect stubs, and the
+legacy `/assets/` mirror are unchanged.
+
+Repository preparation alone does not configure public routing. The deployment
+operator must publish the generated files, register `sparking.win` as the GitHub
+Pages custom domain, point its DNS to GitHub Pages, and verify the HTTPS certificate
+before enforcing HTTPS. If `www.sparking.win` is configured, verify its redirect
+to the apex as well. Verify the old `sparkish-xyz.github.io` host redirects with
+paths intact after GitHub Pages accepts the custom domain; do not remove legacy
+paths. Existing app-bundled/store URLs and any analytics dashboard website URL
+settings are managed outside this repository.
+
+After publishing, check the root and a localized landing over HTTPS, the old-host
+redirect, `/CNAME`, `/robots.txt`, and `/sitemap.xml`. Local tests verify generated
+content and browser behavior, not DNS, TLS issuance, or GitHub Pages settings.
 
 ## Local preview
 
@@ -110,7 +134,7 @@ python3 tools/serve-static.py
 npm test
 ```
 
-Runs Playwright route checks against `http://127.0.0.1:8080` (starts `python3 -m http.server` automatically).
+Runs Playwright checks against `http://127.0.0.1:8080` (starts `python3 tools/serve-static.py` automatically). Install dependencies with `npm ci` and the test browser with `npx playwright install chromium` first. `tests/domain.spec.ts` covers the generated CNAME and canonical domain metadata across all public routes; `tests/analytics.spec.ts` proxies production hosts to the local server and mocks Firebase, with unmatched external HTTPS traffic blocked.
 
 ## Design review (optional)
 
@@ -123,7 +147,7 @@ npm run capture:deployed
 ```
 
 Captures are generated under `design-review-screenshots/<phase>/` and are intentionally gitignored.
-The capture script only accepts `http://127.0.0.1:8080` / `localhost:8080` or `sparkish-xyz.github.io` URLs via `TARGET_URL`.
+The capture script only accepts `http://127.0.0.1:8080` / `localhost:8080`, `sparking.win`, or the legacy `sparkish-xyz.github.io` URLs via `TARGET_URL`. `npm run capture:deployed` targets `https://sparking.win/aquatick/ko/`.
 
 ## CI
 

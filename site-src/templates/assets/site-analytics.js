@@ -1,6 +1,6 @@
 import firebaseConfig from './firebase-config.js';
 
-const isProduction = location.hostname === 'sparkish-xyz.github.io';
+const isProduction = ['sparking.win', 'sparkish-xyz.github.io'].includes(location.hostname);
 const isLocal = ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
 const debug = new URLSearchParams(location.search).get('analytics_debug') === '1';
 const hasConfig = ['apiKey', 'projectId', 'appId', 'measurementId'].every(

@@ -30,15 +30,15 @@ test.describe('Sparkish hub route contracts', () => {
     const kinetto = kinettoListItem?.item;
     expect(kinetto).toMatchObject({
       '@type': 'MobileApplication',
-      url: 'https://sparkish-xyz.github.io/kinetto/',
-      image: 'https://sparkish-xyz.github.io/kinetto/assets/app-icon.png',
+      url: 'https://sparking.win/kinetto/',
+      image: 'https://sparking.win/kinetto/assets/app-icon.png',
     });
     expect(kinetto).not.toHaveProperty('installUrl');
     expect(kinetto).not.toHaveProperty('price');
     expect(kinetto).not.toHaveProperty('offers');
     const alarmcrew = graph.flatMap(({ itemListElement }) => itemListElement ?? [])
       .find(({ item }) => item?.['name'] === 'AlarmCrew');
-    expect(alarmcrew).toMatchObject({ position: 3, item: { url: 'https://sparkish-xyz.github.io/alarmcrew/' } });
+    expect(alarmcrew).toMatchObject({ position: 3, item: { url: 'https://sparking.win/alarmcrew/' } });
     expect(alarmcrew?.item?.['installUrl']).toBe('https://apps.apple.com/app/id6812283770');
     expect(alarmcrew?.item).not.toHaveProperty('offers');
   });

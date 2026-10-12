@@ -1,6 +1,7 @@
 {
   "generatedTextFiles": [
     "index.html",
+    "CNAME",
     "assets/firebase-config.js",
     "assets/site-analytics.js",
     "robots.txt",
@@ -43,6 +44,7 @@
   ],
   "rootOnlyFiles": [
     "index.html",
+    "CNAME",
     "robots.txt",
     "sitemap.xml",
     "llms.txt",
