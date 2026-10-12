@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 
 const ROOT = path.resolve(__dirname, '..');
-const ORIGIN = 'https://sparkish-xyz.github.io';
+const ORIGIN = 'https://sparking.win';
 const BASE = ORIGIN + '/kinetto/';
 const pages = [
   ['kinetto/index.html', 'en', BASE],
@@ -97,7 +97,9 @@ try {
 
   const sitemap = read('sitemap.xml');
   for (const [, , url] of pages) assert(sitemap.includes('<loc>' + url + '</loc>'), 'sitemap URL ' + url);
-  assert.equal((sitemap.match(/<loc>https:\/\/sparkish-xyz\.github\.io\/kinetto\/(?:ko\/|ja\/)?<\/loc>/g) ?? []).length, 3, 'sitemap has exactly three KINETTO URLs');
+  const kinettoUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)]
+    .filter(([, url]) => pages.some(([, , expected]) => url === expected));
+  assert.equal(kinettoUrls.length, 3, 'sitemap has exactly three KINETTO URLs');
   console.log('[check:kinetto] pass');
 } catch (error) {
   console.error('[check:kinetto] ' + error.message);

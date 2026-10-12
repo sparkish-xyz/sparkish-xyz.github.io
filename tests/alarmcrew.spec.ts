@@ -17,7 +17,7 @@ for (const locale of locales) {
     await page.goto(locale.path);
     await expect(page.locator('html')).toHaveAttribute('lang', locale.lang);
     await expect(page.locator('h1')).toHaveText(locale.heading);
-    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://sparkish-xyz.github.io${locale.path}`);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `https://sparking.win${locale.path}`);
     await expect(page.locator('link[hreflang]')).toHaveCount(4);
     await expect(page.locator('.platform')).toHaveCount(2);
     await expect(page.locator('.platform-status').first()).toContainText(/다운로드|Available|公開/);

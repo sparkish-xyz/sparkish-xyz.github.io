@@ -64,26 +64,52 @@ test('local visits do not load Firebase even with valid configuration', async ({
   expect(requests).toEqual([]);
 });
 
-test('production visits log one page view with product and locale without requiring debug mode', async ({ page, request }) => {
-  await page.route('https://sparkish-xyz.github.io/**', async route => {
+// Fail closed: unmatched external traffic (including real GA collection) never leaves a test.
+// Page-level production proxies and Firebase mocks below take precedence over this guard.
+test.beforeEach(async ({ context }) => {
+  await context.route('https://**/*', route => route.abort());
+});
+
+for (const origin of ['https://sparking.win', 'https://sparkish-xyz.github.io']) {
+  test(`${origin}: production visits log one page view without requiring debug mode`, async ({ page, request }) => {
+    await page.route(`${origin}/**`, async route => {
+      const url = new URL(route.request().url());
+      await route.fulfill({ response: await request.get(url.pathname + url.search) });
+    });
+    await mockFirebase(page);
+    await page.goto(`${origin}/alarmcrew/en/?utm_source=website`);
+    await expect.poll(() => page.evaluate(() => window.analyticsTest?.events.length)).toBe(1);
+    const state = await page.evaluate(() => window.analyticsTest);
+    expect(state.config).toEqual({ send_page_view: false });
+    expect(state.events[0]).toMatchObject({
+      name: 'page_view',
+      params: {
+        app_name: 'AlarmCrew',
+        page_language: 'en',
+        page_path: '/alarmcrew/en/',
+        page_location: `${origin}/alarmcrew/en/?utm_source=website`,
+      },
+    });
+    // Finish in-flight asset proxies before Playwright disposes the request fixture.
+    await page.unrouteAll({ behavior: 'wait' });
+  });
+}
+
+test('lookalike and preview hosts do not collect analytics even with the debug flag', async ({ page, request }) => {
+  const requests: string[] = [];
+  page.on('request', request => {
+    if (request.url().includes('gstatic.com/firebasejs/')) requests.push(request.url());
+  });
+  await page.route('https://*.example.test/**', async route => {
     const url = new URL(route.request().url());
     await route.fulfill({ response: await request.get(url.pathname + url.search) });
   });
   await mockFirebase(page);
-  await page.goto('https://sparkish-xyz.github.io/alarmcrew/en/?utm_source=website');
-  await expect.poll(() => page.evaluate(() => window.analyticsTest?.events.length)).toBe(1);
-  const state = await page.evaluate(() => window.analyticsTest);
-  expect(state.config).toEqual({ send_page_view: false });
-  expect(state.events[0]).toMatchObject({
-    name: 'page_view',
-    params: {
-      app_name: 'AlarmCrew',
-      page_language: 'en',
-      page_path: '/alarmcrew/en/',
-      page_location: 'https://sparkish-xyz.github.io/alarmcrew/en/?utm_source=website',
-    },
-  });
-  // Finish in-flight asset proxies before Playwright disposes the request fixture.
+  for (const host of ['sparking.win.example.test', 'preview.example.test']) {
+    await page.goto(`https://${host}/?analytics_debug=1`);
+    await page.waitForLoadState('networkidle');
+  }
+  expect(requests).toEqual([]);
   await page.unrouteAll({ behavior: 'wait' });
 });
 

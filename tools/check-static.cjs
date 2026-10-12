@@ -28,6 +28,7 @@ function reportGroup(label, paths) {
 
 const requiredRootFiles = [
   'index.html',
+  'CNAME',
   'robots.txt',
   'sitemap.xml',
   'llms.txt',

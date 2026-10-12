@@ -26,7 +26,7 @@
     "verify:built-assets": "node tools/verify-built-assets.cjs",
     "verify:generated": "node tools/verify-generated.cjs",
     "capture:local": "node design-review-screenshots/capture.js",
-    "capture:deployed": "TARGET_URL=\"https://sparkish-xyz.github.io/aquatick/ko/\" node design-review-screenshots/capture.js --phase deployed"
+    "capture:deployed": "TARGET_URL=\"https://sparking.win/aquatick/ko/\" node design-review-screenshots/capture.js --phase deployed"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",

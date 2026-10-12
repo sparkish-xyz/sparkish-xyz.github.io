@@ -1,7 +1,7 @@
 import { expect, test } from '@playwright/test';
 import { readFileSync } from 'node:fs';
 
-const origin = 'https://sparkish-xyz.github.io';
+const origin = 'https://sparking.win';
 const guides = [
   { path: '/aquatick/ko/guides/apple-watch/', lang: 'ko', app: 'aquatick', alternate: '/aquatick/en/guides/apple-watch/' },
   { path: '/aquatick/en/guides/apple-watch/', lang: 'en', app: 'aquatick', alternate: '/aquatick/ko/guides/apple-watch/' },

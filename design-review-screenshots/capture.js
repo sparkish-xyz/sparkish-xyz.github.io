@@ -35,7 +35,7 @@ const OUTPUT_DIR = path.resolve(__dirname, '..', 'design-review-screenshots');
 
 // Default: local static server (see README). Override with TARGET_URL for deployed captures.
 const DEFAULT_TARGET = 'http://127.0.0.1:8080/aquatick/ko/';
-const ALLOWED_TARGET_HOSTS = new Set(['127.0.0.1', 'localhost', 'sparkish-xyz.github.io']);
+const ALLOWED_TARGET_HOSTS = new Set(['127.0.0.1', 'localhost', 'sparking.win', 'sparkish-xyz.github.io']);
 
 function resolveTargetUrl(raw) {
   const urlString = raw || DEFAULT_TARGET;
@@ -47,7 +47,7 @@ function resolveTargetUrl(raw) {
     process.exit(1);
   }
   if (u.protocol === 'file:') {
-    console.error('file:// TARGET_URL not allowed; use http://127.0.0.1:8080/... or sparkish-xyz.github.io');
+    console.error('file:// TARGET_URL not allowed; use http://127.0.0.1:8080/... or https://sparking.win/...');
     process.exit(1);
   }
   if (!ALLOWED_TARGET_HOSTS.has(u.hostname)) {
