@@ -12,19 +12,27 @@ test.describe('canonical domain metadata', () => {
     for (const [family, files] of Object.entries(routes)) {
       for (const file of files) {
         const path = '/' + file.replace(/index\.html$/, '');
-        const response = await page.goto(path);
-        expect(response?.status(), path).toBe(200);
-        expect(await response!.text(), path).not.toContain(legacyOrigin);
+        // Read the original response without following HTML meta refreshes. Browser
+        // navigation can discard a legacy redirect's response body before inspection.
+        const response = await request.get(path);
+        expect(response.status(), path).toBe(200);
+        const html = await response.text();
+        expect(html, path).not.toContain(legacyOrigin);
         // Private Android review pages deliberately have no search metadata.
         if (family === 'androidReview') continue;
+        const metadata = await page.evaluate(source => {
+          const document = new DOMParser().parseFromString(source, 'text/html');
+          return {
+            canonicals: Array.from(document.querySelectorAll('link[rel="canonical"]'), element => element.getAttribute('href')),
+            urls: Array.from(document.querySelectorAll('link[rel="alternate"][hreflang], meta[property="og:url"], meta[property="og:image"], meta[name="twitter:image"]'),
+              element => element.getAttribute('href') ?? element.getAttribute('content') ?? ''),
+            schemas: Array.from(document.querySelectorAll('script[type="application/ld+json"]'), element => element.textContent ?? ''),
+          };
+        }, html);
         const canonicalPath = family === 'legacyAquatickStubs' ? '/aquatick' + path : path;
-        await expect(page.locator('link[rel="canonical"]'), path).toHaveAttribute('href', origin + canonicalPath);
-        const metadata = await page.locator('link[rel="alternate"][hreflang], meta[property="og:url"], meta[property="og:image"], meta[name="twitter:image"]').evaluateAll(elements =>
-          elements.map(element => element.getAttribute('href') ?? element.getAttribute('content') ?? ''),
-        );
-        for (const url of metadata) expect(new URL(url).origin, `${path}: ${url}`).toBe(origin);
-        // Parse JSON-LD as well as checking the whole HTML for stale origins.
-        for (const schema of await page.locator('script[type="application/ld+json"]').allTextContents()) {
+        expect(metadata.canonicals, path).toEqual([origin + canonicalPath]);
+        for (const url of metadata.urls) expect(new URL(url).origin, `${path}: ${url}`).toBe(origin);
+        for (const schema of metadata.schemas) {
           expect(JSON.stringify(JSON.parse(schema)), path).toContain(origin);
         }
       }
