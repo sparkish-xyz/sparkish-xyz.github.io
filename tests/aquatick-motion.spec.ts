@@ -88,7 +88,7 @@ test('localized gallery tabs work with keyboard and keep their position', async 
 
 test('demo loads on request, plays, and stops with focus restored on Escape', async ({ page }) => {
   const mediaRequests: string[] = [];
-  page.on('request', request => { if (request.url().endsWith('.mp4')) mediaRequests.push(request.url()); });
+  page.on('request', request => { if (new URL(request.url()).pathname.endsWith('.mp4')) mediaRequests.push(request.url()); });
   await page.goto('/aquatick/ko/');
   expect(mediaRequests).toEqual([]);
   const trigger = page.locator('.demo-trigger');
@@ -131,7 +131,7 @@ test('no-JavaScript fallback exposes complete product content', async ({ browser
   await expect(page.locator('#screen-panel-0')).toBeVisible();
   await expect(page.locator('#screen-panel-1')).toBeVisible();
   await expect(page.locator('#features')).not.toHaveClass(/motion-story/);
-  await expect(page.locator('.demo-trigger')).toHaveAttribute('href', /quick-add\.mp4$/);
+  await expect(page.locator('.demo-trigger')).toHaveAttribute('href', /quick-add\.mp4\?v=20261104$/);
   await expect(page.locator('#pricing table')).toBeVisible();
   await expect(page.locator('#faq')).toBeVisible();
   await context.close();

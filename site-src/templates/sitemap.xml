@@ -13,7 +13,7 @@
   <!-- AquaTick language detector/chooser -->
   <url>
     <loc>https://sparking.win/aquatick/</loc>
-    <lastmod>2026-09-28</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/"/>
@@ -25,7 +25,7 @@
   <!-- AquaTick Korean version (primary polished content) -->
   <url>
     <loc>https://sparking.win/aquatick/ko/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/"/>
@@ -37,7 +37,7 @@
   <!-- AquaTick English version -->
   <url>
     <loc>https://sparking.win/aquatick/en/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/"/>
@@ -49,7 +49,7 @@
   <!-- AquaTick Japanese version -->
   <url>
     <loc>https://sparking.win/aquatick/ja/</loc>
-    <lastmod>2026-10-04</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/ko/"/>

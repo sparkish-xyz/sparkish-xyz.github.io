@@ -1,3 +1,42 @@
+# AquaTick landing imagery — November 4, 2026
+
+The localized landings now use actual AquaTick **2.0.0 (163)** development-build
+captures from native commit `1bc5a4e2` (Milk Teddy and Beige integrated into main).
+The public App Store release of these changes has not been verified, so the hero,
+capture captions and new feature copy identify this as a **2.0 preview**.
+
+- `{ko,en,ja}/{home,home-after,vault,history,cats}.png`: raw 1206×2622 captures from
+  a dedicated iPhone 17 / iOS 27.2 simulator, at default system text size and light
+  appearance. `-AquaTickScreenshotMode -AquaTickScreenshot45DayHistory` provides
+  in-memory sample data, with locale-specific `-AppleLanguages` and `-AppleLocale`.
+  `-AquaTickScreenshotTab` selects Vault/History; `-AquaTickScreenshotVaultSection cats`
+  selects the native collection. Home is 1.55 L; a real +200 mL tap produces 1.75 L.
+  Collection ownership is fixture state, not an assertion that every cat is free.
+- `{ko,en,ja}/quick-add.mp4`: real recordings of that tap in each language. The first
+  8 seconds are encoded at 604px wide, 30 fps, H.264, CRF 24, no audio and fast-start.
+  Playback is visitor-initiated. The website does not record hydration data.
+- `cats/{classic,witch,milk-teddy}.webp`: lossless encodings of the complete native
+  `CatHydrationHero{,HalloweenWitch,MilkTeddy}.imageset` @3x assets, 1020×912.
+  No generated or redrawn product interface is used. Cat preview tabs affect only
+  this page; app selection happens in Vault → Cats. Color themes are independent.
+- `{ko,en,ja}/watch.png`: unchanged earlier Watch captures, as documented below.
+- Decorative water, closing cat and resting cat artwork remain as documented below.
+
+`provenance-20261104.json` records source, build, device and SHA-256 hashes for all
+new/replaced media. Raw session captures remain in `/tmp/aquatick-landing-captures-20261104/`.
+Artwork was exported from the native repository with `git archive 1bc5a4e2`.
+
+Product behavior was checked in `CatSkin.swift`, `CatSkinCollectionInteractor.swift`,
+`VaultCatSkinPresentation.swift`, `AppFlowCoordinator.swift`, and `AquaTickTheme.swift`.
+The Milk Teddy event is configured for November 4–30, 2026: 2 distinct logged days,
+no streak or volume requirement. Halloween ended October 31. Earned cats persist;
+Pro-only access depends on an active subscription. Do not advertise an expired
+rewarded-ad event as currently available or promise an unverified release date.
+
+---
+
+## Prior imagery provenance
+
 # AquaTick landing imagery — October 4, 2026
 
 The motion redesign uses localized native UI, a real screen recording, and one decorative generated background. All app data shown is synthetic screenshot-fixture data.

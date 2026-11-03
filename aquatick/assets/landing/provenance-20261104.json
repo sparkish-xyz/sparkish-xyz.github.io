@@ -1,0 +1,107 @@
+{
+  "checkedAt": "2026-11-04",
+  "nativeRepository": "/Users/byunghak/Documents/xcode_workspace/MiniProjects/AquaTick",
+  "nativeCommit": "1bc5a4e2",
+  "appVersion": "2.0.0",
+  "build": "163",
+  "releaseStatus": "development preview; public App Store release not verified",
+  "device": {
+    "name": "AquaTick Landing QA 20261104",
+    "model": "iPhone 17",
+    "os": "iOS 27.2",
+    "udid": "19238048-F836-4178-8BBB-24F1AA6D27B8"
+  },
+  "launchArguments": [
+    "-AquaTickScreenshotMode",
+    "-AquaTickScreenshot45DayHistory"
+  ],
+  "artwork": "Official native CatHydrationHero variants, lossless WebP, 1020x912",
+  "captures": "Raw 1206x2622 native screenshots. Home shows 1.55 L; home-after shows 1.75 L following an actual +200 mL tap. Screenshot-mode sample records.",
+  "videos": "Actual native +200 mL recordings, first 8 seconds, H.264, 604px wide, 30fps, no audio, fast-start.",
+  "files": {
+    "ko/home.png": {
+      "sha256": "d757b4cc8868d9b4199bb2fc3692392b2dbbd51a0b6a54e6d1eb3a0a951f5171",
+      "bytes": 393422
+    },
+    "ko/home-after.png": {
+      "sha256": "97b85f0e17d3beecb6938d6b105c626da2ef4242250af5afcc3898c287d4601b",
+      "bytes": 393683
+    },
+    "ko/vault.png": {
+      "sha256": "ee2f264bba45d6cae06e3a49827f50d19001cb05d283a2c0f33164fa97aaec2a",
+      "bytes": 361856
+    },
+    "ko/history.png": {
+      "sha256": "c095c79f7f5ab8155eb983b432d0a162e5fb8b06de2facb0422a60f3737188bc",
+      "bytes": 342531
+    },
+    "ko/cats.png": {
+      "sha256": "f715a9439941709c0b8c536ff5b00fdc2a035311300aeaadddacbbace2985232",
+      "bytes": 588130
+    },
+    "ko/quick-add.mp4": {
+      "sha256": "9d1c2fefe9864c5b43aba10dfba05e6c37f511dfaf6f0db5b83829c03cdc0c5a",
+      "bytes": 95271
+    },
+    "en/home.png": {
+      "sha256": "7e3cdafe5682ee3c1626859c8c8d14d2dea1e8dd185f2fe6fcc2e6edbbddb617",
+      "bytes": 441466
+    },
+    "en/home-after.png": {
+      "sha256": "b2e1b68a0cccd81c402d945c5771ebce1e6772ae44eca35f8707a69d343832a3",
+      "bytes": 429774
+    },
+    "en/vault.png": {
+      "sha256": "2bf4fd3b41b1e3e188eb09b13794d7fc369c8d99e7656baf6a554a438a045dc7",
+      "bytes": 395799
+    },
+    "en/history.png": {
+      "sha256": "d49138e2c80f38b558da1239b307afb9609ebdcd06cdd6c33c37800cf150e4bd",
+      "bytes": 380612
+    },
+    "en/cats.png": {
+      "sha256": "0044b4b42384e18d4370fd9866f62d9775f903ad4b051d816c053c1e680d32f3",
+      "bytes": 604708
+    },
+    "en/quick-add.mp4": {
+      "sha256": "7d3a62280d5245982875b50d48dbfa906b5dc4f34d5495fd9ecbc82523e10e8a",
+      "bytes": 96133
+    },
+    "ja/home.png": {
+      "sha256": "0a20fc055bb552a1848428373d78962e464aa2f8ed0fe7e8cfb02c3ab958e4b1",
+      "bytes": 464991
+    },
+    "ja/home-after.png": {
+      "sha256": "148de21d712a41a3745d952ff262c027022d4273e9ae3caa594d8b3dd070cab8",
+      "bytes": 466439
+    },
+    "ja/vault.png": {
+      "sha256": "27aba79dfe8bb83a62dc8b1b9ccf33f825f27cddb26cfd81f5eaf0d28b7bd888",
+      "bytes": 414101
+    },
+    "ja/history.png": {
+      "sha256": "a72717d4ca429e92e596347667862bb59d6c5781c9c7fcde0aa3760eb7ae99dd",
+      "bytes": 371292
+    },
+    "ja/cats.png": {
+      "sha256": "cb9dc82b066b8e4e77d61cff8ae1f79b77c6a895dfd6478c48ab292d97ad3343",
+      "bytes": 615371
+    },
+    "ja/quick-add.mp4": {
+      "sha256": "83b4685e52efe2c4f475b7fff6d2047cf14ac0f443cbb98ccd7425a1e31360e4",
+      "bytes": 93790
+    },
+    "cats/classic.webp": {
+      "sha256": "7cbe23ee907be07476f9675e8032f95eb88bfecc837fa916008a2a87d1664ef7",
+      "bytes": 304986
+    },
+    "cats/milk-teddy.webp": {
+      "sha256": "b95cfe816fd04c967d1f738ebc31b4a41d6e589f82c7b237b1bab21c1ab35208",
+      "bytes": 507250
+    },
+    "cats/witch.webp": {
+      "sha256": "e1654be33462992a3f465a1aaa727e037c7ed3ac919fea5f056b1dd6352a2b5b",
+      "bytes": 396888
+    }
+  }
+}

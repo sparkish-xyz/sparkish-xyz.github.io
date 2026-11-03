@@ -81,6 +81,22 @@ The October 4 redesign combines a restrained two-line headline, overlapping nati
 
 Author new styles in `site-src/styles/aquatick/07-scroll-story.css`, behavior in `site-src/scripts/aquatick/05-scroll-story.js`, and content in the three existing localized templates. GSAP 3.14.2 is pinned and served locally from the JS manifest; update instructions are in `site-src/scripts/aquatick/vendor/NOTICE.md`. Run `npm run build:css`, `npm run build:js`, `npm run generate`, `npm run check`, and `npm test`. The asset provenance is in `aquatick/assets/landing/README.md`.
 
+### AquaTick 2.0 preview and cat collection
+
+The November 4 update replaces all three locales' Home, Cup Vault, History and
+quick-add recordings with native 2.0.0 (163) captures. A new `#cats` section presents
+Classic, Witch and Milk Teddy with the native collection screen. Pointer and
+keyboard tabs preview the official artwork; without JavaScript all three remain
+readable. Five independently selected app color themes include Beige. Event and
+Pro availability follow native commit `1bc5a4e2`; the page labels unverified store
+availability as a 2.0 preview.
+
+Source additions: `site-src/styles/aquatick/08-cat-collection.css` and
+`site-src/scripts/aquatick/06-cat-collection.js`. Media hashes and capture details
+are in `aquatick/assets/landing/provenance-20261104.json` and the adjacent README.
+Run the existing build/generate/check commands and `npm test`; cat interaction,
+localization, narrow layouts and no-JS access are covered by `tests/aquatick-cats.spec.ts`.
+
 ### AquaTick language preference
 
 `localStorage.aquaLangPref` (`ko` | `en` | `ja`) is a **UX-only**, same-origin preference for the language chooser. It is not authentication and can be changed by any script on this origin.

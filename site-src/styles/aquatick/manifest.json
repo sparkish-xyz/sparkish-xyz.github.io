@@ -6,7 +6,8 @@
     "04-social-proof.css",
     "05-answer-cta-footer.css",
     "06-responsive-focus.css",
-    "07-scroll-story.css"
+    "07-scroll-story.css",
+    "08-cat-collection.css"
   ],
   "output": "aquatick/assets/aquatick-site.css",
   "templateOutput": "site-src/templates/aquatick/assets/aquatick-site.css"

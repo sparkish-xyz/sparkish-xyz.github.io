@@ -14,6 +14,10 @@ Important product facts:
 
 ## AquaTick
 
+AquaTick 2.0 preview, checked November 4, 2026 against native source commit 1bc5a4e2: redesigned Home, Cup Vault and History, plus selectable Classic Cat, Witch Cat and Milk Teddy Cat in Vault → Cats. Applying an owned cat changes Home, widget and Live Activity artwork and the app icon. Five independent color themes include Beige. These are development-build previews; availability may differ from the App Store release.
+
+Classic Cat is available from the start. Milk Teddy's configured launch event runs November 4–30, 2026 and requires water logging on 2 distinct days, without a consecutive-day or volume requirement. Event cats can also be earned through a rewarded ad during their event. Earned ownership persists after the event; active Pro grants access to started event cats but is not permanent earned ownership. The Halloween event ended October 31, 2026; do not advertise its ad unlock as currently available.
+
 - [AquaTick language selection](https://sparking.win/aquatick/): Routes visitors to Korean, English, or Japanese content.
 - [AquaTick Korean landing page](https://sparking.win/aquatick/ko/): Korean product overview, features, screenshots, privacy details, Pro pricing, and App Store links.
 - [AquaTick English landing page](https://sparking.win/aquatick/en/): English product overview, features, screenshots, privacy details, Pro pricing, and App Store links.

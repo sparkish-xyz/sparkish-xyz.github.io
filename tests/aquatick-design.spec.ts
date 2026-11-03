@@ -103,7 +103,7 @@ test.describe('AquaTick design contracts', () => {
 
     // Then every required destination is visible and keyboard reachable.
     await expect(menu).toHaveAttribute('open', '');
-    await expect(menu.locator('.nav-menu-panel a')).toHaveCount(7);
+    await expect(menu.locator('.nav-menu-panel a')).toHaveCount(8);
     for (const link of await menu.locator('.nav-menu-panel a').all()) {
       await expect(link).toBeVisible();
       await page.keyboard.press('Tab');
@@ -117,7 +117,7 @@ test.describe('AquaTick design contracts', () => {
       await page.goto(`/aquatick/${locale}/`);
 
       await expect(page.locator('.hero-phone img'), `${locale} localized home capture`).toHaveAttribute(
-        'src', `/aquatick/assets/landing/${locale}/home.png?v=20261004`,
+        'src', `/aquatick/assets/landing/${locale}/home.png?v=20261104`,
       );
 
       const disclosure = page.locator('#privacy details');

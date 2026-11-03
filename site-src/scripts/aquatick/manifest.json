@@ -5,7 +5,8 @@
     "04-nav-menu.js",
     "vendor/gsap.min.js",
     "vendor/ScrollTrigger.min.js",
-    "05-scroll-story.js"
+    "05-scroll-story.js",
+    "06-cat-collection.js"
   ],
   "output": "aquatick/assets/aquatick-site.js",
   "templateOutput": "site-src/templates/aquatick/assets/aquatick-site.js"

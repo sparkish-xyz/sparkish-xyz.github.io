@@ -563,3 +563,50 @@ html[lang="ko"] .handwritten,html[lang="ja"] .handwritten { font-family: var(--f
   .hero-water,.hero-phone,.watch-shot { transform: none !important; }
   .hero-satellite { transform: none; }
 }
+/* Native AquaTick 2.0 captures and the official collectible cat artwork. */
+.aqua-story .release-note { max-width: 620px; margin: 8px auto 0; padding-inline: 20px; color: var(--muted); font-size: 11px; line-height: 1.6; text-wrap: pretty; }
+.aqua-story .hero-footer { min-height: 180px; }
+.aqua-story .cats-section { padding-block: var(--section-space); background: #f4eee4; }
+.cats-heading { max-width: 760px; margin-bottom: 48px; }
+.cats-heading h2 { font-size: clamp(38px, 4.8vw, 68px); line-height: 1.2; letter-spacing: -.045em; margin-bottom: 24px; }
+.cats-heading > p:last-child { max-width: 620px; font-size: 17px; line-height: 1.85; }
+.cats-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); align-items: center; gap: clamp(32px, 7vw, 100px); }
+.cat-showcase { min-width: 0; }
+.cat-tabs { display: flex; padding: 5px; gap: 4px; border: 1px solid #d8cfc0; border-radius: 99px; background: #fffcf7; }
+.cat-tabs button { flex: 1; min-width: 0; min-height: 48px; border: 0; border-radius: 99px; background: transparent; color: #665546; padding: 10px 8px; font: 500 14px var(--font-body); cursor: pointer; white-space: nowrap; }
+.cat-tabs button[aria-selected="true"] { background: #594331; color: #fffdf8; }
+.cat-tabs button:focus-visible { outline: 3px solid var(--water-accent); outline-offset: 3px; }
+.cat-picker-hint { margin: 14px 0 0; text-align: center; color: #776553; font-size: 12px; }
+.cat-preview { display: flex; flex-direction: column; align-items: center; margin: 20px 0 0; text-align: center; }
+.cat-preview > img { display: block; width: min(100%, 340px); height: 330px; object-fit: contain; }
+.cat-preview-copy { max-width: 460px; }
+.cat-badge { color: #72573e; font-size: 11px; letter-spacing: .06em; margin: 16px 0 10px; }
+.cat-preview h3 { font-size: 30px; line-height: 1.25; letter-spacing: -.035em; margin-bottom: 16px; }
+.cat-preview-copy > p:last-child { font-size: 15px; line-height: 1.85; margin: 0; }
+.cat-panels.is-enhanced { min-height: 560px; }
+.cat-collection-shot { margin: 0; text-align: center; }
+.cat-collection-shot > a { display: block; max-width: 300px; margin: auto; }
+.cat-collection-shot img { display: block; width: 100%; height: auto; border-radius: 28px; box-shadow: 0 24px 60px rgb(73 53 33 / 12%); }
+.cat-collection-shot figcaption { margin-top: 24px; }
+.cat-collection-shot .screen-caption { display: block; font-size: 10px; color: #776553; margin-top: 10px; }
+.cat-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; padding-top: 28px; border-top: 1px solid #d8cfc0; }
+.cat-notes p { font-size: 13px; line-height: 1.85; color: #665546; margin: 0; }
+@media (max-width: 899px) {
+  .cats-layout { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .cat-showcase { width: 100%; max-width: 560px; margin: auto; }
+  .cat-panels.is-enhanced { min-height: 535px; }
+  .cat-collection-shot > a { max-width: 280px; }
+  .cat-notes { gap: 24px; }
+}
+@media (max-width: 599px) {
+  .aqua-story .release-note { font-size: 10px; max-width: 360px; }
+  .aqua-story .hero-footer { min-height: 200px; }
+  .cats-heading { margin-bottom: 30px; }
+  .cats-heading > p:last-child { font-size: 15px; }
+  .cat-tabs button { font-size: 12px; }
+  .cat-preview > img { height: 270px; }
+  .cat-preview h3 { font-size: 26px; }
+  .cat-preview-copy > p:last-child { font-size: 14px; }
+  .cat-panels.is-enhanced { min-height: 530px; }
+  .cat-notes { grid-template-columns: minmax(0, 1fr); }
+}
