@@ -8,12 +8,11 @@ const docs = ['support', 'privacy', 'terms'] as const;
 const contact = 'mailto:alarmcrew.support@gmail.com';
 const prohibited = /apps\.apple\.com|itunes\.apple\.com|testflight\.apple\.com|apple-itunes-app|installUrl|downloadUrl|\bdownload\b|다운로드|ダウンロード|피팅\s*팩|fitting packs?|試着パック|href="tel:|\{\{[^}]+\}\}/i;
 
-test('the hub and language cover lead readers to their own edition', async ({ browser }) => {
+test('the Lookfold language cover leads readers to their own edition', async ({ browser }) => {
   for (const [browserLocale, edition] of [['ko-KR','ko'],['ja-JP','ja'],['fr-FR','en']]) {
     const context = await browser.newContext({ locale: browserLocale! });
     const page = await context.newPage();
-    await page.goto('http://127.0.0.1:8080/');
-    await page.getByRole('link', { name: /View Lookfold/ }).click();
+    await page.goto('http://127.0.0.1:8080/lookfold/');
     await expect(page).toHaveURL(new RegExp('/lookfold/' + edition + '/$'));
     await expect(page.locator('html')).toHaveAttribute('lang', edition!);
     await context.close();
@@ -31,9 +30,9 @@ test('static cover, discovery and product metadata keep the release status accur
       expect(sitemap).toContain('<loc>' + origin + '/lookfold/' + locale + '/' + suffix + '</loc>');
     }
   }
-  expect(summary).toMatch(/Lookfold[\s\S]*not been submitted/);
-  await page.goto('/');
-  const graph = JSON.parse(await page.locator('script[type="application/ld+json"]').innerText())['@graph'];
+  expect(summary).toMatch(/Lookfold[\s\S]*submitted for App Review/);
+  const hub = await (await request.get('/')).text();
+  const graph = JSON.parse(hub.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)![1]!)['@graph'];
   const app = graph.find((node: { '@type': string }) => node['@type'] === 'ItemList').itemListElement
     .find((entry: { item: { name: string } }) => entry.item.name === 'Lookfold');
   expect(app.item.url).toBe(origin + '/lookfold/');
@@ -50,7 +49,9 @@ for (const locale of locales) {
       await expect(page.locator('a[aria-current="page"]')).toHaveAttribute('href', base);
       await expect(page.locator('#release-title')).toContainText(/준비|in the making|準備/);
       await expect(page.locator('#journal')).toContainText('AI');
-      for (const fact of ['Free','Lookfold Plus','US $8.99','35','30','5 GiB']) await expect(page.locator('#plans')).toContainText(fact);
+      for (const fact of ['Free','Lookfold Plus']) await expect(page.locator('#plans')).toContainText(fact);
+      await expect(page.locator('#plans')).not.toContainText(/US \$8\.99|35|30|5 GiB/);
+      await expect(page.locator('.source-note')).toContainText('1.0 (5)');
       await expect(page.locator('.availability')).toContainText('Apple');
       expect(await page.content()).not.toMatch(prohibited);
       const pictures = page.locator('.catalogue img');

@@ -43,9 +43,9 @@ AlarmCrew is publicly available on iOS. Product information last checked October
 
 ## Lookfold / 룩폴드 — Closet & Outfit Journal
 
-Lookfold is being prepared for adults in Korea, the United States and Japan. The iOS app has not been submitted for app review. The website and release materials are in Korean, English and Japanese; the current app UI shown in the screenshots is in English. Sign in with Apple is the only account sign-in method.
+Lookfold is being prepared for adults in Korea, the United States and Japan. Version 1.0 (4) has been submitted for App Review; release is still pending. Candidate 1.0 (5) is being prepared and is not the existing submission. The website and release materials are in Korean, English and Japanese; the current app UI shown in the screenshots is in English. Sign in with Apple is the only account sign-in method.
 
-Choose owned clothing, combine pieces, optionally request an AI fitting, confirm actual wear, and reuse the outfit. Plans and AI previews are not actual wear records. Free includes manual wardrobe, outfits, calendar, wear history and reuse. Planned Lookfold Plus: US $8.99 per month, 35 fittings per billing cycle, automatic organization of 30 photos per cycle, 5 GiB storage. Sales have not opened.
+Choose owned clothing, combine pieces, optionally request an AI fitting, confirm actual wear, and reuse the outfit. Plans and AI previews are not actual wear records. Free includes manual wardrobe, outfits, calendar, wear history and reuse. Lookfold Plus is not available for purchase in the current version. Existing result viewing and comparison use no fitting credits. The sample screens contain fictional pre-generated AI examples, not evidence of live AI processing or a fit guarantee.
 
 - [Lookfold language selection](https://sparking.win/lookfold/)
 - [한국어](https://sparking.win/lookfold/ko/), [English](https://sparking.win/lookfold/en/), [日本語](https://sparking.win/lookfold/ja/)
