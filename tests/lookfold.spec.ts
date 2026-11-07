@@ -108,12 +108,12 @@ test('delivered media match the recorded icon and native screenshot sources', ()
   expect(provenance.sourceEvidence).toMatch(/candidate7-artifact-evidence\.json$/);
   expect(provenance.currentCaptureAssets).toHaveLength(9);
   for (const name of provenance.currentCaptureAssets) {
-    expect(sources[name].sourceBuild,name).toBe(provenance.captureBuild);
+    expect(sources[name]?.sourceBuild,name).toBe(provenance.captureBuild);
   }
   expect(provenance.legacy.candidate5Capture.captureBuild).toBe('1.0 (5)');
   expect(provenance.legacy.candidate5Capture.captureEvidence).toMatch(/candidate5-final-simulator-identity\.json$/);
   for (const name of ['app-icon.png','white-shirt.webp','denim.webp','jacket.webp']) {
-    expect(sources[name].sourceCommit,name).toBeTruthy();
+    expect(sources[name]?.sourceCommit,name).toBeTruthy();
     expect(provenance.currentCaptureAssets).not.toContain(name);
   }
   for (const [name, entry] of Object.entries(sources)) {
