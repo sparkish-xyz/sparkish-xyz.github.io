@@ -51,7 +51,7 @@ for (const locale of locales) {
       await expect(page.locator('#journal')).toContainText('AI');
       for (const fact of ['Free','Lookfold Plus']) await expect(page.locator('#plans')).toContainText(fact);
       await expect(page.locator('#plans')).not.toContainText(/US \$8\.99|35|30|5 GiB/);
-      await expect(page.locator('.source-note')).toContainText('1.0 (5)');
+      await expect(page.locator('.source-note')).toContainText('1.0 (7)');
       await expect(page.locator('.availability')).toContainText('Apple');
       expect(await page.content()).not.toMatch(prohibited);
       const pictures = page.locator('.catalogue img');

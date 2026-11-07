@@ -1,6 +1,5 @@
 {
   "product": "Lookfold",
-  "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e",
   "sources": {
     "app-icon.png": {
       "source": "Lookfold/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
@@ -13,56 +12,56 @@
     "ko/01-wardrobe.webp": {
       "source": "release/app-store/assets/screenshots/ko-KR/iphone-6.9/01-wardrobe.png",
       "source_sha256": "d941862c1dfc131f8c7d7917c0ca992a80756a67eb344c6d082981416ab37266",
-      "sha256": "3fbcfd6a5000dc9b2a339b305e8b4cd0ec4f67e843a535892e18c464d2c5c1e6",
-      "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      "sha256": "cc5c9323b03155cdd8d54e02bf245b0dbbbce57389199a23fe44d8ff2622a4d1",
+      "sourceBuild": "1.0 (7)"
     },
     "ko/02-ai-fitting.webp": {
       "source": "release/app-store/assets/screenshots/ko-KR/iphone-6.9/02-ai-fitting.png",
       "source_sha256": "ec3603f2ec9eeadc5c1e4279966a8ece3de4e652f4c3a1b1244120ef2b02478b",
-      "sha256": "30f5adc7a2d6b427ec5aebdfbe1ea6edb7ba47fbab2a754ef854b107cc418f72",
-      "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      "sha256": "afe14b133b968c9edf412f07884c6b3c0ea37514bb65565433c309164f63cee6",
+      "sourceBuild": "1.0 (7)"
     },
     "ko/03-wear-history.webp": {
       "source": "release/app-store/assets/screenshots/ko-KR/iphone-6.9/03-wear-history.png",
-      "source_sha256": "ccae6dcd618cdf581cf35e127892330449c44cf15b266db8328abc295d632126",
-      "sha256": "9f287667b665c1aa48ecfaff5902ae5edbdb00793ac7b93671df6bc387a85d0b",
-      "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      "source_sha256": "ef2a0cae818f0f23cd33f225a7a8efe1d44424a1ee71485a5655fe6e75a301bf",
+      "sha256": "bb2781e45f441836bdba692e7212e51f57160bb106bd02ed33ab67ffe668d795",
+      "sourceBuild": "1.0 (7)"
     },
     "en/01-wardrobe.webp": {
       "source": "release/app-store/assets/screenshots/en-US/iphone-6.9/01-wardrobe.png",
       "source_sha256": "702d1ab85785920ef08bead525b7a0d9bcb41744814640568ec30951ebb4122b",
-      "sha256": "8000929c49adb270f88cfaf7678c4a31c1a77286bb3fe7b5765ff46f0ff9fe47",
-      "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      "sha256": "b3beaa9068330cac36c90acc1e8328bc70adf98a5cf0edbd597c6f2c8eba53b0",
+      "sourceBuild": "1.0 (7)"
     },
     "en/02-ai-fitting.webp": {
       "source": "release/app-store/assets/screenshots/en-US/iphone-6.9/02-ai-fitting.png",
       "source_sha256": "703f4bf2906134bb28ee3e765c71b72206c88dfe595f7c9adc64173caee482e8",
-      "sha256": "8007a7fc52e3c91a636723f185e3296f7208f8c0afc2bac89392708eac5d3b8e",
-      "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      "sha256": "da660aec0cc418374490fba2cde8bc8ec828b4779fea9bd27b601a3605599793",
+      "sourceBuild": "1.0 (7)"
     },
     "en/03-wear-history.webp": {
       "source": "release/app-store/assets/screenshots/en-US/iphone-6.9/03-wear-history.png",
-      "source_sha256": "7afdbf4b636991a38c599caf22327130c43179c7f03c48b8490e7e31f9cea6e0",
-      "sha256": "875256bfb37b09be26bcc522425aa1d303b71ee5f53c9d57d45f90f2aa45bdf7",
-      "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      "source_sha256": "f2a4ca832b2f6fca4a8338b362cdb70543848606df84e926a93bc3673e0cbda7",
+      "sha256": "75f5d0b01f918df98040ae711ca203337dbefb16089ba7a4fe3b94ce7e989e74",
+      "sourceBuild": "1.0 (7)"
     },
     "ja/01-wardrobe.webp": {
       "source": "release/app-store/assets/screenshots/ja/iphone-6.9/01-wardrobe.png",
       "source_sha256": "1fbaa100ebb4a71890dfb1a8fb5f07b24181e52fa7991e64e5a857d055951cd5",
-      "sha256": "8b35ce4923fb1b69ea6b4375a225afbd5a422e1cca87efeccb8c6d1fbb53e610",
-      "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      "sha256": "6a0ae41bc595ce0deaac454769094491047df448afb9e3281fb895aa4d438993",
+      "sourceBuild": "1.0 (7)"
     },
     "ja/02-ai-fitting.webp": {
       "source": "release/app-store/assets/screenshots/ja/iphone-6.9/02-ai-fitting.png",
       "source_sha256": "988658d3dc5abb84c837d15256afa0915af94112d0f34bcc496cad5b142eba05",
-      "sha256": "624196788e4c653d90d7f91ba2e17f0442296cf5dc3a92e8ab4bafab3e37c3e3",
-      "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      "sha256": "1395fbd465463174952e991e8f8a3366f06ef99423528e9330ad3033c6cd9bca",
+      "sourceBuild": "1.0 (7)"
     },
     "ja/03-wear-history.webp": {
       "source": "release/app-store/assets/screenshots/ja/iphone-6.9/03-wear-history.png",
-      "source_sha256": "9c459403767213b903b57e026fe540978011270de39d699ddb794daaaeab00d7",
-      "sha256": "feedb2aa1b21df1b32c2aed37f5b0d8bf319eb0b3b0714002bb3451b938ec037",
-      "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      "source_sha256": "28af9889f92beff5cedfc4884966dce85712c4c776d1dbc17cc3b178313d4f08",
+      "sha256": "6b3f9e747eafbd3bbf1f9549c668651659c79149ef5bee09292185048b4a5954",
+      "sourceBuild": "1.0 (7)"
     },
     "white-shirt.webp": {
       "source": "release/app-store/assets/screenshots/en-US/iphone-6.9/07-personal-details.png",
@@ -106,7 +105,7 @@
   },
   "captureBuild": "1.0 (5)",
   "captureMode": "Final registered-icon Production ordinary sample; no screenshot or E2E arguments",
-  "updatedAt": "2026-11-07T14:43:37.848125+00:00",
+  "updatedAt": "2026-11-07T16:45:11.764495+00:00",
   "captureEvidence": "docs/testing/quality-review/2026-11-07-current/candidate5-final-simulator-identity.json",
   "sourceCommitMeaning": "Committed app/configuration/icon source for the final Production candidate 5. Unchanged garment crops retain their own original sourceCommit.",
   "encoding": {
@@ -116,5 +115,7 @@
     "aspectRatioPreserved": true,
     "crop": false,
     "metadata": "ICC"
-  }
+  },
+  "sourceBuild": "1.0 (7)",
+  "sourceEvidence": "docs/testing/quality-review/2026-11-07-current/candidate7-artifact-evidence.json"
 }
