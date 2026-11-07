@@ -103,19 +103,117 @@
       "note": "Unchanged existing image/crop; source hash refers to that original commit, not the recaptured screenshot set."
     }
   },
-  "captureBuild": "1.0 (5)",
-  "captureMode": "Final registered-icon Production ordinary sample; no screenshot or E2E arguments",
-  "updatedAt": "2026-11-07T16:45:11.764495+00:00",
-  "captureEvidence": "docs/testing/quality-review/2026-11-07-current/candidate5-final-simulator-identity.json",
-  "sourceCommitMeaning": "Committed app/configuration/icon source for the final Production candidate 5. Unchanged garment crops retain their own original sourceCommit.",
+  "captureBuild": "1.0 (7)",
+  "captureMode": "Ordinary Production candidate 7 sample screens captured on the existing iPhone 18 Pro Max and iPad Pro 13-inch (M5) simulators; no screenshot or E2E arguments. Sample and AI labels retained. This does not claim execution of the signed device IPA.",
+  "updatedAt": "2026-11-07T17:05:05.407952+00:00",
+  "captureEvidence": "docs/testing/quality-review/2026-11-07-current/candidate7-simulator-identity.json",
+  "sourceCommitMeaning": "Current nine scene images use verified candidate 7 capture and archive-input evidence. The base checkout SHA alone does not identify the locally changed candidate 7 build. Historical candidate 5 metadata is retained under legacy; unchanged icon and garment crops retain their own sourceCommit.",
   "encoding": {
+    "scope": "currentCaptureAssets only",
     "tool": "cwebp",
     "quality": 90,
+    "method": 6,
     "resizeWidth": 864,
+    "resizeHeight": 1877,
     "aspectRatioPreserved": true,
     "crop": false,
-    "metadata": "ICC"
+    "metadata": "none; current nine WebP files contain VP8 image chunks only"
   },
   "sourceBuild": "1.0 (7)",
-  "sourceEvidence": "docs/testing/quality-review/2026-11-07-current/candidate7-artifact-evidence.json"
+  "sourceEvidence": "docs/testing/quality-review/2026-11-07-current/candidate7-artifact-evidence.json",
+  "legacy": {
+    "candidate5Capture": {
+      "product": "Lookfold",
+      "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e",
+      "captureBuild": "1.0 (5)",
+      "captureMode": "Final registered-icon Production ordinary sample; no screenshot or E2E arguments",
+      "updatedAt": "2026-11-07T14:43:37.848125+00:00",
+      "captureEvidence": "docs/testing/quality-review/2026-11-07-current/candidate5-final-simulator-identity.json",
+      "sourceCommitMeaning": "Committed app/configuration/icon source for the final Production candidate 5. Unchanged garment crops retain their own original sourceCommit.",
+      "encoding": {
+        "tool": "cwebp",
+        "quality": 90,
+        "resizeWidth": 864,
+        "aspectRatioPreserved": true,
+        "crop": false,
+        "metadata": "ICC"
+      }
+    },
+    "candidate5ScreenshotSources": {
+      "ko/01-wardrobe.webp": {
+        "source": "release/app-store/assets/screenshots/ko-KR/iphone-6.9/01-wardrobe.png",
+        "source_sha256": "d941862c1dfc131f8c7d7917c0ca992a80756a67eb344c6d082981416ab37266",
+        "sha256": "3fbcfd6a5000dc9b2a339b305e8b4cd0ec4f67e843a535892e18c464d2c5c1e6",
+        "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      },
+      "ko/02-ai-fitting.webp": {
+        "source": "release/app-store/assets/screenshots/ko-KR/iphone-6.9/02-ai-fitting.png",
+        "source_sha256": "ec3603f2ec9eeadc5c1e4279966a8ece3de4e652f4c3a1b1244120ef2b02478b",
+        "sha256": "30f5adc7a2d6b427ec5aebdfbe1ea6edb7ba47fbab2a754ef854b107cc418f72",
+        "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      },
+      "ko/03-wear-history.webp": {
+        "source": "release/app-store/assets/screenshots/ko-KR/iphone-6.9/03-wear-history.png",
+        "source_sha256": "ccae6dcd618cdf581cf35e127892330449c44cf15b266db8328abc295d632126",
+        "sha256": "9f287667b665c1aa48ecfaff5902ae5edbdb00793ac7b93671df6bc387a85d0b",
+        "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      },
+      "en/01-wardrobe.webp": {
+        "source": "release/app-store/assets/screenshots/en-US/iphone-6.9/01-wardrobe.png",
+        "source_sha256": "702d1ab85785920ef08bead525b7a0d9bcb41744814640568ec30951ebb4122b",
+        "sha256": "8000929c49adb270f88cfaf7678c4a31c1a77286bb3fe7b5765ff46f0ff9fe47",
+        "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      },
+      "en/02-ai-fitting.webp": {
+        "source": "release/app-store/assets/screenshots/en-US/iphone-6.9/02-ai-fitting.png",
+        "source_sha256": "703f4bf2906134bb28ee3e765c71b72206c88dfe595f7c9adc64173caee482e8",
+        "sha256": "8007a7fc52e3c91a636723f185e3296f7208f8c0afc2bac89392708eac5d3b8e",
+        "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      },
+      "en/03-wear-history.webp": {
+        "source": "release/app-store/assets/screenshots/en-US/iphone-6.9/03-wear-history.png",
+        "source_sha256": "7afdbf4b636991a38c599caf22327130c43179c7f03c48b8490e7e31f9cea6e0",
+        "sha256": "875256bfb37b09be26bcc522425aa1d303b71ee5f53c9d57d45f90f2aa45bdf7",
+        "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      },
+      "ja/01-wardrobe.webp": {
+        "source": "release/app-store/assets/screenshots/ja/iphone-6.9/01-wardrobe.png",
+        "source_sha256": "1fbaa100ebb4a71890dfb1a8fb5f07b24181e52fa7991e64e5a857d055951cd5",
+        "sha256": "8b35ce4923fb1b69ea6b4375a225afbd5a422e1cca87efeccb8c6d1fbb53e610",
+        "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      },
+      "ja/02-ai-fitting.webp": {
+        "source": "release/app-store/assets/screenshots/ja/iphone-6.9/02-ai-fitting.png",
+        "source_sha256": "988658d3dc5abb84c837d15256afa0915af94112d0f34bcc496cad5b142eba05",
+        "sha256": "624196788e4c653d90d7f91ba2e17f0442296cf5dc3a92e8ab4bafab3e37c3e3",
+        "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      },
+      "ja/03-wear-history.webp": {
+        "source": "release/app-store/assets/screenshots/ja/iphone-6.9/03-wear-history.png",
+        "source_sha256": "9c459403767213b903b57e026fe540978011270de39d699ddb794daaaeab00d7",
+        "sha256": "feedb2aa1b21df1b32c2aed37f5b0d8bf319eb0b3b0714002bb3451b938ec037",
+        "sourceCommit": "0837bc4823c0c463dbce6e8aa7ffc243c3790e9e"
+      }
+    },
+    "unchangedAssets": {
+      "app-icon.png": "Original candidate 5 icon provenance remains in sources.app-icon.png; unchanged master bytes.",
+      "garmentCrops": [
+        "white-shirt.webp",
+        "denim.webp",
+        "jacket.webp"
+      ],
+      "garmentCropMeaning": "Original crop coordinates, hashes and sourceCommit remain in each sources entry; these are not candidate 7 captures."
+    }
+  },
+  "currentCaptureAssets": [
+    "ko/01-wardrobe.webp",
+    "ko/02-ai-fitting.webp",
+    "ko/03-wear-history.webp",
+    "en/01-wardrobe.webp",
+    "en/02-ai-fitting.webp",
+    "en/03-wear-history.webp",
+    "ja/01-wardrobe.webp",
+    "ja/02-ai-fitting.webp",
+    "ja/03-wear-history.webp"
+  ]
 }

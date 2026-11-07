@@ -95,9 +95,27 @@ for (const locale of locales) {
 }
 
 test('delivered media match the recorded icon and native screenshot sources', () => {
-  const { sources } = JSON.parse(readFileSync('lookfold/assets/provenance.json','utf8')) as {
-    sources: Record<string,{source:string,sha256:string,source_sha256:string}>
+  const provenance = JSON.parse(readFileSync('lookfold/assets/provenance.json','utf8')) as {
+    captureBuild: string; sourceBuild: string; captureEvidence: string; sourceEvidence: string;
+    currentCaptureAssets: string[];
+    legacy: {candidate5Capture: {captureBuild: string; captureEvidence: string}};
+    sources: Record<string,{source:string,sha256:string,source_sha256:string,sourceBuild?:string,sourceCommit?:string}>
   };
+  const { sources } = provenance;
+  expect(provenance.captureBuild).toBe('1.0 (7)');
+  expect(provenance.captureBuild).toBe(provenance.sourceBuild);
+  expect(provenance.captureEvidence).toMatch(/candidate7-simulator-identity\.json$/);
+  expect(provenance.sourceEvidence).toMatch(/candidate7-artifact-evidence\.json$/);
+  expect(provenance.currentCaptureAssets).toHaveLength(9);
+  for (const name of provenance.currentCaptureAssets) {
+    expect(sources[name].sourceBuild,name).toBe(provenance.captureBuild);
+  }
+  expect(provenance.legacy.candidate5Capture.captureBuild).toBe('1.0 (5)');
+  expect(provenance.legacy.candidate5Capture.captureEvidence).toMatch(/candidate5-final-simulator-identity\.json$/);
+  for (const name of ['app-icon.png','white-shirt.webp','denim.webp','jacket.webp']) {
+    expect(sources[name].sourceCommit,name).toBeTruthy();
+    expect(provenance.currentCaptureAssets).not.toContain(name);
+  }
   for (const [name, entry] of Object.entries(sources)) {
     expect(createHash('sha256').update(readFileSync('lookfold/assets/' + name)).digest('hex'),name).toBe(entry.sha256);
     if (name === 'app-icon.png') expect(entry.sha256).toBe(entry.source_sha256);
