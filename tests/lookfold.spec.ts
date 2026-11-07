@@ -69,6 +69,16 @@ for (const locale of locales) {
         await expect(page.locator('.document-body')).toBeVisible();
         await expect(page.locator('.document-body a[href="' + contact + '"]')).toBeVisible();
         expect(await page.content()).not.toMatch(prohibited);
+        if (kind === 'support') {
+          const body = await page.locator('.document-body').innerText();
+          const submissionHistory = {
+            ko: '이전 빌드를 앱 심사에 제출한 이력이 있습니다. 제출은 심사 승인이나 공개 출시를 뜻하지 않습니다.',
+            en: 'A previous build was submitted for app review. Submission does not mean approval or public availability.',
+            ja: '以前のビルドをアプリ審査に提出した履歴があります。提出は審査の承認や一般公開を意味しません。',
+          };
+          expect(body).toContain(submissionHistory[locale]);
+          expect(body).not.toMatch(/has not been submitted|심사에 제출하지 않았|審査にはまだ提出/);
+        }
         if (kind === 'privacy') {
           for (const provider of ['Apple','Supabase','OpenAI','RevenueCat']) await expect(page.locator('.document-body')).toContainText(provider);
         }
