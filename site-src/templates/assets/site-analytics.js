@@ -23,7 +23,7 @@ async function startAnalytics() {
 
   const product = location.pathname.split('/')[1];
   const context = {
-    app_name: { aquatick: 'AquaTick', alarmcrew: 'AlarmCrew', kinetto: 'KINETTO' }[product] || 'Sparkish',
+    app_name: { aquatick: 'AquaTick', alarmcrew: 'AlarmCrew', kinetto: 'KINETTO', lookfold: 'Lookfold' }[product] || 'Sparkish',
     page_language: document.documentElement.lang,
     page_path: location.pathname,
   };

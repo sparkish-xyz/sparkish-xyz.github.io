@@ -42,13 +42,13 @@ async function mockFirebase(page: Page, options: { supported?: boolean; blocked?
   });
 }
 
-test('all ten landing pages load analytics; redirects and documents do not', async ({ request }) => {
-  const landings = ['/', '/aquatick/ko/', '/aquatick/en/', '/aquatick/ja/', '/alarmcrew/', '/alarmcrew/en/', '/alarmcrew/ja/', '/kinetto/', '/kinetto/ko/', '/kinetto/ja/'];
+test('all product landing pages load analytics; redirects and documents do not', async ({ request }) => {
+  const landings = ['/', '/aquatick/ko/', '/aquatick/en/', '/aquatick/ja/', '/alarmcrew/', '/alarmcrew/en/', '/alarmcrew/ja/', '/kinetto/', '/kinetto/ko/', '/kinetto/ja/', '/lookfold/ko/', '/lookfold/en/', '/lookfold/ja/'];
   for (const path of landings) {
     const html = await (await request.get(path)).text();
     expect(html.match(/<script type="module" src="\/assets\/site-analytics.js"><\/script>/g), path).toHaveLength(1);
   }
-  for (const path of ['/aquatick/', '/ko/', '/en/', '/ja/', '/legal/', '/kinetto/privacy/']) {
+  for (const path of ['/aquatick/', '/lookfold/', '/lookfold/en/privacy/', '/ko/', '/en/', '/ja/', '/legal/', '/kinetto/privacy/']) {
     expect(await (await request.get(path)).text(), path).not.toContain('/assets/site-analytics.js');
   }
 });

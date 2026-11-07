@@ -51,7 +51,7 @@ test.describe('Project-hosted support and legal documents', () => {
   });
 
   test('all landing pages and the hub link to documents on this site', async ({ page, request }) => {
-    const landings = ['/', '/aquatick/en/', '/aquatick/ko/', '/aquatick/ja/', '/kinetto/', '/kinetto/ko/', '/kinetto/ja/', '/alarmcrew/', '/alarmcrew/en/', '/alarmcrew/ja/'];
+    const landings = ['/', '/aquatick/en/', '/aquatick/ko/', '/aquatick/ja/', '/kinetto/', '/kinetto/ko/', '/kinetto/ja/', '/alarmcrew/', '/alarmcrew/en/', '/alarmcrew/ja/', '/lookfold/en/', '/lookfold/ko/', '/lookfold/ja/'];
     for (const path of landings) {
       await page.goto(path);
       const html = await (await request.get(path)).text();

@@ -40,6 +40,7 @@ const requiredRootFiles = [
 ];
 
 const requiredRouteFiles = [
+  ...JSON.parse(fs.readFileSync(path.join(root, 'site-src/routes.json'), 'utf8')).lookfold,
   'alarmcrew/index.html',
   'alarmcrew/en/index.html',
   'alarmcrew/ja/index.html',
@@ -58,6 +59,8 @@ const requiredRouteFiles = [
 ];
 
 const requiredAssetFiles = [
+  'lookfold/assets/app-icon.png',
+  'lookfold/assets/lookfold.css',
   'assets/firebase-config.js',
   'assets/site-analytics.js',
   'legal/assets/legal.css',

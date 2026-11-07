@@ -1,5 +1,32 @@
 [
   {
+    "date": "2026-11-07",
+    "product": "Lookfold",
+    "theme": "Neutral Atelier, based on Lookfold/Design/Theme.swift",
+    "macrostructure": "Wardrobe plate, three native journal screens, Free/Plus comparison, release status",
+    "enrichment": "Cropped sample garments and localized release screenshots only",
+    "verification": {
+      "widths": [
+        320,
+        375,
+        414,
+        768,
+        1440
+      ],
+      "keyboard": "pass",
+      "noJS": "pass",
+      "releaseStatus": "pre-submission"
+    },
+    "scores": {
+      "philosophy": 5,
+      "hierarchy": 5,
+      "execution": 4,
+      "specificity": 5,
+      "restraint": 5,
+      "variety": 4
+    }
+  },
+  {
     "date": "2026-10-10",
     "macrostructure": "Feature Stack with cinematic product hero",
     "theme": "AlarmCrew Cinematic Edition — user-requested Apple-style presentation",

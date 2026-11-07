@@ -8,13 +8,13 @@ test.describe('Sparkish hub route contracts', () => {
     await expect(page).toHaveURL(/\/aquatick\/(ko|en|ja)\/?$/);
   });
 
-  test('hub JSON-LD includes the three MobileApplication cards', async ({ page }) => {
+  test('hub JSON-LD includes the four MobileApplication cards', async ({ page }) => {
     await page.goto('/');
     const jsonLd = await page.locator('script[type="application/ld+json"]').textContent();
     expect(jsonLd).toContain('"@type": "Organization"');
     expect(jsonLd).toContain('"@type": "MobileApplication"');
     expect(jsonLd).toContain('AquaTick');
-    expect(jsonLd).toContain('"numberOfItems": 3');
+    expect(jsonLd).toContain('"numberOfItems": 4');
     expect(jsonLd).toContain('KINETTO');
 
     const graph = JSON.parse(jsonLd ?? '')['@graph'] as Array<{
@@ -65,7 +65,7 @@ test.describe('Sparkish hub route contracts', () => {
     for (const width of [320, 375, 414, 768, 1280]) {
       await page.setViewportSize({ width, height: 900 });
       await page.goto('/');
-      await expect(page.locator('.project-link')).toHaveCount(3);
+      await expect(page.locator('.project-link')).toHaveCount(4);
       await expect(page.locator('#aquatick-status')).toHaveText('Available now');
       await expect(page.locator('#kinetto-status')).toHaveText('In the making');
       await expect(page.locator('#alarmcrew-status')).toHaveText('Available on iOS');

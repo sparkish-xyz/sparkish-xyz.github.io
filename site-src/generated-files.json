@@ -32,7 +32,12 @@
     "aquatick/android/ko/index.html",
     "aquatick/android/review/health-connect/index.html",
     "aquatick/android/ko/review/health-connect/index.html",
-    "aquatick/android/review/assets/review.css"
+    "aquatick/android/review/assets/review.css",
+    "lookfold/index.html",
+    "lookfold/ko/index.html",
+    "lookfold/en/index.html",
+    "lookfold/ja/index.html",
+    "lookfold/assets/lookfold.css"
   ],
   "staticAssetDirectories": [
     "assets",
@@ -40,7 +45,8 @@
     "kinetto/assets",
     "alarmcrew/assets",
     "guides/assets",
-    "aquatick/android/review/assets"
+    "aquatick/android/review/assets",
+    "lookfold/assets"
   ],
   "rootOnlyFiles": [
     "index.html",

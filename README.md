@@ -30,7 +30,7 @@ When AquaTick images change, update **`aquatick/assets/`** and copy the same fil
 
 | Path | Purpose |
 |------|---------|
-| `/` | Sparkish portfolio hub (AquaTick, KINETTO, and AlarmCrew) |
+| `/` | Sparkish portfolio hub (AquaTick, KINETTO, AlarmCrew, and Lookfold) |
 | `/aquatick/` | AquaTick language detector / chooser |
 | `/aquatick/ko/`, `/aquatick/en/`, `/aquatick/ja/` | Localized AquaTick landings |
 | `/ko/`, `/en/`, `/ja/` | Legacy stubs → redirect to `/aquatick/ko|en|ja/` |
@@ -56,6 +56,21 @@ requires no JavaScript, API calls, or new dependencies. Authored source and
 migration details live in `site-src/legal/`; run `npm run generate` after editing.
 Original policy languages and effective dates are retained. AquaTick's terms
 page links to its existing Apple Standard EULA on Apple's official website.
+
+### Lookfold — Closet & Outfit Journal
+
+`/lookfold/` chooses the reading language; `/lookfold/{ko,en,ja}/` contains the
+pre-release product overview. Each locale has its own support, privacy and terms
+pages. Edit `site-src/templates/lookfold/` and `site-src/legal/content/lookfold/`,
+then run `npm run generate`, `npm run check` and `npx playwright test tests/lookfold.spec.ts`.
+
+Product source: LookFold commit `c61fdf7`, especially
+`docs/product/01-product-brief.md`, the app's data flows and release legal material.
+See `lookfold/assets/provenance.json` for the original icon, localized release
+screens, crop coordinates, and file hashes. These screens contain sample records
+and English-language app UI. The marketing languages are Korean, English and
+Japanese. The app is not submitted for review; do not add purchase links, store
+badges or release dates without a verified status change.
 
 ### AlarmCrew landing page
 
@@ -105,7 +120,7 @@ localization, narrow layouts and no-JS access are covered by `tests/aquatick-cat
 
 The Firebase project [`sparkish-landingpage`](https://console.firebase.google.com/project/sparkish-landingpage/overview) uses the free Spark plan. Its registered web app is **Sparkish Landing Page**, linked to GA4 property **557581612** and measurement ID **`G-JFG6NYZJ9K`**.
 
-The hub and all nine localized product landings load `/assets/site-analytics.js`. Firebase App and Analytics SDK 12.19.0 load from Google's CDN. The module logs one `page_view` per page and `app_store_click` for App Store links, with `app_name`, `page_language`, and `page_path`; clicks also include `link_url` and `placement`. The Firebase initialization disables automatic page views to avoid counting the explicit event twice. Redirects, the AquaTick language chooser, guides, and legal documents do not load analytics.
+The hub and all twelve localized product landings load `/assets/site-analytics.js`. Firebase App and Analytics SDK 12.19.0 load from Google's CDN. The module logs one `page_view` per page and `app_store_click` for App Store links, with `app_name`, `page_language`, and `page_path`; clicks also include `link_url` and `placement`. The Firebase initialization disables automatic page views to avoid counting the explicit event twice. Redirects, the AquaTick language chooser, guides, and legal documents do not load analytics.
 
 GA4 has event-scoped custom dimensions **Landing app** (`app_name`), **Landing language** (`page_language`), and **CTA placement** (`placement`) registered for report breakdowns.
 

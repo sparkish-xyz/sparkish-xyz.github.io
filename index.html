@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="format-detection" content="telephone=no">
   <title>Sparkish — Small apps. More good days.</title>
-  <meta name="description" content="Small apps with a little character. Meet AquaTick for hydration, KINETTO for running, and AlarmCrew for shared mornings with friends.">
+  <meta name="description" content="Small apps with a little character. Meet AquaTick for hydration, KINETTO for running, AlarmCrew for shared mornings, and Lookfold for your wardrobe.">
   <meta property="og:title" content="Sparkish — Small apps. More good days.">
-  <meta property="og:description" content="Thoughtful apps for everyday life. Build a water habit with AquaTick, meet KINETTO for running, and wake up with friends in AlarmCrew.">
+  <meta property="og:description" content="Thoughtful apps for everyday life. Build a water habit with AquaTick, meet KINETTO for running, wake up with friends in AlarmCrew, and explore the Lookfold outfit journal.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://sparking.win/">
   <meta property="og:site_name" content="Sparkish">
@@ -16,7 +16,7 @@
   <meta property="og:image:alt" content="AquaTick app icon">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Sparkish — Small apps. More good days.">
-  <meta name="twitter:description" content="Thoughtful apps for everyday life. Build a water habit with AquaTick, meet KINETTO for running, and wake up with friends in AlarmCrew.">
+  <meta name="twitter:description" content="Thoughtful apps for everyday life. Build a water habit with AquaTick, meet KINETTO for running, wake up with friends in AlarmCrew, and explore the Lookfold outfit journal.">
   <meta name="twitter:image" content="https://sparking.win/aquatick/assets/aquatick-app-icon.png">
   <meta name="theme-color" content="#f7f8f4">
   <link rel="icon" href="/aquatick/assets/aquatick-app-icon.png" type="image/png">
@@ -37,7 +37,7 @@
       "@type": "ItemList",
       "@id": "https://sparking.win/#apps",
       "name": "Sparkish apps",
-      "numberOfItems": 3,
+      "numberOfItems": 4,
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -77,6 +77,20 @@
             "url": "https://sparking.win/alarmcrew/",
             "image": "https://sparking.win/alarmcrew/assets/app-icon.png",
             "installUrl": "https://apps.apple.com/app/id6812283770"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "MobileApplication",
+            "name": "Lookfold",
+            "alternateName": "룩폴드",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "iOS (in preparation)",
+            "url": "https://sparking.win/lookfold/",
+            "image": "https://sparking.win/lookfold/assets/app-icon.png",
+            "description": "Closet & Outfit Journal. In preparation for Korea, the US and Japan; not yet submitted for app review."
           }
         }
       ]
@@ -133,7 +147,9 @@
     .alarmcrew-art { background: var(--ac-color-night); color: var(--ac-color-light); }
     .alarmcrew-art .art-copy { color: var(--ac-color-orange); }
     .morning-friends { position: absolute; width: 70%; max-width: 320px; right: 5%; bottom: 0; }
-    .app-card:last-child { grid-column: 1 / -1; max-width: 700px; width: 100%; }
+    .lookfold-art { background: #eae5db; color: var(--hub-ink); }
+    .lookfold-art .art-copy { position: relative; z-index: 1; }
+    .lookfold-shirt { position: absolute; width: 58%; right: 2%; bottom: 2%; mix-blend-mode: multiply; }
     .project-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
     .app-icon { width: 40px; height: 40px; border-radius: 10px; }
     .project-heading h2 { font-size: 25px; font-weight: 700; letter-spacing: -0.055em; }
@@ -198,7 +214,7 @@
   <main id="main" class="shell">
     <section class="hero" aria-labelledby="hero-title">
       <h1 id="hero-title"><span>Small apps.</span><span>More good days.</span></h1>
-      <p class="intro">A little care. A little movement. A shared morning.<br>We make thoughtful apps that bring a little character to everyday life.</p>
+      <p class="intro">A little care. A little movement. A shared morning. A well-worn favorite.<br>We make thoughtful apps that bring a little character to everyday life.</p>
     </section>
     <section id="apps" aria-label="Our apps">
       <div class="section-heading"><p class="eyebrow">The apps</p><p>Made to become part of your day.</p></div>
@@ -249,6 +265,14 @@
             </div>
             <p class="project-description" id="alarmcrew-description">Set an alarm with your friends. See who is up. Available on iOS. Android preparing for launch.</p>
             <span class="project-cta" id="alarmcrew-cta">View AlarmCrew</span>
+          </a>
+        </article>
+        <article class="app-card">
+          <a class="project-link" href="/lookfold/" aria-labelledby="lookfold-name lookfold-cta" aria-describedby="lookfold-description lookfold-status">
+            <div class="project-heading"><img class="app-icon" src="/lookfold/assets/app-icon.png" width="1024" height="1024" alt=""><h2 id="lookfold-name">Lookfold</h2><span class="status" id="lookfold-status">In preparation</span></div>
+            <div class="project-art lookfold-art" aria-hidden="true"><p class="art-copy">Monday’s shirt.<br>Tomorrow’s outfit.</p><img class="lookfold-shirt" src="/lookfold/assets/white-shirt.webp" width="798" height="730" loading="lazy" alt=""><p class="art-note">Closet &amp;<br>Outfit Journal</p></div>
+            <p class="project-description" id="lookfold-description">Build a look from clothes you own. Record the day you wore it, and find it again.</p>
+            <span class="project-cta" id="lookfold-cta">View Lookfold</span>
           </a>
         </article>
       </div>

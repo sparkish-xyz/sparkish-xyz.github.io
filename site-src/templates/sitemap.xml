@@ -122,6 +122,38 @@
     <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/alarmcrew/ja/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/alarmcrew/"/>
   </url>
+  <url>
+    <loc>https://sparking.win/lookfold/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/ko/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/en/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/ja/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/"/>
+  </url>
   <!-- Support and legal documents, with authored language variants only -->
   <url>
     <loc>https://sparking.win/legal/</loc>
@@ -434,6 +466,78 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/aquatick/android/delete-account/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/aquatick/android/ko/delete-account/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/aquatick/android/delete-account/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/ko/support/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/en/support/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/en/support/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/en/support/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/ja/support/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/support/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/support/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/support/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/en/support/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/ko/privacy/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/en/privacy/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/ja/privacy/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/en/privacy/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/ko/terms/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/en/terms/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/en/terms/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/en/terms/"/>
+  </url>
+  <url>
+    <loc>https://sparking.win/lookfold/ja/terms/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://sparking.win/lookfold/ko/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sparking.win/lookfold/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://sparking.win/lookfold/ja/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sparking.win/lookfold/en/terms/"/>
   </url>
   <url>
     <loc>https://sparking.win/aquatick/ko/guides/apple-watch/</loc>

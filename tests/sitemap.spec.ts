@@ -57,6 +57,7 @@ test.describe('sitemap route contracts', () => {
       ...AQUATICK_LOCALES.map((locale) => aquatickUrl(locale)),
       ...KINETTO_LOCALES.map((locale) => kinettoUrl(locale)),
       `${BASE_URL}/alarmcrew/`, `${BASE_URL}/alarmcrew/en/`, `${BASE_URL}/alarmcrew/ja/`,
+      ...['', 'ko/', 'en/', 'ja/'].map(path => BASE_URL + '/lookfold/' + path),
       ...(JSON.parse(readFileSync('site-src/routes.json', 'utf8')) as { legal: string[] }).legal
         .map(file => `${BASE_URL}/${file.replace(/index\.html$/, '')}`),
       ...(JSON.parse(readFileSync('site-src/routes.json', 'utf8')) as { guides: string[] }).guides

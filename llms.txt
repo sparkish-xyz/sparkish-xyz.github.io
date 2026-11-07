@@ -1,6 +1,6 @@
 # Sparkish
 
-> Sparkish makes playful apps for everyday habits: AquaTick, a cat-themed hydration tracker; KINETTO, a running app where real runs grow an anonymous Crew; and AlarmCrew, an alarm app for shared mornings with friends.
+> Sparkish makes playful apps for everyday habits: AquaTick, a cat-themed hydration tracker; KINETTO, a running app where real runs grow an anonymous Crew; AlarmCrew, an alarm app for shared mornings with friends; and Lookfold, a wardrobe and outfit journal in preparation.
 
 Localized landing pages provide product information in English, Korean and Japanese. Product guides below explain supported features and their limits.
 
@@ -41,6 +41,16 @@ Classic Cat is available from the start. Milk Teddy's configured launch event ru
 
 AlarmCrew is publicly available on iOS. Product information last checked October 10, 2026. Download: https://apps.apple.com/app/id6812283770 . Android is preparing for Google Play; do not present an Android download or release date as available. Current supported devices: iPhone/iPad with iOS 26.0+. The planned Android version targets Android 8.0+ and is not yet available. Following friends and joining a Crew are separate. Alarm responses record dismissal, not verified wakefulness, and alarms follow each device’s local time. The landing shows labelled previews of the next iOS update, including next-occurrence ordering; these may differ from the current store release. Device-local alarms do not require Crew sync, but signing in and syncing status require the internet. Device power, permissions, volume, and battery settings affect alarm operation. Signing out removes scheduled alarms on that device. The app includes advertising; no claims of guaranteed wake-up, ad-free service, rankings, or gift alarms are made on this page.
 
+## Lookfold / 룩폴드 — Closet & Outfit Journal
+
+Lookfold is being prepared for adults in Korea, the United States and Japan. The iOS app has not been submitted for app review. The website and release materials are in Korean, English and Japanese; the current app UI shown in the screenshots is in English. Sign in with Apple is the only account sign-in method.
+
+Choose owned clothing, combine pieces, optionally request an AI fitting, confirm actual wear, and reuse the outfit. Plans and AI previews are not actual wear records. Free includes manual wardrobe, outfits, calendar, wear history and reuse. Planned Lookfold Plus: US $8.99 per month, 35 fittings per billing cycle, automatic organization of 30 photos per cycle, 5 GiB storage. Sales have not opened.
+
+- [Lookfold language selection](https://sparking.win/lookfold/)
+- [한국어](https://sparking.win/lookfold/ko/), [English](https://sparking.win/lookfold/en/), [日本語](https://sparking.win/lookfold/ja/)
+- [Support](https://sparking.win/lookfold/en/support/), [Privacy Policy](https://sparking.win/lookfold/en/privacy/), [Terms of Use](https://sparking.win/lookfold/en/terms/). The same documents are available in Korean and Japanese. Contact: alarmcrew.support@gmail.com.
+
 ## Product guides
 
 - [Apple Watch에서 물 마신 양 기록하기](https://sparking.win/aquatick/ko/guides/apple-watch/): AquaTick으로 Apple Watch에서 물 섭취량을 기록하는 방법. 지원 OS, 별도의 6개 컵 배치, 빠른 기록과 진행률 표시의 차이를 확인하세요.
@@ -52,7 +62,7 @@ AlarmCrew is publicly available on iOS. Product information last checked October
 
 ## Site Index
 
-- [Sparkish app catalog](https://sparking.win/): Root page listing AquaTick, KINETTO, and AlarmCrew.
+- [Sparkish app catalog](https://sparking.win/): Root page listing AquaTick, KINETTO, AlarmCrew and Lookfold.
 - [Sitemap](https://sparking.win/sitemap.xml): Canonical site routes and language alternates.
 - [Robots policy](https://sparking.win/robots.txt): Crawl policy and sitemap location.
 

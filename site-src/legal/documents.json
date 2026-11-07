@@ -217,6 +217,66 @@
           }
         }
       }
+    },
+    "lookfold": {
+      "name": "Lookfold",
+      "icon": "/lookfold/assets/app-icon.png",
+      "defaultLanguage": "en",
+      "landings": {
+        "ko": "/lookfold/ko/",
+        "en": "/lookfold/en/",
+        "ja": "/lookfold/ja/"
+      },
+      "documents": {
+        "support": {
+          "locales": {
+            "ko": {
+              "content": "lookfold/support-ko.html",
+              "title": "고객지원"
+            },
+            "en": {
+              "content": "lookfold/support-en.html",
+              "title": "Support"
+            },
+            "ja": {
+              "content": "lookfold/support-ja.html",
+              "title": "サポート"
+            }
+          }
+        },
+        "privacy": {
+          "locales": {
+            "ko": {
+              "content": "lookfold/privacy-ko.html",
+              "title": "개인정보 처리방침"
+            },
+            "en": {
+              "content": "lookfold/privacy-en.html",
+              "title": "Privacy Policy"
+            },
+            "ja": {
+              "content": "lookfold/privacy-ja.html",
+              "title": "プライバシーポリシー"
+            }
+          }
+        },
+        "terms": {
+          "locales": {
+            "ko": {
+              "content": "lookfold/terms-ko.html",
+              "title": "이용약관"
+            },
+            "en": {
+              "content": "lookfold/terms-en.html",
+              "title": "Terms of Use"
+            },
+            "ja": {
+              "content": "lookfold/terms-ja.html",
+              "title": "利用規約"
+            }
+          }
+        }
+      }
     }
   }
 }

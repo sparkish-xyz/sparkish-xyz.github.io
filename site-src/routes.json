@@ -56,7 +56,16 @@
     "aquatick/android/ko/privacy/index.html",
     "aquatick/android/ko/terms/index.html",
     "aquatick/android/ko/support/index.html",
-    "aquatick/android/ko/delete-account/index.html"
+    "aquatick/android/ko/delete-account/index.html",
+    "lookfold/ko/support/index.html",
+    "lookfold/en/support/index.html",
+    "lookfold/ja/support/index.html",
+    "lookfold/ko/privacy/index.html",
+    "lookfold/en/privacy/index.html",
+    "lookfold/ja/privacy/index.html",
+    "lookfold/ko/terms/index.html",
+    "lookfold/en/terms/index.html",
+    "lookfold/ja/terms/index.html"
   ],
   "guides": [
     "aquatick/ko/guides/apple-watch/index.html",
@@ -69,5 +78,11 @@
   "androidReview": [
     "aquatick/android/review/health-connect/index.html",
     "aquatick/android/ko/review/health-connect/index.html"
+  ],
+  "lookfold": [
+    "lookfold/index.html",
+    "lookfold/ko/index.html",
+    "lookfold/en/index.html",
+    "lookfold/ja/index.html"
   ]
 }
