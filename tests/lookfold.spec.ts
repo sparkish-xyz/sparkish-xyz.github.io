@@ -88,6 +88,12 @@ for (const locale of locales) {
           await expect(page.locator('.document-body')).toContainText('1833-6972');
           await expect(page.locator('.document-body')).toContainText('118');
           expect(await page.locator('.document-body').innerText()).not.toContain('심사 제출 전인');
+          const operationsCopy = {
+            ko: ['최대 90일', '달력 기준 3일', '아직 운영 검증이 끝나지 않았습니다'],
+            en: ['90 days after closure', 'three calendar days', 'not yet operationally verified'],
+            ja: ['最長90日', '暦日で3日', '運用検証は未完了'],
+          };
+          for (const text of operationsCopy[locale]) await expect(page.locator('.document-body')).toContainText(text);
         }
       }
     });
