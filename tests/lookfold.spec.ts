@@ -79,8 +79,15 @@ for (const locale of locales) {
           expect(body).toContain(submissionHistory[locale]);
           expect(body).not.toMatch(/has not been submitted|심사에 제출하지 않았|審査にはまだ提出/);
         }
+        if (kind === 'privacy' || kind === 'terms') {
+          await expect(page.locator('.document-body')).toContainText('Byunghak Ko');
+          await expect(page.locator('.document-body')).toContainText('2026-11-07');
+        }
         if (kind === 'privacy') {
           for (const provider of ['Apple','Supabase','OpenAI','RevenueCat']) await expect(page.locator('.document-body')).toContainText(provider);
+          await expect(page.locator('.document-body')).toContainText('1833-6972');
+          await expect(page.locator('.document-body')).toContainText('118');
+          expect(await page.locator('.document-body').innerText()).not.toContain('심사 제출 전인');
         }
       }
     });
