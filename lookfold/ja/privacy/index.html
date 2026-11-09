@@ -29,8 +29,8 @@
     <aside class="document-sidebar">
       <a class="product-link" href="/lookfold/ja/"><img src="/lookfold/assets/app-icon.png" width="40" height="40" alt=""><span>Lookfold</span></a>
       <nav class="document-nav" aria-label="文書"><a href="/lookfold/ja/support/">サポート</a><a href="/lookfold/ja/privacy/" aria-current="page">プライバシーポリシー</a><a href="/lookfold/ja/terms/">利用規約</a></nav>
-      <nav class="desktop-toc" aria-label="このページの目次"><p>このページの目次</p><ul><li><a href="#section-1">対象</a></li><li><a href="#section-2">サインインと保存</a></li><li><a href="#section-3">写真と任意のAI処理</a></li><li><a href="#section-4">購入・サポート・共有</a></li><li><a href="#section-5">開示・削除とお問い合わせ</a></li><li><a href="#section-6">サポートの保存と権利請求への対応</a></li><li><a href="#section-7">診断とバックアップの準備状況</a></li><li><a href="#section-8">このウェブサイト</a></li></ul></nav>
-      <details class="table-of-contents"><summary>このページの目次</summary><ul><li><a href="#section-1">対象</a></li><li><a href="#section-2">サインインと保存</a></li><li><a href="#section-3">写真と任意のAI処理</a></li><li><a href="#section-4">購入・サポート・共有</a></li><li><a href="#section-5">開示・削除とお問い合わせ</a></li><li><a href="#section-6">サポートの保存と権利請求への対応</a></li><li><a href="#section-7">診断とバックアップの準備状況</a></li><li><a href="#section-8">このウェブサイト</a></li></ul></details>
+      <nav class="desktop-toc" aria-label="このページの目次"><p>このページの目次</p><ul><li><a href="#section-1">対象</a></li><li><a href="#section-2">アプリ1.0.1ビルド10の利用分析</a></li><li><a href="#section-3">サインインと保存</a></li><li><a href="#section-4">写真と任意のAI処理</a></li><li><a href="#section-5">購入・サポート・共有</a></li><li><a href="#section-6">開示・削除とお問い合わせ</a></li><li><a href="#section-7">サポートの保存と権利請求への対応</a></li><li><a href="#section-8">診断とバックアップの準備状況</a></li><li><a href="#section-9">このウェブサイト</a></li></ul></nav>
+      <details class="table-of-contents"><summary>このページの目次</summary><ul><li><a href="#section-1">対象</a></li><li><a href="#section-2">アプリ1.0.1ビルド10の利用分析</a></li><li><a href="#section-3">サインインと保存</a></li><li><a href="#section-4">写真と任意のAI処理</a></li><li><a href="#section-5">購入・サポート・共有</a></li><li><a href="#section-6">開示・削除とお問い合わせ</a></li><li><a href="#section-7">サポートの保存と権利請求への対応</a></li><li><a href="#section-8">診断とバックアップの準備状況</a></li><li><a href="#section-9">このウェブサイト</a></li></ul></details>
     </aside>
     <div class="document-main">
       <header class="document-heading">
@@ -42,23 +42,26 @@
       <article class="document-body" lang="ja" aria-label="プライバシーポリシー"><h2 id="section-1">対象</h2>
 <p>運営者：Byunghak Ko。施行日：2026-11-07。</p>
 <p>本方針は公開準備中のLookfoldアプリにおけるデータの取り扱いを説明します。サンプルのワードローブは架空のものです。アカウントへの記録の保存とAI処理の依頼は別の操作で、サインインだけで写真がAIに送信されることはありません。</p>
-<h2 id="section-2">サインインと保存</h2>
+<h2 id="section-2">アプリ1.0.1ビルド10の利用分析</h2>
+<p>2026年11月9日更新。この項目はTestFlightを含むLookfold 1.0.1ビルド10以降に適用されます。Firebase Analytics（Google）はアプリの起動・セッション・利用状況、SDKが検出した購入、主要画面への訪問を測定します。アプリインスタンス識別子とアプリ・端末情報を処理し、ネットワーク情報からおおよその地域を推定する場合があります。カスタムイベントは固定の画面名とIDを含み、写真・メモ・検索語・服の詳細・LookfoldアカウントID・認証情報を分析属性から除外します。IDFA・IDFVの収集、広告用ストレージ・広告用ユーザーデータ・広告のパーソナライズは無効です。</p>
+<p>本番アプリは初期設定で収集が有効です。AccountのShare usage analyticsをオフにすると、この端末での収集を停止し、端末内の分析データと識別子をリセットします。設定は再起動後も保持します。Googleが既に受信したイベントはAnalyticsプロパティの保存設定に従い、この操作で過去のイベントは削除されません。分析に関する個人情報のご相談はalarmcrew.support@gmail.comまでご連絡ください。</p>
+<h2 id="section-3">サインインと保存</h2>
 <p>認証とアカウントの区別のために、Appleサインイン識別子、アプリのアカウントID、Appleから提供された場合のメールアドレスを使用します。認証情報は端末のKeychainに、下書きやキャッシュは端末内に保存します。利用者がアカウントに保存した衣類や人物の写真、コーデ、着用日、予定、コレクション、サイズ、メモはSupabaseの東京リージョンの非公開データベースとストレージで処理します。</p>
-<h2 id="section-3">写真と任意のAI処理</h2>
+<h2 id="section-4">写真と任意のAI処理</h2>
 <p>システムの写真選択画面から選んだ写真を取り込みます。AI処理のたびに目的と写真の範囲を確認します。試着には選択した人物と服の写真を、衣類分類には対象の写真を、サーバーを介してOpenAIに送信します。コーデの照合にはコーデ写真と最大24件の選択した候補の写真・ID・名前・分類を使用します。個人メモや決済情報はこれらの依頼の入力項目ではありません。依頼した結果はアカウントに保存しますが、着用実績には自動で追加しません。同意しなくても手動記録は利用できます。</p>
-<h2 id="section-4">購入・サポート・共有</h2>
+<h2 id="section-5">購入・サポート・共有</h2>
 <p>サブスクリプション提供時の決済はAppleが、購入確認と購入分析はRevenueCatが担当します。アカウントに紐づく取引、利用権限、試着残高の記録を管理します。カード番号の全桁は取得しません。お問い合わせ内容、関連する処理ID、エラーやステータスを問題解決に使用します。サポートによる写真確認には対象の写真ごとに利用者の許可が必要です。利用者が外部に共有したファイルは受信先で取り扱われます。</p>
-<h2 id="section-5">開示・削除とお問い合わせ</h2>
+<h2 id="section-6">開示・削除とお問い合わせ</h2>
 <p>Accountから記録のエクスポート、写真の管理、アカウント削除を申請できます。同じAppleアカウントで再認証したうえで、保存したアプリ記録とファイルを削除しAppleサインイン認証を取り消します。発行済みの写真リンクは最長15分間有効な場合があり、外部に共有したコピーは回収できません。処理事業者のログやバックアップ、保存が必要な取引記録はアプリ内データと削除時期が異なる場合があります。アプリやアカウントを削除してもAppleのサブスクリプションは解約されません。開示・訂正・削除・同意の撤回は <a href="mailto:alarmcrew.support@gmail.com">alarmcrew.support@gmail.com</a> へご連絡ください。</p>
 <p>韓国の外部相談・紛争調整窓口：<a href="https://www.kopico.go.kr/">個人情報紛争調停委員会</a> 1833-6972、<a href="https://privacy.kisa.or.kr/">個人情報侵害申告センター</a> 118。Lookfold運営者の窓口とは別の外部機関です。</p>
-<h2 id="section-6">サポートの保存と権利請求への対応</h2>
+<h2 id="section-7">サポートの保存と権利請求への対応</h2>
 <p>プライバシーと権利請求はByunghak Koが上記窓口で直接担当します。一般的な問い合わせは終了後最長90日を保存基準として採用し、正当な早期削除や目的の終了に応じてより早く整理できます。取引、返金、紛争、権利請求の記録は別途評価し、正当な保留を区別します。DBの自動整理と実際のメールボックス運用は公開前に追加の運用検証が必要です。サポートの条件として再購入、新たなAI生成、写真の提供への同意を求めません。</p>
 <p>アクセスを制限した請求台帳に受付ID、最小限のアカウント参照、当初の受付日時、本人確認と処理事業者への対応状況、原文の代わりに証拠への参照を保存します。未完了の対応や保存例外を追跡するため、アプリアカウントの削除後も残る場合があります。すべて照合した通常案件は終了後最長90日で整理し、未解決の例外や正当な保留は別途見直します。処理事業者との手動照合はAppleのサブスクリプション解約ではありません。</p>
 <p>必要な本人確認後、アカウントの自動削除を直ちに試みます。エラー時の運用上の対応目標は当初の受付から暦日で3日以内とし、適用されるより早い義務を優先します。本人確認や再試行で起算点を変更しません。すべての事業者ログ、バックアップ、保存が必要な取引記録を3日以内に消去する保証ではなく、実際の完了は別途確認が必要です。</p>
-<h2 id="section-7">診断とバックアップの準備状況</h2>
+<h2 id="section-8">診断とバックアップの準備状況</h2>
 <p>別個の長期診断コピーは追加しません。サーバー診断は固定のエラー分類と処理IDに限定し、写真、メモ、一時写真URL、トークン、処理事業者の応答原文を記録しません。事業者のセキュリティ、アクセス、SDKログの保存期間は異なる場合があり、公開API/DBログの期間をすべてのログに当てはめません。</p>
 <p>採用したバックアップ目標は、有料プランのDB日次バックアップ7日間と、別個の暗号化写真バックアップ7日間です。運用検証は未完了です。現在のFreeプロジェクトには顧客が復元できるプロジェクトバックアップがなく、独立した写真保存先と復旧キーの手順も未構成です。DBバックアップに写真のバイト列は含まれません。検証済みの復旧時間や復旧時点を現在保証しません。</p>
-<h2 id="section-8">このウェブサイト</h2>
+<h2 id="section-9">このウェブサイト</h2>
 <p>Sparkishの製品紹介ページはFirebase Analyticsでページ訪問を計測します。このサイトではAppleでのサインイン、服の写真のアップロード、AI試着の依頼、決済は受け付けていません。</p></article>
       <a class="back-link document-end" href="/lookfold/ja/">← Lookfold · アプリ紹介に戻る</a>
     </div>

@@ -1,6 +1,9 @@
 <h2>Scope</h2>
 <p>Service operator: Byunghak Ko. Effective date: 2026-11-07.</p>
 <p>This notice describes data handling in the pre-release Lookfold app. The sample wardrobe is fictional. Saving a record to an account and requesting AI processing are separate actions; signing in does not send a photo to AI.</p>
+<h2>App analytics in version 1.0.1, build 10</h2>
+<p>Updated November 9, 2026. This section applies to Lookfold 1.0.1 (build 10) and later, including TestFlight builds. Firebase Analytics (Google) measures app launches, sessions, engagement, SDK-detected purchases and main-screen visits. It processes an app-instance identifier and app/device information, and may derive approximate geography from network information. Custom events contain fixed screen labels and IDs. Photos, notes, search terms, clothing details, Lookfold account IDs and authentication credentials are excluded from analytics properties. IDFA and IDFV collection, advertising storage, advertising user-data use and ad personalization are disabled.</p>
+<p>Production collection is enabled by default. In Account, turn off Share usage analytics to stop collection on this device and reset local analytics data and its identifier. Your choice persists after restarting. This does not erase events already received by Google, which follow the Analytics property retention settings. Contact alarmcrew.support@gmail.com about analytics privacy requests.</p>
 <h2>Sign-in and account storage</h2>
 <p>Lookfold uses an Apple sign-in identifier, app account ID and email if supplied by Apple for authentication and account separation. Credentials use the device Keychain. Drafts and cached content are kept locally. Garment and person photos, outfits, wear dates, plans, collections, sizes and notes you choose to save to an account are processed in a private Supabase database and file storage in the Tokyo region.</p>
 <h2>Selected photos and optional AI</h2>
